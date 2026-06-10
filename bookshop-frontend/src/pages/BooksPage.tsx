@@ -2,11 +2,12 @@ import { useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { PlusIcon, PencilIcon, TrashIcon, MagnifyingGlassIcon, ArrowDownTrayIcon, ClockIcon, Squares2X2Icon, ListBulletIcon } from '@heroicons/react/24/outline';
+import { PlusIcon, PencilIcon, TrashIcon, MagnifyingGlassIcon, ArrowDownTrayIcon, ClockIcon, Squares2X2Icon, ListBulletIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 import { useBooks } from '../hooks/useBooks';
 import { useCategories } from '../hooks/useCategories';
 import { useStockMovements } from '../hooks/useStockMovements';
 import { useToast } from '../context/ToastContext';
+import { useCartContext } from '../context/CartContext';
 import { Table, type Column } from '../components/common/Table';
 import { Button } from '../components/common/Button';
 import { Input } from '../components/common/Input';
@@ -41,6 +42,7 @@ export default function BooksPage() {
   const { categories, fetchCategories } = useCategories();
   const { movements, loading: movLoading, page: movPage, totalPages: movTotalPages, setPage: setMovPage, fetchMovements } = useStockMovements();
   const { showToast } = useToast();
+  const { addItem } = useCartContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
@@ -173,6 +175,12 @@ export default function BooksPage() {
       render: (b) => (
         <div className="flex justify-end gap-1">
           <IconButton
+            icon={<ShoppingBagIcon className="w-4 h-4" />}
+            label={`Add ${b.title} to cart`}
+            variant="primary"
+            onClick={(e) => { e.stopPropagation(); addItem({ bookId: b.id, title: b.title, author: b.author, price: b.price, coverUrl: b.coverUrl, categoryName: categoryMap[b.categoryId] }); }}
+          />
+          <IconButton
             icon={<ClockIcon className="w-4 h-4" />}
             label={`Stock history for ${b.title}`}
             variant="primary"
@@ -192,7 +200,7 @@ export default function BooksPage() {
           />
         </div>
       ),
-      className: 'text-right w-28',
+      className: 'text-right w-36',
     },
   ];
 
@@ -306,6 +314,12 @@ export default function BooksPage() {
                   <div className="mt-auto flex items-center justify-between pt-2 border-t border-gray-100">
                     <span className="text-lg font-bold text-gray-900">${book.price.toFixed(2)}</span>
                     <div className="flex gap-1">
+                      <IconButton
+                        icon={<ShoppingBagIcon className="w-4 h-4" />}
+                        label={`Add ${book.title} to cart`}
+                        variant="primary"
+                        onClick={(e) => { e.stopPropagation(); addItem({ bookId: book.id, title: book.title, author: book.author, price: book.price, coverUrl: book.coverUrl, categoryName: categoryMap[book.categoryId] }); }}
+                      />
                       <IconButton
                         icon={<ClockIcon className="w-4 h-4" />}
                         label={`Stock history for ${book.title}`}

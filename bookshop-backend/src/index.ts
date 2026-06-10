@@ -10,6 +10,7 @@ import stockRouter from './routes/stock.routes';
 import auditRouter from './routes/audit.routes';
 import exportRouter from './routes/export.routes';
 import uploadRouter from './routes/upload.routes';
+import cartRouter from './routes/cart.routes';
 
 // Load environment variables
 dotenv.config();
@@ -42,6 +43,7 @@ app.use('/api/v1', stockRouter);
 app.use('/api/v1/audit-log', auditRouter);
 app.use('/api/v1/export', exportRouter);
 app.use('/api/v1', uploadRouter);
+app.use('/api/v1', cartRouter);
 
 // API documentation endpoint
 app.get('/api/v1', (req: Request, res: Response) => {

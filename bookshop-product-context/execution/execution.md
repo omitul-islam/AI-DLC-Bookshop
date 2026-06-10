@@ -86,16 +86,16 @@ All requirements from [`requirements.md`](../01-source/requirements.md) are impl
 
 | # | Task | Status |
 |---|------|--------|
-| CT1 | Create cart types (`CartItem`, `Cart`) + localStorage utility hook | ⬜ Pending |
-| CT2 | Add "Add to Cart" button on BooksPage (list + grid views) | ⬜ Pending |
-| CT3 | Create CartDrawer component (slide-out from right with backdrop) | ⬜ Pending |
-| CT4 | Create cart summary section (items, qty controls, subtotal, total) | ⬜ Pending |
-| CT5 | Add cart icon with item count badge to sidebar | ⬜ Pending |
-| CT6 | Wire toast notifications for add/remove/clear cart actions | ⬜ Pending |
-| CT7 | Backend: `POST /api/v1/cart/validate` endpoint (stock check) | ⬜ Pending |
-| CT8 | Backend: `POST /api/v1/cart/checkout` endpoint (cart → order, stock deduction, stock movement + audit log) | ⬜ Pending |
-| CT9 | Update OpenAPI contracts for cart endpoints | ⬜ Pending |
-| CT10 | Update database-design.md if schema changes | ⬜ Pending |
+| CT1 | Create cart types (`CartItem`, `Cart`) + localStorage utility hook | ✅ Done |
+| CT2 | Add "Add to Cart" button on BooksPage (list + grid views) | ✅ Done |
+| CT3 | Create CartDrawer component (slide-out from right with backdrop) | ✅ Done |
+| CT4 | Create cart summary section (items, qty controls, subtotal, total) | ✅ Done |
+| CT5 | Add cart icon with item count badge to sidebar | ✅ Done |
+| CT6 | Wire toast notifications for add/remove/clear cart actions | ✅ Done |
+| CT7 | Backend: `POST /api/v1/cart/validate` endpoint (stock check) | ✅ Done |
+| CT8 | Backend: `POST /api/v1/cart/checkout` endpoint (cart → order, stock deduction, stock movement + audit log) | ✅ Done |
+| CT9 | Update OpenAPI contracts for cart endpoints | ✅ Done |
+| CT10 | Update database-design.md if schema changes | ✅ Done |
 
 ---
 

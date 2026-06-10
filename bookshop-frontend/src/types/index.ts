@@ -111,3 +111,40 @@ export interface PaginatedResponse<T> {
   data: T[];
   pagination: PaginationMeta;
 }
+
+export interface CartItem {
+  bookId: string;
+  title: string;
+  author: string;
+  price: number;
+  quantity: number;
+  coverUrl?: string;
+  categoryName?: string;
+}
+
+export interface Cart {
+  items: CartItem[];
+  updatedAt: string;
+}
+
+export interface CartValidateRequest {
+  items: { bookId: string; quantity: number }[];
+}
+
+export interface CartValidateResponse {
+  valid: boolean;
+  errors: { bookId: string; title: string; requested: number; available: number }[];
+}
+
+export interface CheckoutRequest {
+  customerId: string;
+  items: { bookId: string; quantity: number }[];
+}
+
+export interface CheckoutResponse {
+  checkoutId: string;
+  status: string;
+  totalPrice: number;
+  items: { bookId: string; title: string; quantity: number; unitPrice: number; subtotal: number }[];
+  createdAt: string;
+}

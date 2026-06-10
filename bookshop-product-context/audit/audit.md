@@ -212,3 +212,23 @@ Append-only log. Captures every change with ISO 8601 timestamps. Never overwritt
 **Error**: `animate-shimmer` class not found when used inside `@layer components @apply` — Tailwind cannot resolve custom animation utilities inside layer `@apply` directives
 **Fix**: Replaced `@apply animate-shimmer` with inline `animation: shimmer 1.5s ease-in-out infinite` + `background-size: 200% 100%` in `index.css`
 **Verification**: `npm run build` passes, compiled CSS contains `.shimmer` class with correct animation properties
+
+## 2026-06-10T09:00:00Z — Shopping Cart Feature
+**Action**: Implemented shopping cart (client-side localStorage) with add/remove/quantity, cart drawer UI, plus backend validate + checkout endpoints
+**Frontend**:
+- `src/types/index.ts` — Added `CartItem`, `Cart`, `CartValidateRequest/Response`, `CheckoutRequest/Response` types
+- `src/hooks/useCart.ts` — localStorage-backed cart hook (addItem, removeItem, updateQuantity, clearCart, totalItems, subtotal)
+- `src/context/CartContext.tsx` — React context wrapping useCart + toast integration + drawer open/close state
+- `src/components/cart/CartDrawer.tsx` — Slide-out panel from right with backdrop blur, item list with qty stepper, summary, clear/checkout buttons
+- `src/layouts/Sidebar.tsx` — Added Cart nav button with gradient item count badge, opens drawer on click
+- `src/pages/BooksPage.tsx` — Added "Add to Cart" icon button in both list view (table) and grid view (card)
+- `src/App.tsx` — Wrapped app in CartProvider, added CartDrawerWrapper
+**Backend**:
+- `src/routes/cart.routes.ts` — `POST /api/v1/cart/validate` (stock check) + `POST /api/v1/cart/checkout` (transactional: validate → create orders per item → deduct stock → log stock movement + audit)
+- `src/index.ts` — Registered cart routes
+- `src/db/schema.sql` — Added `cart_checkouts` + `checkout_items` tables for future multi-item order support
+- `src/db/database.ts` — Added `CartCheckout` + `CheckoutItem` interfaces
+**Context docs**:
+- `04-architecture/02-database-design/database-design.md` — Updated ERD with cart_checkouts + checkout_items
+- `06-contracts/01-apis/rest/cart.yaml` — Full OpenAPI spec for validate + checkout endpoints
+**Build**: Both frontend and backend `npm run build` pass with zero errors

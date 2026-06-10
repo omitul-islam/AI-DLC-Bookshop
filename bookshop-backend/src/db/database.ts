@@ -56,6 +56,23 @@ interface StockMovement {
   createdAt: Date;
 }
 
+interface CartCheckout {
+  id: string;
+  customerId: string;
+  totalPrice: number;
+  status: 'pending' | 'completed' | 'cancelled';
+  createdAt: Date;
+}
+
+interface CheckoutItem {
+  id: string;
+  checkoutId: string;
+  bookId: string;
+  quantity: number;
+  unitPrice: number;
+  subtotal: number;
+}
+
 interface AuditEntry {
   id: string;
   entityType: string;

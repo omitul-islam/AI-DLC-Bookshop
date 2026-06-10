@@ -121,3 +121,24 @@ BEGIN
       FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
   END IF;
 END $$;
+
+CREATE TABLE IF NOT EXISTS cart_checkouts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  customer_id UUID NOT NULL REFERENCES customers(id),
+  total_price DECIMAL(10,2) NOT NULL,
+  status VARCHAR(20) NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'completed', 'cancelled')),
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS checkout_items (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  checkout_id UUID NOT NULL REFERENCES cart_checkouts(id) ON DELETE CASCADE,
+  book_id UUID NOT NULL REFERENCES books(id),
+  quantity INTEGER NOT NULL CHECK (quantity > 0),
+  unit_price DECIMAL(10,2) NOT NULL,
+  subtotal DECIMAL(10,2) NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_checkout_items_checkout_id ON checkout_items(checkout_id);
+CREATE INDEX IF NOT EXISTS idx_cart_checkouts_customer_id ON cart_checkouts(customer_id);
+CREATE INDEX IF NOT EXISTS idx_cart_checkouts_created_at ON cart_checkouts(created_at DESC);

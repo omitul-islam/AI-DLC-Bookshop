@@ -346,6 +346,8 @@ The schema is defined in `src/db/schema.sql` — an idempotent script with `IF N
 | `orders` | `id`, `customer_id`, `book_id`, `quantity`, `total_price`, `status` | `CHECK(quantity >= 1)`, `CHECK(total_price >= 0)`, `CHECK(status IN (...))` |
 | `stock_movements` | `id`, `book_id`, `old_stock`, `new_stock`, `quantity`, `reason` | `CHECK(reason IN (...))`, `FK → books(id)` |
 | `audit_log` | `id`, `entity_type`, `entity_id`, `action`, `previous_state`, `new_state` | `CHECK(action IN (...))` |
+| `cart_checkouts` | `id`, `customer_id`, `total_price`, `status`, `created_at` | `FK → customers(id)`, `CHECK(status IN (...))` |
+| `checkout_items` | `id`, `checkout_id`, `book_id`, `quantity`, `unit_price`, `subtotal` | `FK → cart_checkouts(id) CASCADE`, `FK → books(id)`, `CHECK(quantity > 0)` |
 
 **Indexes:** All tables indexed on `created_at DESC`; key search/filter columns indexed.
 **Triggers:** Auto-update `updated_at` on every row update (via `update_updated_at_column()` function).
@@ -785,4 +787,4 @@ interface AuditEntry {
 **Active Database**: PostgreSQL 16 (Docker)  
 **Fallback**: InMemoryDatabase (via `USE_IN_MEMORY=true`)  
 **Naming Convention**: snake_case for DB columns, camelCase for TypeScript  
-**Tables**: 6 (categories, books, customers, orders, stock_movements, audit_log)
+**Tables**: 8 (categories, books, customers, orders, stock_movements, audit_log, cart_checkouts, checkout_items)

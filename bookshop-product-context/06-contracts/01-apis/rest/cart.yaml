@@ -1,0 +1,178 @@
+openapi: 3.0.0
+info:
+  title: Shopping Cart API
+  version: 1.0.0
+  description: API for cart validation and checkout (client-side cart management)
+
+servers:
+  - url: /api/v1
+    description: API v1
+
+paths:
+  /cart/validate:
+    post:
+      summary: Validate cart item stock availability
+      description: Checks if all items in the cart have sufficient stock before checkout
+      operationId: validateCart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CartValidateRequest'
+      responses:
+        '200':
+          description: Validation result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CartValidateResponse'
+        '400':
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /cart/checkout:
+    post:
+      summary: Checkout cart — create order with line items
+      description: Converts cart items into a multi-item order with stock deduction, stock movement logging, and audit trail
+      operationId: checkoutCart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckoutRequest'
+      responses:
+        '201':
+          description: Order created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckoutResponse'
+        '400':
+          description: Validation error or insufficient stock
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Customer or book not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    CartItem:
+      type: object
+      required:
+        - bookId
+        - quantity
+      properties:
+        bookId:
+          type: string
+          format: uuid
+          description: Book unique identifier
+        quantity:
+          type: integer
+          minimum: 1
+          description: Quantity of this book in cart
+
+    CartItemDetail:
+      type: object
+      properties:
+        bookId:
+          type: string
+          format: uuid
+        title:
+          type: string
+        quantity:
+          type: integer
+        unitPrice:
+          type: number
+          format: float
+        subtotal:
+          type: number
+          format: float
+
+    CartValidateRequest:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+
+    CartValidateResponse:
+      type: object
+      properties:
+        valid:
+          type: boolean
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartValidationError'
+
+    CartValidationError:
+      type: object
+      properties:
+        bookId:
+          type: string
+          format: uuid
+        title:
+          type: string
+        requested:
+          type: integer
+        available:
+          type: integer
+
+    CheckoutRequest:
+      type: object
+      required:
+        - items
+        - customerId
+      properties:
+        customerId:
+          type: string
+          format: uuid
+          description: Customer placing the order
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItem'
+
+    CheckoutResponse:
+      type: object
+      properties:
+        checkoutId:
+          type: string
+          format: uuid
+        status:
+          type: string
+          enum: [pending]
+        totalPrice:
+          type: number
+          format: float
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartItemDetail'
+        createdAt:
+          type: string
+          format: date-time
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        details:
+          type: array
+          items:
+            type: object
