@@ -91,7 +91,11 @@ Gate 8: Post-Implementation Guardrail
 
 If any step above fails:
 
-1. **Retry** up to 5 times with fixes
-2. If still failing after 5 retries, **stop and observe the context** again
-3. **Suggest a solution** to the user
-4. **Wait for approval and feedback** before proceeding
+1. **Immediately stop** — do not proceed to the next step
+2. **Diagnose** — identify the exact error (build log, browser console, network tab, terminal output)
+3. **Retry** up to 5 times with fixes
+4. If still failing after 5 retries, **stop and observe the context** again
+5. **Suggest a solution** to the user — describe what went wrong, what you tried, and what you think the fix is
+6. **Wait for approval and feedback** before proceeding
+
+> **CRITICAL**: Never say "build passes, lint passes" and skip the Application Run Check. You MUST start the app and open each affected page in a browser to verify it renders without JS/network errors. If the app fails to start or a page errors, stop and follow this On Failure procedure immediately.

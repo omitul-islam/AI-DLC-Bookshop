@@ -16,7 +16,7 @@ function StatsCard({ icon, label, value, bgColor }: {
   bgColor: string;
 }) {
   return (
-    <div className="bg-white rounded-lg shadow-card border border-gray-200 p-6 transition-shadow duration-150 hover:shadow-card-hover">
+    <div className="bg-white rounded-lg shadow-card border border-gray-200 p-6 transition-all duration-200 hover:shadow-card-hover hover:scale-[1.01] hover:border-gray-300">
       <div className="flex items-center gap-4">
         <div className={`w-12 h-12 rounded-lg flex items-center justify-center shrink-0 ${bgColor}`}>
           {icon}
@@ -36,10 +36,10 @@ function SkeletonStats() {
       {[1, 2, 3, 4].map((i) => (
         <div key={i} className="bg-white rounded-lg shadow-card border border-gray-200 p-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-lg bg-gray-200 animate-pulse" />
+            <div className="w-12 h-12 rounded-lg shimmer" />
             <div className="space-y-2 flex-1">
-              <div className="h-3 bg-gray-200 rounded animate-pulse w-20" />
-              <div className="h-6 bg-gray-200 rounded animate-pulse w-16" />
+              <div className="h-3 shimmer w-20" />
+              <div className="h-6 shimmer w-16" />
             </div>
           </div>
         </div>
@@ -53,9 +53,9 @@ function SkeletonSection() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {[1, 2].map((i) => (
         <div key={i} className="bg-white rounded-lg shadow-card border border-gray-200 p-6">
-          <div className="h-4 bg-gray-200 rounded animate-pulse w-32 mb-4" />
+          <div className="h-4 shimmer w-32 mb-4" />
           {[1, 2, 3].map((j) => (
-            <div key={j} className="h-10 bg-gray-100 rounded animate-pulse mb-2 last:mb-0" />
+            <div key={j} className="h-10 shimmer mb-2 last:mb-0" />
           ))}
         </div>
       ))}
@@ -142,8 +142,8 @@ export default function HomePage() {
   return (
     <div className="animate-fade-in">
       <div className="text-center py-8 mb-6">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary text-white mb-4 shadow-lg shadow-primary/25">
-          <BookOpenIcon className="w-5 h-5" />
+        <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500 text-white mb-4 shadow-lg shadow-indigo-500/25">
+          <BookOpenIcon className="w-6 h-6" />
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Bookshop Management</h1>
         <p className="text-sm text-gray-500 max-w-md mx-auto">

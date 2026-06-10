@@ -88,6 +88,19 @@ property-based-testing: opted-out
 | R28 | Card/grid view toggle on BooksPage | ✅ Done | [`bookshop-frontend/../bookshop-frontend/src/pages/BooksPage.tsx`](../../bookshop-frontend/src/pages/BooksPage.tsx) — `viewMode` state with list/grid toggle |
 | R29 | Allowed formats: JPEG, PNG, WebP, GIF, SVG, max 5MB | ✅ Done | [`bookshop-backend/../bookshop-backend/src/routes/upload.routes.ts`](../../bookshop-backend/src/routes/upload.routes.ts) — multer fileFilter + size limit |
 
+### UI Design Polish
+| # | Requirement | Status | Implementation |
+|---|-------------|--------|---------------|
+| R30 | Brand gradient (indigo → blue → purple) on key elements | ✅ Done | [`../../bookshop-frontend/tailwind.config.js`](../../bookshop-frontend/tailwind.config.js) — `brand` color tokens, [`../../bookshop-frontend/src/layouts/Sidebar.tsx`](../../bookshop-frontend/src/layouts/Sidebar.tsx) — gradient logo, [`../../bookshop-frontend/src/components/common/Button.tsx`](../../bookshop-frontend/src/components/common/Button.tsx) — gradient primary, [`../../bookshop-frontend/src/pages/HomePage.tsx`](../../bookshop-frontend/src/pages/HomePage.tsx) — gradient hero icon |
+| R31 | Backdrop blur on modal overlays | ✅ Done | [`../../bookshop-frontend/src/components/common/Modal.tsx`](../../bookshop-frontend/src/components/common/Modal.tsx) — `backdrop-blur-sm` |
+| R32 | Left-border accent on sidebar active nav | ✅ Done | [`../../bookshop-frontend/src/layouts/Sidebar.tsx`](../../bookshop-frontend/src/layouts/Sidebar.tsx) — `border-l-[3px] border-indigo-400` |
+| R33 | Card hover lift (scale + border transition) | ✅ Done | [`../../bookshop-frontend/src/components/common/Card.tsx`](../../bookshop-frontend/src/components/common/Card.tsx) — `hover:scale-[1.01] hover:border-gray-300` |
+| R34 | Lighter typography on page titles | ✅ Done | [`../../bookshop-frontend/src/layouts/PageHeader.tsx`](../../bookshop-frontend/src/layouts/PageHeader.tsx) — `font-semibold tracking-tight` |
+| R35 | Icon slide on button hover | ✅ Done | [`../../bookshop-frontend/src/components/common/Button.tsx`](../../bookshop-frontend/src/components/common/Button.tsx) — `[&>svg]:group-hover:translate-x-0.5` |
+| R36 | Shimmer skeletons instead of pulse | ✅ Done | [`../../bookshop-frontend/src/index.css`](../../bookshop-frontend/src/index.css) — `.shimmer` utility, [`../../bookshop-frontend/src/pages/HomePage.tsx`](../../bookshop-frontend/src/pages/HomePage.tsx) — shimmer skeleton |
+| R37 | Rounded-full search input | ✅ Done | [`../../bookshop-frontend/src/components/common/SearchInput.tsx`](../../bookshop-frontend/src/components/common/SearchInput.tsx) — `rounded-full` |
+| R38 | User avatar in sidebar | ✅ Done | [`../../bookshop-frontend/src/layouts/Sidebar.tsx`](../../bookshop-frontend/src/layouts/Sidebar.tsx) — avatar + name/email section |
+
 ### Non-Functional
 | # | Requirement | Status | Implementation |
 |---|-------------|--------|---------------|
@@ -111,7 +124,7 @@ property-based-testing: opted-out
 | Database Design | ✅ Done (v1.0 in-memory + v1.1 PostgreSQL) | [`04-architecture/02-database-design/database-design.md`](../04-architecture/02-database-design/database-design.md) |
 | API Contracts | ✅ Done | [`06-contracts/01-apis/rest/`](../06-contracts/01-apis/rest/) |
 | Module Specs | ✅ Done | [`05-modules/`](../05-modules/) |
-| UI Design System | ✅ Done | [`07-design-system/`](../07-design-system/) |
+| UI Design System | ✅ Done (v2.1 — brand gradient, shimmer, backdrop blur, component polish) | [`07-design-system/`](../07-design-system/) |
 | Testing Strategy | ✅ Done | [`09-testing/strategy/testing-strategy.md`](../09-testing/strategy/testing-strategy.md) |
 | Implementation Guide | ✅ Done | [`IMPLEMENTATION-GUIDE.md`](../IMPLEMENTATION-GUIDE.md) |
 | Category Business Rules | ✅ Done | [`02-domain/03-business-rules/category-rules.md`](../02-domain/03-business-rules/category-rules.md) |

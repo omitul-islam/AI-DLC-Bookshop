@@ -66,3 +66,33 @@
 - Export must respect current filters (e.g., export only pending orders)
 - CSV must include BOM for Excel compatibility
 - Exported filename must include the current date
+
+### Shopping Cart
+- Users must be able to add books to a cart from the Books page (list and grid view)
+- Cart data must be stored client-side (localStorage) — no authentication required
+- Cart must persist across page refreshes and browser sessions
+- Users must be able to view cart items with cover thumbnail, title, author, unit price, and quantity
+- Users must be able to adjust item quantities (+/- buttons) directly in the cart
+- Users must be able to remove individual items from the cart
+- Cart must display a summary: total items count, subtotal per item, grand total
+- Sidebar must show a cart icon with a badge indicating the number of items in the cart
+- "Add to cart" must show a success toast notification
+- Items with insufficient stock must show a warning when added
+
+### Cart Backend (Checkout preparation)
+- Backend must provide a `POST /api/v1/cart/validate` endpoint to check stock availability for all cart items
+- Backend must provide a `POST /api/v1/cart/checkout` endpoint that converts cart items into an order (placeholder — full payment integration deferred)
+- Checkout must validate stock before creating the order (transactional)
+- Checkout must reduce stock for each item on successful order creation
+- Checkout must record stock movements and audit log entries
+
+### UI Design Polish (Visual Refresh)
+- Apply a rich brand gradient (indigo → blue → purple) to sidebar, page headers, and primary buttons to establish a premium "literary bookshop" identity
+- Add backdrop blur (`backdrop-blur-sm`) on modal overlays for a modern glassmorphism feel
+- Improve sidebar active state with a 3px left-border accent indicator instead of solid background fill
+- Add subtle hover lift effect on cards (`scale-[1.01]` + border color transition)
+- Polish page title typography with lighter weight and tracking
+- Add icon slide animation on button hover
+- Replace `animate-pulse` skeleton loaders with a shimmer gradient sweep effect
+- Update search input to `rounded-full` pill style
+- Add user avatar placeholder section at bottom of sidebar

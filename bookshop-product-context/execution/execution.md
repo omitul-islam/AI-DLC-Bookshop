@@ -64,6 +64,41 @@ All requirements from [`requirements.md`](../01-source/requirements.md) are impl
 
 ---
 
+## Current Sprint — UI Design Polish
+
+| # | Task | Status |
+|---|------|--------|
+| U1 | Update tailwind config with brand gradient palette + new shadows/animations | ⬜ Pending |
+| U2 | Update index.css with shimmer keyframe + backdrop-blur utilities | ⬜ Pending |
+| U3 | Rebrand sidebar: gradient logo area, left-border active indicator, user avatar section | ⬜ Pending |
+| U4 | Update Card component with hover lift effect (scale + border transition) | ⬜ Pending |
+| U5 | Update Modal component with backdrop-blur-sm overlay | ⬜ Pending |
+| U6 | Update Button component with icon slide animation on hover | ⬜ Pending |
+| U7 | Update PageHeader with lighter typography + tracking | ⬜ Pending |
+| U8 | Update SearchInput to rounded-full pill style | ⬜ Pending |
+| U9 | Replace animate-pulse skeletons with shimmer gradient on HomePage | ⬜ Pending |
+| U10 | Apply brand gradient to primary buttons, page header accents, stats card icons | ⬜ Pending |
+| U11 | Update ui-design-context.md with all new design tokens | ⬜ Pending |
+
+---
+
+## Current Sprint — Shopping Cart
+
+| # | Task | Status |
+|---|------|--------|
+| CT1 | Create cart types (`CartItem`, `Cart`) + localStorage utility hook | ⬜ Pending |
+| CT2 | Add "Add to Cart" button on BooksPage (list + grid views) | ⬜ Pending |
+| CT3 | Create CartDrawer component (slide-out from right with backdrop) | ⬜ Pending |
+| CT4 | Create cart summary section (items, qty controls, subtotal, total) | ⬜ Pending |
+| CT5 | Add cart icon with item count badge to sidebar | ⬜ Pending |
+| CT6 | Wire toast notifications for add/remove/clear cart actions | ⬜ Pending |
+| CT7 | Backend: `POST /api/v1/cart/validate` endpoint (stock check) | ⬜ Pending |
+| CT8 | Backend: `POST /api/v1/cart/checkout` endpoint (cart → order, stock deduction, stock movement + audit log) | ⬜ Pending |
+| CT9 | Update OpenAPI contracts for cart endpoints | ⬜ Pending |
+| CT10 | Update database-design.md if schema changes | ⬜ Pending |
+
+---
+
 ## Future Work
 
 | Priority | Item | Depends On |

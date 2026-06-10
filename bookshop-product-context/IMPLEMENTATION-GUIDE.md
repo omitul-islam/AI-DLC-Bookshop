@@ -1321,6 +1321,202 @@ Add upload endpoint to `books.yaml`:
 
 ---
 
+---
+
+## Phase 12: UI Design Polish
+
+### Step 1: Update Tailwind Config
+Edit `tailwind.config.js`:
+- Add brand gradient colors: `indigo-600`, `violet-600`, `purple-600`
+- Add new box shadows: `card-hover` with stronger blur, `modal` shadow
+- Add `shimmer` keyframe animation (gradient sweep for skeletons)
+- Add `icon-slide` keyframe for button icon hover
+- Import `@tailwindcss/forms` plugin for better form styling
+
+### Step 2: Update Global CSS (`index.css`)
+- Add shimmer keyframe: `@keyframes shimmer { 0% { background-position: -200% 0 } 100% { background-position: 200% 0 } }`
+- Add `.shimmer` utility class: `bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer`
+- Keep existing `.card` / `.card-hover` classes, enhance `.card-hover` with `hover:scale-[1.01]`
+
+### Step 3: Update Sidebar (`layouts/Sidebar.tsx`)
+- Logo area: change `bg-blue-600` to `bg-gradient-to-br from-indigo-600 via-blue-600 to-purple-600`
+- Active nav item: replace solid `bg-blue-600` with `border-l-3 border-indigo-400 bg-gray-800/50` left-border accent
+- Add user avatar placeholder at bottom: `w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-400 flex items-center justify-center text-white text-xs font-bold`
+
+### Step 4: Update Card (`components/common/Card.tsx`)
+- Add hover state: `hover:scale-[1.01] hover:border-gray-300 hover:shadow-card-hover transition-all duration-200`
+
+### Step 5: Update Modal (`components/common/Modal.tsx`)
+- Change overlay from `bg-black/50` to `bg-black/40 backdrop-blur-sm`
+- Add `animate-fade-in` on the dialog card
+
+### Step 6: Update Button (`components/common/Button.tsx`)
+- Add icon slide: wrap children in detection — if child is an icon + text pair, add `group` class to button and `group-hover:translate-x-0.5 transition-transform` to icon
+- Update primary variant from `bg-blue-600` to `bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 hover:from-indigo-700 hover:via-blue-700 hover:to-purple-700`
+
+### Step 7: Update PageHeader (`layouts/PageHeader.tsx`)
+- Title: change from `text-3xl font-bold` to `text-3xl font-semibold tracking-tight`
+- Add subtle gradient underline: `decoration-2 decoration-indigo-500/30 underline-offset-4` (optional)
+
+### Step 8: Update SearchInput (`components/common/SearchInput.tsx`)
+- Change `rounded-md` to `rounded-full`
+- Add `pl-10 pr-10` for better pill proportions
+- Add `shadow-sm` for subtle depth
+
+### Step 9: Update HomePage Skeletons (`pages/HomePage.tsx`)
+- Replace `animate-pulse bg-gray-200` with `shimmer` class (shimmer gradient sweep)
+- Use `bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer` instead of `animate-pulse`
+
+### Step 10: Apply Brand Gradient to Key Elements
+- `HomePage.tsx`: Stats card icon containers — change from solid `bg-blue-50` to `bg-gradient-to-br from-indigo-50 to-blue-50`
+- `BooksPage.tsx`: view mode toggle active state — apply brand gradient background
+- `PageHeader.tsx`: bottom border — from `border-gray-200` to `border-gray-200/80`
+
+### Step 11: Update Context Docs
+- Reflect all new design tokens in `07-design-system/01-foundation/ui-design-context.md`
+- Update color palette with new gradient tokens
+- Update component specs with new patterns
+
+---
+
+---
+
+## Phase 13: Shopping Cart
+
+### Step 1: Cart Types & localStorage Hook
+Create `bookshop-frontend/src/types/cart.ts`:
+```typescript
+export interface CartItem {
+  bookId: string;
+  title: string;
+  author: string;
+  price: number;
+  quantity: number;
+  coverUrl?: string;
+  categoryId?: string;
+}
+
+export interface Cart {
+  items: CartItem[];
+  updatedAt: string;
+}
+```
+
+Create `bookshop-frontend/src/hooks/useCart.ts`:
+```typescript
+// localStorage-backed cart hook
+// - loadCart(): reads from localStorage key 'bookshop-cart'
+// - saveCart(cart): writes to localStorage
+// - addItem(book, qty = 1): adds or increments quantity
+// - removeItem(bookId): removes item entirely
+// - updateQuantity(bookId, qty): sets exact quantity (min 0 = remove)
+// - clearCart(): empties cart
+// - totalItems: computed count of all items
+// - subtotal: computed sum of price * qty per item
+// - Notify via showToast() on each action
+```
+
+### Step 2: Add to Cart Button on BooksPage
+- In the table column for actions, add an "Add to Cart" button (ShoppingCartIcon, outline)
+- In grid view, add the button to the bottom of each card (next to edit/delete)
+- On click: call `addItem(book)` → show success toast → update sidebar badge
+- Disable the button or show warning if stock is 0 (out of stock)
+
+### Step 3: Cart Drawer Component
+Create `bookshop-frontend/src/components/cart/CartDrawer.tsx`:
+```tsx
+<CartDrawer isOpen onClose>
+  {/* Overlay with backdrop-blur-sm */}
+  {/* Slide-in panel from right: w-[400px] max-w-full */}
+  {/* Header: "Shopping Cart (N items)" + close X button */}
+  {/* Items list: scrollable */}
+  {/* Each item: cover thumbnail 48x64 | title + author | qty stepper | price | remove */}
+  {/* Footer: subtotal line, total line, "Checkout" button (disabled for now or placeholder) */}
+</CartDrawer>
+```
+
+Quantity stepper: `-` button → `qty` → `+` button. Min 1, show warning if qty exceeds stock.
+
+### Step 4: Cart Icon with Badge in Sidebar
+Add a "Cart" nav item below Orders in the sidebar:
+```tsx
+// Inside the NavLink, after the icon:
+{items.length > 0 && (
+  <span className="ml-auto bg-indigo-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+    {totalItems}
+  </span>
+)}
+```
+Clicking the cart nav item opens the drawer (state lifted to MainLayout or use a context).
+
+### Step 5: Toast Notifications
+Wire cart actions to existing toast system:
+- `addItem` → "Added {title} to cart" (success toast)
+- `removeItem` → "Removed {title} from cart" (info toast)
+- `updateQuantity` → subtle, no toast unless qty reaches 0
+
+### Step 6: Backend — Cart Validate Endpoint
+Create `bookshop-backend/src/routes/cart.routes.ts`:
+```
+POST /api/v1/cart/validate
+Body: { items: [{ bookId: string, quantity: number }] }
+Response: { valid: boolean, errors: [{ bookId, title, requested, available }] }
+Logic: For each item, look up book by ID, compare quantity against stock
+```
+
+### Step 7: Backend — Cart Checkout Endpoint
+```
+POST /api/v1/cart/checkout
+Body: { items: [{ bookId: string, quantity: number }], customerId: string }
+Response: { orderId, items: [...], totalPrice, status: 'pending' }
+Logic (transactional):
+  1. Validate stock for ALL items (fail if any insufficient)
+  2. Create an order record (link to customer)
+  3. Deduct stock for each book
+  4. Record stock movement per item (reason: 'order_deduction')
+  5. Record audit log entry
+  6. Return created order with items
+```
+
+Note: The current schema has orders as single-book records. The checkout may need a new `cart_orders` table or the existing order schema adapted to support multiple items. Options:
+- **Option A (simpler):** Create one order per cart item (reuse existing `orders` table)
+- **Option B (better):** New `cart_checkouts` table with line items for multi-item orders
+
+### Step 8: Update Database Schema (if Option B)
+Cart checkout table:
+```sql
+CREATE TABLE IF NOT EXISTS cart_checkouts (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  customer_id UUID NOT NULL REFERENCES customers(id),
+  total_price DECIMAL(10,2) NOT NULL,
+  status VARCHAR(20) NOT NULL DEFAULT 'pending',
+  created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS checkout_items (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  checkout_id UUID NOT NULL REFERENCES cart_checkouts(id),
+  book_id UUID NOT NULL REFERENCES books(id),
+  quantity INTEGER NOT NULL CHECK (quantity > 0),
+  unit_price DECIMAL(10,2) NOT NULL,
+  subtotal DECIMAL(10,2) NOT NULL
+);
+```
+
+### Step 9: Update API Contracts
+Create `06-contracts/01-apis/rest/cart.yaml` with:
+- `CartItem` schema
+- `CartValidateRequest` / `CartValidateResponse`
+- `CheckoutRequest` / `CheckoutResponse`
+
+### Step 10: Wire Frontend to Backend
+- After successful checkout API call, clear the local cart
+- Show success toast with order ID
+- Navigate to orders page or show order summary
+- On cart open, optionally call validate endpoint to flag stock issues
+
+---
+
 ## 🚀 Ready to Code!
 
 Start with **US-001: Add Book** - it's the foundation for everything else.

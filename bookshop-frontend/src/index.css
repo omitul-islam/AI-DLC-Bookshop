@@ -37,4 +37,10 @@
   .card-hover {
     @apply card hover:shadow-card-hover;
   }
+
+  .shimmer {
+    @apply bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 rounded;
+    background-size: 200% 100%;
+    animation: shimmer 1.5s ease-in-out infinite;
+  }
 }

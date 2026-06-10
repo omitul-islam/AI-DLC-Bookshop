@@ -1,6 +1,6 @@
 # UI Design Context — Bookshop Management System
 
-**Version**: 2.0.0 | **Last Updated**: June 2026
+**Version**: 2.1.0 | **Last Updated**: June 2026
 **Purpose**: Single-source-of-truth reference for all UI design decisions. Every component, spacing rule, color token, and layout constraint is defined here for consistent AI-generated and hand-written code.
 
 ---
@@ -31,6 +31,7 @@ Defined in `tailwind.config.js`:
 ```js
 colors: {
   primary: { DEFAULT: '#3B82F6', dark: '#2563EB', light: '#DBEAFE' },
+  brand: { from: '#4F46E5', via: '#3B82F6', to: '#9333EA' },
   success: '#10B981',
   warning: '#F59E0B',
   error: '#EF4444',
@@ -41,7 +42,11 @@ fontFamily: {
 }
 boxShadow: {
   card: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-  'card-hover': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+  'card-hover': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+  modal: '0 25px 50px -12px rgb(0 0 0 / 0.25)',
+}
+animation: {
+  shimmer: 'shimmer 1.5s ease-in-out infinite',
 }
 ```
 
@@ -51,6 +56,7 @@ Global CSS layer (`index.css`):
 - Custom slim scrollbar (`w-1.5`)
 - `.card`: `bg-white rounded-lg shadow-card p-6`
 - `.card-hover`: adds `hover:shadow-card-hover`
+- `.shimmer`: `bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-shimmer rounded` — used for skeleton loading states
 
 ---
 
@@ -62,6 +68,16 @@ Global CSS layer (`index.css`):
 | primary | `#3B82F6` | `bg-blue-600` / `text-blue-600` / `ring-primary` | Buttons, links, active nav, info badges |
 | primary-dark | `#2563EB` | `hover:bg-blue-700` | Hover on primary buttons |
 | primary-light | `#DBEAFE` | `bg-blue-100` / `text-blue-700` | Badge backgrounds, highlight containers |
+
+### Brand Gradient
+| Token | Tailwind | Usage |
+|-------|----------|-------|
+| brand-from | `from-indigo-500` | Gradient start (sidebar logo, button gradient, hero icon) |
+| brand-via | `via-blue-500` | Gradient midpoint |
+| brand-to | `to-purple-500` | Gradient end |
+| Primary button | `bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600` | Primary action buttons |
+| Sidebar logo | `bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500` | Logo icon container |
+| Hero icon | `bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500` | Dashboard page header icon |
 
 ### Status
 | Token | Hex | Tailwind | Usage |
@@ -153,10 +169,10 @@ display: flex; flex-direction: column;
 ```
 
 **Implementation notes:**
-- Logo area: `<div className="px-6 pb-6 pt-6 border-b border-gray-800">` — contains `w-8 h-8 rounded-lg bg-blue-600` logo box + "Bookshop" text
+- Logo area: `<div className="px-6 pb-6 pt-6 border-b border-gray-800">` — contains `w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500` logo box + "Bookshop" text
 - Nav wrapper: `<nav className="flex-1 px-2 py-4 space-y-0.5">`
-- Each nav item: `NavLink` with exact className pattern (see Section 8)
-- Bottom area: `<div className="mt-auto px-4 pt-4 pb-4 border-t border-gray-800">` — version text `text-xs text-gray-500`
+- Each nav item: `NavLink` with exact className pattern (see Section 8). Active state uses `border-l-[3px] border-indigo-400 bg-gray-800/50` instead of solid fill
+- Bottom area: `<div className="mt-auto px-4 pt-4 pb-4 border-t border-gray-800">` — contains user avatar `w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-400` + name/email
 
 ### Main Content (`layouts/MainLayout.tsx`)
 ```css
@@ -173,10 +189,10 @@ background: #F9FAFB;  /* bg-gray-50 */
 ```jsx
 <div className="flex items-center justify-between mb-6">
   <div>
-    <h1 className="text-3xl font-bold text-gray-900">Books</h1>
+    <h1 className="text-3xl font-semibold tracking-tight text-gray-900">Books</h1>
     <p className="text-sm text-gray-500 mt-0.5">Manage your book inventory</p>
   </div>
-  <button className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">
+  <button className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 text-white text-sm font-medium rounded-md hover:from-indigo-700 hover:via-blue-700 hover:to-purple-700 transition-all">
     <PlusIcon className="w-4 h-4" />
     Add Book
   </button>
@@ -207,7 +223,7 @@ Each card: icon (colored circle `w-10 h-10 rounded-full bg-blue-100 flex items-c
 
 | Variant | Classes |
 |---------|---------|
-| Primary | `inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors` |
+| Primary | `inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 text-white text-sm font-medium rounded-md hover:from-indigo-700 hover:via-blue-700 hover:to-purple-700 transition-all [&>svg]:group-hover:translate-x-0.5 [&>svg]:transition-transform` |
 | Secondary | `inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-700 text-sm font-medium rounded-md border border-gray-300 hover:bg-gray-50 transition-colors` |
 | Danger | `inline-flex items-center gap-2 px-4 py-2 bg-red-500 text-white text-sm font-medium rounded-md hover:bg-red-600 transition-colors` |
 | Ghost | `inline-flex items-center gap-2 px-4 py-2 text-gray-700 text-sm font-medium hover:bg-gray-100 rounded-md transition-colors` |
@@ -244,7 +260,7 @@ Each card: icon (colored circle `w-10 h-10 rounded-full bg-blue-100 flex items-c
 ```jsx
 <div className="relative">
   <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-  <input className="pl-9 pr-4 py-2 text-sm border border-gray-300 rounded-md w-64 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search..." />
+  <input className="pl-10 pr-10 py-2 text-sm border border-gray-300 rounded-full w-64 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm" placeholder="Search..." />
 </div>
 ```
 
@@ -290,9 +306,9 @@ Always add `aria-label` or `role="status"`.
 
 ```jsx
 {/* Overlay */}
-<div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={handleClose}>
+<div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={handleClose}>
   {/* Dialog (stop propagation) */}
-  <div className="bg-white rounded-xl shadow-xl w-full max-w-md" onClick={(e) => e.stopPropagation()}>
+  <div className="bg-white rounded-xl shadow-modal w-full max-w-md" onClick={(e) => e.stopPropagation()}>
     {/* Header */}
     <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
       <h2 className="text-lg font-semibold text-gray-900">Modal Title</h2>
@@ -450,14 +466,14 @@ z-index: 100;
 <NavLink
   to="/books"
   className={({ isActive }) =>
-    `flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-sm font-medium transition-colors ${
+    `flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-sm font-medium transition-all ${
       isActive
-        ? 'bg-blue-600 text-white'
-        : 'text-gray-400 hover:bg-gray-800 hover:text-white'
+        ? 'bg-gray-800/50 text-white border-l-[3px] border-indigo-400 rounded-l-none'
+        : 'text-gray-400 hover:bg-gray-800 hover:text-white border-l-[3px] border-transparent'
     }`
   }
 >
-  <BookOpenIcon className="w-4 h-4 shrink-0" />
+  <BookOpenIcon className="w-5 h-5 shrink-0" />
   <span>Books</span>
 </NavLink>
 ```
@@ -515,7 +531,8 @@ z-index: 100;
 | Sidebar mobile | slide from left | `transition-transform duration-300 ease-in-out` |
 | Spinner | infinite rotation | `animate-spin` |
 | Table rows | bg highlight | `hover:bg-gray-50 transition-colors` |
-| Card hover | shadow lift | `hover:shadow-card-hover transition-shadow duration-150` |
+| Card hover | shadow lift + scale | `hover:shadow-card-hover hover:scale-[1.01] hover:border-gray-300 transition-all duration-200` |
+| Skeleton loading | shimmer sweep | `shimmer` (utility: gradient sweep animation) |
 | Button hover | color shift | `hover:bg-blue-700 transition-colors` |
 
 ---

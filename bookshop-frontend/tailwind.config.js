@@ -12,6 +12,11 @@ export default {
           dark: '#2563EB',
           light: '#DBEAFE',
         },
+        brand: {
+          from: '#4F46E5',
+          via: '#3B82F6',
+          to: '#9333EA',
+        },
         success: '#10B981',
         warning: '#F59E0B',
         error: '#EF4444',
@@ -25,7 +30,8 @@ export default {
       },
       boxShadow: {
         card: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-        'card-hover': '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+        'card-hover': '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        modal: '0 25px 50px -12px rgb(0 0 0 / 0.25)',
       },
       keyframes: {
         'slide-in-right': {
@@ -40,11 +46,16 @@ export default {
           '0%': { opacity: '0', transform: 'translateY(10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
       },
       animation: {
         'slide-in-right': 'slide-in-right 0.3s ease-out',
         'fade-in': 'fade-in 0.2s ease-out',
         'slide-up': 'slide-up 0.2s ease-out',
+        shimmer: 'shimmer 1.5s ease-in-out infinite',
       },
     },
   },

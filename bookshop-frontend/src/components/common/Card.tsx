@@ -10,7 +10,7 @@ interface CardProps {
 
 export function Card({ title, subtitle, children, className = '', hover = false }: CardProps) {
   return (
-    <div className={`bg-white rounded-lg shadow-card border border-gray-200 p-6 ${hover ? 'hover:shadow-card-hover transition-shadow duration-150' : ''} ${className}`}>
+    <div className={`bg-white rounded-lg shadow-card border border-gray-200 p-6 ${hover ? 'hover:shadow-card-hover hover:scale-[1.01] hover:border-gray-300 transition-all duration-200' : ''} ${className}`}>
       {(title || subtitle) && (
         <div className="mb-4">
           {title && <h3 className="text-base font-semibold text-gray-900">{title}</h3>}

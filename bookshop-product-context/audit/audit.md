@@ -187,3 +187,28 @@ Append-only log. Captures every change with ISO 8601 timestamps. Never overwritt
 - [`execution/execution.md`](../execution/execution.md) — Added Current Sprint for Book Cover Images, marked all tasks Done
 - [`aidlc-state/aidlc-state.md`](../aidlc-state/aidlc-state.md) — Updated requirements traceability, doc statuses
 - [`guardrail/guardrail.md`](../guardrail/guardrail.md) — Added New Feature Workflow (8 gates)
+
+## 2026-06-10T08:00:00Z — UI Design Polish
+**Action**: Applied visual refresh across the frontend — brand gradient palette, component polish, shimmer skeletons
+**Files**:
+- [`../../bookshop-frontend/tailwind.config.js`](../../bookshop-frontend/tailwind.config.js) — Added `brand` colors, `shadow-modal`, shimmer keyframe/animation, enhanced `card-hover` shadow
+- [`../../bookshop-frontend/src/index.css`](../../bookshop-frontend/src/index.css) — Added `.shimmer` utility class (gradient sweep skeleton)
+- [`../../bookshop-frontend/src/layouts/Sidebar.tsx`](../../bookshop-frontend/src/layouts/Sidebar.tsx) — Gradient logo, left-border active indicator, user avatar section
+- [`../../bookshop-frontend/src/components/common/Card.tsx`](../../bookshop-frontend/src/components/common/Card.tsx) — Hover lift effect (scale + border transition)
+- [`../../bookshop-frontend/src/components/common/Modal.tsx`](../../bookshop-frontend/src/components/common/Modal.tsx) — Backdrop blur, modal shadow
+- [`../../bookshop-frontend/src/components/common/Button.tsx`](../../bookshop-frontend/src/components/common/Button.tsx) — Gradient primary, icon slide animation, group hover
+- [`../../bookshop-frontend/src/layouts/PageHeader.tsx`](../../bookshop-frontend/src/layouts/PageHeader.tsx) — Lighter typography (semibold + tracking-tight), softer border
+- [`../../bookshop-frontend/src/components/common/SearchInput.tsx`](../../bookshop-frontend/src/components/common/SearchInput.tsx) — Rounded-full pill style with shadow
+- [`../../bookshop-frontend/src/pages/HomePage.tsx`](../../bookshop-frontend/src/pages/HomePage.tsx) — Shimmer skeletons, gradient hero icon, card hover on stats
+**Context docs**:
+- [`01-source/requirements.md`](../01-source/requirements.md) — Added UI Design Polish requirements
+- [`execution/execution.md`](../execution/execution.md) — Added UI Design Polish sprint with 11 tasks
+- [`IMPLEMENTATION-GUIDE.md`](../IMPLEMENTATION-GUIDE.md) — Added Phase 12 with detailed implementation steps
+- [`07-design-system/01-foundation/ui-design-context.md`](../07-design-system/01-foundation/ui-design-context.md) — Updated to v2.1: brand gradient tokens, new shadows, shimmer utility, updated component specs
+**Build**: Frontend `npm run build` passes with zero errors
+
+## 2026-06-10T08:30:00Z — UI Polish Fix (animate-shimmer in @apply)
+**Action**: Fixed runtime CSS error
+**Error**: `animate-shimmer` class not found when used inside `@layer components @apply` — Tailwind cannot resolve custom animation utilities inside layer `@apply` directives
+**Fix**: Replaced `@apply animate-shimmer` with inline `animation: shimmer 1.5s ease-in-out infinite` + `background-size: 200% 100%` in `index.css`
+**Verification**: `npm run build` passes, compiled CSS contains `.shimmer` class with correct animation properties
