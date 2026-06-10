@@ -244,3 +244,17 @@ Append-only log. Captures every change with ISO 8601 timestamps. Never overwritt
 - Updated `index.html` — title changed to "BookHouse — Vintage Bookstore Management", created `public/favicon.svg` with simplified badge
 - Updated `ui-design-context.md` — rebranded references throughout
 - **Build**: Frontend `npm run build` passes with zero errors
+
+### Favourites (Wishlist)
+
+**Status**: ✅ Complete (June 2026)
+
+**What was done**:
+- Created `src/hooks/useFavorites.ts` — localStorage-backed hook with toggle, add, remove, clear, isFavorite
+- Created `src/context/FavoritesContext.tsx` — React context wrapping useFavorites with toast integration
+- Updated `src/pages/BooksPage.tsx` — added heart icon toggle to both list view (table column) and grid view (card button)
+- Created `src/pages/FavouritesPage.tsx` — dedicated page showing all favourited books with checkbox selection and "Add Selected to Cart" button
+- Updated `src/layouts/Sidebar.tsx` — added Favourites nav item with HeartIcon + gradient count badge
+- Updated `src/App.tsx` — wrapped app in FavoritesProvider, added /favourites route
+- **Build**: Frontend `npm run build` passes with zero errors
+- **Run**: Application starts clean, no console errors

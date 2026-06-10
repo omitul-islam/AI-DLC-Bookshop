@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastProvider } from './context/ToastContext';
 import { CartProvider, useCartContext } from './context/CartContext';
+import { FavoritesProvider } from './context/FavoritesContext';
 import { CartDrawer } from './components/cart/CartDrawer';
 import { MainLayout } from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
@@ -10,6 +11,7 @@ import CategoriesPage from './pages/CategoriesPage';
 import OrdersPage from './pages/OrdersPage';
 import ContextPage from './pages/ContextPage';
 import AuditLogPage from './pages/AuditLogPage';
+import { FavouritesPage } from './pages/FavouritesPage';
 
 function CartDrawerWrapper() {
   const { isOpen, closeCart, items, totalItems, subtotal, updateQuantity, removeItem, clearCart } = useCartContext();
@@ -32,18 +34,21 @@ export default function App() {
     <BrowserRouter>
       <ToastProvider>
         <CartProvider>
-          <Routes>
-            <Route path="/" element={<MainLayout />}>
-              <Route index element={<HomePage />} />
-              <Route path="books" element={<BooksPage />} />
-              <Route path="customers" element={<CustomersPage />} />
-              <Route path="categories" element={<CategoriesPage />} />
-              <Route path="orders" element={<OrdersPage />} />
-              <Route path="audit-log" element={<AuditLogPage />} />
-              <Route path="context" element={<ContextPage />} />
-            </Route>
-          </Routes>
-          <CartDrawerWrapper />
+          <FavoritesProvider>
+            <Routes>
+              <Route path="/" element={<MainLayout />}>
+                <Route index element={<HomePage />} />
+                <Route path="books" element={<BooksPage />} />
+                <Route path="favourites" element={<FavouritesPage />} />
+                <Route path="customers" element={<CustomersPage />} />
+                <Route path="categories" element={<CategoriesPage />} />
+                <Route path="orders" element={<OrdersPage />} />
+                <Route path="audit-log" element={<AuditLogPage />} />
+                <Route path="context" element={<ContextPage />} />
+              </Route>
+            </Routes>
+            <CartDrawerWrapper />
+          </FavoritesProvider>
         </CartProvider>
       </ToastProvider>
     </BrowserRouter>

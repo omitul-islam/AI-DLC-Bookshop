@@ -102,3 +102,14 @@
 - Replace the sidebar logo "B" with a vintage circular badge SVG logo: double-ring border, "BOOK" top / "HOUSE" bottom, center has a book + house icon combination, brand gradient colors (indigo → blue → purple)
 - Logo box in sidebar should be slightly larger (`w-10 h-10` instead of `w-8 h-8`) to accommodate the badge detail
 - Update `index.html` title from "Bookshop Management System" to "BookHouse — Vintage Bookstore Management"
+
+### Favourites (Wishlist)
+- Users can mark books as favourites via a heart icon toggle on book cards/rows
+- Favourites stored client-side in localStorage (no auth yet)
+- Dedicated Favourites page accessible from sidebar nav
+- Favourites page shows all liked books with cover, title, author, price
+- Users can select individual books via checkbox and "Add Selected to Cart"
+- Sidebar nav item shows heart icon + favourite count badge
+- Users can remove individual books via the heart toggle on the Favourites page
+- Users can select multiple books and "Remove Selected" from favourites in batch
+- Users can "Clear All Favourites" to remove every favourite at once

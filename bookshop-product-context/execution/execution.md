@@ -109,6 +109,21 @@ All requirements from [`requirements.md`](../01-source/requirements.md) are impl
 
 ---
 
+## Current Sprint — Favourites
+
+| # | Task | Status |
+|---|------|--------|
+| F1 | Create `useFavorites` hook (localStorage) | ✅ Done |
+| F2 | Create `FavoritesContext` for shared state + toast | ✅ Done |
+| F3 | Add heart toggle to BooksPage (list + grid views) | ✅ Done |
+| F4 | Create Favourites page with checkbox selection + "Add Selected to Cart" | ✅ Done |
+| F5 | Add Favourites nav item to sidebar with count badge | ✅ Done |
+| F6 | Wire Favourites → Cart flow (add selected to cart) | ✅ Done |
+| F7 | Guardrail: verify build + application run check | ✅ Done |
+| F8 | Add batch remove selected + clear all favourites | ✅ Done |
+
+---
+
 ## Future Work
 
 | Priority | Item | Depends On |

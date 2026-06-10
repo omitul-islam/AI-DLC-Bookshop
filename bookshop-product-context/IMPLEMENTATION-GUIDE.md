@@ -1548,6 +1548,60 @@ Create an inline SVG component at `src/components/common/BookHouseLogo.tsx`:
 
 ---
 
+## Phase 15: Favourites (Wishlist)
+
+### Step 1: Create `useFavorites` Hook
+File: `src/hooks/useFavorites.ts`
+- localStorage-backed hook storing an array of book IDs
+- `favorites: string[]` — list of book UUIDs
+- `toggleFavorite(bookId: string)` — add if absent, remove if present
+- `isFavorite(bookId: string): boolean`
+- `addFavorite(bookId: string)`, `removeFavorite(bookId: string)`
+- `favoriteCount: number`
+- Align with the `useCart` pattern (same localStorage + getter pattern)
+
+### Step 2: Create `FavoritesContext`
+File: `src/context/FavoritesContext.tsx`
+- Wraps `useFavorites` to share state across the app
+- Provides: `favorites`, `toggleFavorite`, `isFavorite`, `favoriteCount`
+- Integrates toast notifications on add/remove
+- Pattern matches `CartContext.tsx`
+
+### Step 3: Add Heart Toggle to BooksPage
+- In list view (`BooksTable`): add a heart icon column before actions — filled heart (❤️) when favourited, outline heart (♡) when not
+- In grid view (`BookCard`): add a heart icon button in the top-right corner of the card
+- Heart icon colors: `text-red-400` filled, `text-gray-300` outline
+- Hover: `hover:text-red-400` transition
+- Wrap in `FavoritesContext`
+
+### Step 4: Create Favourites Page
+File: `src/pages/FavouritesPage.tsx`
+- Route: `/favourites`
+- Reads `favorites` array from context, fetches full book data via `useBooks` or by passing IDs
+- Displays books in a clean table (similar to books list)
+- Each row has a checkbox for selection
+- "Add Selected to Cart" button in the header (enabled when ≥1 book selected)
+- On click: calls `addItem` from cart context for each selected book, shows toast "Added X books to cart"
+- Empty state: "No favourites yet. Browse books and tap the heart icon to save them."
+
+### Step 5: Add Sidebar Nav Item
+- Add to `Sidebar.tsx` nav items: `{ to: '/favourites', label: 'Favourites', icon: HeartIcon }`
+- Show `favoriteCount` badge next to the label (gradient badge, same style as cart badge)
+- Use `HeartIcon` from `@heroicons/react/24/outline`
+
+### Step 6: Wire into App.tsx
+- Import `FavoritesProvider` and wrap app
+- Import `FavouritesPage` route at `/favourites`
+
+### Step 7: Add Batch Remove + Clear All
+- In `FavouritesPage.tsx`:
+  - Add a "Remove Selected" `Button` in the `PageHeader` `action` alongside "Add Selected to Cart" (shows when `selected.length > 0`)
+  - On click: iterate selected IDs, call `removeFavorite` for each, clear selection, show toast
+  - Add a "Clear All" text button below the select-all bar (or in header)
+  - On click: `clearFavorites()`, clear selection, show toast "All favourites cleared"
+
+---
+
 ## 🚀 Ready to Code!
 
 Start with **US-001: Add Book** - it's the foundation for everything else.

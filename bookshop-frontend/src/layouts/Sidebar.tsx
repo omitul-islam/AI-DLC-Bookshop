@@ -1,11 +1,13 @@
 import { NavLink } from 'react-router-dom';
-import { HomeIcon, BookOpenIcon, UserGroupIcon, ShoppingCartIcon, TagIcon, ClipboardDocumentCheckIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, BookOpenIcon, UserGroupIcon, ShoppingCartIcon, TagIcon, ClipboardDocumentCheckIcon, ShoppingBagIcon, HeartIcon } from '@heroicons/react/24/outline';
 import { useCartContext } from '../context/CartContext';
+import { useFavoritesContext } from '../context/FavoritesContext';
 import { BookHouseLogo } from '../components/common/BookHouseLogo';
 
 const navItems = [
   { to: '/', label: 'Dashboard', icon: HomeIcon },
   { to: '/books', label: 'Books', icon: BookOpenIcon },
+  { to: '/favourites', label: 'Favourites', icon: HeartIcon },
   { to: '/customers', label: 'Customers', icon: UserGroupIcon },
   { to: '/categories', label: 'Categories', icon: TagIcon },
   { to: '/orders', label: 'Orders', icon: ShoppingCartIcon },
@@ -14,6 +16,7 @@ const navItems = [
 
 export function Sidebar() {
   const { totalItems, openCart } = useCartContext();
+  const { favoriteCount } = useFavoritesContext();
   return (
     <aside className="w-[250px] bg-gray-900 text-white flex flex-col min-h-screen fixed left-0 top-0 bottom-0 z-40 overflow-y-auto">
       <div className="px-6 pb-6 pt-6 border-b border-gray-800">
@@ -26,6 +29,7 @@ export function Sidebar() {
       <nav className="flex-1 px-2 py-4 space-y-0.5">
         {navItems.map((item) => {
           const Icon = item.icon;
+          const showFavBadge = item.to === '/favourites' && favoriteCount > 0;
           return (
             <NavLink
               key={item.to}
@@ -41,6 +45,11 @@ export function Sidebar() {
             >
               <Icon className="w-5 h-5 shrink-0" />
               <span>{item.label}</span>
+              {showFavBadge && (
+                <span className="ml-auto bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0">
+                  {favoriteCount > 99 ? '99+' : favoriteCount}
+                </span>
+              )}
             </NavLink>
           );
         })}

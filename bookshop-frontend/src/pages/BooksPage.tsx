@@ -2,12 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { PlusIcon, PencilIcon, TrashIcon, MagnifyingGlassIcon, ArrowDownTrayIcon, ClockIcon, Squares2X2Icon, ListBulletIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
+import { PlusIcon, PencilIcon, TrashIcon, MagnifyingGlassIcon, ArrowDownTrayIcon, ClockIcon, Squares2X2Icon, ListBulletIcon, ShoppingBagIcon, HeartIcon } from '@heroicons/react/24/outline';
 import { useBooks } from '../hooks/useBooks';
 import { useCategories } from '../hooks/useCategories';
 import { useStockMovements } from '../hooks/useStockMovements';
 import { useToast } from '../context/ToastContext';
 import { useCartContext } from '../context/CartContext';
+import { useFavoritesContext } from '../context/FavoritesContext';
 import { Table, type Column } from '../components/common/Table';
 import { Button } from '../components/common/Button';
 import { Input } from '../components/common/Input';
@@ -43,6 +44,7 @@ export default function BooksPage() {
   const { movements, loading: movLoading, page: movPage, totalPages: movTotalPages, setPage: setMovPage, fetchMovements } = useStockMovements();
   const { showToast } = useToast();
   const { addItem } = useCartContext();
+  const { toggleFavorite, isFavorite } = useFavoritesContext();
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
   const [modalOpen, setModalOpen] = useState(false);
@@ -168,6 +170,18 @@ export default function BooksPage() {
         }`}>
           {b.stock} {b.stock === 1 ? 'unit' : 'units'}
         </span>
+      ),
+    },
+    {
+      key: 'fav', label: '',
+      render: (b) => (
+        <button
+          onClick={(e) => { e.stopPropagation(); toggleFavorite(b.id); }}
+          className="p-1 transition-colors"
+          aria-label={isFavorite(b.id) ? 'Remove from favourites' : 'Add to favourites'}
+        >
+          <HeartIcon className={`w-4 h-4 ${isFavorite(b.id) ? 'text-red-400 fill-red-400' : 'text-gray-300'}`} />
+        </button>
       ),
     },
     {
@@ -314,6 +328,12 @@ export default function BooksPage() {
                   <div className="mt-auto flex items-center justify-between pt-2 border-t border-gray-100">
                     <span className="text-lg font-bold text-gray-900">${book.price.toFixed(2)}</span>
                     <div className="flex gap-1">
+                      <IconButton
+                        icon={<HeartIcon className={`w-4 h-4 ${isFavorite(book.id) ? 'fill-red-400 text-red-400' : ''}`} />}
+                        label={isFavorite(book.id) ? 'Remove from favourites' : 'Add to favourites'}
+                        variant="primary"
+                        onClick={(e) => { e.stopPropagation(); toggleFavorite(book.id); }}
+                      />
                       <IconButton
                         icon={<ShoppingBagIcon className="w-4 h-4" />}
                         label={`Add ${book.title} to cart`}
