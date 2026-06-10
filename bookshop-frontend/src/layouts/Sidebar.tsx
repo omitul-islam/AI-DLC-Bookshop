@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { HomeIcon, BookOpenIcon, UserGroupIcon, ShoppingCartIcon, TagIcon, ClipboardDocumentCheckIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 import { useCartContext } from '../context/CartContext';
+import { BookHouseLogo } from '../components/common/BookHouseLogo';
 
 const navItems = [
   { to: '/', label: 'Dashboard', icon: HomeIcon },
@@ -17,10 +18,8 @@ export function Sidebar() {
     <aside className="w-[250px] bg-gray-900 text-white flex flex-col min-h-screen fixed left-0 top-0 bottom-0 z-40 overflow-y-auto">
       <div className="px-6 pb-6 pt-6 border-b border-gray-800">
         <NavLink to="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500 flex items-center justify-center text-white text-sm font-bold transition-transform group-hover:scale-105 shadow-lg shadow-indigo-500/25">
-            B
-          </div>
-          <span className="text-base font-semibold tracking-tight">Bookshop</span>
+          <BookHouseLogo size={36} className="shrink-0" />
+          <span className="text-base font-semibold tracking-tight">BookHouse</span>
         </NavLink>
       </div>
 
@@ -68,7 +67,7 @@ export function Sidebar() {
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-sm font-medium text-gray-200 truncate">Admin</p>
-            <p className="text-xs text-gray-500 truncate">admin@bookshop.io</p>
+            <p className="text-xs text-gray-500 truncate">admin@bookhouse.com</p>
           </div>
         </div>
       </div>

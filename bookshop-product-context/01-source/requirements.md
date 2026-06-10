@@ -96,3 +96,9 @@
 - Replace `animate-pulse` skeleton loaders with a shimmer gradient sweep effect
 - Update search input to `rounded-full` pill style
 - Add user avatar placeholder section at bottom of sidebar
+
+### Brand Rebrand: Bookshop → BookHouse
+- Rename all brand references from "Bookshop" to "BookHouse" across frontend (sidebar, page titles, HTML title, favicon)
+- Replace the sidebar logo "B" with a vintage circular badge SVG logo: double-ring border, "BOOK" top / "HOUSE" bottom, center has a book + house icon combination, brand gradient colors (indigo → blue → purple)
+- Logo box in sidebar should be slightly larger (`w-10 h-10` instead of `w-8 h-8`) to accommodate the badge detail
+- Update `index.html` title from "Bookshop Management System" to "BookHouse — Vintage Bookstore Management"

@@ -232,3 +232,15 @@ Append-only log. Captures every change with ISO 8601 timestamps. Never overwritt
 - `04-architecture/02-database-design/database-design.md` — Updated ERD with cart_checkouts + checkout_items
 - `06-contracts/01-apis/rest/cart.yaml` — Full OpenAPI spec for validate + checkout endpoints
 **Build**: Both frontend and backend `npm run build` pass with zero errors
+
+### BookHouse Rebrand
+
+**Status**: ✅ Complete (June 2026)
+
+**What was done**:
+- Created `src/components/common/BookHouseLogo.tsx` — vintage circular badge SVG with double-ring border, "BOOK" top / "HOUSE" bottom, center book+house icon, brand gradient colors
+- Updated `src/layouts/Sidebar.tsx` — replaced "B" logo with BookHouseLogo, renamed "Bookshop" → "BookHouse", updated email domain
+- Updated `src/pages/HomePage.tsx` — replaced all "Bookshop Management" → "BookHouse"
+- Updated `index.html` — title changed to "BookHouse — Vintage Bookstore Management", created `public/favicon.svg` with simplified badge
+- Updated `ui-design-context.md` — rebranded references throughout
+- **Build**: Frontend `npm run build` passes with zero errors

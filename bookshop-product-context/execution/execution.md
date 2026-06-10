@@ -97,6 +97,16 @@ All requirements from [`requirements.md`](../01-source/requirements.md) are impl
 | CT9 | Update OpenAPI contracts for cart endpoints | ✅ Done |
 | CT10 | Update database-design.md if schema changes | ✅ Done |
 
+## Current Sprint — BookHouse Rebrand
+
+| # | Task | Status |
+|---|------|--------|
+| R1 | Create vintage badge SVG logo component | ✅ Done |
+| R2 | Replace sidebar "B" logo with badge + rename "Bookshop" → "BookHouse" | ✅ Done |
+| R3 | Update all page titles from "Bookshop Management" → "BookHouse" | ✅ Done |
+| R4 | Update index.html title + favicon | ✅ Done |
+| R5 | Update design context docs with new brand name | ✅ Done |
+
 ---
 
 ## Future Work

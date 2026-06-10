@@ -1517,6 +1517,37 @@ Create `06-contracts/01-apis/rest/cart.yaml` with:
 
 ---
 
+## Phase 14: BookHouse Rebrand
+
+### Step 1: Create Vintage Badge SVG Logo
+Create an inline SVG component at `src/components/common/BookHouseLogo.tsx`:
+- Circular badge with double-ring border (outer thick, inner thin)
+- "BOOK" text at top (horizontal, centered)
+- "HOUSE" text at bottom (horizontal, centered)
+- Center icon: an open book with a house roof line above it
+- Small decorative dots/stars on left and right of center
+- Colors: brand gradient (from-indigo-500 via-blue-500 to-purple-500) for the badge fill, white for text and icon
+- Size: `w-10 h-10` (40x40px) for sidebar, scalable via prop
+
+### Step 2: Sidebar Update
+- Import and render `<BookHouseLogo />` instead of the current "B" letter box
+- Change link text from "Bookshop" to "BookHouse"
+- Adjust logo container to `w-10 h-10` for better badge visibility
+
+### Step 3: Page Titles Update
+- `pages/HomePage.tsx`: Change "Bookshop Management" → "BookHouse" in the heading and subtitle
+- `layouts/PageHeader.tsx`: No change needed (title is dynamic)
+- Any other hardcoded "Bookshop" references in pages
+
+### Step 4: HTML Title + Favicon
+- `index.html`: Change `<title>` from "Bookshop Management System" → "BookHouse — Vintage Bookstore Management"
+
+### Step 5: Update Context Docs
+- `ui-design-context.md`: Rename "Bookshop Management System" to "BookHouse" in page title role and header references
+- Update sidebar spec diagram text
+
+---
+
 ## 🚀 Ready to Code!
 
 Start with **US-001: Add Book** - it's the foundation for everything else.

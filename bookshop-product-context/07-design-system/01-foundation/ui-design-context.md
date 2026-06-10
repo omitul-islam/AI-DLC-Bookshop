@@ -1,4 +1,4 @@
-# UI Design Context — Bookshop Management System
+# UI Design Context — BookHouse
 
 **Version**: 2.1.0 | **Last Updated**: June 2026
 **Purpose**: Single-source-of-truth reference for all UI design decisions. Every component, spacing rule, color token, and layout constraint is defined here for consistent AI-generated and hand-written code.
@@ -144,7 +144,7 @@ Sidebar width: `w-[250px]` (not `w-64`). Main content: `ml-[250px]`. This is a f
 ┌──────────────────────────────────────────────────────┐
 │  Sidebar (250px fixed)  │  Main Content (centered)   │
 │  ─────────────────────  │  ml-[250px]                │
-│  Logo (Bookshop)        │  Page Header               │
+│  Logo (BookHouse)       │  Page Header               │
 │  ─────────────────────  │  (title + action btn)      │
 │  Nav items              │  ─────────────────────     │
 │  - Dashboard (HomeIcon) │  max-w-[1200px] mx-auto    │
@@ -169,7 +169,7 @@ display: flex; flex-direction: column;
 ```
 
 **Implementation notes:**
-- Logo area: `<div className="px-6 pb-6 pt-6 border-b border-gray-800">` — contains `w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500` logo box + "Bookshop" text
+- Logo area: `<div className="px-6 pb-6 pt-6 border-b border-gray-800">` — contains vintage badge logo SVG (`BookHouseLogo` component) + "BookHouse" text
 - Nav wrapper: `<nav className="flex-1 px-2 py-4 space-y-0.5">`
 - Each nav item: `NavLink` with exact className pattern (see Section 8). Active state uses `border-l-[3px] border-indigo-400 bg-gray-800/50` instead of solid fill
 - Bottom area: `<div className="mt-auto px-4 pt-4 pb-4 border-t border-gray-800">` — contains user avatar `w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-purple-400` + name/email
@@ -660,7 +660,7 @@ The HomePage (`/`) is a book-focused dashboard. It replaces the generic module-c
 
 ```
 ┌────────────────────────────────────────────────────────────┐
-│  Page intro: Bookshop Management (centered, no action btn) │
+│  Page intro: BookHouse (centered, no action btn) │
 │  ──────────────────────────────────────────────────────── │
 │  Stats Row: grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 │
 │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐     │

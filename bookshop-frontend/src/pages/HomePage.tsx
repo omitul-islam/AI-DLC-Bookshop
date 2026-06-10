@@ -8,6 +8,7 @@ import { useBooks } from '../hooks/useBooks';
 import { Card } from '../components/common/Card';
 import { Alert } from '../components/common/Alert';
 import { EmptyState } from '../components/common/EmptyState';
+import { BookHouseLogo } from '../components/common/BookHouseLogo';
 
 const LOW_STOCK_THRESHOLD = 5;
 
@@ -98,7 +99,7 @@ export default function HomePage() {
     return (
       <div className="animate-fade-in">
         <div className="text-center py-8 mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Bookshop Management</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">BookHouse</h1>
           <p className="text-sm text-gray-500">Loading your dashboard...</p>
         </div>
         <SkeletonStats />
@@ -111,7 +112,7 @@ export default function HomePage() {
     return (
       <div className="animate-fade-in">
         <div className="text-center py-8 mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Bookshop Management</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">BookHouse</h1>
         </div>
         <Alert
           variant="error"
@@ -127,7 +128,7 @@ export default function HomePage() {
     return (
       <div className="animate-fade-in">
         <div className="text-center py-8 mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Bookshop Management</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">BookHouse</h1>
         </div>
         <EmptyState
           icon={<BookOpenIcon className="w-8 h-8 text-gray-400" />}
@@ -143,9 +144,9 @@ export default function HomePage() {
     <div className="animate-fade-in">
       <div className="text-center py-8 mb-6">
         <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-500 text-white mb-4 shadow-lg shadow-indigo-500/25">
-          <BookOpenIcon className="w-6 h-6" />
+          <BookHouseLogo size={28} />
         </div>
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Bookshop Management</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">BookHouse</h1>
         <p className="text-sm text-gray-500 max-w-md mx-auto">
           Manage your inventory, customers, and orders all in one place.
         </p>
