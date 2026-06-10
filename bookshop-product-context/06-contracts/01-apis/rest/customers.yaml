@@ -1,0 +1,227 @@
+openapi: 3.0.0
+info:
+  title: Customer Management API
+  version: 1.0.0
+  description: API for managing customer records
+
+servers:
+  - url: /api/v1
+    description: API v1
+
+paths:
+  /customers:
+    get:
+      summary: List all customers
+      operationId: listCustomers
+      tags:
+        - Customers
+      responses:
+        '200':
+          description: List of customers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomerResponse'
+    
+    post:
+      summary: Add a new customer
+      operationId: addCustomer
+      tags:
+        - Customers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCustomerRequest'
+      responses:
+        '201':
+          description: Customer created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /customers/{customerId}:
+    parameters:
+      - name: customerId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        description: Customer unique identifier
+
+    get:
+      summary: Get customer by ID
+      operationId: getCustomer
+      tags:
+        - Customers
+      responses:
+        '200':
+          description: Customer details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '404':
+          description: Customer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    put:
+      summary: Update customer details
+      operationId: updateCustomer
+      tags:
+        - Customers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCustomerRequest'
+      responses:
+        '200':
+          description: Customer updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Customer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      summary: Delete a customer
+      operationId: deleteCustomer
+      tags:
+        - Customers
+      responses:
+        '204':
+          description: Customer deleted successfully
+        '404':
+          description: Customer not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    CreateCustomerRequest:
+      type: object
+      required:
+        - name
+        - email
+        - phone
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: "John Doe"
+        email:
+          type: string
+          format: email
+          example: "john.doe@example.com"
+        phone:
+          type: string
+          pattern: '^\+?[\d\s\-\(\)]+$'
+          example: "+1-555-123-4567"
+        address:
+          type: string
+          maxLength: 500
+          example: "123 Main St, City, State 12345"
+          description: Optional customer address
+
+    UpdateCustomerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 100
+          example: "John Doe"
+        email:
+          type: string
+          format: email
+          example: "john.doe@example.com"
+        phone:
+          type: string
+          pattern: '^\+?[\d\s\-\(\)]+$'
+          example: "+1-555-123-4567"
+        address:
+          type: string
+          maxLength: 500
+          example: "123 Main St, City, State 12345"
+
+    CustomerResponse:
+      type: object
+      required:
+        - id
+        - name
+        - email
+        - phone
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          format: email
+          example: "john.doe@example.com"
+        phone:
+          type: string
+          example: "+1-555-123-4567"
+        address:
+          type: string
+          nullable: true
+          example: "123 Main St, City, State 12345"
+        createdAt:
+          type: string
+          format: date-time
+          example: "2026-06-05T10:00:00Z"
+        updatedAt:
+          type: string
+          format: date-time
+          example: "2026-06-05T10:00:00Z"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
+          example: "Validation failed"
+        details:
+          type: object
+          additionalProperties: true
+          example:
+            email: "Email is already registered"
+            phone: "Invalid phone number format"

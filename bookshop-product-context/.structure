@@ -1,0 +1,215 @@
+# Bookshop Management System - Product Context Repository Structure
+
+## Purpose
+AI-DLC (AI Development Lifecycle) structured repository for domain knowledge and interface contracts
+
+## Structure Version
+1.0.0
+
+## Directory Structure
+
+```
+bookshop-product-context/
+├── 00-START-HERE.md                   # Navigation and onboarding guide
+├── 01-PRODUCT_VISION.md               # Product vision and strategy
+├── 02-REPOSITORY_PURPOSE.md           # Repository architecture and usage
+├── README.md                          # Main repository documentation
+├── .gitignore                         # Git ignore rules
+├── .structure                         # This file - structure documentation
+│
+├── 01-source/                         # Original source documents (immutable)
+│   ├── README.md
+│   ├── 01-requirements/               # Original requirements documents
+│   ├── 02-user-stories/               # Initial user stories
+│   └── 03-design-artifacts/           # Original design documents
+│
+├── 02-domain/                         # Business domain knowledge
+│   ├── 01-overview/                   # Business context and overview
+│   │   ├── README.md
+│   │   ├── business-context.md
+│   │   ├── business-objectives.md
+│   │   ├── current-challenges.md
+│   │   ├── glossary.md
+│   │   ├── product-vision.md
+│   │   ├── project-summary.md
+│   │   ├── scope.md
+│   │   ├── stakeholders.md
+│   │   └── value-proposition.md
+│   ├── 02-requirements/               # Detailed requirements
+│   │   ├── 01-business-objectives/
+│   │   ├── 02-user-personas/
+│   │   ├── 03-functional-requirements/
+│   │   ├── 04-non-functional-requirements/
+│   │   └── 05-constraints-assumptions/
+│   ├── 03-business-rules/             # Business validation rules
+│   │   ├── book-rules.md
+│   │   ├── customer-rules.md
+│   │   └── order-rules.md
+│   ├── 04-business-processes/         # Business workflows and processes
+│   └── 05-industry-context/           # Retail/bookshop industry context
+│
+├── 03-backlog/                        # Product backlog and sprint planning
+│   ├── sprints/                       # Sprint-by-sprint planning
+│   │   ├── sprint-1-plan.md
+│   │   ├── sprint-2-plan.md
+│   │   └── ...
+│   └── stories/                       # User stories (flat list)
+│       ├── US-001-add-book.md
+│       ├── US-002-list-books.md
+│       └── ...
+│
+├── 04-architecture/                   # System architecture (technology-agnostic)
+│   ├── 00-overview/                   # Architecture principles and patterns
+│   │   ├── architecture-principles.md
+│   │   └── design-patterns.md
+│   ├── 01-system-design/              # C4 architecture diagrams
+│   │   ├── system-context.md          # C4 Level 1
+│   │   ├── container-diagram.md       # C4 Level 2
+│   │   └── component-diagram.md       # C4 Level 3
+│   ├── 02-workflows/                  # Technical workflows
+│   ├── 03-decisions/                  # Architecture Decision Records (ADRs)
+│   ├── 04-backend/                    # Backend architecture details
+│   ├── 05-diagrams/                   # Technical diagrams
+│   │   ├── sequence-diagrams/
+│   │   ├── entity-relationship/
+│   │   └── state-machines/
+│   ├── 06-deployment/                 # Deployment architecture
+│   └── 07-implementation/             # Implementation planning
+│
+├── 05-modules/                        # Technical module specifications
+│   ├── 01-foundation/                 # Auth, RBAC, user management
+│   ├── 02-book-management/            # Book CRUD and inventory
+│   │   └── book-management.md
+│   ├── 03-customer-management/        # Customer records
+│   ├── 04-order-management/           # Order processing
+│   ├── 05-inventory/                  # Stock tracking
+│   └── 06-cross-cutting/              # Logging, audit, NFRs
+│
+├── 06-contracts/                      # Integration contracts (THE GLUE)
+│   ├── 01-apis/                       # API specifications
+│   │   └── rest/                      # REST API contracts
+│   │       ├── books.yaml             # OpenAPI 3.0 spec
+│   │       ├── customers.yaml
+│   │       └── orders.yaml
+│   ├── 02-data-models/                # Shared data models
+│   │   ├── book.schema.json
+│   │   ├── customer.schema.json
+│   │   └── order.schema.json
+│   ├── 03-events/                     # Event schemas
+│   │   ├── book-events.yaml
+│   │   ├── customer-events.yaml
+│   │   └── order-events.yaml
+│   └── 04-integration/                # External integration contracts
+│
+├── 07-design-system/                  # UI/UX design system
+│   ├── 01-foundation/                 # Design tokens, colors, typography
+│   ├── 02-components/                 # Component specifications
+│   ├── 03-patterns/                   # UX interaction patterns
+│   └── 04-platforms/                  # Web and mobile specific guidance
+│
+├── 08-development-guides/             # Implementation guides and runbooks
+│   ├── 01-backend/                    # Backend implementation guide
+│   │   ├── README.md
+│   │   ├── api-design.md
+│   │   ├── database-guide.md
+│   │   ├── testing-guide.md
+│   │   └── deployment-guide.md
+│   ├── 02-frontend/                   # Frontend implementation guide
+│   └── 03-testing/                    # Testing guides
+│
+├── 09-testing/                        # Testing documentation
+│   ├── strategy/                      # Testing strategy
+│   │   └── testing-strategy.md
+│   ├── test-cases/                    # Test case scenarios
+│   └── acceptance/                    # Acceptance test criteria
+│
+├── 10-reference/                      # Reference materials
+│   ├── glossary.md                    # Terms and definitions
+│   └── data-dictionary/               # Data dictionaries
+│       ├── book-entity.md
+│       ├── customer-entity.md
+│       └── order-entity.md
+│
+└── 11-change-requests/                # Change management
+    └── CR-INDEX.md                    # Change request tracking
+```
+
+## Usage as Git Submodule
+
+This repository is designed to be used as a git submodule in implementation repositories:
+
+```bash
+# In implementation repo (backend/frontend/mobile)
+git submodule add <repo-url> context
+
+# Update submodule
+git submodule update --remote context
+```
+
+## Key Principles
+
+1. **Domain Knowledge First** - Business context before technical decisions
+2. **Contract-First Development** - Define interfaces before implementation
+3. **Technology-Agnostic** - High-level abstractions, not implementation details
+4. **Single Source of Truth** - All repos reference the same contracts
+5. **Documentation as Code** - Version controlled, reviewed, maintained
+
+## Directory Purposes
+
+- **01-source**: Immutable original documents (for traceability)
+- **02-domain**: Business knowledge (problems, processes, rules)
+- **03-backlog**: What to build (sprints, stories)
+- **04-architecture**: How to structure (system design, decisions)
+- **05-modules**: What each module does (technical specs)
+- **06-contracts**: How to communicate (APIs, events, data)
+- **07-design-system**: How it looks (UI/UX standards)
+- **08-development-guides**: How to build (implementation runbooks)
+- **09-testing**: How to verify (test strategy, cases)
+- **10-reference**: Quick lookup (glossary, data dictionary)
+- **11-change-requests**: How it evolves (change tracking)
+
+## What Goes Where
+
+### Business Questions → 02-domain/
+- What problems are we solving?
+- Who are the users?
+- What are the business rules?
+- What workflows exist?
+
+### Technical Questions → 04-architecture/
+- How is the system structured?
+- What are the major components?
+- What technologies are used?
+- What decisions have we made?
+
+### Implementation Questions → 05-modules/
+- What does each module do?
+- What data does it manage?
+- What APIs does it expose?
+- How does it integrate?
+
+### Interface Questions → 06-contracts/
+- What are the API endpoints?
+- What data structures are used?
+- What events are published?
+- How do systems communicate?
+
+## Maintenance
+
+- **Update Frequency**: Continuous during development
+- **Review Process**: Pull requests with team review
+- **Version Control**: Git tags for major milestones
+- **Stakeholders**: All team members (PM, BA, Dev, QA, Architects)
+
+## Related Documents
+
+- [00-START-HERE.md](./00-START-HERE.md) - Start here for navigation
+- [01-PRODUCT_VISION.md](./01-PRODUCT_VISION.md) - Product vision
+- [02-REPOSITORY_PURPOSE.md](./02-REPOSITORY_PURPOSE.md) - Architecture
+- [README.md](./README.md) - Main documentation
+
+---
+
+**Structure Version**: 1.0.0  
+**Last Updated**: June 2026  
+**Pattern**: AI-DLC (AI Development Lifecycle)

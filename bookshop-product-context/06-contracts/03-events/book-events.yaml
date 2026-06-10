@@ -1,0 +1,166 @@
+events:
+  BookCreated:
+    version: 1.0.0
+    description: Emitted when a new book is added to inventory
+    payload:
+      type: object
+      required:
+        - bookId
+        - title
+        - author
+        - price
+        - stock
+        - createdAt
+      properties:
+        bookId:
+          type: string
+          format: uuid
+          description: Unique identifier of the created book
+        title:
+          type: string
+          description: Book title
+        author:
+          type: string
+          description: Author name
+        price:
+          type: number
+          format: decimal
+          description: Book price
+        stock:
+          type: integer
+          description: Initial stock quantity
+        createdAt:
+          type: string
+          format: date-time
+          description: Creation timestamp
+
+  BookUpdated:
+    version: 1.0.0
+    description: Emitted when book details are updated
+    payload:
+      type: object
+      required:
+        - bookId
+        - changes
+        - updatedAt
+      properties:
+        bookId:
+          type: string
+          format: uuid
+          description: Unique identifier of the updated book
+        changes:
+          type: object
+          description: Object containing changed fields
+          properties:
+            title:
+              type: string
+            author:
+              type: string
+            price:
+              type: number
+            stock:
+              type: integer
+        previousValues:
+          type: object
+          description: Previous values before update
+        updatedAt:
+          type: string
+          format: date-time
+          description: Update timestamp
+
+  BookDeleted:
+    version: 1.0.0
+    description: Emitted when a book is removed from inventory
+    payload:
+      type: object
+      required:
+        - bookId
+        - deletedAt
+      properties:
+        bookId:
+          type: string
+          format: uuid
+          description: Unique identifier of the deleted book
+        deletedBy:
+          type: string
+          format: uuid
+          description: User who deleted the book
+        deletedAt:
+          type: string
+          format: date-time
+          description: Deletion timestamp
+
+  StockUpdated:
+    version: 1.0.0
+    description: Emitted when book stock quantity changes
+    payload:
+      type: object
+      required:
+        - bookId
+        - oldStock
+        - newStock
+        - reason
+        - updatedAt
+      properties:
+        bookId:
+          type: string
+          format: uuid
+          description: Book whose stock changed
+        oldStock:
+          type: integer
+          description: Previous stock quantity
+        newStock:
+          type: integer
+          description: New stock quantity
+        difference:
+          type: integer
+          description: Change in stock (newStock - oldStock)
+        reason:
+          type: string
+          enum:
+            - order_placed
+            - manual_adjustment
+            - return_processed
+            - damaged_goods
+            - inventory_count
+          description: Reason for stock change
+        orderId:
+          type: string
+          format: uuid
+          description: Related order ID (if reason is order_placed)
+        notes:
+          type: string
+          description: Additional notes about the change
+        updatedAt:
+          type: string
+          format: date-time
+          description: Update timestamp
+
+  LowStockAlert:
+    version: 1.0.0
+    description: Emitted when book stock falls below threshold (future feature)
+    payload:
+      type: object
+      required:
+        - bookId
+        - currentStock
+        - threshold
+        - alertedAt
+      properties:
+        bookId:
+          type: string
+          format: uuid
+          description: Book with low stock
+        title:
+          type: string
+          description: Book title
+        currentStock:
+          type: integer
+          description: Current stock level
+        threshold:
+          type: integer
+          description: Low stock threshold
+        alertedAt:
+          type: string
+          format: date-time
+          description: Alert timestamp

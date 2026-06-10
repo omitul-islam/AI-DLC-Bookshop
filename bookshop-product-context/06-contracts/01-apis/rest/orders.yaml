@@ -1,0 +1,237 @@
+openapi: 3.0.0
+info:
+  title: Order Management API
+  version: 1.0.0
+  description: API for managing customer orders and fulfillment
+
+servers:
+  - url: /api/v1
+    description: API v1
+
+paths:
+  /orders:
+    get:
+      summary: List all orders
+      operationId: listOrders
+      tags:
+        - Orders
+      parameters:
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [pending, shipped, delivered]
+          description: Filter by order status
+        - name: customerId
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+          description: Filter by customer ID
+      responses:
+        '200':
+          description: List of orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OrderResponse'
+    
+    post:
+      summary: Create a new order
+      operationId: createOrder
+      tags:
+        - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrderRequest'
+      responses:
+        '201':
+          description: Order created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '400':
+          description: Validation error or insufficient stock
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Customer or book not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /orders/{orderId}:
+    parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        description: Order unique identifier
+
+    get:
+      summary: Get order by ID
+      operationId: getOrder
+      tags:
+        - Orders
+      responses:
+        '200':
+          description: Order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '404':
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /orders/{orderId}/status:
+    parameters:
+      - name: orderId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        description: Order unique identifier
+
+    put:
+      summary: Update order status
+      operationId: updateOrderStatus
+      tags:
+        - Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateOrderStatusRequest'
+      responses:
+        '200':
+          description: Order status updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        '400':
+          description: Invalid status transition
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    CreateOrderRequest:
+      type: object
+      required:
+        - customerId
+        - bookId
+        - quantity
+      properties:
+        customerId:
+          type: string
+          format: uuid
+          example: "customer-uuid-123"
+        bookId:
+          type: string
+          format: uuid
+          example: "book-uuid-456"
+        quantity:
+          type: integer
+          minimum: 1
+          example: 2
+          description: Number of books to order
+
+    UpdateOrderStatusRequest:
+      type: object
+      required:
+        - status
+      properties:
+        status:
+          type: string
+          enum: [pending, shipped, delivered]
+          example: "shipped"
+          description: New order status (must be valid transition)
+
+    OrderResponse:
+      type: object
+      required:
+        - id
+        - customerId
+        - bookId
+        - quantity
+        - totalPrice
+        - status
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: "order-uuid-789"
+        customerId:
+          type: string
+          format: uuid
+          example: "customer-uuid-123"
+        bookId:
+          type: string
+          format: uuid
+          example: "book-uuid-456"
+        quantity:
+          type: integer
+          example: 2
+        totalPrice:
+          type: number
+          format: decimal
+          example: 31.98
+          description: Total order amount (book price × quantity)
+        status:
+          type: string
+          enum: [pending, shipped, delivered]
+          example: "pending"
+        createdAt:
+          type: string
+          format: date-time
+          example: "2026-06-05T10:00:00Z"
+        updatedAt:
+          type: string
+          format: date-time
+          example: "2026-06-05T10:00:00Z"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
+          example: "Insufficient stock available"
+        details:
+          type: object
+          additionalProperties: true
+          example:
+            bookId: "book-uuid-456"
+            requested: 5
+            available: 2

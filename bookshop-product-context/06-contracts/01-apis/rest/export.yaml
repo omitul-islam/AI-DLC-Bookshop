@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: Export API
+  version: 1.0.0
+  description: API for exporting entity data as CSV
+
+servers:
+  - url: /api/v1
+    description: API v1
+
+paths:
+  /export/{entity}:
+    parameters:
+      - name: entity
+        in: path
+        required: true
+        schema:
+          type: string
+          enum: [books, customers, orders]
+        description: Entity type to export
+
+    get:
+      summary: Export entity data as CSV
+      operationId: exportCsv
+      tags:
+        - Export
+      parameters:
+        - name: status
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter by status (orders only)
+        - name: customerId
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+          description: Filter by customer ID (orders only)
+      responses:
+        '200':
+          description: CSV file download
+          content:
+            text/csv:
+              schema:
+                type: string
+                description: CSV content with BOM for Excel compatibility
+        '400':
+          description: Invalid entity type
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

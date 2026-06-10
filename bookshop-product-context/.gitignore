@@ -1,0 +1,32 @@
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Build artifacts (if any)
+dist/
+build/
+
+# Dependencies (shouldn't be here but just in case)
+node_modules/
+__pycache__/
+*.pyc
+
+# Environment files (shouldn't contain secrets but be safe)
+.env
+.env.local
+.env.*.local
+
+# Generated files
+generated/

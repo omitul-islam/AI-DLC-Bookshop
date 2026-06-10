@@ -1,0 +1,137 @@
+openapi: 3.0.0
+info:
+  title: Audit Log API
+  version: 1.0.0
+  description: API for viewing immutable audit logs of all data changes
+
+servers:
+  - url: /api/v1
+    description: API v1
+
+paths:
+  /audit-log:
+    get:
+      summary: Get audit log entries
+      operationId: getAuditLog
+      tags:
+        - Audit
+      parameters:
+        - name: entityType
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [book, customer, order]
+          description: Filter by entity type
+        - name: entityId
+          in: query
+          required: false
+          schema:
+            type: string
+            format: uuid
+          description: Filter by entity ID
+        - name: action
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [created, updated, deleted]
+          description: Filter by action
+        - name: fromDate
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+          description: Filter entries after this date
+        - name: toDate
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+          description: Filter entries before this date
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: Paginated audit log entries
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AuditEntryResponse'
+                  pagination:
+                    $ref: '#/components/schemas/PaginationMeta'
+
+components:
+  schemas:
+    AuditEntryResponse:
+      type: object
+      required:
+        - id
+        - entityType
+        - entityId
+        - action
+        - performedBy
+        - createdAt
+      properties:
+        id:
+          type: string
+          format: uuid
+        entityType:
+          type: string
+          enum: [book, customer, order]
+        entityId:
+          type: string
+          format: uuid
+        action:
+          type: string
+          enum: [created, updated, deleted]
+        previousState:
+          type: object
+          nullable: true
+          description: JSON snapshot before change
+        newState:
+          type: object
+          nullable: true
+          description: JSON snapshot after change
+        performedBy:
+          type: string
+          default: system
+        createdAt:
+          type: string
+          format: date-time
+
+    PaginationMeta:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        totalPages:
+          type: integer
+        hasNext:
+          type: boolean
+        hasPrev:
+          type: boolean

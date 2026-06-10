@@ -1,0 +1,341 @@
+openapi: 3.0.0
+info:
+  title: Book Management API
+  version: 1.0.0
+  description: API for managing bookshop inventory
+
+servers:
+  - url: /api/v1
+    description: API v1
+
+paths:
+  /books:
+    get:
+      summary: List all books
+      operationId: listBooks
+      tags:
+        - Books
+      responses:
+        '200':
+          description: List of books
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookResponse'
+    
+    post:
+      summary: Add a new book
+      operationId: addBook
+      tags:
+        - Books
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateBookRequest'
+      responses:
+        '201':
+          description: Book created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /books/{bookId}:
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: Book unique identifier
+
+    get:
+      summary: Get book by ID
+      operationId: getBook
+      tags:
+        - Books
+      responses:
+        '200':
+          description: Book details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookResponse'
+        '404':
+          description: Book not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    put:
+      summary: Update book details
+      operationId: updateBook
+      tags:
+        - Books
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateBookRequest'
+      responses:
+        '200':
+          description: Book updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Book not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      summary: Delete a book
+      operationId: deleteBook
+      tags:
+        - Books
+      responses:
+        '204':
+          description: Book deleted successfully
+        '404':
+          description: Book not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /books/search:
+    get:
+      summary: Search books by title or author
+      operationId: searchBooks
+      tags:
+        - Books
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 1
+          description: Search query (searches title and author)
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BookResponse'
+        '400':
+          description: Invalid search query
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /books/{bookId}/cover:
+    post:
+      summary: Upload book cover image
+      operationId: uploadBookCover
+      tags:
+        - Books
+      parameters:
+        - name: bookId
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                cover:
+                  type: string
+                  format: binary
+                  description: Book cover image (JPEG, PNG, WebP, GIF, SVG - max 5MB)
+      responses:
+        '200':
+          description: Cover uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  coverUrl:
+                    type: string
+                    format: uri
+                  book:
+                    $ref: '#/components/schemas/BookResponse'
+        '400':
+          description: Invalid file or no file uploaded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Book not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    CreateBookRequest:
+      type: object
+      required:
+        - title
+        - author
+        - price
+        - stock
+        - categoryId
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 255
+          example: "The Great Gatsby"
+        author:
+          type: string
+          minLength: 1
+          maxLength: 255
+          example: "F. Scott Fitzgerald"
+        price:
+          type: number
+          format: decimal
+          minimum: 0
+          example: 15.99
+          description: Price in currency units
+        stock:
+          type: integer
+          minimum: 0
+          example: 25
+          description: Available quantity
+        categoryId:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+          description: Category to assign the book to
+        coverUrl:
+          type: string
+          format: uri
+          description: Public URL of the book cover image (uploaded via POST /books/{id}/cover)
+
+    UpdateBookRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 255
+          example: "The Great Gatsby"
+        author:
+          type: string
+          minLength: 1
+          maxLength: 255
+          example: "F. Scott Fitzgerald"
+        price:
+          type: number
+          format: decimal
+          minimum: 0
+          example: 15.99
+        stock:
+          type: integer
+          minimum: 0
+          example: 25
+        categoryId:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+          description: Reassign book to a different category
+        coverUrl:
+          type: string
+          format: uri
+          description: Public URL of the book cover image
+
+    BookResponse:
+      type: object
+      required:
+        - id
+        - title
+        - author
+        - price
+        - stock
+        - categoryId
+        - createdAt
+        - updatedAt
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        title:
+          type: string
+          example: "The Great Gatsby"
+        author:
+          type: string
+          example: "F. Scott Fitzgerald"
+        price:
+          type: number
+          format: decimal
+          example: 15.99
+        stock:
+          type: integer
+          example: 25
+        categoryId:
+          type: string
+          format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
+        createdAt:
+          type: string
+          format: date-time
+          example: "2026-06-05T10:00:00Z"
+        updatedAt:
+          type: string
+          format: date-time
+          example: "2026-06-05T10:00:00Z"
+        coverUrl:
+          type: string
+          format: uri
+          example: "https://project.supabase.co/storage/v1/object/public/book-covers/books/uuid/1234567890.jpg"
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
+          example: "Validation failed"
+        details:
+          type: object
+          additionalProperties: true
+          example:
+            price: "Price must be zero or greater"
+            stock: "Stock must be a whole number"

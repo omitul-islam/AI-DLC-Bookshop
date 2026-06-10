@@ -1,0 +1,185 @@
+openapi: 3.0.0
+info:
+  title: Stock Movement API
+  version: 1.0.0
+  description: API for tracking and adjusting book stock levels
+
+servers:
+  - url: /api/v1
+    description: API v1
+
+paths:
+  /books/{bookId}/stock-movements:
+    parameters:
+      - name: bookId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        description: Book unique identifier
+
+    get:
+      summary: Get stock movements for a book
+      operationId: getStockMovements
+      tags:
+        - Stock
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 1
+            minimum: 1
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+      responses:
+        '200':
+          description: Paginated stock movements
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/StockMovementResponse'
+                  pagination:
+                    $ref: '#/components/schemas/PaginationMeta'
+
+  /books/{bookId}/stock-adjust:
+    parameters:
+      - name: bookId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+
+    post:
+      summary: Manually adjust stock for a book
+      operationId: adjustStock
+      tags:
+        - Stock
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdjustStockRequest'
+      responses:
+        '200':
+          description: Stock adjusted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    StockMovementResponse:
+      type: object
+      required:
+        - id
+        - bookId
+        - oldStock
+        - newStock
+        - quantity
+        - reason
+        - createdAt
+      properties:
+        id:
+          type: string
+          format: uuid
+        bookId:
+          type: string
+          format: uuid
+        oldStock:
+          type: integer
+        newStock:
+          type: integer
+        quantity:
+          type: integer
+        reason:
+          type: string
+          enum: [order_deduction, manual_restock, manual_adjustment, correction]
+        referenceId:
+          type: string
+          format: uuid
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+
+    AdjustStockRequest:
+      type: object
+      required:
+        - newStock
+        - reason
+      properties:
+        newStock:
+          type: integer
+          minimum: 0
+          description: New stock level (absolute value, not delta)
+        reason:
+          type: string
+          enum: [manual_restock, manual_adjustment, correction]
+
+    BookResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        author:
+          type: string
+        price:
+          type: number
+        stock:
+          type: integer
+        categoryId:
+          type: string
+          format: uuid
+
+    PaginationMeta:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        totalPages:
+          type: integer
+        hasNext:
+          type: boolean
+        hasPrev:
+          type: boolean
+
+    ErrorResponse:
+      type: object
+      required:
+        - error
+      properties:
+        error:
+          type: string
+        details:
+          type: object
+          additionalProperties: true
