@@ -10,6 +10,8 @@ async function seed() {
 
   try {
     // Clear existing data (order matters: child tables first)
+    await pool.query('DELETE FROM stock_movements');
+    await pool.query('DELETE FROM audit_log');
     await pool.query('DELETE FROM orders');
     await pool.query('DELETE FROM books');
     await pool.query('DELETE FROM categories');

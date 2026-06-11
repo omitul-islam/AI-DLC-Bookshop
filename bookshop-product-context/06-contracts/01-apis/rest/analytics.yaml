@@ -1,0 +1,102 @@
+openapi: 3.0.3
+info:
+  title: Analytics API
+  description: Sales analytics and reporting endpoints
+  version: 1.0.0
+
+paths:
+  /api/v1/analytics/sales-by-month:
+    get:
+      summary: Get monthly sales data
+      description: Returns aggregated monthly sales with revenue, order count, books sold, average order value, top-selling book per month, and trend vs previous month
+      tags: [Analytics]
+      responses:
+        '200':
+          description: Monthly sales data
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [summary, months]
+                properties:
+                  summary:
+                    type: object
+                    description: Current month summary with trend
+                    required:
+                      - currentMonthRevenue
+                      - currentMonthOrders
+                      - currentMonthBooksSold
+                      - trend
+                      - trendPercent
+                      - ytdRevenue
+                    properties:
+                      currentMonthRevenue:
+                        type: number
+                        description: Total revenue for the current month
+                      currentMonthOrders:
+                        type: integer
+                        description: Number of orders in current month
+                      currentMonthBooksSold:
+                        type: integer
+                        description: Total books sold in current month
+                      trend:
+                        type: string
+                        enum: [up, down, flat]
+                        description: Revenue trend vs previous month
+                      trendPercent:
+                        type: integer
+                        description: Percentage change in revenue vs previous month
+                      ytdRevenue:
+                        type: number
+                        description: Year-to-date total revenue
+                  months:
+                    type: array
+                    description: Monthly breakdown, newest first
+                    items:
+                      type: object
+                      required:
+                        - month
+                        - totalOrders
+                        - booksSold
+                        - revenue
+                        - avgOrderValue
+                        - topBook
+                        - trend
+                        - trendPercent
+                      properties:
+                        month:
+                          type: string
+                          format: date
+                          description: First day of the month (YYYY-MM-DD)
+                        totalOrders:
+                          type: integer
+                          description: Number of orders in this month
+                        booksSold:
+                          type: integer
+                          description: Total quantity of books sold
+                        revenue:
+                          type: number
+                          description: Total revenue in BDT
+                        avgOrderValue:
+                          type: number
+                          description: Average revenue per order
+                        topBook:
+                          type: string
+                          nullable: true
+                          description: Title of the best-selling book this month
+                        trend:
+                          type: string
+                          enum: [up, down, flat]
+                          description: Revenue trend vs previous month
+                        trendPercent:
+                          type: integer
+                          description: Percentage change vs previous month
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string

@@ -136,7 +136,17 @@
 
 ---
 
-## 17. Planned Features
+## 17. Monthly Sales Analytics Panel
+- **Summary Bar**: This month's revenue with trend arrow vs last month, plus YTD total revenue
+- **Monthly Table**: Columns — Month, Total Orders, Books Sold, Revenue, Avg Order Value, Top-Selling Book
+- **Trend Badges**: Revenue change vs previous month displayed as ↑ (up) / ↓ (down) / — (flat)
+- **Month Drill-Down**: Clicking a month row navigates to `/orders?month=YYYY-MM` with filtered order list
+- **Backend**: `GET /api/v1/analytics/sales-by-month` — pure aggregation queries on existing `orders` table, no new tables
+- **Data**: month, totalOrders, totalBooksSold, totalRevenue, averageOrderValue, topBook, trendArrow, trendPercentage
+
+---
+
+## 18. Planned Features
 - JWT authentication & RBAC
 - Swagger UI docs
 - ISBN, publisher, book covers, multiple authors

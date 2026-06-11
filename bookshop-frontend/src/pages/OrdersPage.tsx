@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { PlusIcon, FunnelIcon, ClipboardDocumentListIcon, ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { PlusIcon, FunnelIcon, ClipboardDocumentListIcon, ArrowDownTrayIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { useOrders } from '../hooks/useOrders';
 import { useBooks } from '../hooks/useBooks';
 import { useCustomers } from '../hooks/useCustomers';
@@ -41,6 +42,8 @@ export default function OrdersPage() {
   const { books, fetchBooks } = useBooks();
   const { customers, fetchCustomers } = useCustomers();
   const { showToast } = useToast();
+  const [searchParams] = useSearchParams();
+  const monthFilter = searchParams.get('month') || undefined;
 
   const [modalOpen, setModalOpen] = useState(false);
   const [statusFilter, setStatusFilter] = useState<string>('');
@@ -59,10 +62,13 @@ export default function OrdersPage() {
   const stockError = selectedBook && selectedQuantity > selectedBook.stock;
 
   useEffect(() => {
-    fetchOrders(page, limit, statusFilter ? { status: statusFilter } : undefined);
+    const params: any = {};
+    if (statusFilter) params.status = statusFilter;
+    if (monthFilter) params.month = monthFilter;
+    fetchOrders(page, limit, params);
     fetchBooks();
     fetchCustomers();
-  }, [fetchOrders, fetchBooks, fetchCustomers, page, limit, statusFilter]);
+  }, [fetchOrders, fetchBooks, fetchCustomers, page, limit, statusFilter, monthFilter]);
 
   const openCreateModal = () => {
     reset({ customerId: '', bookId: '', quantity: 1 });
@@ -132,6 +138,20 @@ export default function OrdersPage() {
         }
       />
 
+      {monthFilter && (
+        <div className="flex items-center gap-2 mb-3 bg-indigo-50 border border-indigo-200 rounded-lg px-3 py-2">
+          <Link to="/orders" className="text-indigo-600 hover:text-indigo-800 transition-colors">
+            <ArrowLeftIcon className="w-4 h-4" />
+          </Link>
+          <span className="text-sm text-indigo-700">
+            Showing orders from <strong>{monthFilter}</strong>
+          </span>
+          <Link to="/orders" className="ml-auto text-xs text-indigo-600 hover:text-indigo-800 underline">
+            Clear filter
+          </Link>
+        </div>
+      )}
+
       <div className="flex items-center gap-2 mb-4">
         <FunnelIcon className="w-4 h-4 text-gray-400" />
         {filters.map((f) => (
@@ -152,9 +172,9 @@ export default function OrdersPage() {
       {filteredOrders.length === 0 ? (
         <EmptyState
           icon={<ClipboardDocumentListIcon className="w-8 h-8 text-gray-400" />}
-          title={statusFilter ? `No ${statusFilter} orders` : 'No orders yet'}
-          message={statusFilter ? `No orders with status "${statusFilter}".` : 'Create your first order to get started.'}
-          action={statusFilter ? undefined : { label: 'Create Order', onClick: openCreateModal }}
+          title={monthFilter ? `No orders in ${monthFilter}` : statusFilter ? `No ${statusFilter} orders` : 'No orders yet'}
+          message={monthFilter ? `No orders found for ${monthFilter}.` : statusFilter ? `No orders with status "${statusFilter}".` : 'Create your first order to get started.'}
+          action={monthFilter || statusFilter ? undefined : { label: 'Create Order', onClick: openCreateModal }}
         />
       ) : (
         <div>

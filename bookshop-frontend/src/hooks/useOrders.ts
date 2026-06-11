@@ -9,7 +9,7 @@ export function useOrders() {
   const [totalPages, setTotalPages] = useState(1);
   const [limit, setLimit] = useState(20);
 
-  const fetchOrders = useCallback(async (p = page, l = limit, params?: { status?: string; customerId?: string }) => {
+  const fetchOrders = useCallback(async (p = page, l = limit, params?: { status?: string; customerId?: string; month?: string }) => {
     setLoading(true);
     try {
       const { data, pagination } = await ordersApi.getAll(p, l, params);

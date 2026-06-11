@@ -46,6 +46,7 @@ router.get('/', async (req: Request, res: Response) => {
     const filters: any = {};
     if (req.query.status) filters.status = req.query.status;
     if (req.query.customerId) filters.customerId = req.query.customerId;
+    if (req.query.month) filters.month = req.query.month;
 
     const result = await orderService.listOrders(page, limit, filters);
     res.json(result);

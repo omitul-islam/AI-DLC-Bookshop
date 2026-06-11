@@ -23,6 +23,7 @@ All requirements from [`requirements.md`](../01-source/requirements.md) are impl
 | Audit Log | `audit_log` table, auto-log on all CRUD, filtered view endpoint | Audit log page with filter bar + table | — |
 | Export CSV | CSV export endpoint per entity with BOM | Export CSV buttons on list pages | — |
 | Book Cover Images | S3 upload endpoint (file → Supabase Storage → URL) | Card/grid view toggle, file upload in modal, cover display | — |
+| Monthly Sales Analytics | `GET /api/v1/analytics/sales-by-month` aggregation endpoint | MonthlySalesPanel on HomePage, month drill-down on OrdersPage | [`analytics.yaml`](../06-contracts/01-apis/rest/analytics.yaml) |
 
 ---
 
@@ -121,6 +122,23 @@ All requirements from [`requirements.md`](../01-source/requirements.md) are impl
 | F6 | Wire Favourites → Cart flow (add selected to cart) | ✅ Done |
 | F7 | Guardrail: verify build + application run check | ✅ Done |
 | F8 | Add batch remove selected + clear all favourites | ✅ Done |
+
+---
+
+## Current Sprint — Monthly Sales Analytics Panel
+
+| # | Task | Status |
+|---|------|--------|
+| M1 | Add requirements to `01-source/requirements.md` | ✅ Done |
+| M2 | Update `execution/execution.md` with sprint plan | ✅ Done |
+| M3 | Backend: create `GET /api/v1/analytics/sales-by-month` endpoint (aggregate orders by month, total revenue, book count, order count, avg order value, top book per month, trend vs prev month) | ✅ Done |
+| M4 | Backend: update orders route to support `?month=2026-04` filter for drill-down | ✅ Done |
+| M5 | Frontend: add `analytics.api.ts` with API call + hook | ✅ Done |
+| M6 | Frontend: build Monthly Sales panel on HomePage (summary bar + table with trend arrows) | ✅ Done |
+| M7 | Frontend: wire month row click → navigate to orders page filtered by that month | ✅ Done |
+| M8 | Update API contracts (`analytics.yaml`) | ✅ Done |
+| M9 | Update business rules if needed | ✅ Done (no new rules needed) |
+| M10 | Guardrail: verify build + application run check | ✅ Done |
 
 ---
 

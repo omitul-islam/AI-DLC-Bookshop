@@ -258,3 +258,27 @@ Append-only log. Captures every change with ISO 8601 timestamps. Never overwritt
 - Updated `src/App.tsx` — wrapped app in FavoritesProvider, added /favourites route
 - **Build**: Frontend `npm run build` passes with zero errors
 - **Run**: Application starts clean, no console errors
+
+## 2026-06-11T07:48:00Z — Monthly Sales Analytics Panel
+**Action**: Full-stack implementation of dashboard monthly sales analytics
+**Backend**:
+- `bookshop-backend/src/routes/analytics.routes.ts` — `GET /api/v1/analytics/sales-by-month`
+- `bookshop-backend/src/services/analytics.service.ts` — Aggregation logic (revenue, orders, books sold, avg order value, top book, trend arrows)
+- `bookshop-backend/src/db/database.ts` — `getSalesByMonth()` on both InMemory + Postgres, month filter on `findAllOrdersPaginated()`
+- `bookshop-backend/src/index.ts` — Mounted analytics routes
+**Frontend**:
+- `bookshop-frontend/src/api/analytics.api.ts` — API client for analytics endpoint
+- `bookshop-frontend/src/hooks/useAnalytics.ts` — Data hook
+- `bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx` — Panel with summary bar + monthly table + trend badges + month drill-down click
+- `bookshop-frontend/src/pages/HomePage.tsx` — Integrated MonthlySalesPanel above recent books/low stock
+- `bookshop-frontend/src/pages/OrdersPage.tsx` — Month filter from URL param (`?month=YYYY-MM`), filter indicator, back link
+- `bookshop-frontend/src/api/orders.api.ts` — Added `month` param to `getAll()`
+- `bookshop-frontend/src/hooks/useOrders.ts` — Passes `month` param to API
+**Context docs**:
+- [`01-source/requirements.md`](../01-source/requirements.md) — Added Monthly Sales Analytics Panel section (R30-R36)
+- [`IMPLEMENTATION-GUIDE.md`](../IMPLEMENTATION-GUIDE.md) — Added Phase 16
+- [`06-contracts/01-apis/rest/analytics.yaml`](../06-contracts/01-apis/rest/analytics.yaml) — OpenAPI spec for analytics endpoint
+- [`execution/execution.md`](../execution/execution.md) — M1-M10 all ✅ Done
+- [`aidlc-state/aidlc-state.md`](../aidlc-state/aidlc-state.md) — Added analytics traceability + doc statuses
+**Build**: Both backend and frontend `npm run build` pass with zero errors
+**Run**: Application starts clean, no console errors on HomePage or OrdersPage (with/without month filter)

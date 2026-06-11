@@ -11,6 +11,7 @@ import auditRouter from './routes/audit.routes';
 import exportRouter from './routes/export.routes';
 import uploadRouter from './routes/upload.routes';
 import cartRouter from './routes/cart.routes';
+import analyticsRouter from './routes/analytics.routes';
 
 // Load environment variables
 dotenv.config();
@@ -44,6 +45,7 @@ app.use('/api/v1/audit-log', auditRouter);
 app.use('/api/v1/export', exportRouter);
 app.use('/api/v1', uploadRouter);
 app.use('/api/v1', cartRouter);
+app.use('/api/v1/analytics', analyticsRouter);
 
 // API documentation endpoint
 app.get('/api/v1', (req: Request, res: Response) => {
@@ -61,6 +63,7 @@ app.get('/api/v1', (req: Request, res: Response) => {
       'cover-upload': '/api/v1/books/:id/cover',
       'audit-log': '/api/v1/audit-log',
       export: '/api/v1/export/:entity',
+      analytics: '/api/v1/analytics/sales-by-month',
     },
     documentation: {
       openapi: {

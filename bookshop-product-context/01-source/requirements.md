@@ -113,3 +113,12 @@
 - Users can remove individual books via the heart toggle on the Favourites page
 - Users can select multiple books and "Remove Selected" from favourites in batch
 - Users can "Clear All Favourites" to remove every favourite at once
+
+### Monthly Sales Analytics Panel
+- Dashboard must show a monthly sales table with columns: Month, Total Orders, Books Sold, Revenue (BDT), Avg Order Value
+- Each row must show the top-selling book title for that month
+- A trend arrow (↑/↓) must indicate revenue change vs previous month
+- Top summary bar: "This Month: ৳X (↑Y% from last month)" with YTD total
+- Clicking a month row must navigate to the filtered orders page for that month
+- Backend must provide a `GET /api/v1/analytics/sales-by-month` endpoint returning aggregated monthly sales data
+- No new database tables required — aggregation queries on existing `orders` table

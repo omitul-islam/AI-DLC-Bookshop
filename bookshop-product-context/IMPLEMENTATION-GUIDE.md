@@ -333,7 +333,7 @@ Before marking a story as complete:
 - [ ] Code reviewed
 - [ ] Manually tested
 
----
+----------------------------------
 
 ## 🏷️ Phase 5: Category Management
 
@@ -523,9 +523,9 @@ In `BooksPage.tsx` create/edit modal, add a category dropdown (reuse `Select` co
 ### Step 10: Filter Books by Category
 In `BooksPage.tsx`, add a category filter dropdown above the search bar. When selected, pass `?categoryId=` param to the backend. Add a `filterByCategory` query to the book service.
 
----
+----------------------------------
 
-## Phase 6: PostgreSQL Migration
+## 🏷️ Phase 6: PostgreSQL Migration
 
 ### Migration Steps (In-Memory → PostgreSQL)
 
@@ -608,9 +608,9 @@ npm run seed
 - Books: `context/05-modules/02-book-management/book-management.md`
 - Categories: `context/05-modules/02-category-management/category-management.md`
 
----
+----------------------------------
 
-## Phase 7: Pagination
+## 🏷️ Phase 7: Pagination
 
 ### Step 1: Pagination Utility
 Create `bookshop-backend/src/utils/pagination.ts`:
@@ -744,9 +744,9 @@ export function useBooks() {
 ### Step 9: Frontend — Integrate on Pages
 Wrap each list page's Table with the Pagination component. Default to bottom of the table.
 
----
+----------------------------------
 
-## Phase 8: Stock Movement Log
+## 🏷️ Phase 8: Stock Movement Log
 
 ### Step 1: Database Migration
 Add to `schema.sql`:
@@ -904,9 +904,9 @@ await db.recordStockMovement({
 - Add "Stock History" button per book row in `BooksPage` that opens a modal with paginated movements table
 - Dashboard: add "Recent Stock Activity" card showing the latest 10 movements across all books (use a new endpoint or filter)
 
----
+----------------------------------
 
-## Phase 9: Audit Log
+## 🏷️ Phase 9: Audit Log
 
 ### Step 1: Database Migration
 Add to `schema.sql`:
@@ -1083,9 +1083,9 @@ Create `AuditLogPage.tsx`:
 - Add route in `App.tsx`: `<Route path="audit-log" element={<AuditLogPage />} />`
 - Add "Audit Log" link in sidebar navigation
 
----
+----------------------------------
 
-## Phase 10: Export CSV
+## 🏷️ Phase 10: Export CSV
 
 ### Step 1: CSV Utility
 Create `bookshop-backend/src/utils/csv.ts`:
@@ -1219,9 +1219,9 @@ On each list page (`BooksPage`, `CustomersPage`, `OrdersPage`), add an "Export C
 
 ---
 
----
+----------------------------------
 
-## Phase 11: Book Cover Images + Card View
+## 🏷️ Phase 11: Book Cover Images + Card View
 
 ### Step 1: Install S3 SDK
 Remove Supabase SDK, install AWS S3 client:
@@ -1321,9 +1321,9 @@ Add upload endpoint to `books.yaml`:
 
 ---
 
----
+----------------------------------
 
-## Phase 12: UI Design Polish
+## 🏷️ Phase 12: UI Design Polish
 
 ### Step 1: Update Tailwind Config
 Edit `tailwind.config.js`:
@@ -1379,9 +1379,9 @@ Edit `tailwind.config.js`:
 
 ---
 
----
+----------------------------------
 
-## Phase 13: Shopping Cart
+## 🏷️ Phase 13: Shopping Cart
 
 ### Step 1: Cart Types & localStorage Hook
 Create `bookshop-frontend/src/types/cart.ts`:
@@ -1515,9 +1515,9 @@ Create `06-contracts/01-apis/rest/cart.yaml` with:
 - Navigate to orders page or show order summary
 - On cart open, optionally call validate endpoint to flag stock issues
 
----
+----------------------------------
 
-## Phase 14: BookHouse Rebrand
+## 🏷️ Phase 14: BookHouse Rebrand
 
 ### Step 1: Create Vintage Badge SVG Logo
 Create an inline SVG component at `src/components/common/BookHouseLogo.tsx`:
@@ -1546,9 +1546,9 @@ Create an inline SVG component at `src/components/common/BookHouseLogo.tsx`:
 - `ui-design-context.md`: Rename "Bookshop Management System" to "BookHouse" in page title role and header references
 - Update sidebar spec diagram text
 
----
+----------------------------------
 
-## Phase 15: Favourites (Wishlist)
+## 🏷️ Phase 15: Favourites (Wishlist)
 
 ### Step 1: Create `useFavorites` Hook
 File: `src/hooks/useFavorites.ts`
@@ -1600,7 +1600,262 @@ File: `src/pages/FavouritesPage.tsx`
   - Add a "Clear All" text button below the select-all bar (or in header)
   - On click: `clearFavorites()`, clear selection, show toast "All favourites cleared"
 
----
+----------------------------------
+
+## 🏷️ Phase 16: Monthly Sales Analytics Panel
+
+### Prerequisites
+- Orders table exists with `created_at`, `total_price`, `quantity`, `status` columns
+- No new database tables required — pure aggregation queries
+
+### Step 1: Backend — Analytics Route & Endpoint
+
+Create `bookshop-backend/src/routes/analytics.routes.ts`:
+
+```typescript
+import { Router, Request, Response } from 'express';
+import { db } from '../db/database';
+
+const router = Router();
+
+// GET /api/v1/analytics/sales-by-month
+// Returns monthly aggregated sales data
+router.get('/sales-by-month', async (req: Request, res: Response) => {
+  try {
+    const result = await db.query(`
+      SELECT
+        DATE_TRUNC('month', created_at) AS month,
+        COUNT(DISTINCT id) AS total_orders,
+        SUM(quantity) AS books_sold,
+        SUM(total_price) AS revenue,
+        ROUND(AVG(total_price), 2) AS avg_order_value
+      FROM orders
+      WHERE status != 'cancelled'
+      GROUP BY DATE_TRUNC('month', created_at)
+      ORDER BY month DESC
+    `);
+
+    // For each month, find the top-selling book
+    const monthlyData = await Promise.all(
+      result.rows.map(async (row: any) => {
+        const topBook = await db.query(`
+          SELECT b.title, SUM(o.quantity) as total_sold
+          FROM orders o
+          JOIN books b ON o.book_id = b.id
+          WHERE DATE_TRUNC('month', o.created_at) = $1
+            AND o.status != 'cancelled'
+          GROUP BY b.id, b.title
+          ORDER BY total_sold DESC
+          LIMIT 1
+        `, [row.month]);
+
+        return {
+          month: row.month,
+          totalOrders: parseInt(row.total_orders, 10),
+          booksSold: parseInt(row.books_sold, 10),
+          revenue: parseFloat(row.revenue),
+          avgOrderValue: parseFloat(row.avg_order_value),
+          topBook: topBook.rows[0]?.title || null,
+        };
+      })
+    );
+
+    // Calculate trend arrows (compare each month with previous)
+    const withTrend = monthlyData.map((curr, i) => ({
+      ...curr,
+      trend: i < monthlyData.length - 1
+        ? curr.revenue >= monthlyData[i + 1].revenue ? 'up' : 'down'
+        : 'flat',
+      trendPercent: i < monthlyData.length - 1 && monthlyData[i + 1].revenue > 0
+        ? Math.round(((curr.revenue - monthlyData[i + 1].revenue) / monthlyData[i + 1].revenue) * 100)
+        : 0,
+    }));
+
+    // Compute summary for current month
+    const currentMonth = withTrend[0] || null;
+    const summary = currentMonth ? {
+      currentMonthRevenue: currentMonth.revenue,
+      currentMonthOrders: currentMonth.totalOrders,
+      currentMonthBooksSold: currentMonth.booksSold,
+      trend: currentMonth.trend,
+      trendPercent: currentMonth.trendPercent,
+      ytdRevenue: monthlyData
+        .filter(m => new Date(m.month).getFullYear() === new Date().getFullYear())
+        .reduce((sum, m) => sum + m.revenue, 0),
+    } : null;
+
+    res.json({ summary, months: withTrend });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+export default router;
+```
+
+Mount in `index.ts`:
+```typescript
+import analyticsRouter from './routes/analytics.routes';
+app.use('/api/v1/analytics', analyticsRouter);
+```
+
+### Step 2: Backend — Add Month Filter to Orders Endpoint
+
+In `bookshop-backend/src/routes/orders.ts`, add an optional `month` query param (format `YYYY-MM`):
+
+```typescript
+// Add to existing GET / route
+const monthFilter = req.query.month as string | undefined;
+// If monthFilter is provided, add WHERE clause:
+// WHERE DATE_TRUNC('month', created_at) = $X
+```
+
+Update `order.service.ts` to accept `month` param.
+
+### Step 3: Frontend — API Module & Hook
+
+Create `bookshop-frontend/src/api/analytics.api.ts`:
+```typescript
+import apiClient from './client';
+
+export interface MonthlySales {
+  month: string;
+  totalOrders: number;
+  booksSold: number;
+  revenue: number;
+  avgOrderValue: number;
+  topBook: string | null;
+  trend: 'up' | 'down' | 'flat';
+  trendPercent: number;
+}
+
+export interface AnalyticsSummary {
+  currentMonthRevenue: number;
+  currentMonthOrders: number;
+  currentMonthBooksSold: number;
+  trend: string;
+  trendPercent: number;
+  ytdRevenue: number;
+}
+
+export const analyticsApi = {
+  getSalesByMonth: (): Promise<{ summary: AnalyticsSummary; months: MonthlySales[] }> =>
+    apiClient.get('/analytics/sales-by-month'),
+};
+```
+
+Create `bookshop-frontend/src/hooks/useAnalytics.ts`:
+```typescript
+import { useState, useEffect, useCallback } from 'react';
+import { analyticsApi, MonthlySales, AnalyticsSummary } from '../api/analytics.api';
+
+export function useAnalytics() {
+  const [months, setMonths] = useState<MonthlySales[]>([]);
+  const [summary, setSummary] = useState<AnalyticsSummary | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetch = useCallback(async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const data = await analyticsApi.getSalesByMonth();
+      setMonths(data.months);
+      setSummary(data.summary);
+    } catch (err: any) {
+      setError(err.message || 'Failed to load analytics');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => { fetch(); }, [fetch]);
+
+  return { months, summary, loading, error, refetch: fetch };
+}
+```
+
+### Step 4: Frontend — Analytics Panel Component
+
+Create `bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx`:
+
+```tsx
+// Displays:
+// 1. Summary bar: "This Month: ৳X (↑Y% from last month) · YTD: ৳Z"
+// 2. Table: Month | Orders | Books Sold | Revenue | Avg Value | Top Book | Trend
+// 3. Each month row is clickable → navigates to /orders?month=YYYY-MM
+// 4. Loading state: shimmer skeleton placeholder
+// 5. Empty state: "No orders yet. Start by creating an order."
+// 6. Error state: alert with retry button
+```
+
+Place it on the HomePage above the existing stats cards.
+
+### Step 5: Frontend — Wire Month Click to Orders Page
+
+In `MonthlySalesPanel.tsx`, use `useNavigate` from `react-router-dom` to navigate:
+```tsx
+const navigate = useNavigate();
+// On row click:
+navigate(`/orders?month=${month}`);
+```
+
+In `OrdersPage.tsx`, read `month` from URL search params and pass it to the orders API call:
+```tsx
+const [searchParams] = useSearchParams();
+const monthFilter = searchParams.get('month') || undefined;
+// Pass to useOrders hook
+```
+
+Update `useOrders` hook and `orders.api.ts` to support `month` param.
+
+### Step 6: Update Context Docs
+
+Create `bookshop-product-context/06-contracts/01-apis/rest/analytics.yaml`:
+```yaml
+openapi: 3.0.3
+info:
+  title: Analytics API
+  version: 1.0.0
+paths:
+  /api/v1/analytics/sales-by-month:
+    get:
+      summary: Get monthly sales data
+      responses:
+        '200':
+          description: Monthly sales aggregated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  summary:
+                    type: object
+                    properties:
+                      currentMonthRevenue: { type: number }
+                      currentMonthOrders: { type: integer }
+                      currentMonthBooksSold: { type: integer }
+                      trend: { type: string, enum: [up, down, flat] }
+                      trendPercent: { type: integer }
+                      ytdRevenue: { type: number }
+                  months:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        month: { type: string, format: date }
+                        totalOrders: { type: integer }
+                        booksSold: { type: integer }
+                        revenue: { type: number }
+                        avgOrderValue: { type: number }
+                        topBook: { type: string, nullable: true }
+                        trend: { type: string, enum: [up, down, flat] }
+                        trendPercent: { type: integer }
+```
+
+Update `business-rules/order-rules.md` if needed (no rule changes expected).
+
+----------------------------------
 
 ## 🚀 Ready to Code!
 

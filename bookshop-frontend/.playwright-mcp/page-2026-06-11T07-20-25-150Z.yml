@@ -1,0 +1,3231 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - img "Customer Care" [ref=e8]
+            - generic [ref=e9]: "Hotline: 16297"
+            - text: (9 AM to 8 PM)
+          - generic [ref=e10]:
+            - link "অর্ডার ট্র্যাক করুন" [ref=e11] [cursor=pointer]:
+              - /url: /my-section/orders-v2?ref=to_hm
+              - generic [ref=e12]: অর্ডার ট্র্যাক করুন
+            - link "রকমারি উদ্যোক্তা" [ref=e14] [cursor=pointer]:
+              - /url: https://docs.google.com/forms/d/e/1FAIpQLScESDTv8m3eGL-E0Wwpq-8UbmhnQMYcWtteydzugmPO7QjbEw/viewform
+              - generic [ref=e15]: রকমারি উদ্যোক্তা
+            - link "ঘরে বসে আয় করুন" [ref=e17] [cursor=pointer]:
+              - /url: https://affiliate.rokomari.io/
+              - generic [ref=e18]: ঘরে বসে আয় করুন
+            - link "বই ডোনেশন" [ref=e20] [cursor=pointer]:
+              - /url: /book-donation?ref=hm_bd
+              - generic [ref=e21]: বই ডোনেশন
+        - generic [ref=e23]:
+          - link "Rokomari logo" [ref=e26] [cursor=pointer]:
+            - /url: /
+            - img "Rokomari logo" [ref=e27]
+          - generic [ref=e31]:
+            - textbox "Search" [ref=e32]:
+              - /placeholder: Search by electronics (Charger Fan, Smart Watch, Au|
+            - button "" [ref=e34] [cursor=pointer]:
+              - generic [ref=e35]: 
+          - generic [ref=e37]:
+            - generic [ref=e38] [cursor=pointer]:
+              - img "google play image" [ref=e39]
+              - generic [ref=e40]:
+                - paragraph [ref=e41]: Download
+                - paragraph [ref=e42]: Rokomari App
+            - link "user Hello, Sign in" [ref=e44] [cursor=pointer]:
+              - /url: /login
+              - img "user" [ref=e45]
+              - text: Hello, Sign in
+            - link "cart" [ref=e47] [cursor=pointer]:
+              - /url: /cart
+              - img "cart" [ref=e48]
+      - navigation [ref=e49]:
+        - generic [ref=e50]:
+          - list [ref=e52]:
+            - listitem [ref=e53]:
+              - link "বই" [ref=e54] [cursor=pointer]:
+                - /url: /book?ref=nm
+            - listitem [ref=e55]:
+              - link "ই-বুক" [ref=e56] [cursor=pointer]:
+                - /url: /book/ebook?ref=sm_p3
+            - listitem [ref=e57]:
+              - link "ইলেক্ট্রনিক্স" [ref=e58] [cursor=pointer]:
+                - /url: /electronics?ref=nm
+            - listitem [ref=e59]:
+              - link "সুপার স্টোর" [ref=e60] [cursor=pointer]:
+                - /url: /superstore?ref=nm
+            - listitem [ref=e61]:
+              - link "কিডস জোন" [ref=e62] [cursor=pointer]:
+                - /url: /kids-zone?ref=nm
+            - listitem [ref=e63]:
+              - link "প্রাতিষ্ঠানিক অর্ডার" [ref=e64] [cursor=pointer]:
+                - /url: /corporate?ref=nm
+            - listitem [ref=e65]:
+              - link "বেস্টসেলার অ্যাওয়ার্ড, ২৫" [ref=e66] [cursor=pointer]:
+                - /url: /best-seller-award?ref=nm
+            - listitem [ref=e67]:
+              - link "আজকের অফার !" [ref=e68] [cursor=pointer]:
+                - /url: /offer
+            - listitem [ref=e69]:
+              - link "বইমেলা ২০২৬" [ref=e70] [cursor=pointer]:
+                - /url: /boimela
+            - listitem [ref=e71]:
+              - link "Just for you jfy star icon" [ref=e72] [cursor=pointer]:
+                - /url: /product/activity-wise-recommendation/browse-page
+                - text: Just for you
+                - img "jfy star icon" [ref=e74]
+          - list [ref=e79]:
+            - listitem [ref=e80]:
+              - link "লেখক " [ref=e81] [cursor=pointer]:
+                - /url: /book/authors?ref=sm_p0
+                - text: লেখক
+                - generic [ref=e82]: 
+            - listitem [ref=e83]:
+              - link "বিষয় " [ref=e84] [cursor=pointer]:
+                - /url: /book/categories?ref=sm_p1
+                - text: বিষয়
+                - generic [ref=e85]: 
+            - listitem [ref=e86]:
+              - link "প্রকাশনী " [ref=e87] [cursor=pointer]:
+                - /url: /book/publishers?ref=sm_p2
+                - text: প্রকাশনী
+                - generic [ref=e88]: 
+            - listitem [ref=e89]:
+              - link "বইমেলা ২০২৬" [ref=e90] [cursor=pointer]:
+                - /url: /boimela
+            - listitem [ref=e91]:
+              - link "একাডেমিক বই" [ref=e92] [cursor=pointer]:
+                - /url: /book/category/412/academic
+            - listitem [ref=e93]:
+              - link "অতিরিক্ত ছাড়ের বই" [ref=e94] [cursor=pointer]:
+                - /url: /book/category/1983?ref=sm_p13
+            - listitem [ref=e95]:
+              - link "প্যারালাল TEXT " [ref=e96] [cursor=pointer]:
+                - /url: /book/publisher/12019/udvash-academic-and-admission-care?ref=pralal_txt
+                - text: প্যারালাল TEXT
+                - generic [ref=e97]: 
+            - listitem [ref=e98]:
+              - link "ভর্তি প্রস্তুতি " [ref=e99] [cursor=pointer]:
+                - /url: /admission-preparation?admission-test-preparation
+                - text: ভর্তি প্রস্তুতি
+                - generic [ref=e100]: 
+            - listitem [ref=e101]:
+              - link "ইসলামি বই" [ref=e102] [cursor=pointer]:
+                - /url: /islamic?ref=sm_p9
+            - listitem [ref=e103]:
+              - link "ইংরেজি ভাষার বই" [ref=e104] [cursor=pointer]:
+                - /url: /book/category/403/foreign-language-books
+            - listitem [ref=e105]:
+              - link "পশ্চিমবঙ্গের বই" [ref=e106] [cursor=pointer]:
+                - /url: /book/category/406/west-bengal-books?ref=sm_p10
+  - text: 
+  - generic [ref=e109]:
+    - generic [ref=e111]:
+      - generic [ref=e115]:
+        - checkbox "eBook" [ref=e116]
+        - generic [ref=e117] [cursor=pointer]: eBook
+      - generic [ref=e119]:
+        - paragraph [ref=e121]: Shop by Categories
+        - generic [ref=e123]:
+          - link "ইঞ্জিনিয়ারিং" [ref=e124] [cursor=pointer]:
+            - /url: /product/category/90
+            - generic [ref=e126]: ইঞ্জিনিয়ারিং
+          - link "মেডিকেল" [ref=e127] [cursor=pointer]:
+            - /url: /product/category/91
+            - generic [ref=e129]: মেডিকেল
+          - link "স্কুল" [ref=e130] [cursor=pointer]:
+            - /url: /product/category/1337
+            - generic [ref=e132]: স্কুল
+          - link "একাদশ-দ্বাদশ শ্রেণি (উচ্চ মাধ্যমিক/এইচএসসি)" [ref=e133] [cursor=pointer]:
+            - /url: /product/category/1349
+            - generic [ref=e135]: একাদশ-দ্বাদশ শ্রেণি (উচ্চ মাধ্যমিক/এইচএসসি)
+          - link "ইংলিশ মিডিয়াম" [ref=e136] [cursor=pointer]:
+            - /url: /product/category/1353
+            - generic [ref=e138]: ইংলিশ মিডিয়াম
+          - link "কারিগরি" [ref=e139] [cursor=pointer]:
+            - /url: /product/category/1354
+            - generic [ref=e141]: কারিগরি
+          - 'link "উন্মুক্ত: এসএসসি ও এইচএসসি সমমান" [ref=e142] [cursor=pointer]':
+            - /url: /product/category/2108
+            - generic [ref=e144]: "উন্মুক্ত: এসএসসি ও এইচএসসি সমমান"
+          - link "মাদ্রাসার বই" [ref=e145] [cursor=pointer]:
+            - /url: /product/category/2238
+            - generic [ref=e147]: মাদ্রাসার বই
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - paragraph [ref=e150]: Sort
+          - link "Reset Sort" [ref=e151] [cursor=pointer]:
+            - /url: /book/category/412
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - radio "Best Seller" [checked] [ref=e155]
+            - generic [ref=e157] [cursor=pointer]: Best Seller
+          - generic [ref=e158]:
+            - radio "New Released" [ref=e160]
+            - generic [ref=e162] [cursor=pointer]: New Released
+          - generic [ref=e163]:
+            - radio "Price - Low to High" [ref=e165]
+            - generic [ref=e167] [cursor=pointer]: Price - Low to High
+          - generic [ref=e168]:
+            - radio "Price - High to Low" [ref=e170]
+            - generic [ref=e172] [cursor=pointer]: Price - High to Low
+          - generic [ref=e173]:
+            - radio "Discount - Low to High" [ref=e175]
+            - generic [ref=e177] [cursor=pointer]: Discount - Low to High
+          - generic [ref=e178]:
+            - radio "Discount - High to Low" [ref=e180]
+            - generic [ref=e182] [cursor=pointer]: Discount - High to Low
+      - generic [ref=e186]:
+        - checkbox "In Stock" [ref=e187]
+        - generic [ref=e188] [cursor=pointer]: In Stock
+      - generic [ref=e189]:
+        - generic [ref=e190]:
+          - paragraph [ref=e191]: Filter
+          - link "Reset Filter" [ref=e192] [cursor=pointer]:
+            - /url: /book/category/412
+        - generic [ref=e193]:
+          - generic [ref=e194]:
+            - generic [ref=e195]:
+              - paragraph [ref=e196]: By Authors
+              - generic [ref=e197]:
+                - textbox [ref=e198]
+                - img "search icon" [ref=e199]
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - checkbox "ইসলামিয়া কুতুবখানা" [ref=e202]
+                - generic [ref=e203] [cursor=pointer]: ইসলামিয়া কুতুবখানা
+              - generic [ref=e204]:
+                - checkbox "লেকচার" [ref=e205]
+                - generic [ref=e206] [cursor=pointer]: লেকচার
+              - generic [ref=e207]:
+                - checkbox "পাঞ্জেরী সম্পাদনা পর্ষদ" [ref=e208]
+                - generic [ref=e209] [cursor=pointer]: পাঞ্জেরী সম্পাদনা পর্ষদ
+              - generic [ref=e210]:
+                - checkbox "মাকতাবাতুল ফাতাহ বাংলাদেশ" [ref=e211]
+                - generic [ref=e212] [cursor=pointer]: মাকতাবাতুল ফাতাহ বাংলাদেশ
+              - generic [ref=e213]:
+                - checkbox "কওমী লাইব্রেরী" [ref=e214]
+                - generic [ref=e215] [cursor=pointer]: কওমী লাইব্রেরী
+              - generic [ref=e216]:
+                - checkbox "আল-কাউসার প্রকাশনী" [ref=e217]
+                - generic [ref=e218] [cursor=pointer]: আল-কাউসার প্রকাশনী
+              - generic [ref=e219]:
+                - checkbox "রয়েল সম্পাদনা পর্ষদ" [ref=e220]
+                - generic [ref=e221] [cursor=pointer]: রয়েল সম্পাদনা পর্ষদ
+              - generic [ref=e222]:
+                - checkbox "কুতুবখানায়ে রশিদিয়া" [ref=e223]
+                - generic [ref=e224] [cursor=pointer]: কুতুবখানায়ে রশিদিয়া
+              - generic [ref=e225]:
+                - checkbox "আল ফাতাহ পাবলিকেশন্স" [ref=e226]
+                - generic [ref=e227] [cursor=pointer]: আল ফাতাহ পাবলিকেশন্স
+              - generic [ref=e228]:
+                - checkbox "দারসুন" [ref=e229]
+                - generic [ref=e230] [cursor=pointer]: দারসুন
+              - generic [ref=e231]:
+                - checkbox "জন ইবনেজার" [ref=e232]
+                - generic [ref=e233] [cursor=pointer]: জন ইবনেজার
+              - generic [ref=e234]:
+                - checkbox "ফয়েজিয়া কুতুবখানা" [ref=e235]
+                - generic [ref=e236] [cursor=pointer]: ফয়েজিয়া কুতুবখানা
+              - generic [ref=e237]:
+                - checkbox "আনোয়ার লাইব্রেরী" [ref=e238]
+                - generic [ref=e239] [cursor=pointer]: আনোয়ার লাইব্রেরী
+              - generic [ref=e240]:
+                - checkbox "আল-আকসা লাইব্রেরী" [ref=e241]
+                - generic [ref=e242] [cursor=pointer]: আল-আকসা লাইব্রেরী
+              - generic [ref=e243]:
+                - checkbox "অক্ষরপত্র প্রকাশনী" [ref=e244]
+                - generic [ref=e245] [cursor=pointer]: অক্ষরপত্র প্রকাশনী
+              - generic [ref=e246]:
+                - checkbox "পিয়ারসন" [ref=e247]
+                - generic [ref=e248] [cursor=pointer]: পিয়ারসন
+              - generic [ref=e249]:
+                - checkbox "টেকনিক্যাল প্রকাশনী" [ref=e250]
+                - generic [ref=e251] [cursor=pointer]: টেকনিক্যাল প্রকাশনী
+              - generic [ref=e252]:
+                - checkbox "দারুল হাদীস মিসর" [ref=e253]
+                - generic [ref=e254] [cursor=pointer]: দারুল হাদীস মিসর
+              - generic [ref=e255]:
+                - checkbox "আদিগন্ত প্রকাশনী" [ref=e256]
+                - generic [ref=e257] [cursor=pointer]: আদিগন্ত প্রকাশনী
+              - generic [ref=e258]:
+                - checkbox "মাকতাবাতুল হিজায" [ref=e259]
+                - generic [ref=e260] [cursor=pointer]: মাকতাবাতুল হিজায
+              - generic [ref=e261]:
+                - checkbox "আল্লামা মুফতি কেফায়াতুল্লাহ সাহেব( রহ.)" [ref=e262]
+                - generic [ref=e263] [cursor=pointer]: আল্লামা মুফতি কেফায়াতুল্লাহ সাহেব( রহ.)
+              - generic [ref=e264]:
+                - checkbox "হাকীমুল উম্মত প্রকাশনী" [ref=e265]
+                - generic [ref=e266] [cursor=pointer]: হাকীমুল উম্মত প্রকাশনী
+              - generic [ref=e267]:
+                - checkbox "ক্যাপটেন পাবলিশার্স" [ref=e268]
+                - generic [ref=e269] [cursor=pointer]: ক্যাপটেন পাবলিশার্স
+              - generic [ref=e270]:
+                - checkbox "মুজাহিদ প্রকাশনী" [ref=e271]
+                - generic [ref=e272] [cursor=pointer]: মুজাহিদ প্রকাশনী
+              - generic [ref=e273]:
+                - checkbox "বেফাকুল মাদারিসিল আরাবিয়া বাংলাদেশ" [ref=e274]
+                - generic [ref=e275] [cursor=pointer]: বেফাকুল মাদারিসিল আরাবিয়া বাংলাদেশ
+              - generic [ref=e276]:
+                - checkbox "حكيم الامت مولانا اشرف علي تهانوي رح ( হাকীমুল উম্মত মাওলানা আশরাফ আলী থানভী রহ.)" [ref=e277]
+                - generic [ref=e278] [cursor=pointer]: حكيم الامت مولانا اشرف علي تهانوي رح ( হাকীমুল উম্মত মাওলানা আশরাফ আলী থানভী রহ.)
+              - generic [ref=e279]:
+                - checkbox "টেন মিনিট স্কুল" [ref=e280]
+                - generic [ref=e281] [cursor=pointer]: টেন মিনিট স্কুল
+              - generic [ref=e282]:
+                - checkbox "মাকতাবাতুত্ তাকওয়া" [ref=e283]
+                - generic [ref=e284] [cursor=pointer]: মাকতাবাতুত্ তাকওয়া
+              - generic [ref=e285]:
+                - checkbox "মোঃ সুমন রেজা" [ref=e286]
+                - generic [ref=e287] [cursor=pointer]: মোঃ সুমন রেজা
+              - generic [ref=e288]:
+                - checkbox "ইঞ্জি . মোঃ নূর–ই মোস্তফা" [ref=e289]
+                - generic [ref=e290] [cursor=pointer]: ইঞ্জি . মোঃ নূর–ই মোস্তফা
+              - generic [ref=e291]:
+                - checkbox "কিউএনএ পাবলিকেশন্স লেখক পরিষদ" [ref=e292]
+                - generic [ref=e293] [cursor=pointer]: কিউএনএ পাবলিকেশন্স লেখক পরিষদ
+              - generic [ref=e294]:
+                - checkbox "মাওলানা আবু তাহের মেছবাহ" [ref=e295]
+                - generic [ref=e296] [cursor=pointer]: মাওলানা আবু তাহের মেছবাহ
+              - generic [ref=e297]:
+                - checkbox "ইমাম আবু ঈসা মুহাম্মদ ইবনে ঈসা আত তিরমিযী (রহঃ)" [ref=e298]
+                - generic [ref=e299] [cursor=pointer]: ইমাম আবু ঈসা মুহাম্মদ ইবনে ঈসা আত তিরমিযী (রহঃ)
+              - generic [ref=e300]:
+                - checkbox "শরীফ মুহাম্মাদ ইউনুস" [ref=e301]
+                - generic [ref=e302] [cursor=pointer]: শরীফ মুহাম্মাদ ইউনুস
+              - generic [ref=e303]:
+                - checkbox "আশরাফিয়া বুক হাউজ" [ref=e304]
+                - generic [ref=e305] [cursor=pointer]: আশরাফিয়া বুক হাউজ
+              - generic [ref=e306]:
+                - checkbox "আল্লামা আবুল হাসান বোরহান উদ্দিন আলী বিন আবু বকর আল মারগিনানী র." [ref=e307]
+                - generic [ref=e308] [cursor=pointer]: আল্লামা আবুল হাসান বোরহান উদ্দিন আলী বিন আবু বকর আল মারগিনানী র.
+              - generic [ref=e309]:
+                - checkbox "হযরত মাওলানা মুফতী মুহাম্মদ শফী (রহ.)" [ref=e310]
+                - generic [ref=e311] [cursor=pointer]: হযরত মাওলানা মুফতী মুহাম্মদ শফী (রহ.)
+              - generic [ref=e312]:
+                - checkbox "উইলিয়াম স্ট্যালিংস্‌" [ref=e313]
+                - generic [ref=e314] [cursor=pointer]: উইলিয়াম স্ট্যালিংস্‌
+              - generic [ref=e315]:
+                - checkbox "মুফাক্কিরে ইসলাম হযরত মাওলানা সাইয়্যিদ আবুল হাসান আলী নদভী রহ." [ref=e316]
+                - generic [ref=e317] [cursor=pointer]: মুফাক্কিরে ইসলাম হযরত মাওলানা সাইয়্যিদ আবুল হাসান আলী নদভী রহ.
+              - generic [ref=e318]:
+                - checkbox "মোমেন তাজোয়ার মমিত" [ref=e319]
+                - generic [ref=e320] [cursor=pointer]: মোমেন তাজোয়ার মমিত
+              - generic [ref=e321]:
+                - checkbox "مكتبة الحراء (মাকতাবাতুল হেরা)" [ref=e322]
+                - generic [ref=e323] [cursor=pointer]: مكتبة الحراء (মাকতাবাতুল হেরা)
+              - generic [ref=e324]:
+                - checkbox "আর. সি. হিব্লার" [ref=e325]
+                - generic [ref=e326] [cursor=pointer]: আর. সি. হিব্লার
+              - generic [ref=e327]:
+                - checkbox "মো. বায়েজিদ হোসাইন" [ref=e328]
+                - generic [ref=e329] [cursor=pointer]: মো. বায়েজিদ হোসাইন
+              - generic [ref=e330]:
+                - checkbox "রিমা থারেজা" [ref=e331]
+                - generic [ref=e332] [cursor=pointer]: রিমা থারেজা
+              - generic [ref=e333]:
+                - checkbox "আল্লামা মুহাম্মাদ সুলতান যওক নদভী" [ref=e334]
+                - generic [ref=e335] [cursor=pointer]: আল্লামা মুহাম্মাদ সুলতান যওক নদভী
+              - generic [ref=e336]:
+                - checkbox "প্রাইম পাবলিকেশনস্" [ref=e337]
+                - generic [ref=e338] [cursor=pointer]: প্রাইম পাবলিকেশনস্
+              - generic [ref=e339]:
+                - checkbox "জ্ঞানগৃহ গবেষণা ও সম্পাদনা পরিষদ" [ref=e340]
+                - generic [ref=e341] [cursor=pointer]: জ্ঞানগৃহ গবেষণা ও সম্পাদনা পরিষদ
+              - generic [ref=e342]:
+                - checkbox "থমাস এল ফ্লয়েড" [ref=e343]
+                - generic [ref=e344] [cursor=pointer]: থমাস এল ফ্লয়েড
+              - generic [ref=e345]:
+                - checkbox "মুফতী মুহাম্মাদ ইদরীস কাসেমী" [ref=e346]
+                - generic [ref=e347] [cursor=pointer]: মুফতী মুহাম্মাদ ইদরীস কাসেমী
+              - generic [ref=e348]:
+                - checkbox "ব্রাজা এম. দাস" [ref=e349]
+                - generic [ref=e350] [cursor=pointer]: ব্রাজা এম. দাস
+              - generic [ref=e351]:
+                - checkbox "মুহাম্মদী বুক হাউজ" [ref=e352]
+                - generic [ref=e353] [cursor=pointer]: মুহাম্মদী বুক হাউজ
+              - generic [ref=e354]:
+                - checkbox "এ. নাগর কানি" [ref=e355]
+                - generic [ref=e356] [cursor=pointer]: এ. নাগর কানি
+              - generic [ref=e357]:
+                - checkbox "থানভী ভারত" [ref=e358]
+                - generic [ref=e359] [cursor=pointer]: থানভী ভারত
+              - generic [ref=e360]:
+                - checkbox "মার্গারেট এস গোমিস" [ref=e361]
+                - generic [ref=e362] [cursor=pointer]: মার্গারেট এস গোমিস
+              - generic [ref=e363]:
+                - checkbox "দারুল উলূম লাইব্রেরী" [ref=e364]
+                - generic [ref=e365] [cursor=pointer]: দারুল উলূম লাইব্রেরী
+              - generic [ref=e366]:
+                - checkbox "সতীশ চন্দ্র" [ref=e367]
+                - generic [ref=e368] [cursor=pointer]: সতীশ চন্দ্র
+              - generic [ref=e369]:
+                - checkbox "হযরত মাওলানা মুশতাক আহমদ চরথালভী" [ref=e370]
+                - generic [ref=e371] [cursor=pointer]: হযরত মাওলানা মুশতাক আহমদ চরথালভী
+              - generic [ref=e372]:
+                - checkbox "হযরত মাওলানা সাইয়্যিদ মুহাম্মদ মিয়াঁ(র.)" [ref=e373]
+                - generic [ref=e374] [cursor=pointer]: হযরত মাওলানা সাইয়্যিদ মুহাম্মদ মিয়াঁ(র.)
+              - generic [ref=e375]:
+                - checkbox "আর্কিওয়ার্ল্ড" [ref=e376]
+                - generic [ref=e377] [cursor=pointer]: আর্কিওয়ার্ল্ড
+              - generic [ref=e378]:
+                - checkbox "মাওঃ মুহাম্মদ হাফিজুর রহমান যশোরী" [ref=e379]
+                - generic [ref=e380] [cursor=pointer]: মাওঃ মুহাম্মদ হাফিজুর রহমান যশোরী
+              - generic [ref=e381]:
+                - checkbox "মোঃ আল মেহেদী" [ref=e382]
+                - generic [ref=e383] [cursor=pointer]: মোঃ আল মেহেদী
+              - generic [ref=e384]:
+                - checkbox "সাইয়েদ আহমাদ সাঈদ" [ref=e385]
+                - generic [ref=e386] [cursor=pointer]: সাইয়েদ আহমাদ সাঈদ
+              - generic [ref=e387]:
+                - checkbox "ড. মোঃ সাখাওয়াত হোসেন" [ref=e388]
+                - generic [ref=e389] [cursor=pointer]: ড. মোঃ সাখাওয়াত হোসেন
+              - generic [ref=e390]:
+                - checkbox "স্পন্দন এডু এন্ড কনসালটেন্সি সম্পাদনা পরিষদ" [ref=e391]
+                - generic [ref=e392] [cursor=pointer]: স্পন্দন এডু এন্ড কনসালটেন্সি সম্পাদনা পরিষদ
+              - generic [ref=e393]:
+                - checkbox "গ্যালাক্সী পাবলিকেশন" [ref=e394]
+                - generic [ref=e395] [cursor=pointer]: গ্যালাক্সী পাবলিকেশন
+              - generic [ref=e396]:
+                - checkbox "দারে ইবনে জাওযী (মিসর)" [ref=e397]
+                - generic [ref=e398] [cursor=pointer]: দারে ইবনে জাওযী (মিসর)
+              - generic [ref=e399]:
+                - checkbox "পুথিনিলয় প্রকাশনী" [ref=e400]
+                - generic [ref=e401] [cursor=pointer]: পুথিনিলয় প্রকাশনী
+              - generic [ref=e402]:
+                - checkbox "বি. টি. ভাসাভানথাপা" [ref=e403]
+                - generic [ref=e404] [cursor=pointer]: বি. টি. ভাসাভানথাপা
+              - generic [ref=e405]:
+                - checkbox "মুহাম্মাদ এইচ রশিদ" [ref=e406]
+                - generic [ref=e407] [cursor=pointer]: মুহাম্মাদ এইচ রশিদ
+              - generic [ref=e408]:
+                - checkbox "এম. মরিস মানো" [ref=e409]
+                - generic [ref=e410] [cursor=pointer]: এম. মরিস মানো
+              - generic [ref=e411]:
+                - checkbox "মাইক ম্যাকগ্রাথ" [ref=e412]
+                - generic [ref=e413] [cursor=pointer]: মাইক ম্যাকগ্রাথ
+              - generic [ref=e414]:
+                - 'checkbox "মো: সিরাজুল ইসলাম ভুইয়া" [ref=e415]'
+                - generic [ref=e416] [cursor=pointer]: "মো: সিরাজুল ইসলাম ভুইয়া"
+              - generic [ref=e417]:
+                - checkbox "হযরত মাওলানা শফীকুর রহমান নদভী রহ." [ref=e418]
+                - generic [ref=e419] [cursor=pointer]: হযরত মাওলানা শফীকুর রহমান নদভী রহ.
+              - generic [ref=e420]:
+                - checkbox "আল ফাতাহ সম্পাদনা পর্ষদ" [ref=e421]
+                - generic [ref=e422] [cursor=pointer]: আল ফাতাহ সম্পাদনা পর্ষদ
+              - generic [ref=e423]:
+                - checkbox "ইন্টারন্যাশনাল কোড কাউন্সিল" [ref=e424]
+                - generic [ref=e425] [cursor=pointer]: ইন্টারন্যাশনাল কোড কাউন্সিল
+              - generic [ref=e426]:
+                - checkbox "এম. এম. রহমান" [ref=e427]
+                - generic [ref=e428] [cursor=pointer]: এম. এম. রহমান
+              - generic [ref=e429]:
+                - checkbox "হাদিউল ইসলাম" [ref=e430]
+                - generic [ref=e431] [cursor=pointer]: হাদিউল ইসলাম
+              - generic [ref=e432]:
+                - checkbox "অশোক গার্গ" [ref=e433]
+                - generic [ref=e434] [cursor=pointer]: অশোক গার্গ
+              - generic [ref=e435]:
+                - checkbox "আই ক্লেমেন্ট" [ref=e436]
+                - generic [ref=e437] [cursor=pointer]: আই ক্লেমেন্ট
+              - generic [ref=e438]:
+                - checkbox "আল্লামা জালালুদ্দীন সুয়ূতি রহ." [ref=e439]
+                - generic [ref=e440] [cursor=pointer]: আল্লামা জালালুদ্দীন সুয়ূতি রহ.
+              - generic [ref=e441]:
+                - checkbox "এফ.এ. ডেভিস কোম্পানি" [ref=e442]
+                - generic [ref=e443] [cursor=pointer]: এফ.এ. ডেভিস কোম্পানি
+              - generic [ref=e444]:
+                - checkbox "জন ভিন্স" [ref=e445]
+                - generic [ref=e446] [cursor=pointer]: জন ভিন্স
+              - generic [ref=e447]:
+                - checkbox "ড. জহির উদ্দিন মোহাম্মাদ শরিফ" [ref=e448]
+                - generic [ref=e449] [cursor=pointer]: ড. জহির উদ্দিন মোহাম্মাদ শরিফ
+              - generic [ref=e450]:
+                - checkbox "মাওলানা মোহাম্মদ ইব্রাহীম" [ref=e451]
+                - generic [ref=e452] [cursor=pointer]: মাওলানা মোহাম্মদ ইব্রাহীম
+              - generic [ref=e453]:
+                - checkbox "সন্দীপন টীম" [ref=e454]
+                - generic [ref=e455] [cursor=pointer]: সন্দীপন টীম
+              - generic [ref=e456]:
+                - checkbox "সায়মন হেইকিন" [ref=e457]
+                - generic [ref=e458] [cursor=pointer]: সায়মন হেইকিন
+              - generic [ref=e459]:
+                - checkbox "(شيخ الاسلام مفتي محمد تقي عثماني) শাইখুল ইসলাম মুফতী মুহাম্মাদ তাকী উসমানী" [ref=e460]
+                - generic [ref=e461] [cursor=pointer]: (شيخ الاسلام مفتي محمد تقي عثماني) শাইখুল ইসলাম মুফতী মুহাম্মাদ তাকী উসমানী
+              - generic [ref=e462]:
+                - checkbox "আর.পি. সিং" [ref=e463]
+                - generic [ref=e464] [cursor=pointer]: আর.পি. সিং
+              - generic [ref=e465]:
+                - checkbox "ই. বালাগুরুসামী" [ref=e466]
+                - generic [ref=e467] [cursor=pointer]: ই. বালাগুরুসামী
+              - generic [ref=e468]:
+                - checkbox "ওয়াই ড্যানিয়েল লাইয়াং" [ref=e469]
+                - generic [ref=e470] [cursor=pointer]: ওয়াই ড্যানিয়েল লাইয়াং
+              - generic [ref=e471]:
+                - checkbox "প্রফেসর সেলিন ইয়াসমিন" [ref=e472]
+                - generic [ref=e473] [cursor=pointer]: প্রফেসর সেলিন ইয়াসমিন
+              - generic [ref=e474]:
+                - checkbox "বন্দি পাঠশালা পাবলিকেশন্স" [ref=e475]
+                - generic [ref=e476] [cursor=pointer]: বন্দি পাঠশালা পাবলিকেশন্স
+              - generic [ref=e477]:
+                - checkbox "বেহ্‌রোজ এ. ফোরোউজান" [ref=e478]
+                - generic [ref=e479] [cursor=pointer]: বেহ্‌রোজ এ. ফোরোউজান
+              - generic [ref=e480]:
+                - checkbox "মাহবুবুর রহমান (তথ্য প্রযুক্তিবিদ)" [ref=e481]
+                - generic [ref=e482] [cursor=pointer]: মাহবুবুর রহমান (তথ্য প্রযুক্তিবিদ)
+              - generic [ref=e483]:
+                - checkbox "ডা. মোঃ তানভীর ইসলাম" [ref=e484]
+                - generic [ref=e485] [cursor=pointer]: ডা. মোঃ তানভীর ইসলাম
+              - generic [ref=e486]:
+                - checkbox "ড্রিমল্যান্ড পাবলিকেশন্স" [ref=e487]
+                - generic [ref=e488] [cursor=pointer]: ড্রিমল্যান্ড পাবলিকেশন্স
+              - generic [ref=e489]:
+                - checkbox "দারুল আলামিয়্যাহ মিসর" [ref=e490]
+                - generic [ref=e491] [cursor=pointer]: দারুল আলামিয়্যাহ মিসর
+              - generic [ref=e492]:
+                - checkbox "ভিশরাম সিং" [ref=e493]
+                - generic [ref=e494] [cursor=pointer]: ভিশরাম সিং
+              - generic [ref=e495]:
+                - checkbox "সিস্কো নেটওয়্যারকিং একাডেমী প্রোগ্রাম" [ref=e496]
+                - generic [ref=e497] [cursor=pointer]: সিস্কো নেটওয়্যারকিং একাডেমী প্রোগ্রাম
+              - generic [ref=e498]:
+                - checkbox "স্প্রিঙহাউস্‌" [ref=e499]
+                - generic [ref=e500] [cursor=pointer]: স্প্রিঙহাউস্‌
+          - generic [ref=e501]:
+            - generic [ref=e502]:
+              - paragraph [ref=e503]: By Publishers
+              - generic [ref=e504]:
+                - textbox [ref=e505]
+                - img "search icon" [ref=e506]
+            - generic [ref=e507]:
+              - generic [ref=e508]:
+                - checkbox "স্প্রিংগার স্প্রিংগার" [ref=e509]
+                - generic [ref=e510] [cursor=pointer]: স্প্রিংগার
+              - generic [ref=e511]:
+                - checkbox "জায়পি ব্রাদার্স মেডিক্যাল পাবলিশার্স (ভারত)" [ref=e512]
+                - generic [ref=e513] [cursor=pointer]: জায়পি ব্রাদার্স মেডিক্যাল পাবলিশার্স (ভারত)
+              - generic [ref=e514]:
+                - checkbox "পিয়ারসন (ভারত)" [ref=e515]
+                - generic [ref=e516] [cursor=pointer]: পিয়ারসন (ভারত)
+              - generic [ref=e517]:
+                - checkbox "এলজাভিয়ার (ভারত)" [ref=e518]
+                - generic [ref=e519] [cursor=pointer]: এলজাভিয়ার (ভারত)
+              - generic [ref=e520]:
+                - checkbox "ম্যাকগ্রা হিল এডুকেশন (ভারত)" [ref=e521]
+                - generic [ref=e522] [cursor=pointer]: ম্যাকগ্রা হিল এডুকেশন (ভারত)
+              - generic [ref=e523]:
+                - checkbox "ম্যাগ্রহিল (ভারত)" [ref=e524]
+                - generic [ref=e525] [cursor=pointer]: ম্যাগ্রহিল (ভারত)
+              - generic [ref=e526]:
+                - checkbox "ইসলামিয়া কুতুবখানা" [ref=e527]
+                - generic [ref=e528] [cursor=pointer]: ইসলামিয়া কুতুবখানা
+              - generic [ref=e529]:
+                - checkbox "সিআরসি প্রেস (ভারত) সিআরসি প্রেস" [ref=e530]
+                - generic [ref=e531] [cursor=pointer]: সিআরসি প্রেস (ভারত)
+              - generic [ref=e532]:
+                - checkbox "লিপিনকট উইলিয়ামস্‌ এন্ড উইলকিন্স" [ref=e533]
+                - generic [ref=e534] [cursor=pointer]: লিপিনকট উইলিয়ামস্‌ এন্ড উইলকিন্স
+              - generic [ref=e535]:
+                - checkbox "মাকতাবাতুল ফাতাহ বাংলাদেশ" [ref=e536]
+                - generic [ref=e537] [cursor=pointer]: মাকতাবাতুল ফাতাহ বাংলাদেশ
+              - generic [ref=e538]:
+                - checkbox "লেকচার পাবলিকেশন্স লি." [ref=e539]
+                - generic [ref=e540] [cursor=pointer]: লেকচার পাবলিকেশন্স লি.
+              - generic [ref=e541]:
+                - checkbox "সিবিএস পাবলিশারস এন্ড ডিসট্রিবিউটরস (ভারত)" [ref=e542]
+                - generic [ref=e543] [cursor=pointer]: সিবিএস পাবলিশারস এন্ড ডিসট্রিবিউটরস (ভারত)
+              - generic [ref=e544]:
+                - checkbox "পাঞ্জেরী পাবলিকেশন্স লিমিটেড" [ref=e545]
+                - generic [ref=e546] [cursor=pointer]: পাঞ্জেরী পাবলিকেশন্স লিমিটেড
+              - generic [ref=e547]:
+                - checkbox "হিউমানা প্রেস" [ref=e548]
+                - generic [ref=e549] [cursor=pointer]: হিউমানা প্রেস
+              - generic [ref=e550]:
+                - checkbox "পিয়ারসন এডুকেশন (ভারত)" [ref=e551]
+                - generic [ref=e552] [cursor=pointer]: পিয়ারসন এডুকেশন (ভারত)
+              - generic [ref=e553]:
+                - checkbox "অক্সফোর্ড ইউনিভার্সিটি প্রেস (ভারত)" [ref=e554]
+                - generic [ref=e555] [cursor=pointer]: অক্সফোর্ড ইউনিভার্সিটি প্রেস (ভারত)
+              - generic [ref=e556]:
+                - checkbox "আল-কাউসার প্রকাশনী" [ref=e557]
+                - generic [ref=e558] [cursor=pointer]: আল-কাউসার প্রকাশনী
+              - generic [ref=e559]:
+                - checkbox "কওমী লাইব্রেরী" [ref=e560]
+                - generic [ref=e561] [cursor=pointer]: কওমী লাইব্রেরী
+              - generic [ref=e562]:
+                - checkbox "আউড়িস রেফারেন্স লিমিটেড" [ref=e563]
+                - generic [ref=e564] [cursor=pointer]: আউড়িস রেফারেন্স লিমিটেড
+              - generic [ref=e565]:
+                - checkbox "দি রয়েল সায়েন্টিফিক পাবলিকেশন্স" [ref=e566]
+                - generic [ref=e567] [cursor=pointer]: দি রয়েল সায়েন্টিফিক পাবলিকেশন্স
+              - generic [ref=e568]:
+                - checkbox "বি. জেইন রেগুলার (ভারত)" [ref=e569]
+                - generic [ref=e570] [cursor=pointer]: বি. জেইন রেগুলার (ভারত)
+              - generic [ref=e571]:
+                - checkbox "কুতুবখানায়ে রশিদিয়া" [ref=e572]
+                - generic [ref=e573] [cursor=pointer]: কুতুবখানায়ে রশিদিয়া
+              - generic [ref=e574]:
+                - checkbox "আল ফাতাহ পাবলিকেশন্স" [ref=e575]
+                - generic [ref=e576] [cursor=pointer]: আল ফাতাহ পাবলিকেশন্স
+              - generic [ref=e577]:
+                - checkbox "একাডেমিক প্রেস, ইন্ডিয়া" [ref=e578]
+                - generic [ref=e579] [cursor=pointer]: একাডেমিক প্রেস, ইন্ডিয়া
+              - generic [ref=e580]:
+                - checkbox "অক্ষরপত্র প্রকাশনী" [ref=e581]
+                - generic [ref=e582] [cursor=pointer]: অক্ষরপত্র প্রকাশনী
+              - generic [ref=e583]:
+                - checkbox "আশরাফিয়া বুক হাউস" [ref=e584]
+                - generic [ref=e585] [cursor=pointer]: আশরাফিয়া বুক হাউস
+              - generic [ref=e586]:
+                - checkbox "নবারুণ পাবলিকেশন" [ref=e587]
+                - generic [ref=e588] [cursor=pointer]: নবারুণ পাবলিকেশন
+              - generic [ref=e589]:
+                - checkbox "দারসুন" [ref=e590]
+                - generic [ref=e591] [cursor=pointer]: দারসুন
+              - generic [ref=e592]:
+                - checkbox "ফয়েজিয়া কুতুবখানা" [ref=e593]
+                - generic [ref=e594] [cursor=pointer]: ফয়েজিয়া কুতুবখানা
+              - generic [ref=e595]:
+                - checkbox "কল্যাণী পাবলিশারস্ (ভারত)" [ref=e596]
+                - generic [ref=e597] [cursor=pointer]: কল্যাণী পাবলিশারস্ (ভারত)
+              - generic [ref=e598]:
+                - checkbox "আল-আকসা লাইব্রেরী" [ref=e599]
+                - generic [ref=e600] [cursor=pointer]: আল-আকসা লাইব্রেরী
+              - generic [ref=e601]:
+                - checkbox "সেনগেজ (ভারত)" [ref=e602]
+                - generic [ref=e603] [cursor=pointer]: সেনগেজ (ভারত)
+              - generic [ref=e604]:
+                - checkbox "এস চাঁদ পাবলিশিং (ভারত)" [ref=e605]
+                - generic [ref=e606] [cursor=pointer]: এস চাঁদ পাবলিশিং (ভারত)
+              - generic [ref=e607]:
+                - checkbox "মার্টিন ডিনাইট" [ref=e608]
+                - generic [ref=e609] [cursor=pointer]: মার্টিন ডিনাইট
+              - generic [ref=e610]:
+                - checkbox "মস্‌বি" [ref=e611]
+                - generic [ref=e612] [cursor=pointer]: মস্‌বি
+              - generic [ref=e613]:
+                - checkbox "টেকনিক্যাল প্রকাশনী" [ref=e614]
+                - generic [ref=e615] [cursor=pointer]: টেকনিক্যাল প্রকাশনী
+              - generic [ref=e616]:
+                - checkbox "নিউ এজ ইন্টারন্যাশনাল পাবলিশার্স (ভারত)" [ref=e617]
+                - generic [ref=e618] [cursor=pointer]: নিউ এজ ইন্টারন্যাশনাল পাবলিশার্স (ভারত)
+              - generic [ref=e619]:
+                - checkbox "টেইলর এন্ড ফ্রান্সিস টেইলর এন্ড ফ্রান্সিস" [ref=e620]
+                - generic [ref=e621] [cursor=pointer]: টেইলর এন্ড ফ্রান্সিস
+              - generic [ref=e622]:
+                - checkbox "উইলি ইন্ডিয়া প্রাইভেট লিমিটেড" [ref=e623]
+                - generic [ref=e624] [cursor=pointer]: উইলি ইন্ডিয়া প্রাইভেট লিমিটেড
+              - generic [ref=e625]:
+                - checkbox "আনোয়ার লাইব্রেরী" [ref=e626]
+                - generic [ref=e627] [cursor=pointer]: আনোয়ার লাইব্রেরী
+              - generic [ref=e628]:
+                - checkbox "মাকতাবাতুল হিজায" [ref=e629]
+                - generic [ref=e630] [cursor=pointer]: মাকতাবাতুল হিজায
+              - generic [ref=e631]:
+                - checkbox "উইলি-ব্ল্যাকওয়েল" [ref=e632]
+                - generic [ref=e633] [cursor=pointer]: উইলি-ব্ল্যাকওয়েল
+              - generic [ref=e634]:
+                - checkbox "লেকচার পাবলিকেশন্স লি.(মাদ্রাসা)" [ref=e635]
+                - generic [ref=e636] [cursor=pointer]: লেকচার পাবলিকেশন্স লি.(মাদ্রাসা)
+              - generic [ref=e637]:
+                - checkbox "বি.জেইন পাবলিশার্স (ভারত)" [ref=e638]
+                - generic [ref=e639] [cursor=pointer]: বি.জেইন পাবলিশার্স (ভারত)
+              - generic [ref=e640]:
+                - checkbox "মাদানী কুতুবখানা" [ref=e641]
+                - generic [ref=e642] [cursor=pointer]: মাদানী কুতুবখানা
+              - generic [ref=e643]:
+                - checkbox "ক্যামব্রিজ ইউনিভার্সিটি প্রেস (ভারত)" [ref=e644]
+                - generic [ref=e645] [cursor=pointer]: ক্যামব্রিজ ইউনিভার্সিটি প্রেস (ভারত)
+              - generic [ref=e646]:
+                - checkbox "পুথিনিলয় প্রকাশনী" [ref=e647]
+                - generic [ref=e648] [cursor=pointer]: পুথিনিলয় প্রকাশনী
+              - generic [ref=e649]:
+                - checkbox "বাটারওয়ার্থ-হেইনম্যান লিমিটেড" [ref=e650]
+                - generic [ref=e651] [cursor=pointer]: বাটারওয়ার্থ-হেইনম্যান লিমিটেড
+              - generic [ref=e652]:
+                - checkbox "জন উইলি এন্ড সন্স" [ref=e653]
+                - generic [ref=e654] [cursor=pointer]: জন উইলি এন্ড সন্স
+              - generic [ref=e655]:
+                - checkbox "ডব্লিউ বি সান্ডার্স কোং." [ref=e656]
+                - generic [ref=e657] [cursor=pointer]: ডব্লিউ বি সান্ডার্স কোং.
+              - generic [ref=e658]:
+                - checkbox "مكتبة الحراء (মাকতাবাতুল হেরা)" [ref=e659]
+                - generic [ref=e660] [cursor=pointer]: مكتبة الحراء (মাকতাবাতুল হেরা)
+              - generic [ref=e661]:
+                - checkbox "উইলি ইন্ডিয়া" [ref=e662]
+                - generic [ref=e663] [cursor=pointer]: উইলি ইন্ডিয়া
+              - generic [ref=e664]:
+                - checkbox "দিগন্ত প্রকাশনী" [ref=e665]
+                - generic [ref=e666] [cursor=pointer]: দিগন্ত প্রকাশনী
+              - generic [ref=e667]:
+                - checkbox "এলজাভিয়ার সায়েন্স" [ref=e668]
+                - generic [ref=e669] [cursor=pointer]: এলজাভিয়ার সায়েন্স
+              - generic [ref=e670]:
+                - checkbox [ref=e671]
+                - generic [ref=e672] [cursor=pointer]: সিআরসি প্রেস
+              - generic [ref=e673]:
+                - checkbox "প্রেনটিস হল (ভারত)" [ref=e674]
+                - generic [ref=e675] [cursor=pointer]: প্রেনটিস হল (ভারত)
+              - generic [ref=e676]:
+                - checkbox "শিশু ভুবন" [ref=e677]
+                - generic [ref=e678] [cursor=pointer]: শিশু ভুবন
+              - generic [ref=e679]:
+                - checkbox [ref=e680]
+                - generic [ref=e681] [cursor=pointer]: স্প্রিংগার
+              - generic [ref=e682]:
+                - checkbox "حكيم الامت پركاشني (হাকীমুল উম্মত প্রকাশনী)" [ref=e683]
+                - generic [ref=e684] [cursor=pointer]: حكيم الامت پركاشني (হাকীমুল উম্মত প্রকাশনী)
+              - generic [ref=e685]:
+                - checkbox "এফ.এ. ডেভিস কোম্পানি (ভারত)" [ref=e686]
+                - generic [ref=e687] [cursor=pointer]: এফ.এ. ডেভিস কোম্পানি (ভারত)
+              - generic [ref=e688]:
+                - checkbox "দারুল হাদীস মিসর (ভারত)" [ref=e689]
+                - generic [ref=e690] [cursor=pointer]: দারুল হাদীস মিসর (ভারত)
+              - generic [ref=e691]:
+                - checkbox "সেনগেজ লার্ণিং" [ref=e692]
+                - generic [ref=e693] [cursor=pointer]: সেনগেজ লার্ণিং
+              - generic [ref=e694]:
+                - checkbox "ডিলমার সেনগেজ" [ref=e695]
+                - generic [ref=e696] [cursor=pointer]: ডিলমার সেনগেজ
+              - generic [ref=e697]:
+                - checkbox "বিকাশ পাবলিশিং হাউজ" [ref=e698]
+                - generic [ref=e699] [cursor=pointer]: বিকাশ পাবলিশিং হাউজ
+              - generic [ref=e700]:
+                - checkbox "রুটলেজ" [ref=e701]
+                - generic [ref=e702] [cursor=pointer]: রুটলেজ
+              - generic [ref=e703]:
+                - checkbox "মল্লিক ব্রাদার্স" [ref=e704]
+                - generic [ref=e705] [cursor=pointer]: মল্লিক ব্রাদার্স
+              - generic [ref=e706]:
+                - checkbox "সাউন্ডারস লিঃ" [ref=e707]
+                - generic [ref=e708] [cursor=pointer]: সাউন্ডারস লিঃ
+              - generic [ref=e709]:
+                - checkbox "গুলশান পাবলিকেশন্স" [ref=e710]
+                - generic [ref=e711] [cursor=pointer]: গুলশান পাবলিকেশন্স
+              - generic [ref=e712]:
+                - checkbox "বীরকাউসার" [ref=e713]
+                - generic [ref=e714] [cursor=pointer]: বীরকাউসার
+              - generic [ref=e715]:
+                - checkbox "প্রেনটিস হল ইন্ডিয়া লার্নিং প্রাইভেট লিমিটেড" [ref=e716]
+                - generic [ref=e717] [cursor=pointer]: প্রেনটিস হল ইন্ডিয়া লার্নিং প্রাইভেট লিমিটেড
+              - generic [ref=e718]:
+                - checkbox "চার্চিল লিভিংস্টোন" [ref=e719]
+                - generic [ref=e720] [cursor=pointer]: চার্চিল লিভিংস্টোন
+              - generic [ref=e721]:
+                - checkbox "ওয়ান্ডার ওয়ার্ল্ড" [ref=e722]
+                - generic [ref=e723] [cursor=pointer]: ওয়ান্ডার ওয়ার্ল্ড
+              - generic [ref=e724]:
+                - checkbox "মাকতাবাতুত তাকওয়া" [ref=e725]
+                - generic [ref=e726] [cursor=pointer]: মাকতাবাতুত তাকওয়া
+              - generic [ref=e727]:
+                - checkbox "জন্স এন্ড বার্টলেট" [ref=e728]
+                - generic [ref=e729] [cursor=pointer]: জন্স এন্ড বার্টলেট
+              - generic [ref=e730]:
+                - checkbox "বেফাকুল মাদারিসিল আরাবিয়া বাংলাদেশ" [ref=e731]
+                - generic [ref=e732] [cursor=pointer]: বেফাকুল মাদারিসিল আরাবিয়া বাংলাদেশ
+              - generic [ref=e733]:
+                - checkbox "মুজাহিদ প্রকাশনী" [ref=e734]
+                - generic [ref=e735] [cursor=pointer]: মুজাহিদ প্রকাশনী
+              - generic [ref=e736]:
+                - checkbox "পিএইচআই লার্নিং (ভারত)" [ref=e737]
+                - generic [ref=e738] [cursor=pointer]: পিএইচআই লার্নিং (ভারত)
+              - generic [ref=e739]:
+                - checkbox "কারেন্ট বুকস ইন্টারন্যাশানাল (ভারত)" [ref=e740]
+                - generic [ref=e741] [cursor=pointer]: কারেন্ট বুকস ইন্টারন্যাশানাল (ভারত)
+              - generic [ref=e742]:
+                - checkbox "বি পি বি" [ref=e743]
+                - generic [ref=e744] [cursor=pointer]: বি পি বি
+              - generic [ref=e745]:
+                - checkbox "এস চাঁদ এন্ড কম্পানি" [ref=e746]
+                - generic [ref=e747] [cursor=pointer]: এস চাঁদ এন্ড কম্পানি
+              - generic [ref=e748]:
+                - checkbox "টেন মিনিট স্কুল" [ref=e749]
+                - generic [ref=e750] [cursor=pointer]: টেন মিনিট স্কুল
+              - generic [ref=e751]:
+                - checkbox "প্রাইম পাবলিকেশনস্" [ref=e752]
+                - generic [ref=e753] [cursor=pointer]: প্রাইম পাবলিকেশনস্
+              - generic [ref=e754]:
+                - checkbox "জমজম কুতুবখানা" [ref=e755]
+                - generic [ref=e756] [cursor=pointer]: জমজম কুতুবখানা
+              - generic [ref=e757]:
+                - checkbox "টেকনিক পাবলিকেশন" [ref=e758]
+                - generic [ref=e759] [cursor=pointer]: টেকনিক পাবলিকেশন
+              - generic [ref=e760]:
+                - checkbox "দি পার্থেনন পাবলিশিং" [ref=e761]
+                - generic [ref=e762] [cursor=pointer]: দি পার্থেনন পাবলিশিং
+              - generic [ref=e763]:
+                - checkbox "বি. জেইন লার্জ প্রিন্ট (ভারত)" [ref=e764]
+                - generic [ref=e765] [cursor=pointer]: বি. জেইন লার্জ প্রিন্ট (ভারত)
+              - generic [ref=e766]:
+                - checkbox "ও’রেলী (ভারত)" [ref=e767]
+                - generic [ref=e768] [cursor=pointer]: ও’রেলী (ভারত)
+              - generic [ref=e769]:
+                - checkbox "ইনফর্মা হেল্থকেয়ার" [ref=e770]
+                - generic [ref=e771] [cursor=pointer]: ইনফর্মা হেল্থকেয়ার
+              - generic [ref=e772]:
+                - checkbox "জ্ঞানগৃহ প্রকাশনী" [ref=e773]
+                - generic [ref=e774] [cursor=pointer]: জ্ঞানগৃহ প্রকাশনী
+              - generic [ref=e775]:
+                - checkbox "কিউএনএ পাবলিকেশন" [ref=e776]
+                - generic [ref=e777] [cursor=pointer]: কিউএনএ পাবলিকেশন
+              - generic [ref=e778]:
+                - checkbox "ক্যাপটেন পাবলিশার্স (বাংলাবাজার)" [ref=e779]
+                - generic [ref=e780] [cursor=pointer]: ক্যাপটেন পাবলিশার্স (বাংলাবাজার)
+              - generic [ref=e781]:
+                - checkbox [ref=e782]
+                - generic [ref=e783] [cursor=pointer]: টেইলর এন্ড ফ্রান্সিস
+              - generic [ref=e784]:
+                - checkbox "নূর ফিজিক্স ক্রিয়েটিভ পাবলিশার্স" [ref=e785]
+                - generic [ref=e786] [cursor=pointer]: নূর ফিজিক্স ক্রিয়েটিভ পাবলিশার্স
+              - generic [ref=e787]:
+                - checkbox "মরগান কাউফম্যান পাবলিশার্স ইন" [ref=e788]
+                - generic [ref=e789] [cursor=pointer]: মরগান কাউফম্যান পাবলিশার্স ইন
+              - generic [ref=e790]:
+                - checkbox "মার্সেল ডেকার" [ref=e791]
+                - generic [ref=e792] [cursor=pointer]: মার্সেল ডেকার
+              - generic [ref=e793]:
+                - checkbox "কনজুমেট পাবলিকেশন্স" [ref=e794]
+                - generic [ref=e795] [cursor=pointer]: কনজুমেট পাবলিকেশন্স
+              - generic [ref=e796]:
+                - checkbox "মাহমুদ পাবলিকেশন্স" [ref=e797]
+                - generic [ref=e798] [cursor=pointer]: মাহমুদ পাবলিকেশন্স
+              - generic [ref=e799]:
+                - checkbox "এডুলাইট পাবলিকেশন্স লি." [ref=e800]
+                - generic [ref=e801] [cursor=pointer]: এডুলাইট পাবলিকেশন্স লি.
+              - generic [ref=e802]:
+                - checkbox "এনসিবিএ (ভারত)" [ref=e803]
+                - generic [ref=e804] [cursor=pointer]: এনসিবিএ (ভারত)
+              - generic [ref=e805]:
+                - checkbox "ওয়াল্টার্স ক্লুঅয়ের" [ref=e806]
+                - generic [ref=e807] [cursor=pointer]: ওয়াল্টার্স ক্লুঅয়ের
+          - generic [ref=e808]:
+            - paragraph [ref=e810]: Price
+            - generic [ref=e812]:
+              - generic [ref=e813]:
+                - generic [ref=e814]:
+                  - generic [ref=e819]: ৳0
+                  - generic [ref=e820]: ৳101 600
+                - generic [ref=e821]:
+                  - generic [ref=e823]: "0"
+                  - generic [ref=e829]: 25 400
+                  - generic [ref=e835]: 50 800
+                  - generic [ref=e841]: 76 200
+                  - generic [ref=e847]: 101 600
+              - textbox [ref=e851]: 0to101600
+          - generic [ref=e852]:
+            - generic [ref=e853]:
+              - paragraph [ref=e854]: Languages
+              - generic [ref=e855]:
+                - textbox [ref=e856]
+                - img "search icon" [ref=e857]
+            - generic [ref=e858]:
+              - generic [ref=e859]:
+                - checkbox "ইংরেজি" [ref=e860]
+                - generic [ref=e861] [cursor=pointer]: ইংরেজি
+              - generic [ref=e862]:
+                - checkbox "বাংলা" [ref=e863]
+                - generic [ref=e864] [cursor=pointer]: বাংলা
+              - generic [ref=e865]:
+                - checkbox "আরবী" [ref=e866]
+                - generic [ref=e867] [cursor=pointer]: আরবী
+              - generic [ref=e868]:
+                - checkbox "বাংলা ও আরবী" [ref=e869]
+                - generic [ref=e870] [cursor=pointer]: বাংলা ও আরবী
+              - generic [ref=e871]:
+                - checkbox "উর্দু" [ref=e872]
+                - generic [ref=e873] [cursor=pointer]: উর্দু
+              - generic [ref=e874]:
+                - checkbox "বাংলা ও ইংরেজী" [ref=e875]
+                - generic [ref=e876] [cursor=pointer]: বাংলা ও ইংরেজী
+              - generic [ref=e877]:
+                - checkbox "আরবী, উর্দু" [ref=e878]
+                - generic [ref=e879] [cursor=pointer]: আরবী, উর্দু
+              - generic [ref=e880]:
+                - checkbox "বাংলা, আরবী, উর্দু" [ref=e881]
+                - generic [ref=e882] [cursor=pointer]: বাংলা, আরবী, উর্দু
+              - generic [ref=e883]:
+                - checkbox "ফার্সি" [ref=e884]
+                - generic [ref=e885] [cursor=pointer]: ফার্সি
+              - generic [ref=e886]:
+                - checkbox "বাংলা, ইংরেজী, আরবি" [ref=e887]
+                - generic [ref=e888] [cursor=pointer]: বাংলা, ইংরেজী, আরবি
+          - generic [ref=e889]:
+            - paragraph [ref=e891]: Discount
+            - generic [ref=e893]:
+              - generic [ref=e894]:
+                - generic [ref=e895]:
+                  - generic [ref=e900]: 0%
+                  - generic [ref=e901]: 65%
+                - generic [ref=e902]:
+                  - generic [ref=e904]: "0"
+                  - generic [ref=e910]: "16"
+                  - generic [ref=e916]: "33"
+                  - generic [ref=e922]: "49"
+                  - generic [ref=e928]: "65"
+              - textbox [ref=e932]: 0to65
+          - generic [ref=e933]:
+            - paragraph [ref=e935]: Ratings
+            - generic [ref=e936]:
+              - generic [ref=e937]:
+                - checkbox "star icon for rating 5 star icon for rating-5 star icon for rating-5 star icon for rating-5 star icon for rating-5" [ref=e938]
+                - generic [ref=e939] [cursor=pointer]:
+                  - img "star icon for rating 5" [ref=e940]
+                  - img "star icon for rating-5" [ref=e941]
+                  - img "star icon for rating-5" [ref=e942]
+                  - img "star icon for rating-5" [ref=e943]
+                  - img "star icon for rating-5" [ref=e944]
+              - generic [ref=e945]:
+                - checkbox "star icon for rating-4 star icon for rating-4 star icon for rating-4 star icon for rating-4" [ref=e946]
+                - generic [ref=e947] [cursor=pointer]:
+                  - img "star icon for rating-4" [ref=e948]
+                  - img "star icon for rating-4" [ref=e949]
+                  - img "star icon for rating-4" [ref=e950]
+                  - img "star icon for rating-4" [ref=e951]
+              - generic [ref=e952]:
+                - checkbox "star icon for rating-3 star icon for rating-3 star icon for rating-3" [ref=e953]
+                - generic [ref=e954] [cursor=pointer]:
+                  - img "star icon for rating-3" [ref=e955]
+                  - img "star icon for rating-3" [ref=e956]
+                  - img "star icon for rating-3" [ref=e957]
+              - generic [ref=e958]:
+                - checkbox "star icon for rating-2 star icon for rating-2" [ref=e959]
+                - generic [ref=e960] [cursor=pointer]:
+                  - img "star icon for rating-2" [ref=e961]
+                  - img "star icon for rating-2" [ref=e962]
+              - generic [ref=e963]:
+                - checkbox "star icon for rating-1" [ref=e964]
+                - img "star icon for rating-1" [ref=e966] [cursor=pointer]
+      - generic [ref=e967]:
+        - generic [ref=e968]:
+          - paragraph [ref=e969]: Related Products
+          - link "View All" [ref=e970] [cursor=pointer]:
+            - /url: https://www.rokomari.com/product/category/2095/
+        - generic [ref=e971]:
+          - link "Matador University Backpack (MA06) - Black image Matador University Backpack (MA06) - Black Matador Backpack TK. 1,380 (8% Off)" [ref=e972] [cursor=pointer]:
+            - /url: /product/182785/matador-university-backpack-ma06-black?ref=toi
+            - img "Matador University Backpack (MA06) - Black image" [ref=e973]
+            - generic [ref=e974]:
+              - paragraph [ref=e975]: Matador University Backpack (MA06) - Black
+              - paragraph [ref=e976]: Matador Backpack
+              - paragraph [ref=e977]: TK. 1,380 (8% Off)
+          - link "Matador i-teen Geometry Box image Matador i-teen Geometry Box Matador Group TK. 167" [ref=e978] [cursor=pointer]:
+            - /url: /product/176069/matador-i-teen-geometry-box?ref=toi
+            - img "Matador i-teen Geometry Box image" [ref=e979]
+            - generic [ref=e980]:
+              - paragraph [ref=e981]: Matador i-teen Geometry Box
+              - paragraph [ref=e982]: Matador Group
+              - paragraph [ref=e983]: TK. 167
+          - link "GQ Genius Ball Pen Black Ink - 10 Pcs image GQ Genius Ball Pen Black Ink - 10 Pcs GQ TK. 49 (2% Off)" [ref=e984] [cursor=pointer]:
+            - /url: /product/175130/gq-genius-ball-pen-black-ink-10-pcs?ref=toi
+            - img "GQ Genius Ball Pen Black Ink - 10 Pcs image" [ref=e985]
+            - generic [ref=e986]:
+              - paragraph [ref=e987]: GQ Genius Ball Pen Black Ink - 10 Pcs
+              - paragraph [ref=e988]: GQ
+              - paragraph [ref=e989]: TK. 49 (2% Off)
+          - link "Matador All Time Scale 30cm 1Pcs image Matador All Time Scale 30cm 1Pcs Matador Group TK. 22" [ref=e990] [cursor=pointer]:
+            - /url: /product/184770/matador-all-time-scale-30cm-1pcs?ref=toi
+            - img "Matador All Time Scale 30cm 1Pcs image" [ref=e991]
+            - generic [ref=e992]:
+              - paragraph [ref=e993]: Matador All Time Scale 30cm 1Pcs
+              - paragraph [ref=e994]: Matador Group
+              - paragraph [ref=e995]: TK. 22
+          - link "Top - Janani Liner Bag - 01 Pcs (Any Color End Binding) image Top - Janani Liner Bag - 01 Pcs (Any Color End Binding) TOP - Pen ‍and Stationery Industries Ltd. TK. 34 (15% Off)" [ref=e996] [cursor=pointer]:
+            - /url: /product/183364/top-janani-liner-bag-01-pcs-any-color-end-binding?ref=toi
+            - img "Top - Janani Liner Bag - 01 Pcs (Any Color End Binding) image" [ref=e997]
+            - generic [ref=e998]:
+              - paragraph [ref=e999]: Top - Janani Liner Bag - 01 Pcs (Any Color End Binding)
+              - paragraph [ref=e1000]: TOP - Pen ‍and Stationery Industries Ltd.
+              - paragraph [ref=e1001]: TK. 34 (15% Off)
+          - link "Matador Genius HB Pencils 1 Pack 12 pcs image Matador Genius HB Pencils 1 Pack 12 pcs Matador Group TK. 126" [ref=e1002] [cursor=pointer]:
+            - /url: /product/184769/matador-genius-hb-pencils-1-pack-12-pcs?ref=toi
+            - img "Matador Genius HB Pencils 1 Pack 12 pcs image" [ref=e1003]
+            - generic [ref=e1004]:
+              - paragraph [ref=e1005]: Matador Genius HB Pencils 1 Pack 12 pcs
+              - paragraph [ref=e1006]: Matador Group
+              - paragraph [ref=e1007]: TK. 126
+          - link "Matador Twinkle Eraser - 1 Box (24 Pcs) image Matador Twinkle Eraser - 1 Box (24 Pcs) Matador Group TK. 256 (11% Off)" [ref=e1008] [cursor=pointer]:
+            - /url: /product/184780/matador-twinkle-eraser-1-box-24-pcs?ref=toi
+            - img "Matador Twinkle Eraser - 1 Box (24 Pcs) image" [ref=e1009]
+            - generic [ref=e1010]:
+              - paragraph [ref=e1011]: Matador Twinkle Eraser - 1 Box (24 Pcs)
+              - paragraph [ref=e1012]: Matador Group
+              - paragraph [ref=e1013]: TK. 256 (11% Off)
+          - link "Back To School - Stapled Notebook [96 Page] [Thin Foldable Cover] image Back To School - Stapled Notebook [96 Page] [Thin Foldable Cover] - RV_0068 Reverie Publications TK. 25 (16% Off)" [ref=e1014] [cursor=pointer]:
+            - /url: /product/126875/back-to-school-stapled-notebook-96-page-thin-foldable-cover?ref=toi
+            - img "Back To School - Stapled Notebook [96 Page] [Thin Foldable Cover] image" [ref=e1015]
+            - generic [ref=e1016]:
+              - paragraph [ref=e1017]: Back To School - Stapled Notebook [96 Page] [Thin Foldable Cover] - RV_0068
+              - paragraph [ref=e1018]: Reverie Publications
+              - paragraph [ref=e1019]: TK. 25 (16% Off)
+          - link "Top Demai 300 Page Khata - 01 Pcs (Any Style and Color) image Top Demai 300 Page Khata - 01 Pcs (Any Style and Color) TOP - Pen ‍and Stationery Industries Ltd. TK. 80 (3% Off)" [ref=e1020] [cursor=pointer]:
+            - /url: /product/182584/top-demai-300-page-khata-01-pcs-any-style-and-color?ref=toi
+            - img "Top Demai 300 Page Khata - 01 Pcs (Any Style and Color) image" [ref=e1021]
+            - generic [ref=e1022]:
+              - paragraph [ref=e1023]: Top Demai 300 Page Khata - 01 Pcs (Any Style and Color)
+              - paragraph [ref=e1024]: TOP - Pen ‍and Stationery Industries Ltd.
+              - paragraph [ref=e1025]: TK. 80 (3% Off)
+          - link "Top Choco Choco Ball Point Pen Black Ink image Top Choco Choco Ball Point Pen Black Ink - (12 Pcs) TOP - Pen ‍and Stationery Industries Ltd. TK. 70" [ref=e1026] [cursor=pointer]:
+            - /url: /product/182533/top-choco-choco-ball-point-pen-black-ink?ref=toi
+            - img "Top Choco Choco Ball Point Pen Black Ink image" [ref=e1027]
+            - generic [ref=e1028]:
+              - paragraph [ref=e1029]: Top Choco Choco Ball Point Pen Black Ink - (12 Pcs)
+              - paragraph [ref=e1030]: TOP - Pen ‍and Stationery Industries Ltd.
+              - paragraph [ref=e1031]: TK. 70
+    - generic [ref=e1032]:
+      - generic [ref=e1034]:
+        - link "ইঞ্জিনিয়ারিং" [ref=e1035] [cursor=pointer]:
+          - /url: /product/category/90
+        - link "মেডিকেল" [ref=e1036] [cursor=pointer]:
+          - /url: /product/category/91
+        - link "স্কুল" [ref=e1037] [cursor=pointer]:
+          - /url: /product/category/1337
+        - link "একাদশ-দ্বাদশ শ্রেণি (উচ্চ মাধ্যমিক/এইচএসসি)" [ref=e1038] [cursor=pointer]:
+          - /url: /product/category/1349
+        - link "ইংলিশ মিডিয়াম" [ref=e1039] [cursor=pointer]:
+          - /url: /product/category/1353
+        - link "কারিগরি" [ref=e1040] [cursor=pointer]:
+          - /url: /product/category/1354
+        - 'link "উন্মুক্ত: এসএসসি ও এইচএসসি সমমান" [ref=e1041] [cursor=pointer]':
+          - /url: /product/category/2108
+        - link "মাদ্রাসার বই" [ref=e1042] [cursor=pointer]:
+          - /url: /product/category/2238
+      - generic [ref=e1043]:
+        - generic [ref=e1044]:
+          - navigation "breadcrumb" [ref=e1045]:
+            - list [ref=e1046]:
+              - link "বই" [ref=e1047] [cursor=pointer]:
+                - /url: /book/category/1/
+              - generic [ref=e1048]: ">"
+              - listitem [ref=e1049]: একাডেমিক
+          - generic [ref=e1051]:
+            - heading "Academic" [level=1] [ref=e1052]
+            - paragraph [ref=e1053]: (Showing 1 to 60 of 10000 items)
+        - generic [ref=e1055]:
+          - generic "সহজ Biology (নবম - দশম শ্রেণি) জুন্নুরাইন খান" [ref=e1056]:
+            - link "Sohoj Biology (Class 9-10) image সহজ Biology (নবম - দশম শ্রেণি) জুন্নুরাইন খান      (345) Product in stock TK. 300" [ref=e1058] [cursor=pointer]:
+              - /url: /book/441806/sohoj-biology-class-9-10
+              - img "Sohoj Biology (Class 9-10) image" [ref=e1060]
+              - generic [ref=e1062]:
+                - heading "সহজ Biology (নবম - দশম শ্রেণি)" [level=4] [ref=e1063]
+                - paragraph [ref=e1064]: জুন্নুরাইন খান
+                - generic [ref=e1065]:
+                  - generic [ref=e1066]: 
+                  - generic [ref=e1067]: 
+                  - generic [ref=e1068]: 
+                  - generic [ref=e1069]: 
+                  - generic [ref=e1070]: 
+                  - text: (345)
+                - paragraph [ref=e1071]: Product in stock
+                - paragraph [ref=e1072]: TK. 300
+          - generic "কিউএনএ এইচএসসি বায়োলজি নোটস কিউএনএ পাবলিকেশন্স লেখক পরিষদ" [ref=e1073]:
+            - link "QNA HSC Biology Notes image 15 কিউএনএ এইচএসসি বায়োলজি নোটস কিউএনএ পাবলিকেশন্স লেখক পরিষদ      (330) Product in stock TK. 520 TK. 442" [ref=e1075] [cursor=pointer]:
+              - /url: /book/477234/qna-hsc-biology-notes
+              - generic [ref=e1076]:
+                - img "QNA HSC Biology Notes image" [ref=e1077]
+                - paragraph [ref=e1079]: "15"
+              - generic [ref=e1081]:
+                - heading "কিউএনএ এইচএসসি বায়োলজি নোটস" [level=4] [ref=e1082]
+                - paragraph [ref=e1083]: কিউএনএ পাবলিকেশন্স লেখক পরিষদ
+                - generic [ref=e1084]:
+                  - generic [ref=e1085]: 
+                  - generic [ref=e1086]: 
+                  - generic [ref=e1087]: 
+                  - generic [ref=e1088]: 
+                  - generic [ref=e1089]: 
+                  - text: (330)
+                - paragraph [ref=e1090]: Product in stock
+                - paragraph [ref=e1091]: TK. 520 TK. 442
+          - generic "কিউএনএ সমন্বিত বাংলা ২য় পত্র কিউএনএ পাবলিকেশন্স লেখক পরিষদ" [ref=e1092]:
+            - link "QNA Combined Bangla 2nd Paper image 15 কিউএনএ সমন্বিত বাংলা ২য় পত্র কিউএনএ পাবলিকেশন্স লেখক পরিষদ      (132) Product in stock TK. 340 TK. 289" [ref=e1094] [cursor=pointer]:
+              - /url: /book/486859/qna-combined-bangla-2nd-paper
+              - generic [ref=e1095]:
+                - img "QNA Combined Bangla 2nd Paper image" [ref=e1096]
+                - paragraph [ref=e1098]: "15"
+              - generic [ref=e1100]:
+                - heading "কিউএনএ সমন্বিত বাংলা ২য় পত্র" [level=4] [ref=e1101]
+                - paragraph [ref=e1102]: কিউএনএ পাবলিকেশন্স লেখক পরিষদ
+                - generic [ref=e1103]:
+                  - generic [ref=e1104]: 
+                  - generic [ref=e1105]: 
+                  - generic [ref=e1106]: 
+                  - generic [ref=e1107]: 
+                  - generic [ref=e1108]: 
+                  - text: (132)
+                - paragraph [ref=e1109]: Product in stock
+                - paragraph [ref=e1110]: TK. 340 TK. 289
+          - generic "শামায়েলে তিরমিজি [নবিজি এমন ছিলেন] (দুই খণ্ড) ইমাম আবু ঈসা মুহাম্মদ ইবনে ঈসা আত তিরমিযী (রহঃ)" [ref=e1111]:
+            - link "Shamayele Tirmizi [Nobizi amon silen] image 48 শামায়েলে তিরমিজি [নবিজি এমন ছিলেন] (দুই খণ্ড) ইমাম আবু ঈসা মুহাম্মদ ইবনে ঈসা আত তিরমিযী (রহঃ)      (49) Product in stock TK. 1,100 TK. 569" [ref=e1113] [cursor=pointer]:
+              - /url: /book/270747/shamayele-tirmizi-nobizi-amon-silen
+              - generic [ref=e1114]:
+                - img "Shamayele Tirmizi [Nobizi amon silen] image" [ref=e1115]
+                - paragraph [ref=e1117]: "48"
+              - generic [ref=e1119]:
+                - heading "শামায়েলে তিরমিজি [নবিজি এমন ছিলেন] (দুই খণ্ড)" [level=4] [ref=e1120]
+                - paragraph [ref=e1121]: ইমাম আবু ঈসা মুহাম্মদ ইবনে ঈসা আত তিরমিযী (রহঃ)
+                - generic [ref=e1122]:
+                  - generic [ref=e1123]: 
+                  - generic [ref=e1124]: 
+                  - generic [ref=e1125]: 
+                  - generic [ref=e1126]: 
+                  - generic [ref=e1127]: 
+                  - text: (49)
+                - paragraph [ref=e1128]: Product in stock
+                - paragraph [ref=e1129]: TK. 1,100 TK. 569
+          - generic "HSC জৈবযৌগের ইন্টারেক্টিভ ম্যাপ জাহিদুল ইসলাম" [ref=e1130]:
+            - link "HSC Interactive map of organic compounds image 19 HSC জৈবযৌগের ইন্টারেক্টিভ ম্যাপ জাহিদুল ইসলাম      (1181) Product in stock TK. 270 TK. 219" [ref=e1132] [cursor=pointer]:
+              - /url: /book/212338/hsc-interactive-map-of-organic-compounds
+              - generic [ref=e1133]:
+                - img "HSC Interactive map of organic compounds image" [ref=e1134]
+                - paragraph [ref=e1136]: "19"
+              - generic [ref=e1138]:
+                - heading "HSC জৈবযৌগের ইন্টারেক্টিভ ম্যাপ" [level=4] [ref=e1139]
+                - paragraph [ref=e1140]: জাহিদুল ইসলাম
+                - generic [ref=e1141]:
+                  - generic [ref=e1142]: 
+                  - generic [ref=e1143]: 
+                  - generic [ref=e1144]: 
+                  - generic [ref=e1145]: 
+                  - generic [ref=e1146]: 
+                  - text: (1181)
+                - paragraph [ref=e1147]: Product in stock
+                - paragraph [ref=e1148]: TK. 270 TK. 219
+          - generic "কিউএনএ এইচএসসি আইসিটি নোটস কিউএনএ পাবলিকেশন্স লেখক পরিষদ" [ref=e1149]:
+            - link "QNA HSC ICT Notes image 15 কিউএনএ এইচএসসি আইসিটি নোটস কিউএনএ পাবলিকেশন্স লেখক পরিষদ      (77) Product in stock TK. 500 TK. 425" [ref=e1151] [cursor=pointer]:
+              - /url: /book/514393/qna-hsc-ict-notes
+              - generic [ref=e1152]:
+                - img "QNA HSC ICT Notes image" [ref=e1153]
+                - paragraph [ref=e1155]: "15"
+              - generic [ref=e1157]:
+                - heading "কিউএনএ এইচএসসি আইসিটি নোটস" [level=4] [ref=e1158]
+                - paragraph [ref=e1159]: কিউএনএ পাবলিকেশন্স লেখক পরিষদ
+                - generic [ref=e1160]:
+                  - generic [ref=e1161]: 
+                  - generic [ref=e1162]: 
+                  - generic [ref=e1163]: 
+                  - generic [ref=e1164]: 
+                  - generic [ref=e1165]: 
+                  - text: (77)
+                - paragraph [ref=e1166]: Product in stock
+                - paragraph [ref=e1167]: TK. 500 TK. 425
+          - generic "এসো আরবী শিখি (১-৩ খণ্ড একত্রে) মাওলানা আবু তাহের মেছবাহ" [ref=e1168]:
+            - link "Aso Arobic Shikhi (1-3 Part Akotre) image এসো আরবী শিখি (১-৩ খণ্ড একত্রে) মাওলানা আবু তাহের মেছবাহ      (124) Product in stock TK. 180" [ref=e1170] [cursor=pointer]:
+              - /url: /book/144120/aso-arobic-shikhi-1-3-part-akotre
+              - img "Aso Arobic Shikhi (1-3 Part Akotre) image" [ref=e1172]
+              - generic [ref=e1174]:
+                - heading "এসো আরবী শিখি (১-৩ খণ্ড একত্রে)" [level=4] [ref=e1175]
+                - paragraph [ref=e1176]: মাওলানা আবু তাহের মেছবাহ
+                - generic [ref=e1177]:
+                  - generic [ref=e1178]: 
+                  - generic [ref=e1179]: 
+                  - generic [ref=e1180]: 
+                  - generic [ref=e1181]: 
+                  - generic [ref=e1182]: 
+                  - text: (124)
+                - paragraph [ref=e1183]: Product in stock
+                - paragraph [ref=e1184]: TK. 180
+          - generic "Right Forms of Verb and Subject - Verb Agreement শরীফ মুহাম্মাদ ইউনুস" [ref=e1185]:
+            - link "Right Forms of Verb and Subject - Verb Agreement image Right Forms of Verb and Subject - Verb Agreement শরীফ মুহাম্মাদ ইউনুস      (20) Product in stock TK. 30" [ref=e1187] [cursor=pointer]:
+              - /url: /book/262172/right-forms-of-verb-and-subject-verb-agreement
+              - img "Right Forms of Verb and Subject - Verb Agreement image" [ref=e1189]
+              - generic [ref=e1191]:
+                - heading "Right Forms of Verb and Subject - Verb Agreement" [level=4] [ref=e1192]
+                - paragraph [ref=e1193]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1194]:
+                  - generic [ref=e1195]: 
+                  - generic [ref=e1196]: 
+                  - generic [ref=e1197]: 
+                  - generic [ref=e1198]: 
+                  - generic [ref=e1199]: 
+                  - text: (20)
+                - paragraph [ref=e1200]: Product in stock
+                - paragraph [ref=e1201]: TK. 30
+          - generic "Narration শরীফ মুহাম্মাদ ইউনুস" [ref=e1202]:
+            - link "Narration image Narration শরীফ মুহাম্মাদ ইউনুস      (21) Product in stock TK. 30" [ref=e1204] [cursor=pointer]:
+              - /url: /book/234667/narration
+              - img "Narration image" [ref=e1206]
+              - generic [ref=e1208]:
+                - heading "Narration" [level=4] [ref=e1209]
+                - paragraph [ref=e1210]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1211]:
+                  - generic [ref=e1212]: 
+                  - generic [ref=e1213]: 
+                  - generic [ref=e1214]: 
+                  - generic [ref=e1215]: 
+                  - generic [ref=e1216]: 
+                  - text: (21)
+                - paragraph [ref=e1217]: Product in stock
+                - paragraph [ref=e1218]: TK. 30
+          - generic "এইচএসসি বোর্ড অ্যানালাইসিস এন্ড সুপার সাজেশন (ফুল সিলেবাস) টিম বিজ্ঞান ক্লাস" [ref=e1219]:
+            - link "HSC Board Analysis and Super Suggestion image 35 এইচএসসি বোর্ড অ্যানালাইসিস এন্ড সুপার সাজেশন (ফুল সিলেবাস) টিম বিজ্ঞান ক্লাস      (124) Product in stock TK. 1,000 TK. 650" [ref=e1221] [cursor=pointer]:
+              - /url: /book/533206/hsc-board-analysis-and-super-suggestion
+              - generic [ref=e1222]:
+                - img "HSC Board Analysis and Super Suggestion image" [ref=e1223]
+                - paragraph [ref=e1225]: "35"
+              - generic [ref=e1227]:
+                - heading "এইচএসসি বোর্ড অ্যানালাইসিস এন্ড সুপার সাজেশন (ফুল সিলেবাস)" [level=4] [ref=e1228]
+                - paragraph [ref=e1229]: টিম বিজ্ঞান ক্লাস
+                - generic [ref=e1230]:
+                  - generic [ref=e1231]: 
+                  - generic [ref=e1232]: 
+                  - generic [ref=e1233]: 
+                  - generic [ref=e1234]: 
+                  - generic [ref=e1235]: 
+                  - text: (124)
+                - paragraph [ref=e1236]: Product in stock
+                - paragraph [ref=e1237]: TK. 1,000 TK. 650
+          - generic "Tense And Sentences শরীফ মুহাম্মাদ ইউনুস" [ref=e1238]:
+            - link "Tense And Sentences image Tense And Sentences শরীফ মুহাম্মাদ ইউনুস      (19) Product in stock TK. 30" [ref=e1240] [cursor=pointer]:
+              - /url: /book/256107/tense-and-sentences
+              - img "Tense And Sentences image" [ref=e1242]
+              - generic [ref=e1244]:
+                - heading "Tense And Sentences" [level=4] [ref=e1245]
+                - paragraph [ref=e1246]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1247]:
+                  - generic [ref=e1248]: 
+                  - generic [ref=e1249]: 
+                  - generic [ref=e1250]: 
+                  - generic [ref=e1251]: 
+                  - generic [ref=e1252]: 
+                  - text: (19)
+                - paragraph [ref=e1253]: Product in stock
+                - paragraph [ref=e1254]: TK. 30
+          - generic "Completing Sentence শরীফ মুহাম্মাদ ইউনুস" [ref=e1255]:
+            - link "Completing Sentence image 35 Completing Sentence শরীফ মুহাম্মাদ ইউনুস      (23) Product in stock TK. 60 TK. 39" [ref=e1257] [cursor=pointer]:
+              - /url: /book/259652/completing-sentence
+              - generic [ref=e1258]:
+                - img "Completing Sentence image" [ref=e1259]
+                - paragraph [ref=e1261]: "35"
+              - generic [ref=e1263]:
+                - heading "Completing Sentence" [level=4] [ref=e1264]
+                - paragraph [ref=e1265]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1266]:
+                  - generic [ref=e1267]: 
+                  - generic [ref=e1268]: 
+                  - generic [ref=e1269]: 
+                  - generic [ref=e1270]: 
+                  - generic [ref=e1271]: 
+                  - text: (23)
+                - paragraph [ref=e1272]: Product in stock
+                - paragraph [ref=e1273]: TK. 60 TK. 39
+          - generic "Sentence Connector, Punctuation And Capitalization শরীফ মুহাম্মাদ ইউনুস" [ref=e1274]:
+            - link "Sentence Connector, Punctuation And Capitalization image Sentence Connector, Punctuation And Capitalization শরীফ মুহাম্মাদ ইউনুস      (9) Product in stock TK. 33" [ref=e1276] [cursor=pointer]:
+              - /url: /book/270682/sentence-connector-punctuation-and-capitalization
+              - img "Sentence Connector, Punctuation And Capitalization image" [ref=e1278]
+              - generic [ref=e1280]:
+                - heading "Sentence Connector, Punctuation And Capitalization" [level=4] [ref=e1281]
+                - paragraph [ref=e1282]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1283]:
+                  - generic [ref=e1284]: 
+                  - generic [ref=e1285]: 
+                  - generic [ref=e1286]: 
+                  - generic [ref=e1287]: 
+                  - generic [ref=e1288]: 
+                  - text: (9)
+                - paragraph [ref=e1289]: Product in stock
+                - paragraph [ref=e1290]: TK. 33
+          - generic "Modifier, Special Clues and Pronoun Reference শরীফ মুহাম্মাদ ইউনুস" [ref=e1291]:
+            - link "Modifier, Special Clues and Pronoun Reference image 12 Modifier, Special Clues and Pronoun Reference শরীফ মুহাম্মাদ ইউনুস      (13) TK. 33 TK. 29" [ref=e1293] [cursor=pointer]:
+              - /url: /book/234668/modifier-special-clues-and-pronoun-reference
+              - generic [ref=e1294]:
+                - img "Modifier, Special Clues and Pronoun Reference image" [ref=e1295]
+                - paragraph [ref=e1297]: "12"
+              - generic [ref=e1299]:
+                - heading "Modifier, Special Clues and Pronoun Reference" [level=4] [ref=e1300]
+                - paragraph [ref=e1301]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1302]:
+                  - generic [ref=e1303]: 
+                  - generic [ref=e1304]: 
+                  - generic [ref=e1305]: 
+                  - generic [ref=e1306]: 
+                  - generic [ref=e1307]: 
+                  - text: (13)
+                - paragraph
+                - paragraph [ref=e1308]: TK. 33 TK. 29
+          - generic "Article শরীফ মুহাম্মাদ ইউনুস" [ref=e1309]:
+            - link "Article image Article শরীফ মুহাম্মাদ ইউনুস      (9) Product in stock TK. 33" [ref=e1311] [cursor=pointer]:
+              - /url: /book/270539/article
+              - img "Article image" [ref=e1313]
+              - generic [ref=e1315]:
+                - heading "Article" [level=4] [ref=e1316]
+                - paragraph [ref=e1317]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1318]:
+                  - generic [ref=e1319]: 
+                  - generic [ref=e1320]: 
+                  - generic [ref=e1321]: 
+                  - generic [ref=e1322]: 
+                  - generic [ref=e1323]: 
+                  - text: (9)
+                - paragraph [ref=e1324]: Product in stock
+                - paragraph [ref=e1325]: TK. 33
+          - generic "পদার্থবিজ্ঞান কনসেপ্ট বুক - নবম-দশম শ্রেণী মোঃ সজীব আলী" [ref=e1326]:
+            - 'link "Physics Concept Book: Class 9-10 image পদার্থবিজ্ঞান কনসেপ্ট বুক - নবম-দশম শ্রেণী মোঃ সজীব আলী      (70) TK. 450" [ref=e1328] [cursor=pointer]':
+              - /url: /book/464200/physics-concept-book-class-9-10
+              - 'img "Physics Concept Book: Class 9-10 image" [ref=e1330]'
+              - generic [ref=e1332]:
+                - heading "পদার্থবিজ্ঞান কনসেপ্ট বুক - নবম-দশম শ্রেণী" [level=4] [ref=e1333]
+                - paragraph [ref=e1334]: মোঃ সজীব আলী
+                - generic [ref=e1335]:
+                  - generic [ref=e1336]: 
+                  - generic [ref=e1337]: 
+                  - generic [ref=e1338]: 
+                  - generic [ref=e1339]: 
+                  - generic [ref=e1340]: 
+                  - text: (70)
+                - paragraph
+                - paragraph [ref=e1341]: TK. 450
+          - generic "QNA এইচএসসি গাণিতিক সূত্রসমগ্র - For HSC কিউএনএ পাবলিকেশন্স লেখক পরিষদ" [ref=e1342]:
+            - link "QNA HSC Ganitik Sutrosamagra image 15 QNA এইচএসসি গাণিতিক সূত্রসমগ্র - For HSC কিউএনএ পাবলিকেশন্স লেখক পরিষদ      (45) Product in stock TK. 360 TK. 306" [ref=e1344] [cursor=pointer]:
+              - /url: /book/458015/qna-hsc-ganitik-sutrosamagra
+              - generic [ref=e1345]:
+                - img "QNA HSC Ganitik Sutrosamagra image" [ref=e1346]
+                - paragraph [ref=e1348]: "15"
+              - generic [ref=e1350]:
+                - heading "QNA এইচএসসি গাণিতিক সূত্রসমগ্র - For HSC" [level=4] [ref=e1351]
+                - paragraph [ref=e1352]: কিউএনএ পাবলিকেশন্স লেখক পরিষদ
+                - generic [ref=e1353]:
+                  - generic [ref=e1354]: 
+                  - generic [ref=e1355]: 
+                  - generic [ref=e1356]: 
+                  - generic [ref=e1357]: 
+                  - generic [ref=e1358]: 
+                  - text: (45)
+                - paragraph [ref=e1359]: Product in stock
+                - paragraph [ref=e1360]: TK. 360 TK. 306
+          - generic "Verb শরীফ মুহাম্মাদ ইউনুস" [ref=e1361]:
+            - link "Verb image Verb শরীফ মুহাম্মাদ ইউনুস      (12) Product in stock TK. 33" [ref=e1363] [cursor=pointer]:
+              - /url: /book/270538/verb
+              - img "Verb image" [ref=e1365]
+              - generic [ref=e1367]:
+                - heading "Verb" [level=4] [ref=e1368]
+                - paragraph [ref=e1369]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1370]:
+                  - generic [ref=e1371]: 
+                  - generic [ref=e1372]: 
+                  - generic [ref=e1373]: 
+                  - generic [ref=e1374]: 
+                  - generic [ref=e1375]: 
+                  - text: (12)
+                - paragraph [ref=e1376]: Product in stock
+                - paragraph [ref=e1377]: TK. 33
+          - generic "কাব্য ভাইয়ার ম্যাথ ট্রিকস উচ্চতর গণিত ১ম ও ২য় পত্র খালেদুর রহমান কাব্য" [ref=e1378]:
+            - link "Kabbo Vaiyar Math Tricks Higher Math 1st o 2nd paper image 24 কাব্য ভাইয়ার ম্যাথ ট্রিকস উচ্চতর গণিত ১ম ও ২য় পত্র খালেদুর রহমান কাব্য      (116) Product in stock TK. 1,267 TK. 969" [ref=e1380] [cursor=pointer]:
+              - /url: /book/516118/kabbo-vaiyar-math-tricks-higher-math-1st-o-2nd-paper
+              - generic [ref=e1381]:
+                - img "Kabbo Vaiyar Math Tricks Higher Math 1st o 2nd paper image" [ref=e1382]
+                - paragraph [ref=e1384]: "24"
+              - generic [ref=e1386]:
+                - heading "কাব্য ভাইয়ার ম্যাথ ট্রিকস উচ্চতর গণিত ১ম ও ২য় পত্র" [level=4] [ref=e1387]
+                - paragraph [ref=e1388]: খালেদুর রহমান কাব্য
+                - generic [ref=e1389]:
+                  - generic [ref=e1390]: 
+                  - generic [ref=e1391]: 
+                  - generic [ref=e1392]: 
+                  - generic [ref=e1393]: 
+                  - generic [ref=e1394]: 
+                  - text: (116)
+                - paragraph [ref=e1395]: Product in stock
+                - paragraph [ref=e1396]: TK. 1,267 TK. 969
+          - generic "AFFIX (Prefix Suffix) শরীফ মুহাম্মাদ ইউনুস" [ref=e1397]:
+            - link "AFFIX (Prefix image 12 AFFIX (Prefix Suffix) শরীফ মুহাম্মাদ ইউনুস      (10) Product in stock TK. 33 TK. 29" [ref=e1399] [cursor=pointer]:
+              - /url: /book/282942/affix-prefix
+              - generic [ref=e1400]:
+                - img "AFFIX (Prefix image" [ref=e1401]
+                - paragraph [ref=e1403]: "12"
+              - generic [ref=e1405]:
+                - heading "AFFIX (Prefix Suffix)" [level=4] [ref=e1406]
+                - paragraph [ref=e1407]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1408]:
+                  - generic [ref=e1409]: 
+                  - generic [ref=e1410]: 
+                  - generic [ref=e1411]: 
+                  - generic [ref=e1412]: 
+                  - generic [ref=e1413]: 
+                  - text: (10)
+                - paragraph [ref=e1414]: Product in stock
+                - paragraph [ref=e1415]: TK. 33 TK. 29
+          - generic "Tag Question, WH Question And Embedded Question শরীফ মুহাম্মাদ ইউনুস" [ref=e1416]:
+            - link "Tag Question, WH Question And Embedded Question image 03 Tag Question, WH Question And Embedded Question শরীফ মুহাম্মাদ ইউনুস      (14) Product in stock TK. 30 TK. 29" [ref=e1418] [cursor=pointer]:
+              - /url: /book/266015/tag-question-wh-question-and-embedded-question
+              - generic [ref=e1419]:
+                - img "Tag Question, WH Question And Embedded Question image" [ref=e1420]
+                - paragraph [ref=e1422]: "03"
+              - generic [ref=e1424]:
+                - heading "Tag Question, WH Question And Embedded Question" [level=4] [ref=e1425]
+                - paragraph [ref=e1426]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1427]:
+                  - generic [ref=e1428]: 
+                  - generic [ref=e1429]: 
+                  - generic [ref=e1430]: 
+                  - generic [ref=e1431]: 
+                  - generic [ref=e1432]: 
+                  - text: (14)
+                - paragraph [ref=e1433]: Product in stock
+                - paragraph [ref=e1434]: TK. 30 TK. 29
+          - generic "এইচ.এস.সি পদার্থবিজ্ঞান পকেট বুক - ২য় পত্র মো. নুমেরি সাত্তার অপার" [ref=e1435]:
+            - link "HSC Physics Pocket book 2nd paper image 19 এইচ.এস.সি পদার্থবিজ্ঞান পকেট বুক - ২য় পত্র মো. নুমেরি সাত্তার অপার      (674) Product in stock TK. 270 TK. 219" [ref=e1437] [cursor=pointer]:
+              - /url: /book/215587/hsc-physics-pocket-book-2nd-paper
+              - generic [ref=e1438]:
+                - img "HSC Physics Pocket book 2nd paper image" [ref=e1439]
+                - paragraph [ref=e1441]: "19"
+              - generic [ref=e1443]:
+                - heading "এইচ.এস.সি পদার্থবিজ্ঞান পকেট বুক - ২য় পত্র" [level=4] [ref=e1444]
+                - paragraph [ref=e1445]: মো. নুমেরি সাত্তার অপার
+                - generic [ref=e1446]:
+                  - generic [ref=e1447]: 
+                  - generic [ref=e1448]: 
+                  - generic [ref=e1449]: 
+                  - generic [ref=e1450]: 
+                  - generic [ref=e1451]: 
+                  - text: (674)
+                - paragraph [ref=e1452]: Product in stock
+                - paragraph [ref=e1453]: TK. 270 TK. 219
+          - generic "Writing Shortcut Solution তাহমিদ হাসান" [ref=e1454]:
+            - link "Writing Shortcut Solution image 33 Writing Shortcut Solution তাহমিদ হাসান      (121) Product in stock TK. 269 TK. 179" [ref=e1456] [cursor=pointer]:
+              - /url: /book/192910/writing-shortcut-solution
+              - generic [ref=e1457]:
+                - img "Writing Shortcut Solution image" [ref=e1458]
+                - paragraph [ref=e1460]: "33"
+              - generic [ref=e1462]:
+                - heading "Writing Shortcut Solution" [level=4] [ref=e1463]
+                - paragraph [ref=e1464]: তাহমিদ হাসান
+                - generic [ref=e1465]:
+                  - generic [ref=e1466]: 
+                  - generic [ref=e1467]: 
+                  - generic [ref=e1468]: 
+                  - generic [ref=e1469]: 
+                  - generic [ref=e1470]: 
+                  - text: (121)
+                - paragraph [ref=e1471]: Product in stock
+                - paragraph [ref=e1472]: TK. 269 TK. 179
+          - generic "শতভাগ কুরআনের ভোকাবুলারি লেভেল - ১ শাঈখ হাসান মাহফুজ" [ref=e1473]:
+            - link "Sotovag Quraner Vocabulary Level image 20 শতভাগ কুরআনের ভোকাবুলারি লেভেল - ১ শাঈখ হাসান মাহফুজ      (7) Product in stock TK. 215 TK. 172" [ref=e1475] [cursor=pointer]:
+              - /url: /book/351738/sotovag-quraner-vocabulary-level
+              - generic [ref=e1476]:
+                - img "Sotovag Quraner Vocabulary Level image" [ref=e1477]
+                - paragraph [ref=e1479]: "20"
+              - generic [ref=e1481]:
+                - heading "শতভাগ কুরআনের ভোকাবুলারি লেভেল - ১" [level=4] [ref=e1482]
+                - paragraph [ref=e1483]: শাঈখ হাসান মাহফুজ
+                - generic [ref=e1484]:
+                  - generic [ref=e1485]: 
+                  - generic [ref=e1486]: 
+                  - generic [ref=e1487]: 
+                  - generic [ref=e1488]: 
+                  - generic [ref=e1489]: 
+                  - text: (7)
+                - paragraph [ref=e1490]: Product in stock
+                - paragraph [ref=e1491]: TK. 215 TK. 172
+          - generic "SSC English A Plus Handbook আবু মোহাম্মদ সিফাত শাহনেওয়াজ বিন আজম, টেন মিনিট স্কুল (সম্পাদক)" [ref=e1492]:
+            - link "SSC English A Plus Handbook image SSC English A Plus Handbook আবু মোহাম্মদ সিফাত শাহনেওয়াজ বিন আজম, টেন মিনিট স্কুল (সম্পাদক)      (43) Product in stock TK. 350" [ref=e1494] [cursor=pointer]:
+              - /url: /book/512228/ssc-english-a-plus-handbook
+              - img "SSC English A Plus Handbook image" [ref=e1496]
+              - generic [ref=e1498]:
+                - heading "SSC English A Plus Handbook" [level=4] [ref=e1499]
+                - paragraph [ref=e1500]: আবু মোহাম্মদ সিফাত শাহনেওয়াজ বিন আজম, টেন মিনিট স্কুল (সম্পাদক)
+                - generic [ref=e1501]:
+                  - generic [ref=e1502]: 
+                  - generic [ref=e1503]: 
+                  - generic [ref=e1504]: 
+                  - generic [ref=e1505]: 
+                  - generic [ref=e1506]: 
+                  - text: (43)
+                - paragraph [ref=e1507]: Product in stock
+                - paragraph [ref=e1508]: TK. 350
+          - generic "সহজ Biology প্রথম পত্র - একাদশ-দ্বাদশ শ্রেণি জুন্নুরাইন খান" [ref=e1509]:
+            - link "Sohoj Biology 1st Paper Class 11-12 image সহজ Biology প্রথম পত্র - একাদশ-দ্বাদশ শ্রেণি জুন্নুরাইন খান      (42) Product in stock TK. 350" [ref=e1511] [cursor=pointer]:
+              - /url: /book/472557/sohoj-biology-1st-paper-class-11-12
+              - img "Sohoj Biology 1st Paper Class 11-12 image" [ref=e1513]
+              - generic [ref=e1515]:
+                - heading "সহজ Biology প্রথম পত্র - একাদশ-দ্বাদশ শ্রেণি" [level=4] [ref=e1516]
+                - paragraph [ref=e1517]: জুন্নুরাইন খান
+                - generic [ref=e1518]:
+                  - generic [ref=e1519]: 
+                  - generic [ref=e1520]: 
+                  - generic [ref=e1521]: 
+                  - generic [ref=e1522]: 
+                  - generic [ref=e1523]: 
+                  - text: (42)
+                - paragraph [ref=e1524]: Product in stock
+                - paragraph [ref=e1525]: TK. 350
+          - generic "পদার্থবিজ্ঞান ১ম পত্র (একাদশ-দ্বাদশ শ্রেণি)(সাদা) ড. আমির হোসেন খান" [ref=e1526]:
+            - link "Physics1st part (Class XI-XII)(Sada) image 09 পদার্থবিজ্ঞান ১ম পত্র (একাদশ-দ্বাদশ শ্রেণি)(সাদা) ড. আমির হোসেন খান      (47) Product in stock TK. 600 TK. 549" [ref=e1528] [cursor=pointer]:
+              - /url: /book/429100/physics1st-part-class-xi-xii-sada
+              - generic [ref=e1529]:
+                - img "Physics1st part (Class XI-XII)(Sada) image" [ref=e1530]
+                - paragraph [ref=e1532]: "09"
+              - generic [ref=e1534]:
+                - heading "পদার্থবিজ্ঞান ১ম পত্র (একাদশ-দ্বাদশ শ্রেণি)(সাদা)" [level=4] [ref=e1535]
+                - paragraph [ref=e1536]: ড. আমির হোসেন খান
+                - generic [ref=e1537]:
+                  - generic [ref=e1538]: 
+                  - generic [ref=e1539]: 
+                  - generic [ref=e1540]: 
+                  - generic [ref=e1541]: 
+                  - generic [ref=e1542]: 
+                  - text: (47)
+                - paragraph [ref=e1543]: Product in stock
+                - paragraph [ref=e1544]: TK. 600 TK. 549
+          - generic "আত তামরিন আল কিতাবী আলা তারেকু ইলাল আরাবীয়াহ মাওলানা আবু তাহের মেছবাহ" [ref=e1545]:
+            - link "At Tamrin Al Kitabi Ala Tareku Ilal Arabiyah image আত তামরিন আল কিতাবী আলা তারেকু ইলাল আরাবীয়াহ মাওলানা আবু তাহের মেছবাহ      (39) Product in stock TK. 120" [ref=e1547] [cursor=pointer]:
+              - /url: /book/152322/at-tamrin-al-kitabi-ala-tareku-ilal-arabiyah
+              - img "At Tamrin Al Kitabi Ala Tareku Ilal Arabiyah image" [ref=e1549]
+              - generic [ref=e1551]:
+                - heading "আত তামরিন আল কিতাবী আলা তারেকু ইলাল আরাবীয়াহ" [level=4] [ref=e1552]
+                - paragraph [ref=e1553]: মাওলানা আবু তাহের মেছবাহ
+                - generic [ref=e1554]:
+                  - generic [ref=e1555]: 
+                  - generic [ref=e1556]: 
+                  - generic [ref=e1557]: 
+                  - generic [ref=e1558]: 
+                  - generic [ref=e1559]: 
+                  - text: (39)
+                - paragraph [ref=e1560]: Product in stock
+                - paragraph [ref=e1561]: TK. 120
+          - generic "Noun শরীফ মুহাম্মাদ ইউনুস" [ref=e1562]:
+            - link "Noun image Noun শরীফ মুহাম্মাদ ইউনুস      (9) Product in stock TK. 33" [ref=e1564] [cursor=pointer]:
+              - /url: /book/266016/noun
+              - img "Noun image" [ref=e1566]
+              - generic [ref=e1568]:
+                - heading "Noun" [level=4] [ref=e1569]
+                - paragraph [ref=e1570]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1571]:
+                  - generic [ref=e1572]: 
+                  - generic [ref=e1573]: 
+                  - generic [ref=e1574]: 
+                  - generic [ref=e1575]: 
+                  - generic [ref=e1576]: 
+                  - text: (9)
+                - paragraph [ref=e1577]: Product in stock
+                - paragraph [ref=e1578]: TK. 33
+          - generic "এইচএসসি বাংলা প্রথম পত্র মাস্টারবুক টেন মিনিট স্কুল" [ref=e1579]:
+            - link "HSC Bangla Paper 1st Paper Masterbook image এইচএসসি বাংলা প্রথম পত্র মাস্টারবুক টেন মিনিট স্কুল      (52) TK. 375" [ref=e1581] [cursor=pointer]:
+              - /url: /book/511526/hsc-bangla-paper-1st-paper-masterbook
+              - img "HSC Bangla Paper 1st Paper Masterbook image" [ref=e1583]
+              - generic [ref=e1585]:
+                - heading "এইচএসসি বাংলা প্রথম পত্র মাস্টারবুক" [level=4] [ref=e1586]
+                - paragraph [ref=e1587]: টেন মিনিট স্কুল
+                - generic [ref=e1588]:
+                  - generic [ref=e1589]: 
+                  - generic [ref=e1590]: 
+                  - generic [ref=e1591]: 
+                  - generic [ref=e1592]: 
+                  - generic [ref=e1593]: 
+                  - text: (52)
+                - paragraph
+                - paragraph [ref=e1594]: TK. 375
+          - generic "এইচএসসি ইংরেজি প্রথম পত্র মাস্টারবুক টেন মিনিট স্কুল" [ref=e1595]:
+            - link "HSC English 1st Paper Masterbook image এইচএসসি ইংরেজি প্রথম পত্র মাস্টারবুক টেন মিনিট স্কুল      (55) Product in stock TK. 375" [ref=e1597] [cursor=pointer]:
+              - /url: /book/511528/hsc-english-1st-paper-masterbook
+              - img "HSC English 1st Paper Masterbook image" [ref=e1599]
+              - generic [ref=e1601]:
+                - heading "এইচএসসি ইংরেজি প্রথম পত্র মাস্টারবুক" [level=4] [ref=e1602]
+                - paragraph [ref=e1603]: টেন মিনিট স্কুল
+                - generic [ref=e1604]:
+                  - generic [ref=e1605]: 
+                  - generic [ref=e1606]: 
+                  - generic [ref=e1607]: 
+                  - generic [ref=e1608]: 
+                  - generic [ref=e1609]: 
+                  - text: (55)
+                - paragraph [ref=e1610]: Product in stock
+                - paragraph [ref=e1611]: TK. 375
+          - generic "HSC 27 ও HSC 26 বেস্ট প্যাকেজ (নতুন সিলেবাসে বাংলা, ইংরেজি ও ICT বই) নাহিদ হাসান মুন্না" [ref=e1612]:
+            - link "HSC 27 and HSC 26 Best Package (new Syllabus- Bangla, English image HSC 27 ও HSC 26 বেস্ট প্যাকেজ (নতুন সিলেবাসে বাংলা, ইংরেজি ও ICT বই) নাহিদ হাসান মুন্না      (385) TK. 1,350" [ref=e1614] [cursor=pointer]:
+              - /url: /book/483943/hsc-27-and-hsc-26-best-package-new-syllabus-bangla-english
+              - img "HSC 27 and HSC 26 Best Package (new Syllabus- Bangla, English image" [ref=e1616]
+              - generic [ref=e1618]:
+                - heading "HSC 27 ও HSC 26 বেস্ট প্যাকেজ (নতুন সিলেবাসে বাংলা, ইংরেজি ও ICT বই)" [level=4] [ref=e1619]
+                - paragraph [ref=e1620]: নাহিদ হাসান মুন্না
+                - generic [ref=e1621]:
+                  - generic [ref=e1622]: 
+                  - generic [ref=e1623]: 
+                  - generic [ref=e1624]: 
+                  - generic [ref=e1625]: 
+                  - generic [ref=e1626]: 
+                  - text: (385)
+                - paragraph
+                - paragraph [ref=e1627]: TK. 1,350
+          - generic "বাংলা এ প্লাস (এইচএসসি এবং আলিম ২০২৭ ও ২০২৬ ব্যাচ) নাহিদ হাসান মুন্না" [ref=e1628]:
+            - link "Bangla A Plus (HSC and Alim 2027 and 2026 Batch) image বাংলা এ প্লাস (এইচএসসি এবং আলিম ২০২৭ ও ২০২৬ ব্যাচ) নাহিদ হাসান মুন্না      (329) Product in stock TK. 500" [ref=e1630] [cursor=pointer]:
+              - /url: /book/533185/bangla-a-plus-hsc-and-alim-2027-and-2026-batch
+              - img "Bangla A Plus (HSC and Alim 2027 and 2026 Batch) image" [ref=e1632]
+              - generic [ref=e1634]:
+                - heading "বাংলা এ প্লাস (এইচএসসি এবং আলিম ২০২৭ ও ২০২৬ ব্যাচ)" [level=4] [ref=e1635]
+                - paragraph [ref=e1636]: নাহিদ হাসান মুন্না
+                - generic [ref=e1637]:
+                  - generic [ref=e1638]: 
+                  - generic [ref=e1639]: 
+                  - generic [ref=e1640]: 
+                  - generic [ref=e1641]: 
+                  - generic [ref=e1642]: 
+                  - text: (329)
+                - paragraph [ref=e1643]: Product in stock
+                - paragraph [ref=e1644]: TK. 500
+          - generic "মীযানুসসরফ ও মুনশায়িব - (বাংলা) ইসলামিয়া কুতুবখানা" [ref=e1645]:
+            - link "Mizanus Saraf O Munshaib image মীযানুসসরফ ও মুনশায়িব - (বাংলা) ইসলামিয়া কুতুবখানা      (10) Product in stock TK. 155" [ref=e1647] [cursor=pointer]:
+              - /url: /book/145131/mizanus-saraf-o-munshaib
+              - img "Mizanus Saraf O Munshaib image" [ref=e1649]
+              - generic [ref=e1651]:
+                - heading "মীযানুসসরফ ও মুনশায়িব - (বাংলা)" [level=4] [ref=e1652]
+                - paragraph [ref=e1653]: ইসলামিয়া কুতুবখানা
+                - generic [ref=e1654]:
+                  - generic [ref=e1655]: 
+                  - generic [ref=e1656]: 
+                  - generic [ref=e1657]: 
+                  - generic [ref=e1658]: 
+                  - generic [ref=e1659]: 
+                  - text: (10)
+                - paragraph [ref=e1660]: Product in stock
+                - paragraph [ref=e1661]: TK. 155
+          - generic "এইচ.এস.সি রসায়ন পকেট বুক - ১ম পত্র মোঃ নাজমুস সাকিব" [ref=e1662]:
+            - link "Hsc Chemistry Pocket Book image 19 এইচ.এস.সি রসায়ন পকেট বুক - ১ম পত্র মোঃ নাজমুস সাকিব      (63) Product in stock TK. 270 TK. 219" [ref=e1664] [cursor=pointer]:
+              - /url: /book/229295/hsc-chemistry-pocket-book
+              - generic [ref=e1665]:
+                - img "Hsc Chemistry Pocket Book image" [ref=e1666]
+                - paragraph [ref=e1668]: "19"
+              - generic [ref=e1670]:
+                - heading "এইচ.এস.সি রসায়ন পকেট বুক - ১ম পত্র" [level=4] [ref=e1671]
+                - paragraph [ref=e1672]: মোঃ নাজমুস সাকিব
+                - generic [ref=e1673]:
+                  - generic [ref=e1674]: 
+                  - generic [ref=e1675]: 
+                  - generic [ref=e1676]: 
+                  - generic [ref=e1677]: 
+                  - generic [ref=e1678]: 
+                  - text: (63)
+                - paragraph [ref=e1679]: Product in stock
+                - paragraph [ref=e1680]: TK. 270 TK. 219
+          - generic "এইচএসসি ইংরেজি দ্বিতীয় পত্র মাস্টারবুক টেন মিনিট স্কুল" [ref=e1681]:
+            - link "HSC English 2nd Paper Masterbook image এইচএসসি ইংরেজি দ্বিতীয় পত্র মাস্টারবুক টেন মিনিট স্কুল      (31) Product in stock TK. 375" [ref=e1683] [cursor=pointer]:
+              - /url: /book/511532/hsc-english-2nd-paper-masterbook
+              - img "HSC English 2nd Paper Masterbook image" [ref=e1685]
+              - generic [ref=e1687]:
+                - heading "এইচএসসি ইংরেজি দ্বিতীয় পত্র মাস্টারবুক" [level=4] [ref=e1688]
+                - paragraph [ref=e1689]: টেন মিনিট স্কুল
+                - generic [ref=e1690]:
+                  - generic [ref=e1691]: 
+                  - generic [ref=e1692]: 
+                  - generic [ref=e1693]: 
+                  - generic [ref=e1694]: 
+                  - generic [ref=e1695]: 
+                  - text: (31)
+                - paragraph [ref=e1696]: Product in stock
+                - paragraph [ref=e1697]: TK. 375
+          - generic "এইচ.এস.সি রসায়ন পকেট বুক - ২য় পত্র মঈনুল হাসান" [ref=e1698]:
+            - link "HSC Rosayon Pocket Book image 19 এইচ.এস.সি রসায়ন পকেট বুক - ২য় পত্র মঈনুল হাসান      (61) TK. 270 TK. 219" [ref=e1700] [cursor=pointer]:
+              - /url: /book/229296/hsc-rosayon-pocket-book
+              - generic [ref=e1701]:
+                - img "HSC Rosayon Pocket Book image" [ref=e1702]
+                - paragraph [ref=e1704]: "19"
+              - generic [ref=e1706]:
+                - heading "এইচ.এস.সি রসায়ন পকেট বুক - ২য় পত্র" [level=4] [ref=e1707]
+                - paragraph [ref=e1708]: মঈনুল হাসান
+                - generic [ref=e1709]:
+                  - generic [ref=e1710]: 
+                  - generic [ref=e1711]: 
+                  - generic [ref=e1712]: 
+                  - generic [ref=e1713]: 
+                  - generic [ref=e1714]: 
+                  - text: (61)
+                - paragraph
+                - paragraph [ref=e1715]: TK. 270 TK. 219
+          - generic "NCGP (Number, Case , Gender, Person) শরীফ মুহাম্মাদ ইউনুস" [ref=e1716]:
+            - link "NCGP (Number, Case , Gender, Person) image 12 NCGP (Number, Case , Gender, Person) শরীফ মুহাম্মাদ ইউনুস      (9) Product in stock TK. 33 TK. 29" [ref=e1718] [cursor=pointer]:
+              - /url: /book/282935/ncgp-number-case-gender-person
+              - generic [ref=e1719]:
+                - img "NCGP (Number, Case , Gender, Person) image" [ref=e1720]
+                - paragraph [ref=e1722]: "12"
+              - generic [ref=e1724]:
+                - heading "NCGP (Number, Case , Gender, Person)" [level=4] [ref=e1725]
+                - paragraph [ref=e1726]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e1727]:
+                  - generic [ref=e1728]: 
+                  - generic [ref=e1729]: 
+                  - generic [ref=e1730]: 
+                  - generic [ref=e1731]: 
+                  - generic [ref=e1732]: 
+                  - text: (9)
+                - paragraph [ref=e1733]: Product in stock
+                - paragraph [ref=e1734]: TK. 33 TK. 29
+          - generic "আইসিটি বোর্ড এনালাইসিস এন্ড সুপার সাজেশন উইথ সিকিউ সলভ টিম বিজ্ঞান ক্লাস" [ref=e1735]:
+            - link "ICT Board Analysis and Super Suggestion with CQ Solve image আইসিটি বোর্ড এনালাইসিস এন্ড সুপার সাজেশন উইথ সিকিউ সলভ টিম বিজ্ঞান ক্লাস      (53) Product in stock TK. 550" [ref=e1737] [cursor=pointer]:
+              - /url: /book/511531/ict-board-analysis-and-super-suggestion-with-cq-solve
+              - img "ICT Board Analysis and Super Suggestion with CQ Solve image" [ref=e1739]
+              - generic [ref=e1741]:
+                - heading "আইসিটি বোর্ড এনালাইসিস এন্ড সুপার সাজেশন উইথ সিকিউ সলভ" [level=4] [ref=e1742]
+                - paragraph [ref=e1743]: টিম বিজ্ঞান ক্লাস
+                - generic [ref=e1744]:
+                  - generic [ref=e1745]: 
+                  - generic [ref=e1746]: 
+                  - generic [ref=e1747]: 
+                  - generic [ref=e1748]: 
+                  - generic [ref=e1749]: 
+                  - text: (53)
+                - paragraph [ref=e1750]: Product in stock
+                - paragraph [ref=e1751]: TK. 550
+          - generic "ড্রাগ ইনডেক্স মোঃ আল-আমিন" [ref=e1752]:
+            - link "Drug Index image ড্রাগ ইনডেক্স মোঃ আল-আমিন      (25) Product in stock TK. 999" [ref=e1754] [cursor=pointer]:
+              - /url: /book/98283/drug-index
+              - img "Drug Index image" [ref=e1756]
+              - generic [ref=e1758]:
+                - heading "ড্রাগ ইনডেক্স" [level=4] [ref=e1759]
+                - paragraph [ref=e1760]: মোঃ আল-আমিন
+                - generic [ref=e1761]:
+                  - generic [ref=e1762]: 
+                  - generic [ref=e1763]: 
+                  - generic [ref=e1764]: 
+                  - generic [ref=e1765]: 
+                  - generic [ref=e1766]: 
+                  - text: (25)
+                - paragraph [ref=e1767]: Product in stock
+                - paragraph [ref=e1768]: TK. 999
+          - generic "হিফয ছাত্রদের তথ্য বই বেফাকুল মাদারিসিল আরাবিয়া বাংলাদেশ" [ref=e1769]:
+            - link "Hifz chatroder Totho book (Only for Madrasa) image হিফয ছাত্রদের তথ্য বই বেফাকুল মাদারিসিল আরাবিয়া বাংলাদেশ      (4) TK. 42" [ref=e1771] [cursor=pointer]:
+              - /url: /book/146722/hifz-chatroder-totho-book-only-for-madrasa
+              - img "Hifz chatroder Totho book (Only for Madrasa) image" [ref=e1773]
+              - generic [ref=e1775]:
+                - heading "হিফয ছাত্রদের তথ্য বই" [level=4] [ref=e1776]
+                - paragraph [ref=e1777]: বেফাকুল মাদারিসিল আরাবিয়া বাংলাদেশ
+                - generic [ref=e1778]:
+                  - generic [ref=e1779]: 
+                  - generic [ref=e1780]: 
+                  - generic [ref=e1781]: 
+                  - generic [ref=e1782]: 
+                  - generic [ref=e1783]: 
+                  - text: (4)
+                - paragraph
+                - paragraph [ref=e1784]: TK. 42
+          - generic "সফওয়াতুল মাসাদির ইসলামিয়া কুতুবখানা" [ref=e1785]:
+            - link "Sofwatul Masadir image সফওয়াতুল মাসাদির ইসলামিয়া কুতুবখানা      (26) Product in stock TK. 175" [ref=e1787] [cursor=pointer]:
+              - /url: /book/145135/sofwatul-masadir
+              - img "Sofwatul Masadir image" [ref=e1789]
+              - generic [ref=e1791]:
+                - heading "সফওয়াতুল মাসাদির" [level=4] [ref=e1792]
+                - paragraph [ref=e1793]: ইসলামিয়া কুতুবখানা
+                - generic [ref=e1794]:
+                  - generic [ref=e1795]: 
+                  - generic [ref=e1796]: 
+                  - generic [ref=e1797]: 
+                  - generic [ref=e1798]: 
+                  - generic [ref=e1799]: 
+                  - text: (26)
+                - paragraph [ref=e1800]: Product in stock
+                - paragraph [ref=e1801]: TK. 175
+          - generic "এসো ছারফ শিখি মাওলানা আবু তাহের মেছবাহ" [ref=e1802]:
+            - link "Esho sarf shikhi image এসো ছারফ শিখি মাওলানা আবু তাহের মেছবাহ      (20) Product in stock TK. 110" [ref=e1804] [cursor=pointer]:
+              - /url: /book/152311/esho-sarf-shikhi
+              - img "Esho sarf shikhi image" [ref=e1806]
+              - generic [ref=e1808]:
+                - heading "এসো ছারফ শিখি" [level=4] [ref=e1809]
+                - paragraph [ref=e1810]: মাওলানা আবু তাহের মেছবাহ
+                - generic [ref=e1811]:
+                  - generic [ref=e1812]: 
+                  - generic [ref=e1813]: 
+                  - generic [ref=e1814]: 
+                  - generic [ref=e1815]: 
+                  - generic [ref=e1816]: 
+                  - text: (20)
+                - paragraph [ref=e1817]: Product in stock
+                - paragraph [ref=e1818]: TK. 110
+          - generic "এসো আরবী শিখি-১ মাওলানা আবু তাহের মেছবাহ" [ref=e1819]:
+            - link "Eso Arbi Shikhi-1 image এসো আরবী শিখি-১ মাওলানা আবু তাহের মেছবাহ      (20) TK. 45" [ref=e1821] [cursor=pointer]:
+              - /url: /book/144117/eso-arbi-shikhi-1
+              - img "Eso Arbi Shikhi-1 image" [ref=e1823]
+              - generic [ref=e1825]:
+                - heading "এসো আরবী শিখি-১" [level=4] [ref=e1826]
+                - paragraph [ref=e1827]: মাওলানা আবু তাহের মেছবাহ
+                - generic [ref=e1828]:
+                  - generic [ref=e1829]: 
+                  - generic [ref=e1830]: 
+                  - generic [ref=e1831]: 
+                  - generic [ref=e1832]: 
+                  - generic [ref=e1833]: 
+                  - text: (20)
+                - paragraph
+                - paragraph [ref=e1834]: TK. 45
+          - generic "কিউএনএ এইচএসসি সাজেশন উইথ সল্যুশন ২.০ কিউএনএ পাবলিকেশন্স লেখক পরিষদ" [ref=e1835]:
+            - link "QNA HSC Suggestion with Solution 2.0 image 15 কিউএনএ এইচএসসি সাজেশন উইথ সল্যুশন ২.০ কিউএনএ পাবলিকেশন্স লেখক পরিষদ      (304) TK. 999 TK. 849" [ref=e1837] [cursor=pointer]:
+              - /url: /book/537607/qna-hsc-suggestion-with-solution-2-0
+              - generic [ref=e1838]:
+                - img "QNA HSC Suggestion with Solution 2.0 image" [ref=e1839]
+                - paragraph [ref=e1841]: "15"
+              - generic [ref=e1843]:
+                - heading "কিউএনএ এইচএসসি সাজেশন উইথ সল্যুশন ২.০" [level=4] [ref=e1844]
+                - paragraph [ref=e1845]: কিউএনএ পাবলিকেশন্স লেখক পরিষদ
+                - generic [ref=e1846]:
+                  - generic [ref=e1847]: 
+                  - generic [ref=e1848]: 
+                  - generic [ref=e1849]: 
+                  - generic [ref=e1850]: 
+                  - generic [ref=e1851]: 
+                  - text: (304)
+                - paragraph
+                - paragraph [ref=e1852]: TK. 999 TK. 849
+          - generic "আইসিটি ম্যাজিক (এইচএসসি ২০২৭ ও ২০২৬) নাহিদ হাসান মুন্না" [ref=e1853]:
+            - link "ICT Magic (HSC 2027 and 2026 Batch) image আইসিটি ম্যাজিক (এইচএসসি ২০২৭ ও ২০২৬) নাহিদ হাসান মুন্না      (204) Product in stock TK. 400" [ref=e1855] [cursor=pointer]:
+              - /url: /book/539088/ict-magic-hsc-2027-and-2026-batch
+              - img "ICT Magic (HSC 2027 and 2026 Batch) image" [ref=e1857]
+              - generic [ref=e1859]:
+                - heading "আইসিটি ম্যাজিক (এইচএসসি ২০২৭ ও ২০২৬)" [level=4] [ref=e1860]
+                - paragraph [ref=e1861]: নাহিদ হাসান মুন্না
+                - generic [ref=e1862]:
+                  - generic [ref=e1863]: 
+                  - generic [ref=e1864]: 
+                  - generic [ref=e1865]: 
+                  - generic [ref=e1866]: 
+                  - generic [ref=e1867]: 
+                  - text: (204)
+                - paragraph [ref=e1868]: Product in stock
+                - paragraph [ref=e1869]: TK. 400
+          - generic "কিউএনএ এইচএসসি হিউম্যানিটিজ সাজেশন উইথ সল্যুশন কিউএনএ পাবলিকেশন্স লেখক পরিষদ" [ref=e1870]:
+            - link "QNA HSC Humanities Suggestion With Solution image 15 কিউএনএ এইচএসসি হিউম্যানিটিজ সাজেশন উইথ সল্যুশন কিউএনএ পাবলিকেশন্স লেখক পরিষদ      (45) Product in stock TK. 1,000 TK. 850" [ref=e1872] [cursor=pointer]:
+              - /url: /book/523118/qna-hsc-humanities-suggestion-with-solution
+              - generic [ref=e1873]:
+                - img "QNA HSC Humanities Suggestion With Solution image" [ref=e1874]
+                - paragraph [ref=e1876]: "15"
+              - generic [ref=e1878]:
+                - heading "কিউএনএ এইচএসসি হিউম্যানিটিজ সাজেশন উইথ সল্যুশন" [level=4] [ref=e1879]
+                - paragraph [ref=e1880]: কিউএনএ পাবলিকেশন্স লেখক পরিষদ
+                - generic [ref=e1881]:
+                  - generic [ref=e1882]: 
+                  - generic [ref=e1883]: 
+                  - generic [ref=e1884]: 
+                  - generic [ref=e1885]: 
+                  - generic [ref=e1886]: 
+                  - text: (45)
+                - paragraph [ref=e1887]: Product in stock
+                - paragraph [ref=e1888]: TK. 1,000 TK. 850
+          - generic "এসো নাহ্‌ব শিখি মাওলানা আবু তাহের মেছবাহ" [ref=e1889]:
+            - link "Aso Nahob Shikhi image এসো নাহ্‌ব শিখি মাওলানা আবু তাহের মেছবাহ      (22) Product in stock TK. 100" [ref=e1891] [cursor=pointer]:
+              - /url: /book/125722/aso-nahob-shikhi
+              - img "Aso Nahob Shikhi image" [ref=e1893]
+              - generic [ref=e1895]:
+                - heading "এসো নাহ্‌ব শিখি" [level=4] [ref=e1896]
+                - paragraph [ref=e1897]: মাওলানা আবু তাহের মেছবাহ
+                - generic [ref=e1898]:
+                  - generic [ref=e1899]: 
+                  - generic [ref=e1900]: 
+                  - generic [ref=e1901]: 
+                  - generic [ref=e1902]: 
+                  - generic [ref=e1903]: 
+                  - text: (22)
+                - paragraph [ref=e1904]: Product in stock
+                - paragraph [ref=e1905]: TK. 100
+          - generic "জীববিজ্ঞান দ্বিতীয় পত্র - একাদশ-দ্বাদশ শ্রেণি গাজী এস. এম. আজমল" [ref=e1906]:
+            - link "Biology 2nd Paper (For Class XI-XII) image 08 জীববিজ্ঞান দ্বিতীয় পত্র - একাদশ-দ্বাদশ শ্রেণি গাজী এস. এম. আজমল      (14) Product in stock TK. 475 TK. 439" [ref=e1908] [cursor=pointer]:
+              - /url: /book/423925/biology-2nd-paper-for-class-xi-xii
+              - generic [ref=e1909]:
+                - img "Biology 2nd Paper (For Class XI-XII) image" [ref=e1910]
+                - paragraph [ref=e1912]: "08"
+              - generic [ref=e1914]:
+                - heading "জীববিজ্ঞান দ্বিতীয় পত্র - একাদশ-দ্বাদশ শ্রেণি" [level=4] [ref=e1915]
+                - paragraph [ref=e1916]: গাজী এস. এম. আজমল
+                - generic [ref=e1917]:
+                  - generic [ref=e1918]: 
+                  - generic [ref=e1919]: 
+                  - generic [ref=e1920]: 
+                  - generic [ref=e1921]: 
+                  - generic [ref=e1922]: 
+                  - text: (14)
+                - paragraph [ref=e1923]: Product in stock
+                - paragraph [ref=e1924]: TK. 475 TK. 439
+          - generic "এইচ.এস.সি ক্যালকুলাস ইন্টারেক্টিভ ম্যাপ আলভি আহমেদ" [ref=e1925]:
+            - link "HSC Calculus Interactive Map image 19 এইচ.এস.সি ক্যালকুলাস ইন্টারেক্টিভ ম্যাপ আলভি আহমেদ      (51) Product in stock TK. 270 TK. 219" [ref=e1927] [cursor=pointer]:
+              - /url: /book/229300/hsc-calculus-interactive-map
+              - generic [ref=e1928]:
+                - img "HSC Calculus Interactive Map image" [ref=e1929]
+                - paragraph [ref=e1931]: "19"
+              - generic [ref=e1933]:
+                - heading "এইচ.এস.সি ক্যালকুলাস ইন্টারেক্টিভ ম্যাপ" [level=4] [ref=e1934]
+                - paragraph [ref=e1935]: আলভি আহমেদ
+                - generic [ref=e1936]:
+                  - generic [ref=e1937]: 
+                  - generic [ref=e1938]: 
+                  - generic [ref=e1939]: 
+                  - generic [ref=e1940]: 
+                  - generic [ref=e1941]: 
+                  - text: (51)
+                - paragraph [ref=e1942]: Product in stock
+                - paragraph [ref=e1943]: TK. 270 TK. 219
+          - generic "এইচএসসি ইংরেজি মিশন A (১ম ও ২য় পত্র) নাঈম দুর্জয়" [ref=e1944]:
+            - link "HSC English Mission A (1st image এইচএসসি ইংরেজি মিশন A (১ম ও ২য় পত্র) নাঈম দুর্জয়      (39) Product in stock TK. 400" [ref=e1946] [cursor=pointer]:
+              - /url: /book/551210/hsc-english-mission-a-1st
+              - img "HSC English Mission A (1st image" [ref=e1948]
+              - generic [ref=e1950]:
+                - heading "এইচএসসি ইংরেজি মিশন A (১ম ও ২য় পত্র)" [level=4] [ref=e1951]
+                - paragraph [ref=e1952]: নাঈম দুর্জয়
+                - generic [ref=e1953]:
+                  - generic [ref=e1954]: 
+                  - generic [ref=e1955]: 
+                  - generic [ref=e1956]: 
+                  - generic [ref=e1957]: 
+                  - generic [ref=e1958]: 
+                  - text: (39)
+                - paragraph [ref=e1959]: Product in stock
+                - paragraph [ref=e1960]: TK. 400
+          - generic "প্রতিষ্ঠান যেভাবে পরিচালনা করবেন- ১ হাফেজ মাওলানা মুফতি মোহাম্মদ মুসা খান" [ref=e1961]:
+            - link "Pratishthan jevabe poricalona korben- ১ image 31 প্রতিষ্ঠান যেভাবে পরিচালনা করবেন- ১ হাফেজ মাওলানা মুফতি মোহাম্মদ মুসা খান      (4) TK. 320 TK. 221" [ref=e1963] [cursor=pointer]:
+              - /url: /book/276651/pratishthan-jevabe-poricalona-korben
+              - generic [ref=e1964]:
+                - img "Pratishthan jevabe poricalona korben- ১ image" [ref=e1965]
+                - paragraph [ref=e1967]: "31"
+              - generic [ref=e1969]:
+                - heading "প্রতিষ্ঠান যেভাবে পরিচালনা করবেন- ১" [level=4] [ref=e1970]
+                - paragraph [ref=e1971]: হাফেজ মাওলানা মুফতি মোহাম্মদ মুসা খান
+                - generic [ref=e1972]:
+                  - generic [ref=e1973]: 
+                  - generic [ref=e1974]: 
+                  - generic [ref=e1975]: 
+                  - generic [ref=e1976]: 
+                  - generic [ref=e1977]: 
+                  - text: (4)
+                - paragraph
+                - paragraph [ref=e1978]: TK. 320 TK. 221
+          - generic "কিউএনএ কমবাইন্ড ইংলিশ ব্যাচ ২০২৬, ২০২৭ কিউএনএ পাবলিকেশন্স লেখক পরিষদ" [ref=e1979]:
+            - link "QNA Combined English Batch 2026, 2027 image 15 কিউএনএ কমবাইন্ড ইংলিশ ব্যাচ ২০২৬, ২০২৭ কিউএনএ পাবলিকেশন্স লেখক পরিষদ      (20) Product in stock TK. 680 TK. 578" [ref=e1981] [cursor=pointer]:
+              - /url: /book/452566/qna-combined-english-batch-2026-2027
+              - generic [ref=e1982]:
+                - img "QNA Combined English Batch 2026, 2027 image" [ref=e1983]
+                - paragraph [ref=e1985]: "15"
+              - generic [ref=e1987]:
+                - heading "কিউএনএ কমবাইন্ড ইংলিশ ব্যাচ ২০২৬, ২০২৭" [level=4] [ref=e1988]
+                - paragraph [ref=e1989]: কিউএনএ পাবলিকেশন্স লেখক পরিষদ
+                - generic [ref=e1990]:
+                  - generic [ref=e1991]: 
+                  - generic [ref=e1992]: 
+                  - generic [ref=e1993]: 
+                  - generic [ref=e1994]: 
+                  - generic [ref=e1995]: 
+                  - text: (20)
+                - paragraph [ref=e1996]: Product in stock
+                - paragraph [ref=e1997]: TK. 680 TK. 578
+          - generic "এইচএসসি EBI সাজেশন্স সৈয়দ সাকিব আলম" [ref=e1998]:
+            - link "HSC EBI SUGGESTIONS image 06 এইচএসসি EBI সাজেশন্স সৈয়দ সাকিব আলম      (9) Product in stock TK. 530 TK. 500" [ref=e2000] [cursor=pointer]:
+              - /url: /book/552221/hsc-ebi-suggestions
+              - generic [ref=e2001]:
+                - img "HSC EBI SUGGESTIONS image" [ref=e2002]
+                - paragraph [ref=e2004]: "06"
+              - generic [ref=e2006]:
+                - heading "এইচএসসি EBI সাজেশন্স" [level=4] [ref=e2007]
+                - paragraph [ref=e2008]: সৈয়দ সাকিব আলম
+                - generic [ref=e2009]:
+                  - generic [ref=e2010]: 
+                  - generic [ref=e2011]: 
+                  - generic [ref=e2012]: 
+                  - generic [ref=e2013]: 
+                  - generic [ref=e2014]: 
+                  - text: (9)
+                - paragraph [ref=e2015]: Product in stock
+                - paragraph [ref=e2016]: TK. 530 TK. 500
+          - generic "এইচএসসি ICT মাস্টারবুক টেন মিনিট স্কুল" [ref=e2017]:
+            - link "HSC ICT Master Book image এইচএসসি ICT মাস্টারবুক টেন মিনিট স্কুল      (46) TK. 750" [ref=e2019] [cursor=pointer]:
+              - /url: /book/510297/hsc-ict-master-book
+              - img "HSC ICT Master Book image" [ref=e2021]
+              - generic [ref=e2023]:
+                - heading "এইচএসসি ICT মাস্টারবুক" [level=4] [ref=e2024]
+                - paragraph [ref=e2025]: টেন মিনিট স্কুল
+                - generic [ref=e2026]:
+                  - generic [ref=e2027]: 
+                  - generic [ref=e2028]: 
+                  - generic [ref=e2029]: 
+                  - generic [ref=e2030]: 
+                  - generic [ref=e2031]: 
+                  - text: (46)
+                - paragraph
+                - paragraph [ref=e2032]: TK. 750
+          - generic "ফিজিক্স অলিম্পিয়াড সমগ্র ক্যাটাগরি গ - (৯ম ও ১০ম শ্রেণীর জন্য) তৌফিকুন নূর ফরিদ" [ref=e2033]:
+            - link "Physics Olympiad Somogro (For Class 9 and 10) image 27 ফিজিক্স অলিম্পিয়াড সমগ্র ক্যাটাগরি গ - (৯ম ও ১০ম শ্রেণীর জন্য) তৌফিকুন নূর ফরিদ      (20) Product in stock TK. 600 TK. 439" [ref=e2035] [cursor=pointer]:
+              - /url: /book/359542/physics-olympiad-somogro-for-class-9-and-10
+              - generic [ref=e2036]:
+                - img "Physics Olympiad Somogro (For Class 9 and 10) image" [ref=e2037]
+                - paragraph [ref=e2039]: "27"
+              - generic [ref=e2041]:
+                - heading "ফিজিক্স অলিম্পিয়াড সমগ্র ক্যাটাগরি গ - (৯ম ও ১০ম শ্রেণীর জন্য)" [level=4] [ref=e2042]
+                - paragraph [ref=e2043]: তৌফিকুন নূর ফরিদ
+                - generic [ref=e2044]:
+                  - generic [ref=e2045]: 
+                  - generic [ref=e2046]: 
+                  - generic [ref=e2047]: 
+                  - generic [ref=e2048]: 
+                  - generic [ref=e2049]: 
+                  - text: (20)
+                - paragraph [ref=e2050]: Product in stock
+                - paragraph [ref=e2051]: TK. 600 TK. 439
+          - generic "আল-মু’জামুল ওয়াফী ড. মুহাম্মদ ফজলুর রহমান" [ref=e2052]:
+            - link "Al-Mu'jamul Wayafe (Adhunik Arobi-Bangla Ovidhan) image 09 আল-মু’জামুল ওয়াফী ড. মুহাম্মদ ফজলুর রহমান      (21) Product in stock TK. 550 TK. 499" [ref=e2054] [cursor=pointer]:
+              - /url: /book/75333/al-mu-jamul-wayafe-adhunik-arobi-bangla-ovidhan
+              - generic [ref=e2055]:
+                - img "Al-Mu'jamul Wayafe (Adhunik Arobi-Bangla Ovidhan) image" [ref=e2056]
+                - paragraph [ref=e2058]: "09"
+              - generic [ref=e2060]:
+                - heading "আল-মু’জামুল ওয়াফী" [level=4] [ref=e2061]
+                - paragraph [ref=e2062]: ড. মুহাম্মদ ফজলুর রহমান
+                - generic [ref=e2063]:
+                  - generic [ref=e2064]: 
+                  - generic [ref=e2065]: 
+                  - generic [ref=e2066]: 
+                  - generic [ref=e2067]: 
+                  - generic [ref=e2068]: 
+                  - text: (21)
+                - paragraph [ref=e2069]: Product in stock
+                - paragraph [ref=e2070]: TK. 550 TK. 499
+          - generic "সার্টিফিকেট ইন কম্পিউটার অফিস অ্যাপ্লিকেশন (বিষয় কোড-৭৬) মাহবুবুর রহমান (তথ্য প্রযুক্তিবিদ)" [ref=e2071]:
+            - link "Certificate In Computer Office Application (Subject Cod-76) image 34 সার্টিফিকেট ইন কম্পিউটার অফিস অ্যাপ্লিকেশন (বিষয় কোড-৭৬) মাহবুবুর রহমান (তথ্য প্রযুক্তিবিদ)      (14) TK. 300 TK. 199" [ref=e2073] [cursor=pointer]:
+              - /url: /book/174094/certificate-in-computer-office-application-subject-cod-76
+              - generic [ref=e2074]:
+                - img "Certificate In Computer Office Application (Subject Cod-76) image" [ref=e2075]
+                - paragraph [ref=e2077]: "34"
+              - generic [ref=e2079]:
+                - heading "সার্টিফিকেট ইন কম্পিউটার অফিস অ্যাপ্লিকেশন (বিষয় কোড-৭৬)" [level=4] [ref=e2080]
+                - paragraph [ref=e2081]: মাহবুবুর রহমান (তথ্য প্রযুক্তিবিদ)
+                - generic [ref=e2082]:
+                  - generic [ref=e2083]: 
+                  - generic [ref=e2084]: 
+                  - generic [ref=e2085]: 
+                  - generic [ref=e2086]: 
+                  - generic [ref=e2087]: 
+                  - text: (14)
+                - paragraph
+                - paragraph [ref=e2088]: TK. 300 TK. 199
+          - 'generic "বহুভাষী সাঁটলিপি মো: আব্দুল মান্নান সরকার" [ref=e2089]':
+            - 'link "Bohuvashi Shortlipi image 11 বহুভাষী সাঁটলিপি মো: আব্দুল মান্নান সরকার      (18) Product in stock TK. 335 TK. 299" [ref=e2091] [cursor=pointer]':
+              - /url: /book/188433/bohuvashi-shortlipi
+              - generic [ref=e2092]:
+                - img "Bohuvashi Shortlipi image" [ref=e2093]
+                - paragraph [ref=e2095]: "11"
+              - generic [ref=e2097]:
+                - heading "বহুভাষী সাঁটলিপি" [level=4] [ref=e2098]
+                - paragraph [ref=e2099]: "মো: আব্দুল মান্নান সরকার"
+                - generic [ref=e2100]:
+                  - generic [ref=e2101]: 
+                  - generic [ref=e2102]: 
+                  - generic [ref=e2103]: 
+                  - generic [ref=e2104]: 
+                  - generic [ref=e2105]: 
+                  - text: (18)
+                - paragraph [ref=e2106]: Product in stock
+                - paragraph [ref=e2107]: TK. 335 TK. 299
+          - generic "কনজুমেট HSC Grammar Package শরীফ মুহাম্মাদ ইউনুস" [ref=e2108]:
+            - link "কনজুমেট HSC Grammar Package image 13 কনজুমেট HSC Grammar Package শরীফ মুহাম্মাদ ইউনুস      (5) Product in stock TK. 285 TK. 249" [ref=e2110] [cursor=pointer]:
+              - /url: /book/335611/-hsc-grammar-package
+              - generic [ref=e2111]:
+                - img "কনজুমেট HSC Grammar Package image" [ref=e2112]
+                - paragraph [ref=e2114]: "13"
+              - generic [ref=e2116]:
+                - heading "কনজুমেট HSC Grammar Package" [level=4] [ref=e2117]
+                - paragraph [ref=e2118]: শরীফ মুহাম্মাদ ইউনুস
+                - generic [ref=e2119]:
+                  - generic [ref=e2120]: 
+                  - generic [ref=e2121]: 
+                  - generic [ref=e2122]: 
+                  - generic [ref=e2123]: 
+                  - generic [ref=e2124]: 
+                  - text: (5)
+                - paragraph [ref=e2125]: Product in stock
+                - paragraph [ref=e2126]: TK. 285 TK. 249
+        - generic [ref=e2127]:
+          - generic [ref=e2129]: 
+          - generic [ref=e2130]: "1"
+          - link "2" [ref=e2131] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=2
+          - link "3" [ref=e2132] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=3
+          - link "4" [ref=e2133] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=4
+          - link "5" [ref=e2134] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=5
+          - link "6" [ref=e2135] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=6
+          - link "7" [ref=e2136] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=7
+          - link "8" [ref=e2137] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=8
+          - link "9" [ref=e2138] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=9
+          - link "10" [ref=e2139] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=10
+          - generic [ref=e2140]: ⋅⋅⋅
+          - link "166" [ref=e2141] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=166
+          - link "167" [ref=e2142] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=167
+          - link "" [ref=e2143] [cursor=pointer]:
+            - /url: /book/category/412/academic?sort=SOLD_COUNT_DESC&status=AVAILABLE&page=2
+            - generic [ref=e2144]: 
+  - contentinfo [ref=e2145]:
+    - generic [ref=e2147]:
+      - generic [ref=e2148]:
+        - img "OnnoRokom Web Service" [ref=e2150]
+        - generic [ref=e2151]:
+          - paragraph [ref=e2152]:
+            - img "Customer Care" [ref=e2153]
+            - text: Customer Care
+            - generic [ref=e2154]: "Hotline: 16297 (9 AM to 8 PM)"
+            - link "care@rokomari.com" [ref=e2156] [cursor=pointer]:
+              - /url: mailto:care@rokomari.com
+          - paragraph [ref=e2157]:
+            - img "Corporate Sales" [ref=e2158]
+            - text: To be a seller!
+            - link "seller@rokomari.com" [ref=e2160] [cursor=pointer]:
+              - /url: mailto:seller@rokomari.com
+          - paragraph [ref=e2161]:
+            - img "Corporate Sales" [ref=e2162]
+            - text: Corporate Sales
+            - generic [ref=e2163]:
+              - link "01708166238" [ref=e2164] [cursor=pointer]:
+                - /url: https://wa.me/8801708166238
+              - text: (Whatsapp)
+            - link "sales@rokomari.com" [ref=e2166] [cursor=pointer]:
+              - /url: mailto:sales@rokomari.com
+          - paragraph [ref=e2167]:
+            - img "Corporate Sales" [ref=e2168]
+            - text: Retailer
+            - generic [ref=e2169]:
+              - link "01708166185" [ref=e2170] [cursor=pointer]:
+                - /url: https://wa.me/8801708166185
+              - text: (Whatsapp)
+            - link "wholesale@rokomari.com" [ref=e2172] [cursor=pointer]:
+              - /url: mailto:wholesale@rokomari.com
+          - generic [ref=e2173]:
+            - img "Address" [ref=e2174]
+            - generic [ref=e2175]:
+              - paragraph [ref=e2176]:
+                - link "Address" [ref=e2177] [cursor=pointer]:
+                  - /url: mailto:admin@rokomari.com
+              - paragraph [ref=e2178]: 2/1/E, Eden Center, Arambag, Motijheel, Dhaka-1000
+          - paragraph [ref=e2179]:
+            - img "Email" [ref=e2180]
+            - text: For any other info
+            - link "admin@rokomari.com" [ref=e2182] [cursor=pointer]:
+              - /url: mailto:admin@rokomari.com
+      - generic [ref=e2184]:
+        - generic [ref=e2185]:
+          - generic [ref=e2186]:
+            - paragraph [ref=e2187]: হোম
+            - list [ref=e2188]:
+              - listitem [ref=e2189]:
+                - text: 
+                - link "বই" [ref=e2190] [cursor=pointer]:
+                  - /url: /book
+              - listitem [ref=e2191]:
+                - text: 
+                - link "ইলেকট্রনিক্স" [ref=e2192] [cursor=pointer]:
+                  - /url: /electronics
+              - listitem [ref=e2193]:
+                - text: 
+                - link "অ্যাক্সেসরিজ" [ref=e2194] [cursor=pointer]:
+                  - /url: /stationery
+              - listitem [ref=e2195]:
+                - text: 
+                - link "গিফট ভাউচার" [ref=e2196] [cursor=pointer]:
+                  - /url: /product/category/2102/Gift-Voucher
+              - listitem [ref=e2197]:
+                - text: 
+                - link "স্টেশনারি" [ref=e2198] [cursor=pointer]:
+                  - /url: /stationery
+          - generic [ref=e2199]:
+            - paragraph [ref=e2200]: পণ্যসমূহ
+            - list [ref=e2201]:
+              - listitem [ref=e2202]:
+                - text: 
+                - link "লেখকগণ" [ref=e2203] [cursor=pointer]:
+                  - /url: /book/authors
+              - listitem [ref=e2204]:
+                - text: 
+                - link "প্রকাশকগণ" [ref=e2205] [cursor=pointer]:
+                  - /url: /book/publishers
+              - listitem [ref=e2206]:
+                - text: 
+                - link "তালিকা" [ref=e2207] [cursor=pointer]:
+                  - /url: /lists?ref=f_l
+              - listitem [ref=e2208]:
+                - text: 
+                - link "রিভিউ" [ref=e2209] [cursor=pointer]:
+                  - /url: /reviews?ref=f_r
+          - generic [ref=e2210]:
+            - paragraph [ref=e2211]: আমাদের সম্পর্কে জানুন
+            - list [ref=e2212]:
+              - listitem [ref=e2213]:
+                - text: 
+                - link "আমাদের সম্পর্কে" [ref=e2214] [cursor=pointer]:
+                  - /url: /aboutus
+              - listitem [ref=e2215]:
+                - text: 
+                - link "সাইট ম্যাপ" [ref=e2216] [cursor=pointer]:
+                  - /url: /sitemap
+              - listitem [ref=e2217]:
+                - text: 
+                - link "ক্যারিয়ার" [ref=e2218] [cursor=pointer]:
+                  - /url: /career/job
+              - listitem [ref=e2219]:
+                - text: 
+                - link "ব্লগ" [ref=e2220] [cursor=pointer]:
+                  - /url: /blog
+        - generic [ref=e2221]:
+          - generic [ref=e2222]:
+            - paragraph [ref=e2223]: শপ বাই
+            - list [ref=e2224]:
+              - listitem [ref=e2225]:
+                - text: 
+                - link "বইয়ের ক্যাটাগরি" [ref=e2226] [cursor=pointer]:
+                  - /url: /book/categories
+              - listitem [ref=e2227]:
+                - text: 
+                - link "ইলেকট্রনিক্স ক্যাটাগরি" [ref=e2228] [cursor=pointer]:
+                  - /url: /electronics/categories
+              - listitem [ref=e2229]:
+                - text: 
+                - link "বই মেলা ২০২৬" [ref=e2230] [cursor=pointer]:
+                  - /url: /boimela
+              - listitem [ref=e2231]:
+                - text: 
+                - link "ইসলামিক বই" [ref=e2232] [cursor=pointer]:
+                  - /url: /book/category/81
+              - listitem [ref=e2233]:
+                - text: 
+                - link "প্রি-অর্ডার" [ref=e2234] [cursor=pointer]:
+                  - /url: /book/category/2103
+              - listitem [ref=e2235]:
+                - text: 
+                - link "বিদেশি বই" [ref=e2236] [cursor=pointer]:
+                  - /url: /book/category/403
+              - listitem [ref=e2237]:
+                - text: 
+                - link "বেস্ট সেলিং" [ref=e2238] [cursor=pointer]:
+                  - /url: /list/38927
+              - listitem [ref=e2239]:
+                - text: 
+                - link "অতিরিক্ত ছাড়" [ref=e2240] [cursor=pointer]:
+                  - /url: /book/category/1983
+              - listitem [ref=e2241]:
+                - text: 
+                - link "স্টেশনারি" [ref=e2242] [cursor=pointer]:
+                  - /url: /stationery
+          - generic [ref=e2243]:
+            - paragraph [ref=e2244]: সাপোর্ট
+            - list [ref=e2245]:
+              - listitem [ref=e2246]:
+                - text: 
+                - link "অর্ডার ট্র্যাক করুন" [ref=e2247] [cursor=pointer]:
+                  - /url: /my-section/orders-v2
+              - listitem [ref=e2248]:
+                - text: 
+                - link "যোগাযোগ করুন" [ref=e2249] [cursor=pointer]:
+                  - /url: /contactus
+              - listitem [ref=e2250]:
+                - text: 
+                - link "আমার পণ্য খুঁজুন" [ref=e2251] [cursor=pointer]:
+                  - /url: /findmyproduct
+              - listitem [ref=e2252]:
+                - text: 
+                - link "সচরাচর জিজ্ঞাসা" [ref=e2253] [cursor=pointer]:
+                  - /url: /faq
+              - listitem [ref=e2254]:
+                - text: 
+                - link "হেল্প ডেস্ক" [ref=e2255] [cursor=pointer]:
+                  - /url: /help
+              - listitem [ref=e2256]:
+                - text: 
+                - link "লেখক/প্রকাশক রিকোয়েস্ট" [ref=e2257] [cursor=pointer]:
+                  - /url: /writer-publisher/entry
+              - listitem [ref=e2258]:
+                - text: 
+                - link "রিটেইলার রিকোয়েস্ট" [ref=e2259] [cursor=pointer]:
+                  - /url: /retailer/sign-up
+          - generic [ref=e2260]:
+            - paragraph [ref=e2261]: পলিসি
+            - list [ref=e2262]:
+              - listitem [ref=e2263]:
+                - text: 
+                - link "শর্তাবলী" [ref=e2264] [cursor=pointer]:
+                  - /url: /terms
+              - listitem [ref=e2265]:
+                - text: 
+                - link "গোপনীয়তা পলিসি" [ref=e2266] [cursor=pointer]:
+                  - /url: /policy
+              - listitem [ref=e2267]:
+                - text: 
+                - link "হ্যাপি রিটার্ন পলিসি" [ref=e2268] [cursor=pointer]:
+                  - /url: /happy-return-replacement-faq
+              - listitem [ref=e2269]:
+                - text: 
+                - link "রিফান্ড পলিসি" [ref=e2270] [cursor=pointer]:
+                  - /url: /refund
+      - generic [ref=e2271]:
+        - generic [ref=e2272]:
+          - paragraph [ref=e2273]: JOIN US
+          - link "facebook" [ref=e2274] [cursor=pointer]:
+            - /url: https://www.facebook.com/rokomari2.0
+            - img "facebook" [ref=e2275]
+          - link "twitter" [ref=e2276] [cursor=pointer]:
+            - /url: https://twitter.com/RokomariDotCom
+            - img "twitter" [ref=e2277]
+          - link "telegram" [ref=e2278] [cursor=pointer]:
+            - /url: https://t.me/rokomariofficial
+            - img "telegram" [ref=e2279]
+          - link "whatsapp" [ref=e2280] [cursor=pointer]:
+            - /url: https://whatsapp.com/channel/0029VaJHB4WGU3BSWWSli32B
+            - img "whatsapp" [ref=e2281]
+          - link "linkedin" [ref=e2282] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/10239632
+            - img "linkedin" [ref=e2283]
+          - link "instagram" [ref=e2284] [cursor=pointer]:
+            - /url: https://www.instagram.com/rokomari
+            - img "instagram" [ref=e2285]
+          - link "youtube" [ref=e2286] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCMtGHnB-gqavI2L0d8SP2xg
+            - img "youtube" [ref=e2287]
+        - generic [ref=e2288]:
+          - paragraph [ref=e2289]:
+            - img "icon" [ref=e2290]
+            - text: Download App
+          - link "icon" [ref=e2291] [cursor=pointer]:
+            - /url: https://apps.apple.com/us/app/rokomari-com/id1493045502?mt=8
+            - img "icon" [ref=e2292]
+          - link "icon" [ref=e2293] [cursor=pointer]:
+            - /url: https://play.google.com/store/apps/details?id=com.rokomari&utm_campaign=site_footer&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1
+            - img "icon" [ref=e2294]
+        - img "star image" [ref=e2296]
+    - paragraph [ref=e2298]:
+      - generic [ref=e2299]: © 2012-2026 Rokomari.com
+      - link "DMCA.com Protection Status" [ref=e2300] [cursor=pointer]:
+        - /url: https://www.dmca.com/Protection/Status.aspx?ID=ddd27387-5eac-4229-9fe7-0ebcba690798&refurl=https://www.rokomari.com/book/category/412/school-college-books?sort=SOLD_COUNT_DESC&status=AVAILABLE
+        - img "DMCA.com Protection Status" [ref=e2301]
+    - generic [ref=e2304]:
+      - generic [ref=e2305]:
+        - 'heading "Rokomari.com : The Largest Online Store in Bangladesh" [level=5] [ref=e2306]':
+          - link "Rokomari.com" [ref=e2307] [cursor=pointer]:
+            - /url: https://www.rokomari.com
+          - text: ": The Largest Online Store in Bangladesh"
+        - paragraph [ref=e2308]:
+          - link "Rokomari.com" [ref=e2309] [cursor=pointer]:
+            - /url: https://www.rokomari.com
+          - text: is one of the most beloved online shops in Bangladesh, famous for its enormous collection of more than 300,000 books in almost 3,000 categories. But Rokomari is more than just a bookshop. It offers a wide range of products across more than 500 categories including electronics, gadgets, kitchen appliances, fashion accessories, kids accessories, food, stationery and automobile items.
+        - heading "Various book categories:" [level=5] [ref=e2310]
+        - paragraph [ref=e2311]: Rokomari has an incredible variety of books to suit every reader's preference. Whether you are looking for fantasy, non-fiction, religious books, self-help books or academic and professional books, Rokomari has it all. The website is easy to navigate, making it easy to find and buy the books you want.
+        - heading "Various product categories:" [level=5] [ref=e2312]
+        - paragraph [ref=e2313]: Rokomari is not just about books; It is a one-stop online shop for all your needs. From the latest electronics and gadgets to everyday kitchen appliances, kids and baby items, preferred beauty and personal care, trendy fashion and apparel, stationery and office supplies, food and groceries and even automobile products Rokomari has you covered. The site is designed to quickly find and buy what you are looking for.
+        - heading "Online Shopping Experience:" [level=5] [ref=e2314]
+        - paragraph [ref=e2315]: Shopping at Rokomari is designed to be easy. As a leading bookseller, Rokomari makes shopping for books or other products online an easy and enjoyable experience. The user-friendly website makes it easy for you to find and buy your favourite books, necessary electronics, groceries, baby items and more. You can get book buying advice or compare products to make sure you're getting the best deal. If you are wondering 'which store is near me', Rokomari's extensive online presence brings the shopping experience to your doorstep.
+        - heading "Your ultimate online shopping destination:." [level=5] [ref=e2316]
+        - paragraph [ref=e2317]: Rokomari is dedicated to being the leading online store in Bangladesh, offering a huge selection of products. With a strong distribution network, Rokomari ensures your orders on-time cash on delivery across Bangladesh and to more than 30 countries worldwide. Whether you are looking to buy books, electronics, groceries, kids items or anything else, Rokomari is your all time shopping destination. Visit rokomari.com now and enjoy a great online shopping experience by exploring a world of books or the realm of goods at your fingertips
+        - heading "Top Writer" [level=5] [ref=e2318]
+        - link "Arif Azad," [ref=e2319] [cursor=pointer]:
+          - /url: /book/author/47902
+        - link "Humayun Ahmed," [ref=e2320] [cursor=pointer]:
+          - /url: /book/author/1
+        - link "Muhammod Zafar Iqbal," [ref=e2321] [cursor=pointer]:
+          - /url: /book/author/93
+        - link "Farid Ahmed," [ref=e2322] [cursor=pointer]:
+          - /url: /book/author/68583
+        - link "Munzereen Shahid," [ref=e2323] [cursor=pointer]:
+          - /url: /book/author/79420
+        - link "Saiful Islam," [ref=e2324] [cursor=pointer]:
+          - /url: /book/author/82055
+        - link "Dr. Khandaker Abdullah Jahangir," [ref=e2325] [cursor=pointer]:
+          - /url: /book/author/24701
+        - link "Shaykh Ahmadullah," [ref=e2326] [cursor=pointer]:
+          - /url: /book/author/78860
+        - link "Tamim Shahriar Subeen," [ref=e2327] [cursor=pointer]:
+          - /url: /book/author/4207
+        - link "Ahmed Sofa," [ref=e2328] [cursor=pointer]:
+          - /url: /book/author/2254
+        - link "Bangabandhu Sheikh Mujibur Rahman," [ref=e2329] [cursor=pointer]:
+          - /url: /book/author/3471
+        - link "Abul Asad," [ref=e2330] [cursor=pointer]:
+          - /url: /book/author/6868
+        - link "Sadat Hossain," [ref=e2331] [cursor=pointer]:
+          - /url: /book/author/5717
+        - link "Dr. Mizanur Rahman Azhari," [ref=e2332] [cursor=pointer]:
+          - /url: /book/author/81400
+        - link "Jhankar Mahbub," [ref=e2333] [cursor=pointer]:
+          - /url: /book/author/40266
+        - link "Ayman Sadiq," [ref=e2334] [cursor=pointer]:
+          - /url: /book/author/60139
+        - link "Chamok Hasan," [ref=e2335] [cursor=pointer]:
+          - /url: /book/author/6019
+        - link "S. M. Zakir Hussain," [ref=e2336] [cursor=pointer]:
+          - /url: /book/author/3595
+        - link "Sharif Muhammad Younus," [ref=e2337] [cursor=pointer]:
+          - /url: /book/author/78635
+        - link "Rabindranath Tagore," [ref=e2338] [cursor=pointer]:
+          - /url: /book/author/930
+        - link "Mohammod Nazim Uddin," [ref=e2339] [cursor=pointer]:
+          - /url: /book/author/10634
+        - link "Nouman Ali Khan," [ref=e2340] [cursor=pointer]:
+          - /url: /book/author/53482
+        - link "Shahorier," [ref=e2341] [cursor=pointer]:
+          - /url: /book/author/4658
+        - link "Masud Shorif," [ref=e2342] [cursor=pointer]:
+          - /url: /book/author/7879
+        - link "Shaikhul Islam Mufti Muhammod Taki Osmani," [ref=e2343] [cursor=pointer]:
+          - /url: /book/author/11855
+        - link "Allama Sofiur Rahman Mubarakpuri (Rh.)," [ref=e2344] [cursor=pointer]:
+          - /url: /book/author/24668
+        - link "Rokib Hasan," [ref=e2345] [cursor=pointer]:
+          - /url: /book/author/4378
+        - link "Jahir Rayhan," [ref=e2346] [cursor=pointer]:
+          - /url: /book/author/3182
+        - link "Muhammod Eleyas kanchon (Coach Kanchan)," [ref=e2347] [cursor=pointer]:
+          - /url: /book/author/86968
+        - link "Saifur Rahman Khan," [ref=e2348] [cursor=pointer]:
+          - /url: /book/author/13863
+        - link "Bibhutibhushan Bandyopadhyay," [ref=e2349] [cursor=pointer]:
+          - /url: /book/author/7245
+        - link "Anisul Hoque," [ref=e2350] [cursor=pointer]:
+          - /url: /book/author/50
+        - link "Paulo Coelho," [ref=e2351] [cursor=pointer]:
+          - /url: /book/author/2210
+        - link "A. S. M. Anas Ferdous," [ref=e2352] [cursor=pointer]:
+          - /url: /book/author/82126
+        - link "Ragib Hasan," [ref=e2353] [cursor=pointer]:
+          - /url: /book/author/31918
+        - link "Sunil Gangapadhyay (Nillohit)," [ref=e2354] [cursor=pointer]:
+          - /url: /book/author/846
+        - link "MD. Tipu Sultan," [ref=e2355] [cursor=pointer]:
+          - /url: /book/author/90239
+        - link "Dale Carnegie," [ref=e2356] [cursor=pointer]:
+          - /url: /book/author/8325
+        - link "Abdur Razzak Bin Yusuf," [ref=e2357] [cursor=pointer]:
+          - /url: /book/author/15572
+        - link "Maolana Abu Taher Mesbah," [ref=e2358] [cursor=pointer]:
+          - /url: /book/author/11914
+        - link "Thibaut Meurisse," [ref=e2359] [cursor=pointer]:
+          - /url: /book/author/49301
+        - link "Brian Tracy," [ref=e2360] [cursor=pointer]:
+          - /url: /book/author/30813
+        - link "Shaikh Muhammad Saalih Al Munajjid," [ref=e2361] [cursor=pointer]:
+          - /url: /book/author/73301
+        - link "Sayed Mujtaba Ali," [ref=e2362] [cursor=pointer]:
+          - /url: /book/author/3298
+        - link "Munir Hasan," [ref=e2363] [cursor=pointer]:
+          - /url: /book/author/3031
+        - link "Mottasin Pahlovi," [ref=e2364] [cursor=pointer]:
+          - /url: /book/author/81098
+        - link "Mohiuddin Ahmmod," [ref=e2365] [cursor=pointer]:
+          - /url: /book/author/26452
+        - link "Humayun Azad," [ref=e2366] [cursor=pointer]:
+          - /url: /book/author/975
+        - link "Emam Muhammod Ibne Esmail Bokhari (R)," [ref=e2367] [cursor=pointer]:
+          - /url: /book/author/9392
+        - link "Nick Pirog," [ref=e2368] [cursor=pointer]:
+          - /url: /book/author/40707
+      - generic [ref=e2369]:
+        - heading "Books" [level=5] [ref=e2370]
+        - link "Religious Books," [ref=e2371] [cursor=pointer]:
+          - /url: /book/category/30
+        - link "Exams Preparation Guide," [ref=e2372] [cursor=pointer]:
+          - /url: /book/category/411
+        - link "Novel," [ref=e2373] [cursor=pointer]:
+          - /url: /book/category/364
+        - link "Language & Dictionary," [ref=e2374] [cursor=pointer]:
+          - /url: /book/category/23
+        - link "Children & Teens," [ref=e2375] [cursor=pointer]:
+          - /url: /book/category/11
+        - link "Self-Help, Motivational and Meditation," [ref=e2376] [cursor=pointer]:
+          - /url: /book/category/32
+        - link "School & College Books," [ref=e2377] [cursor=pointer]:
+          - /url: /book/category/412
+        - link "Mystery, Detective, Horror, Thriller and Adventure," [ref=e2378] [cursor=pointer]:
+          - /url: /book/category/408
+        - link "Story," [ref=e2379] [cursor=pointer]:
+          - /url: /book/category/363
+        - link "Biographies & Memories," [ref=e2380] [cursor=pointer]:
+          - /url: /book/category/9
+        - link "Computer,Internet,Freelancing and Outsourcing," [ref=e2381] [cursor=pointer]:
+          - /url: /book/category/14
+        - link "Mathematics, Science & Technology," [ref=e2382] [cursor=pointer]:
+          - /url: /book/category/31
+        - link "Business, Investing & Economics," [ref=e2383] [cursor=pointer]:
+          - /url: /book/category/10
+        - link "Rhymes, Poems and Recitation," [ref=e2384] [cursor=pointer]:
+          - /url: /book/category/407
+        - link "History and Tradition," [ref=e2385] [cursor=pointer]:
+          - /url: /book/category/19
+        - link "Articles," [ref=e2386] [cursor=pointer]:
+          - /url: /book/category/42
+        - link "Politics," [ref=e2387] [cursor=pointer]:
+          - /url: /book/category/404
+        - link "Professional,Journal & Reference," [ref=e2388] [cursor=pointer]:
+          - /url: /book/category/21
+        - link "Collections & Box Sets," [ref=e2389] [cursor=pointer]:
+          - /url: /book/category/12
+        - link "West Bengal Books," [ref=e2390] [cursor=pointer]:
+          - /url: /book/category/406
+        - link "Liberation War 1971," [ref=e2391] [cursor=pointer]:
+          - /url: /book/category/24
+        - link "Science Fiction," [ref=e2392] [cursor=pointer]:
+          - /url: /book/category/410
+        - link "Law and Justice," [ref=e2393] [cursor=pointer]:
+          - /url: /book/category/41
+        - link "Health and Fitness," [ref=e2394] [cursor=pointer]:
+          - /url: /book/category/18
+        - link "Travel and Emigration," [ref=e2395] [cursor=pointer]:
+          - /url: /book/category/36
+        - link "Family, Parenting and Children related," [ref=e2396] [cursor=pointer]:
+          - /url: /book/category/620
+        - link "Engineering,Medical,Versity and Polytechnic," [ref=e2397] [cursor=pointer]:
+          - /url: /book/category/413
+        - link "English Language Books," [ref=e2398] [cursor=pointer]:
+          - /url: /book/category/403
+        - link "Philosophy and Philosopher," [ref=e2399] [cursor=pointer]:
+          - /url: /book/category/29
+        - link "Bangladesh," [ref=e2400] [cursor=pointer]:
+          - /url: /book/category/8
+        - link "Music, Films & Entertainment," [ref=e2401] [cursor=pointer]:
+          - /url: /book/category/26
+        - link "Humor & Entertainment," [ref=e2402] [cursor=pointer]:
+          - /url: /book/category/20
+        - link "Agriculture," [ref=e2403] [cursor=pointer]:
+          - /url: /book/category/6
+        - link "Magazine," [ref=e2404] [cursor=pointer]:
+          - /url: /book/category/79
+        - link "Society, Civilization and Culture," [ref=e2405] [cursor=pointer]:
+          - /url: /book/category/405
+        - link "Books of Drama," [ref=e2406] [cursor=pointer]:
+          - /url: /book/category/414
+        - link "Cooking,Food and Nutrition," [ref=e2407] [cursor=pointer]:
+          - /url: /book/category/15
+        - link "Book," [ref=e2408] [cursor=pointer]:
+          - /url: /book/category/1
+        - link "Translated Books," [ref=e2409] [cursor=pointer]:
+          - /url: /book/category/35
+        - link "Drawing, Painting, Design and Photography," [ref=e2410] [cursor=pointer]:
+          - /url: /book/category/7
+        - link "Comics & Graphic Novels," [ref=e2411] [cursor=pointer]:
+          - /url: /book/category/13
+        - link "Media, Journalism & Reporting," [ref=e2412] [cursor=pointer]:
+          - /url: /book/category/22
+        - link "Others," [ref=e2413] [cursor=pointer]:
+          - /url: /book/category/28
+        - link "Sports & Games," [ref=e2414] [cursor=pointer]:
+          - /url: /book/category/34
+        - link "Nature & Outdoors," [ref=e2415] [cursor=pointer]:
+          - /url: /book/category/27
+        - link "National and International Olympiad," [ref=e2416] [cursor=pointer]:
+          - /url: /book/category/2426
+        - link "Omar Akuse Bookfair," [ref=e2417] [cursor=pointer]:
+          - /url: /book/category/40
+        - link "Animals and Animal Kingdom," [ref=e2418] [cursor=pointer]:
+          - /url: /book/category/409
+        - link "rokomari collection," [ref=e2419] [cursor=pointer]:
+          - /url: /book/category/80
+        - link "Suppliers Page," [ref=e2420] [cursor=pointer]:
+          - /url: /book/category/1988
+        - heading "Best Selling Books" [level=5] [ref=e2421]
+        - link "স্মার্ট ইংলিশ স্মার্ট ওয়ে টু লার্ন ইংলিশ," [ref=e2422] [cursor=pointer]:
+          - /url: /book/173438
+        - link "ঘরে বসে Spoken English," [ref=e2423] [cursor=pointer]:
+          - /url: /book/206592
+        - link "ইংলিশে দুর্বলদের জন্য," [ref=e2424] [cursor=pointer]:
+          - /url: /book/215765
+        - link "রাসূলুল্লাহ (সা.) এর সকাল সন্ধ্যার দু’আ ও যিকর এবং দোয়ার কার্ড," [ref=e2425] [cursor=pointer]:
+          - /url: /book/210878
+        - link "প্যারাডক্সিক্যাল সাজিদ," [ref=e2426] [cursor=pointer]:
+          - /url: /book/129384
+        - link "বেলা ফুরাবার আগে," [ref=e2427] [cursor=pointer]:
+          - /url: /book/195175
+        - link "সবার জন্য Vocabulary," [ref=e2428] [cursor=pointer]:
+          - /url: /book/212325
+        - link "রমাদান প্ল্যানার (সংস্করণ, ২০২৩)," [ref=e2429] [cursor=pointer]:
+          - /url: /book/213408
+        - link "প্যারাডক্সিক্যাল সাজিদ ২," [ref=e2430] [cursor=pointer]:
+          - /url: /book/178414
+        - link "স্মার্ট ইংলিশ স্মার্ট ওয়ে টু লার্ন ইংলিশ," [ref=e2431] [cursor=pointer]:
+          - /url: /book/197744
+        - link "মুক্তিযুদ্ধের ইতিহাস," [ref=e2432] [cursor=pointer]:
+          - /url: /book/14376
+        - link "ম্যাসেজ," [ref=e2433] [cursor=pointer]:
+          - /url: /book/213376
+        - link "জীবন যেখানে যেমন," [ref=e2434] [cursor=pointer]:
+          - /url: /book/212665
+        - link "সহজ ভাষায় ইংলিশ গ্রামার," [ref=e2435] [cursor=pointer]:
+          - /url: /book/223842
+        - link "ক্যাশ মেশিন," [ref=e2436] [cursor=pointer]:
+          - /url: /book/370955
+        - link "বোনাস," [ref=e2437] [cursor=pointer]:
+          - /url: /book/260423
+        - link "কুরআন থেকে নেওয়া জীবনের পাঠ," [ref=e2438] [cursor=pointer]:
+          - /url: /book/279506
+        - link "নবি জীবনের গল্প," [ref=e2439] [cursor=pointer]:
+          - /url: /book/212664
+        - link "অসমাপ্ত আত্মজীবনী (সুলভ)," [ref=e2440] [cursor=pointer]:
+          - /url: /book/91586
+        - link "এবার ভিন্ন কিছু হোক," [ref=e2441] [cursor=pointer]:
+          - /url: /book/226821
+        - link "মা, মা, মা এবং বাবা," [ref=e2442] [cursor=pointer]:
+          - /url: /book/170978
+        - link "ইংলিশে দুর্বলদের জন্য VOCAB THERAPY," [ref=e2443] [cursor=pointer]:
+          - /url: /book/241679
+        - link "বি স্মার্ট উইথ মুহাম্মাদ (সাঃ)," [ref=e2444] [cursor=pointer]:
+          - /url: /book/154062
+        - link "রাহে বেলায়াত," [ref=e2445] [cursor=pointer]:
+          - /url: /book/75371
+        - link "প্রোডাক্টিভ মুসলিম," [ref=e2446] [cursor=pointer]:
+          - /url: /book/193764
+        - link "কম্পিউটার প্রোগ্রামিং," [ref=e2447] [cursor=pointer]:
+          - /url: /book/10053
+        - link "বাংলা এ প্লাস," [ref=e2448] [cursor=pointer]:
+          - /url: /book/217964
+        - link "প্রত্যাবর্তন," [ref=e2449] [cursor=pointer]:
+          - /url: /book/160096
+        - link "ডোপামিন ডিটক্স," [ref=e2450] [cursor=pointer]:
+          - /url: /book/243389
+        - link "স্মার্ট ফেসবুক মার্কেটিং," [ref=e2451] [cursor=pointer]:
+          - /url: /book/278081
+        - link "কালার কোডেড উচ্চারণ ও অনুবাদ সহ সহজ কোরআন," [ref=e2452] [cursor=pointer]:
+          - /url: /book/164954
+        - 'link "ফ্রিল্যান্সিং : ইন্টারনেট থেকে আয়," [ref=e2453] [cursor=pointer]':
+          - /url: /book/194484
+        - link "নেভার স্টপ লার্নিং," [ref=e2454] [cursor=pointer]:
+          - /url: /book/156910
+        - link "সহীহ মাসনূন ওযীফা," [ref=e2455] [cursor=pointer]:
+          - /url: /book/90459
+        - link "তারাবীহর সালাতে কুরআনের বার্তা," [ref=e2456] [cursor=pointer]:
+          - /url: /book/380270
+        - 'link "সিক্রেটস অব জায়োনিজম : বিশ্বব্যাপী জায়োনিস্ট ষড়যন্ত্রের ভেতর-বাহির," [ref=e2457] [cursor=pointer]':
+          - /url: /book/194749
+        - link "স্টুডেন্ট হ্যাকস," [ref=e2458] [cursor=pointer]:
+          - /url: /book/177053
+        - link "আরজ আলী সমীপে," [ref=e2459] [cursor=pointer]:
+          - /url: /book/159496
+        - link "ভাল্লাগে না," [ref=e2460] [cursor=pointer]:
+          - /url: /book/177051
+        - link "যদ্যপি আমার গুরু," [ref=e2461] [cursor=pointer]:
+          - /url: /book/6773
+        - link "বেসিক টু ম্যাজিক ম্যাথ (তৃতীয় সংস্করণ ২০২৩)," [ref=e2462] [cursor=pointer]:
+          - /url: /book/232376
+        - link "কমিউনিকেশন হ্যাকস," [ref=e2463] [cursor=pointer]:
+          - /url: /book/194492
+        - link "জোবায়ের’স জিকে (সাধারণ জ্ঞান)," [ref=e2464] [cursor=pointer]:
+          - /url: /book/189896
+        - link "কুরআনের শব্দাবলি," [ref=e2465] [cursor=pointer]:
+          - /url: /book/239846
+        - link "দ্য পাওয়ার অব ইউর সাবকনশাস মাইন্ড," [ref=e2466] [cursor=pointer]:
+          - /url: /book/96211
+        - link "রিচ ড্যাড পুওর ড্যাড," [ref=e2467] [cursor=pointer]:
+          - /url: /book/172284
+        - link "জবাব," [ref=e2468] [cursor=pointer]:
+          - /url: /book/212666
+        - link "অঙ্ক ভাইয়া," [ref=e2469] [cursor=pointer]:
+          - /url: /book/158616
+        - link "বঙ্গভবনে শেষ দিনগুলি," [ref=e2470] [cursor=pointer]:
+          - /url: /book/7336
+        - link "কারাগারের রোজনামচা," [ref=e2471] [cursor=pointer]:
+          - /url: /book/133377
+        - heading "Top Publisher" [level=5] [ref=e2472]
+        - link "Somokalin Prokashon," [ref=e2473] [cursor=pointer]:
+          - /url: /book/publisher/6854
+        - link "Tamrolipi," [ref=e2474] [cursor=pointer]:
+          - /url: /book/publisher/58
+        - link "Adarsha," [ref=e2475] [cursor=pointer]:
+          - /url: /book/publisher/91
+        - link "Guardian Publications," [ref=e2476] [cursor=pointer]:
+          - /url: /book/publisher/5351
+        - link "Farid Publications," [ref=e2477] [cursor=pointer]:
+          - /url: /book/publisher/8319
+        - link "English Therapy," [ref=e2478] [cursor=pointer]:
+          - /url: /book/publisher/10917
+        - link "As-Sunnah Publications," [ref=e2479] [cursor=pointer]:
+          - /url: /book/publisher/672
+        - link "Prothoma Prokashan," [ref=e2480] [cursor=pointer]:
+          - /url: /book/publisher/38
+        - link "Somoy Prakashan," [ref=e2481] [cursor=pointer]:
+          - /url: /book/publisher/21
+        - link "Anannya," [ref=e2482] [cursor=pointer]:
+          - /url: /book/publisher/2
+        - link "Anyaprokash," [ref=e2483] [cursor=pointer]:
+          - /url: /book/publisher/1
+        - link "As-Sunna Foundation," [ref=e2484] [cursor=pointer]:
+          - /url: /book/publisher/10633
+        - link "Mowla Brothers," [ref=e2485] [cursor=pointer]:
+          - /url: /book/publisher/41
+        - link "Dimik Prokashoni," [ref=e2486] [cursor=pointer]:
+          - /url: /book/publisher/3594
+        - link "Addhayan Prokashoni," [ref=e2487] [cursor=pointer]:
+          - /url: /book/publisher/6901
+        - link "Batighor Prokashoni," [ref=e2488] [cursor=pointer]:
+          - /url: /book/publisher/572
+        - link "Panjeree Publications," [ref=e2489] [cursor=pointer]:
+          - /url: /book/publisher/391
+        - link "The University Press Limited(UPL)," [ref=e2490] [cursor=pointer]:
+          - /url: /book/publisher/606
+        - link "Anyadhara," [ref=e2491] [cursor=pointer]:
+          - /url: /book/publisher/364
+        - link "Gyankosh Prokashony," [ref=e2492] [cursor=pointer]:
+          - /url: /book/publisher/16
+        - link "Agamee Prokashoni," [ref=e2493] [cursor=pointer]:
+          - /url: /book/publisher/7
+        - link "Anupam Prakashany," [ref=e2494] [cursor=pointer]:
+          - /url: /book/publisher/11
+        - link "Mina Book House," [ref=e2495] [cursor=pointer]:
+          - /url: /book/publisher/651
+        - link "Bishowsahitto Kendro," [ref=e2496] [cursor=pointer]:
+          - /url: /book/publisher/51
+        - link "Seba Prokashony," [ref=e2497] [cursor=pointer]:
+          - /url: /book/publisher/369
+        - link "Ananda Publishers (India)," [ref=e2498] [cursor=pointer]:
+          - /url: /book/publisher/123
+        - link "Oitijjhya," [ref=e2499] [cursor=pointer]:
+          - /url: /book/publisher/175
+        - link "Protik Prokashana Sangstha," [ref=e2500] [cursor=pointer]:
+          - /url: /book/publisher/18
+        - link "Kakali Prokashoni," [ref=e2501] [cursor=pointer]:
+          - /url: /book/publisher/15
+        - link "Sattayon Prokashon," [ref=e2502] [cursor=pointer]:
+          - /url: /book/publisher/11107
+        - link "Bangla Sahityo Prishod," [ref=e2503] [cursor=pointer]:
+          - /url: /book/publisher/665
+        - link "Abosar Prokashana Sangstha," [ref=e2504] [cursor=pointer]:
+          - /url: /book/publisher/117
+        - link "Muktodesh Prokason," [ref=e2505] [cursor=pointer]:
+          - /url: /book/publisher/429
+        - link "Annesha Prokashon," [ref=e2506] [cursor=pointer]:
+          - /url: /book/publisher/12
+        - link "Rushda Prokash," [ref=e2507] [cursor=pointer]:
+          - /url: /book/publisher/10471
+        - link "Kathaprokash," [ref=e2508] [cursor=pointer]:
+          - /url: /book/publisher/6
+        - link "Deys Publishing (India)," [ref=e2509] [cursor=pointer]:
+          - /url: /book/publisher/642
+        - link "Anindya Prokash," [ref=e2510] [cursor=pointer]:
+          - /url: /book/publisher/84
+        - link "Charcha Grantho Prokash," [ref=e2511] [cursor=pointer]:
+          - /url: /book/publisher/1611
+        - link "Bangla Academy," [ref=e2512] [cursor=pointer]:
+          - /url: /book/publisher/8
+        - link "Pearl Publications," [ref=e2513] [cursor=pointer]:
+          - /url: /book/publisher/17
+        - link "Consummate Publication," [ref=e2514] [cursor=pointer]:
+          - /url: /book/publisher/10018
+        - link "Islamic Foundation," [ref=e2515] [cursor=pointer]:
+          - /url: /book/publisher/586
+        - link "Odommo Prokash," [ref=e2516] [cursor=pointer]:
+          - /url: /book/publisher/4890
+        - link "Protiti," [ref=e2517] [cursor=pointer]:
+          - /url: /book/publisher/575
+        - link "Nibraas Prokashoni," [ref=e2518] [cursor=pointer]:
+          - /url: /book/publisher/4987
+        - link "Adhunik Prokasoni," [ref=e2519] [cursor=pointer]:
+          - /url: /book/publisher/6797
+        - link "Darus Salam Bangladesh," [ref=e2520] [cursor=pointer]:
+          - /url: /book/publisher/2944
+        - link "The Sky Publishars," [ref=e2521] [cursor=pointer]:
+          - /url: /book/publisher/404
+        - link "Sobujpatro Publications," [ref=e2522] [cursor=pointer]:
+          - /url: /book/publisher/2941
+      - generic [ref=e2523]:
+        - heading "Electronics" [level=5] [ref=e2524]
+        - link "Stationery," [ref=e2525] [cursor=pointer]:
+          - /url: /product/category/2095
+        - link "Food Products," [ref=e2526] [cursor=pointer]:
+          - /url: /product/category/2358
+        - link "Islamic Accessories," [ref=e2527] [cursor=pointer]:
+          - /url: /product/category/2094
+        - link "Beauty & Health," [ref=e2528] [cursor=pointer]:
+          - /url: /product/category/2355
+        - link "Baby & Kids," [ref=e2529] [cursor=pointer]:
+          - /url: /product/category/1799
+        - link "Groceries," [ref=e2530] [cursor=pointer]:
+          - /url: /product/category/2848
+        - link "Kitchen Appliances," [ref=e2531] [cursor=pointer]:
+          - /url: /product/category/2384
+        - link "Bags and Travel," [ref=e2532] [cursor=pointer]:
+          - /url: /product/category/2338
+        - link "Fashion," [ref=e2533] [cursor=pointer]:
+          - /url: /product/category/1987
+        - link "Software and Multimedia," [ref=e2534] [cursor=pointer]:
+          - /url: /product/category/2132
+        - link "Tools, DIY & Outdoor," [ref=e2535] [cursor=pointer]:
+          - /url: /product/category/4484
+        - link "Furniture & Decor," [ref=e2536] [cursor=pointer]:
+          - /url: /product/category/2371
+        - link "Supplier and Campaign Page," [ref=e2537] [cursor=pointer]:
+          - /url: /product/category/1988
+        - link "Tutorial," [ref=e2538] [cursor=pointer]:
+          - /url: /product/category/2128
+        - link "Bedding & Bath," [ref=e2539] [cursor=pointer]:
+          - /url: /product/category/6381
+        - link "Medicine," [ref=e2540] [cursor=pointer]:
+          - /url: /product/category/3732
+        - link "Motors," [ref=e2541] [cursor=pointer]:
+          - /url: /product/category/2474
+        - link "Rokomari Product Collection," [ref=e2542] [cursor=pointer]:
+          - /url: /product/category/2341
+        - link "Hobby, Art and Culture," [ref=e2543] [cursor=pointer]:
+          - /url: /product/category/2399
+        - link "Sports & Outdoors," [ref=e2544] [cursor=pointer]:
+          - /url: /product/category/1986
+        - link "Pet Supplies," [ref=e2545] [cursor=pointer]:
+          - /url: /product/category/4648
+        - link "Home Appliances," [ref=e2546] [cursor=pointer]:
+          - /url: /product/category/2418
+        - link "Appliances," [ref=e2547] [cursor=pointer]:
+          - /url: /product/category/4454
+        - link "Covid 19 protection," [ref=e2548] [cursor=pointer]:
+          - /url: /product/category/2521
+        - link "Health & Beauty," [ref=e2549] [cursor=pointer]:
+          - /url: /product/category/3008
+        - heading "Best Selling Electronics Product" [level=5] [ref=e2550]
+        - link "Orelco SCC Without USB (12V-10A)," [ref=e2551] [cursor=pointer]:
+          - /url: /electronics/250829
+        - link "Orelco Auto Volt Shield," [ref=e2552] [cursor=pointer]:
+          - /url: /electronics/233809
+        - link "HTC AT-1210 Rechargeable 4 Clipper Hair Trimmer For Men," [ref=e2553] [cursor=pointer]:
+          - /url: /electronics/248461
+        - link "HTC AT-522 Rechargeable Cordless Trimmer For Men," [ref=e2554] [cursor=pointer]:
+          - /url: /electronics/248462
+        - link "Baseus Comfort Reading Mini Clip Lamp (DGRAD-0G)-Dark Gray," [ref=e2555] [cursor=pointer]:
+          - /url: /electronics/277048
+        - link "QCY HT05 Melobuds ANC True Wireless Earbuds - Black," [ref=e2556] [cursor=pointer]:
+          - /url: /electronics/318469
+        - link "HTC AT-538 Rechargeable Hair and Beard Trimmer For Men," [ref=e2557] [cursor=pointer]:
+          - /url: /electronics/248441
+        - link "Kemei KM-9020 Electric Hair Clipper Rechargeable Men Hair Trimmer," [ref=e2558] [cursor=pointer]:
+          - /url: /electronics/246406
+        - link "MI In Ear Headphones Basic - Black," [ref=e2559] [cursor=pointer]:
+          - /url: /electronics/195203
+        - link "A4 Tech Wired Optical Mouse 2X Click, USB, Black (OP-620D)," [ref=e2560] [cursor=pointer]:
+          - /url: /electronics/98744
+        - link "Remax RM-512 Wired Music Earphone," [ref=e2561] [cursor=pointer]:
+          - /url: /electronics/185807
+        - link "Orelco Digital Voltage Stabilizer (DVS - Up To 15.5 CFT)," [ref=e2562] [cursor=pointer]:
+          - /url: /electronics/102803
+        - link "Xiaomi Solove Desktop Stand Fan F5 5W 4000mAh - Black," [ref=e2563] [cursor=pointer]:
+          - /url: /electronics/239878
+        - link "Kemei KM-5017 Waterproof High Power Rechargeable Hair Trimmer," [ref=e2564] [cursor=pointer]:
+          - /url: /electronics/246633
+        - link "HTC AT-528 Professional Hair Clipper Trimmer For Men," [ref=e2565] [cursor=pointer]:
+          - /url: /electronics/248457
+        - link "Boya BY-M1 Omnidirectional Lavalier Microphone," [ref=e2566] [cursor=pointer]:
+          - /url: /electronics/236579
+        - link "Lenovo HE05 Wireless In-ear Neckband Bluetooth Earphones - Black," [ref=e2567] [cursor=pointer]:
+          - /url: /electronics/222036
+        - link "USB Rechargeable Folding Fan with LED Light (any color) - LR-2018," [ref=e2568] [cursor=pointer]:
+          - /url: /electronics/302316
+        - link "Orelco 3Watt Dc Tube Light," [ref=e2569] [cursor=pointer]:
+          - /url: /electronics/262532
+        - link "Philips BT1230 Cordless Trimmer," [ref=e2570] [cursor=pointer]:
+          - /url: /electronics/247277
+        - link "Prestige Electric Kettle - 2 Liter - Silver And Black," [ref=e2571] [cursor=pointer]:
+          - /url: /electronics/298488
+        - link "Lenovo HE05X Wireless In-ear Neckband Bluetooth Earphones - Black," [ref=e2572] [cursor=pointer]:
+          - /url: /electronics/222038
+        - link "Xiaomi Solove X3s USB Flashlight And 3000mAh Power Bank Black," [ref=e2573] [cursor=pointer]:
+          - /url: /electronics/222290
+        - link "Xiaomi MI Enchen Boost USB Electric Hair Trimmer," [ref=e2574] [cursor=pointer]:
+          - /url: /electronics/248493
+        - link "Xiaomi Dual Driver In-ear Magnetic Earphones - Blue," [ref=e2575] [cursor=pointer]:
+          - /url: /electronics/222295
+        - link "Havit HV-SC055 Laptop Cleaning Kit," [ref=e2576] [cursor=pointer]:
+          - /url: /electronics/185549
+        - link "Kemei KM-809A Digital Electric Rechargeable Professional Hair Clipper Trimmer," [ref=e2577] [cursor=pointer]:
+          - /url: /electronics/246535
+        - link "Vintage T9 Electric Professional Hair Clipper Hair Cutting Machine Trimmer," [ref=e2578] [cursor=pointer]:
+          - /url: /electronics/331598
+        - link "Kemei Km 6330 3 In 1 Hair Clipper Grooming Kit Trimmer," [ref=e2579] [cursor=pointer]:
+          - /url: /electronics/246721
+        - link "JYSUPER JY-2215 Professional Rechargeable Fan With LED Light," [ref=e2580] [cursor=pointer]:
+          - /url: /electronics/389636
+        - link "MI USB Cable Type C White," [ref=e2581] [cursor=pointer]:
+          - /url: /electronics/195227
+        - link "Haylou TWS GT1 Pro Bluetooth Earphone - Black," [ref=e2582] [cursor=pointer]:
+          - /url: /electronics/227456
+        - link "Jisulife FA13P Oscillating Extendable Desk Fan," [ref=e2583] [cursor=pointer]:
+          - /url: /electronics/314029
+        - link "Logitech USB Contoured Shape Mouse," [ref=e2584] [cursor=pointer]:
+          - /url: /electronics/136736
+        - link "Lenovo HE05X II (New Edition) Wireless In-ear Neckband Earphones - Black," [ref=e2585] [cursor=pointer]:
+          - /url: /electronics/265551
+        - link "Kitchen Clock English 24-hour Electronic Timer Digital Reminder Alarm Clocks (Multicolour).," [ref=e2586] [cursor=pointer]:
+          - /url: /electronics/355466
+        - link "Portable USB Rechargeable Neck Fan," [ref=e2587] [cursor=pointer]:
+          - /url: /electronics/310836
+        - link "Orelco SCC With USB (12V-10A)," [ref=e2588] [cursor=pointer]:
+          - /url: /electronics/309031
+        - link "Xiaomi USB Charger 33W Quick Charge- White," [ref=e2589] [cursor=pointer]:
+          - /url: /electronics/239831
+        - link "Baseus Smart Eye Series Rechargeable Folding Reading Desk Lamp (Smart Light) DGZG-0G- Dark Grey," [ref=e2590] [cursor=pointer]:
+          - /url: /electronics/293900
+        - link "JISULIFE FA43 Handheld Turbo Fan 4000mAh," [ref=e2591] [cursor=pointer]:
+          - /url: /electronics/304418
+        - link "QCY ArcBuds HT07 ANC TWS Earbuds," [ref=e2592] [cursor=pointer]:
+          - /url: /electronics/330784
+        - link "MI USB Charger 2A - White," [ref=e2593] [cursor=pointer]:
+          - /url: /electronics/195216
+        - link "New Sony High Speed Table Fan – 5 Blades (TFSO 5BO)," [ref=e2594] [cursor=pointer]:
+          - /url: /electronics/288413
+        - link "Philips BT1235 Cordless Trimmer," [ref=e2595] [cursor=pointer]:
+          - /url: /electronics/247234
+        - link "Jisulife FA20X 4000mah Portable Handheld Cooling Pocket Fan," [ref=e2596] [cursor=pointer]:
+          - /url: /electronics/301511
+        - link "A4 Tech Wired V-Track Mouse USB Black, 1.5M Cable (N-70FX)," [ref=e2597] [cursor=pointer]:
+          - /url: /electronics/98815
+        - link "Digital Stopwatch," [ref=e2598] [cursor=pointer]:
+          - /url: /electronics/336719
+        - link "A4Tech HS-30 ComfortFit Stereo Headset," [ref=e2599] [cursor=pointer]:
+          - /url: /electronics/98725
+        - link "Baseus Adaman Metal Digital Display Quick Charge Power Bank - 20000mAh 22.5W - PPAD000101" [ref=e2600] [cursor=pointer]:
+          - /url: /electronics/318454
+        - heading "Top Electronics Brand" [level=5] [ref=e2601]
+        - link "OnnoRokom Electronics Co. Ltd.," [ref=e2602] [cursor=pointer]:
+          - /url: /brand/12962
+        - link "HTC," [ref=e2603] [cursor=pointer]:
+          - /url: /brand/11933
+        - link "Xiaomi," [ref=e2604] [cursor=pointer]:
+          - /url: /brand/6327
+        - link "Non-Brand," [ref=e2605] [cursor=pointer]:
+          - /url: /brand/9152
+        - link "Kemei," [ref=e2606] [cursor=pointer]:
+          - /url: /brand/11910
+        - link "Baseus," [ref=e2607] [cursor=pointer]:
+          - /url: /brand/12748
+        - link "A4Tech," [ref=e2608] [cursor=pointer]:
+          - /url: /brand/4195
+        - link "JISULIFE," [ref=e2609] [cursor=pointer]:
+          - /url: /brand/13453
+        - link "Havit," [ref=e2610] [cursor=pointer]:
+          - /url: /brand/8960
+        - link "QCY," [ref=e2611] [cursor=pointer]:
+          - /url: /brand/13767
+        - link "Lenovo," [ref=e2612] [cursor=pointer]:
+          - /url: /brand/4197
+        - link "Remax," [ref=e2613] [cursor=pointer]:
+          - /url: /brand/8978
+        - link "Philips," [ref=e2614] [cursor=pointer]:
+          - /url: /brand/6914
+        - link "Haylou," [ref=e2615] [cursor=pointer]:
+          - /url: /brand/11191
+        - link "Boya," [ref=e2616] [cursor=pointer]:
+          - /url: /brand/11754
+        - link "Oraimo," [ref=e2617] [cursor=pointer]:
+          - /url: /brand/13151
+        - link "Logitech," [ref=e2618] [cursor=pointer]:
+          - /url: /brand/5848
+        - link "Geeoo," [ref=e2619] [cursor=pointer]:
+          - /url: /brand/13555
+        - link "Prestige," [ref=e2620] [cursor=pointer]:
+          - /url: /brand/13319
+        - link "Orelco," [ref=e2621] [cursor=pointer]:
+          - /url: /brand/4192
+        - link "Yison," [ref=e2622] [cursor=pointer]:
+          - /url: /brand/12845
+        - link "TP-Link," [ref=e2623] [cursor=pointer]:
+          - /url: /brand/4948
+        - link "Vintage," [ref=e2624] [cursor=pointer]:
+          - /url: /brand/14101
+        - link "Fantech," [ref=e2625] [cursor=pointer]:
+          - /url: /brand/16698
+        - link "Riversong," [ref=e2626] [cursor=pointer]:
+          - /url: /brand/12769
+        - link "OnePlus," [ref=e2627] [cursor=pointer]:
+          - /url: /brand/11323
+        - link "Defender," [ref=e2628] [cursor=pointer]:
+          - /url: /brand/13502
+        - link "Realme," [ref=e2629] [cursor=pointer]:
+          - /url: /brand/11326
+        - link "New Sony," [ref=e2630] [cursor=pointer]:
+          - /url: /brand/13162
+        - link "XTRA," [ref=e2631] [cursor=pointer]:
+          - /url: /brand/13416
+        - link "Imilab," [ref=e2632] [cursor=pointer]:
+          - /url: /brand/11226
+        - link "Rapoo," [ref=e2633] [cursor=pointer]:
+          - /url: /brand/4200
+        - link "JY Super," [ref=e2634] [cursor=pointer]:
+          - /url: /brand/13558
+        - link "JBL," [ref=e2635] [cursor=pointer]:
+          - /url: /brand/13454
+        - link "Adata," [ref=e2636] [cursor=pointer]:
+          - /url: /brand/4194
+        - link "Lexar," [ref=e2637] [cursor=pointer]:
+          - /url: /brand/11758
+        - link "Panasonic," [ref=e2638] [cursor=pointer]:
+          - /url: /brand/11916
+        - link "Megastar," [ref=e2639] [cursor=pointer]:
+          - /url: /brand/12778
+        - link "Vision," [ref=e2640] [cursor=pointer]:
+          - /url: /brand/13173
+        - link "Kieslect," [ref=e2641] [cursor=pointer]:
+          - /url: /brand/11409
+        - link "RIVO," [ref=e2642] [cursor=pointer]:
+          - /url: /brand/15056
+        - link "Awei," [ref=e2643] [cursor=pointer]:
+          - /url: /brand/13928
+        - link "Miyako," [ref=e2644] [cursor=pointer]:
+          - /url: /brand/13365
+        - link "Amazfit," [ref=e2645] [cursor=pointer]:
+          - /url: /brand/11189
+        - link "Nextool," [ref=e2646] [cursor=pointer]:
+          - /url: /brand/13959
+        - link "VGR," [ref=e2647] [cursor=pointer]:
+          - /url: /brand/11923
+        - link "Kamasonic," [ref=e2648] [cursor=pointer]:
+          - /url: /brand/13470
+        - link "Kaspersky Lab," [ref=e2649] [cursor=pointer]:
+          - /url: /brand/4559
+        - link "Edifier," [ref=e2650] [cursor=pointer]:
+          - /url: /brand/10468
+        - link "hoco" [ref=e2651] [cursor=pointer]:
+          - /url: /brand/15073
+      - generic [ref=e2652]:
+        - heading "Super Store" [level=5] [ref=e2653]
+        - link "Super Store Page," [ref=e2654] [cursor=pointer]:
+          - /url: https://www.rokomari.com/superstore
+        - link "Stationery," [ref=e2655] [cursor=pointer]:
+          - /url: /product/category/2095
+        - link "Food Products," [ref=e2656] [cursor=pointer]:
+          - /url: /product/category/2358
+        - link "Islamic Accessories," [ref=e2657] [cursor=pointer]:
+          - /url: /product/category/2094
+        - link "Beauty & Health," [ref=e2658] [cursor=pointer]:
+          - /url: /product/category/2355
+        - link "Baby & Kids," [ref=e2659] [cursor=pointer]:
+          - /url: /product/category/1799
+        - link "Groceries," [ref=e2660] [cursor=pointer]:
+          - /url: /product/category/2848
+        - link "Kitchen Appliances," [ref=e2661] [cursor=pointer]:
+          - /url: /product/category/2384
+        - link "Bags and Travel," [ref=e2662] [cursor=pointer]:
+          - /url: /product/category/2338
+        - link "Fashion," [ref=e2663] [cursor=pointer]:
+          - /url: /product/category/1987
+        - link "Software and Multimedia," [ref=e2664] [cursor=pointer]:
+          - /url: /product/category/2132
+        - link "Tools, DIY & Outdoor," [ref=e2665] [cursor=pointer]:
+          - /url: /product/category/4484
+        - link "Furniture & Decor," [ref=e2666] [cursor=pointer]:
+          - /url: /product/category/2371
+        - link "Supplier and Campaign Page," [ref=e2667] [cursor=pointer]:
+          - /url: /product/category/1988
+        - link "Tutorial," [ref=e2668] [cursor=pointer]:
+          - /url: /product/category/2128
+        - link "Bedding & Bath," [ref=e2669] [cursor=pointer]:
+          - /url: /product/category/6381
+        - link "Medicine," [ref=e2670] [cursor=pointer]:
+          - /url: /product/category/3732
+        - link "Motors," [ref=e2671] [cursor=pointer]:
+          - /url: /product/category/2474
+        - link "Rokomari Product Collection," [ref=e2672] [cursor=pointer]:
+          - /url: /product/category/2341
+        - link "Hobby, Art and Culture," [ref=e2673] [cursor=pointer]:
+          - /url: /product/category/2399
+        - link "Sports & Outdoors," [ref=e2674] [cursor=pointer]:
+          - /url: /product/category/1986
+        - link "Pet Supplies," [ref=e2675] [cursor=pointer]:
+          - /url: /product/category/4648
+        - link "Home Appliances," [ref=e2676] [cursor=pointer]:
+          - /url: /product/category/2418
+        - link "Appliances," [ref=e2677] [cursor=pointer]:
+          - /url: /product/category/4454
+        - link "Covid 19 protection," [ref=e2678] [cursor=pointer]:
+          - /url: /product/category/2521
+        - link "Health & Beauty," [ref=e2679] [cursor=pointer]:
+          - /url: /product/category/3008
+        - heading "Best Sellling Superstore Product" [level=5] [ref=e2680]
+        - link "Tangram (Magnet)," [ref=e2681] [cursor=pointer]:
+          - /url: /product/257476
+        - link "Alor Jholok," [ref=e2682] [cursor=pointer]:
+          - /url: /product/109603
+        - link "Chumboker Chamok," [ref=e2683] [cursor=pointer]:
+          - /url: /product/101883
+        - link "Torith Tandob," [ref=e2684] [cursor=pointer]:
+          - /url: /product/109604
+        - link "Rashayon Rohosho," [ref=e2685] [cursor=pointer]:
+          - /url: /product/122023
+        - link "Casio Scientific Calculator (2nd edition) Black," [ref=e2686] [cursor=pointer]:
+          - /url: /product/201785
+        - link "Econo Ball Pen Black Ink - 10 Pcs," [ref=e2687] [cursor=pointer]:
+          - /url: /product/175127
+        - link "Odvut Mapjokh," [ref=e2688] [cursor=pointer]:
+          - /url: /product/125611
+        - link "Econo DX Ball Pen Black Ink - 10 Pcs," [ref=e2689] [cursor=pointer]:
+          - /url: /product/175128
+        - link "Mojar Periscope," [ref=e2690] [cursor=pointer]:
+          - /url: /product/180497
+        - link "Focus Challenge (Bangla Version)," [ref=e2691] [cursor=pointer]:
+          - /url: /product/194654
+        - link "Matador Report Cover (Plastic cilp) Any color 1 Pcs," [ref=e2692] [cursor=pointer]:
+          - /url: /product/184775
+        - link "Casio (fx-991CW) Scientific Calculator- Black," [ref=e2693] [cursor=pointer]:
+          - /url: /product/288086
+        - 'link "Hand Writing Khata: Bangla Bornomala-1 (Play-Pre-Prymary)," [ref=e2694] [cursor=pointer]':
+          - /url: /product/214803
+        - link "Bigganbaksho-5th Class," [ref=e2695] [cursor=pointer]:
+          - /url: /product/194655
+        - 'link "Handwriting Exercise Khata : English Letters," [ref=e2696] [cursor=pointer]':
+          - /url: /product/214804
+        - link "Mrittik Nakshi Kantha (নকশি কাঁথা) Notebook," [ref=e2697] [cursor=pointer]:
+          - /url: /product/175751
+        - link "Khair Natural Olive Miswak," [ref=e2698] [cursor=pointer]:
+          - /url: /product/195010
+        - 'link "Hand Writing Khata: Mathematics Number," [ref=e2699] [cursor=pointer]':
+          - /url: /product/214805
+        - 'link "Hand Writing Khata: Arabic Word-1," [ref=e2700] [cursor=pointer]':
+          - /url: /product/214806
+        - link "Magic of Magnet," [ref=e2701] [cursor=pointer]:
+          - /url: /product/120521
+        - link "Acure Alkushi Powder (AlKushi Gura) - 100gm," [ref=e2702] [cursor=pointer]:
+          - /url: /product/207121
+        - link "Khaas Food Ashwagandha Powder - 100 gm," [ref=e2703] [cursor=pointer]:
+          - /url: /product/188167
+        - link "Matador Zipper Admit (Twin) Any Design - 1 Pcs," [ref=e2704] [cursor=pointer]:
+          - /url: /product/184774
+        - link "Pilot BP-1 Ball pen (M) - 1 Pcs," [ref=e2705] [cursor=pointer]:
+          - /url: /product/266759
+        - link "Matador Clear Bag - A4 - 1Pcs," [ref=e2706] [cursor=pointer]:
+          - /url: /product/225352
+        - link "Color Of Light," [ref=e2707] [cursor=pointer]:
+          - /url: /product/116709
+        - link "Matador Hi-School Ball Pen Colors 5Pcs," [ref=e2708] [cursor=pointer]:
+          - /url: /product/202732
+        - link "Econo 786 Ball Pen Black Ink - 10 Pcs," [ref=e2709] [cursor=pointer]:
+          - /url: /product/190135
+        - link "Matador All-Time Ball Pen-6Pcs," [ref=e2710] [cursor=pointer]:
+          - /url: /product/202723
+        - link "Matador All Time Scale 1Pcs," [ref=e2711] [cursor=pointer]:
+          - /url: /product/184771
+        - link "Acure Bombax Root Powder (Shimul Mul Gura) - 100gm," [ref=e2712] [cursor=pointer]:
+          - /url: /product/201954
+        - link "Acure Ashwagandha Powder (Ashwagandha Gura) - 100gm," [ref=e2713] [cursor=pointer]:
+          - /url: /product/201953
+        - link "Amazing Electricity," [ref=e2714] [cursor=pointer]:
+          - /url: /product/125612
+        - link "Casio Scientific Calculator 2nd edition," [ref=e2715] [cursor=pointer]:
+          - /url: /product/168407
+        - link "LCD Writing Tablet - 8.5 Inches," [ref=e2716] [cursor=pointer]:
+          - /url: /product/221005
+        - link "Al-Nuaim Chocolate Musk Attar - 6ml," [ref=e2717] [cursor=pointer]:
+          - /url: /product/101280
+        - 'link "Handwriting Khata: Bangla Bornomala-0 (Nurani-Free-Primary)," [ref=e2718] [cursor=pointer]':
+          - /url: /product/223435
+        - 'link "Handwriting Exercise Book : Arabic Horaf-0," [ref=e2719] [cursor=pointer]':
+          - /url: /product/223434
+        - link "Captain Curious," [ref=e2720] [cursor=pointer]:
+          - /url: /product/199748
+        - link "Hand Writing Khata (Bangla, English, Math, Arabic Word)," [ref=e2721] [cursor=pointer]:
+          - /url: /product/206773
+        - link "Dwmy Student Life Planner," [ref=e2722] [cursor=pointer]:
+          - /url: /product/261406
+        - link "Mystery Of Chemistry," [ref=e2723] [cursor=pointer]:
+          - /url: /product/151634
+        - link "Zaitoon Natural Export Quality Miswak," [ref=e2724] [cursor=pointer]:
+          - /url: /product/185884
+        - link "Hearts Gift Bag," [ref=e2725] [cursor=pointer]:
+          - /url: /product/208157
+        - link "XinGli Sticky Notes - 100 Sheets (Any Color)," [ref=e2726] [cursor=pointer]:
+          - /url: /product/219426
+        - 'link "Handwriting Exercise Book: English Sentences," [ref=e2727] [cursor=pointer]':
+          - /url: /product/214812
+        - link "Student Planner," [ref=e2728] [cursor=pointer]:
+          - /url: /product/276596
+        - link "4 Digit Manual Hand Tally Mechanical Palm Click Counter," [ref=e2729] [cursor=pointer]:
+          - /url: /product/102759
+        - link "Sevendays Dhaka Notebook," [ref=e2730] [cursor=pointer]:
+          - /url: /product/207253
+        - heading "Top Superstore Brand" [level=5] [ref=e2731]
+        - link "OnnoRokom BigganBaksho," [ref=e2732] [cursor=pointer]:
+          - /url: /brand/4207
+        - link "Matador Group," [ref=e2733] [cursor=pointer]:
+          - /url: /brand/8570
+        - link "Non-Brand," [ref=e2734] [cursor=pointer]:
+          - /url: /brand/9152
+        - link "Hearts Bangladesh," [ref=e2735] [cursor=pointer]:
+          - /url: /brand/4480
+        - link "ACURE," [ref=e2736] [cursor=pointer]:
+          - /url: /brand/9717
+        - link "Career Publications," [ref=e2737] [cursor=pointer]:
+          - /url: /brand/10339
+        - link "CASIO," [ref=e2738] [cursor=pointer]:
+          - /url: /brand/6911
+        - link "GQ Ball Pen Industries," [ref=e2739] [cursor=pointer]:
+          - /url: /brand/8503
+        - link "Deli," [ref=e2740] [cursor=pointer]:
+          - /url: /brand/10904
+        - link "Pilot," [ref=e2741] [cursor=pointer]:
+          - /url: /brand/12455
+        - link "Sevendays Notes," [ref=e2742] [cursor=pointer]:
+          - /url: /brand/8882
+        - link "Faber Castell," [ref=e2743] [cursor=pointer]:
+          - /url: /brand/8897
+        - link "Sariyagraph," [ref=e2744] [cursor=pointer]:
+          - /url: /brand/11628
+        - link "Al-Nuaim," [ref=e2745] [cursor=pointer]:
+          - /url: /brand/8893
+        - link "Khaas Food," [ref=e2746] [cursor=pointer]:
+          - /url: /brand/8810
+        - link "Pentel," [ref=e2747] [cursor=pointer]:
+          - /url: /brand/12563
+        - link "FEVICOL," [ref=e2748] [cursor=pointer]:
+          - /url: /brand/9884
+        - link "Mrittik," [ref=e2749] [cursor=pointer]:
+          - /url: /brand/11380
+        - link "Rongdhonu," [ref=e2750] [cursor=pointer]:
+          - /url: /brand/11059
+        - link "Khair Natural," [ref=e2751] [cursor=pointer]:
+          - /url: /brand/9112
+        - link "Foska," [ref=e2752] [cursor=pointer]:
+          - /url: /brand/4601
+        - link "Karkuma," [ref=e2753] [cursor=pointer]:
+          - /url: /brand/12586
+        - link "Taqwa," [ref=e2754] [cursor=pointer]:
+          - /url: /brand/4484
+        - link "Naturals," [ref=e2755] [cursor=pointer]:
+          - /url: /brand/10550
+        - link "Alif Attar," [ref=e2756] [cursor=pointer]:
+          - /url: /brand/10480
+        - link "Panash Food," [ref=e2757] [cursor=pointer]:
+          - /url: /brand/10477
+        - link "Green Publishers," [ref=e2758] [cursor=pointer]:
+          - /url: /brand/4625
+        - link "Prep Store," [ref=e2759] [cursor=pointer]:
+          - /url: /brand/11961
+        - link "Uni-Ball," [ref=e2760] [cursor=pointer]:
+          - /url: /brand/11327
+        - link "Vaseline," [ref=e2761] [cursor=pointer]:
+          - /url: /brand/12713
+        - link "Doms," [ref=e2762] [cursor=pointer]:
+          - /url: /brand/11769
+        - link "Tanzeel Publications," [ref=e2763] [cursor=pointer]:
+          - /url: /brand/10547
+        - link "SAMS," [ref=e2764] [cursor=pointer]:
+          - /url: /brand/12959
+        - link "Alor Dishari Publications," [ref=e2765] [cursor=pointer]:
+          - /url: /brand/11651
+        - link "Golla," [ref=e2766] [cursor=pointer]:
+          - /url: /brand/9822
+        - link "DyuBOOKISH," [ref=e2767] [cursor=pointer]:
+          - /url: /brand/11998
+        - link "Red Leaf," [ref=e2768] [cursor=pointer]:
+          - /url: /brand/12513
+        - link "Imarat Miswak," [ref=e2769] [cursor=pointer]:
+          - /url: /brand/8987
+        - link "FARHAN PERFUMES," [ref=e2770] [cursor=pointer]:
+          - /url: /brand/8990
+        - link "AKIJ Daily," [ref=e2771] [cursor=pointer]:
+          - /url: /brand/15715
+        - link "Perfumance," [ref=e2772] [cursor=pointer]:
+          - /url: /brand/11977
+        - link "Keep Smiling," [ref=e2773] [cursor=pointer]:
+          - /url: /brand/12371
+        - link "Projukti Team," [ref=e2774] [cursor=pointer]:
+          - /url: /brand/5325
+        - link "GXIN," [ref=e2775] [cursor=pointer]:
+          - /url: /brand/12528
+        - link "Linc," [ref=e2776] [cursor=pointer]:
+          - /url: /brand/12301
+        - link "PAPERTECH," [ref=e2777] [cursor=pointer]:
+          - /url: /brand/13050
+        - link "Gazi Paper Product," [ref=e2778] [cursor=pointer]:
+          - /url: /brand/6189
+        - link "Vim," [ref=e2779] [cursor=pointer]:
+          - /url: /brand/13843
+        - link "Mont Marte," [ref=e2780] [cursor=pointer]:
+          - /url: /brand/10906
+        - link "Vesoje Agro" [ref=e2781] [cursor=pointer]:
+          - /url: /brand/12915
+  - text: 
+  - button "Open chat" [ref=e2782] [cursor=pointer]

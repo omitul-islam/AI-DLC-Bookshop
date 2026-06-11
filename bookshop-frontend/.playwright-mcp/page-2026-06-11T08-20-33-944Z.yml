@@ -1,0 +1,151 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - link "BookHouse BookHouse" [ref=e6] [cursor=pointer]:
+      - /url: /
+      - img "BookHouse" [ref=e7]:
+        - generic [ref=e10]: BOOK
+        - generic [ref=e16]: HOUSE
+      - generic [ref=e17]: BookHouse
+    - navigation [ref=e18]:
+      - link "Dashboard" [ref=e19] [cursor=pointer]:
+        - /url: /
+        - img [ref=e20]
+        - generic [ref=e22]: Dashboard
+      - link "Books" [ref=e23] [cursor=pointer]:
+        - /url: /books
+        - img [ref=e24]
+        - generic [ref=e26]: Books
+      - link "Favourites" [ref=e27] [cursor=pointer]:
+        - /url: /favourites
+        - img [ref=e28]
+        - generic [ref=e30]: Favourites
+      - link "Customers" [ref=e31] [cursor=pointer]:
+        - /url: /customers
+        - img [ref=e32]
+        - generic [ref=e34]: Customers
+      - link "Categories" [ref=e35] [cursor=pointer]:
+        - /url: /categories
+        - img [ref=e36]
+        - generic [ref=e39]: Categories
+      - link "Orders" [ref=e40] [cursor=pointer]:
+        - /url: /orders
+        - img [ref=e41]
+        - generic [ref=e43]: Orders
+      - link "Audit Log" [ref=e44] [cursor=pointer]:
+        - /url: /audit-log
+        - img [ref=e45]
+        - generic [ref=e47]: Audit Log
+      - button "Cart" [ref=e49] [cursor=pointer]:
+        - img [ref=e50]
+        - generic [ref=e52]: Cart
+    - generic [ref=e54]:
+      - generic [ref=e55]: A
+      - generic [ref=e56]:
+        - paragraph [ref=e57]: Admin
+        - paragraph [ref=e58]: admin@bookhouse.com
+  - main [ref=e59]:
+    - generic [ref=e250]:
+      - generic [ref=e251]:
+        - heading "Orders" [level=1] [ref=e253]
+        - generic [ref=e255]:
+          - button "Export CSV" [ref=e256] [cursor=pointer]:
+            - img [ref=e257]
+            - text: Export CSV
+          - button "Create Order" [active] [ref=e259] [cursor=pointer]:
+            - img [ref=e260]
+            - text: Create Order
+      - generic [ref=e262]:
+        - img [ref=e263]
+        - button "All" [ref=e265] [cursor=pointer]
+        - button "Pending" [ref=e266] [cursor=pointer]
+        - button "Shipped" [ref=e267] [cursor=pointer]
+        - button "Delivered" [ref=e268] [cursor=pointer]
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - generic [ref=e272]:
+            - generic [ref=e273]:
+              - generic [ref=e274]: "#09f5931c"
+              - generic [ref=e275]:
+                - img [ref=e276]
+                - text: Delivered
+            - generic [ref=e278]: $399.60
+          - generic [ref=e279]:
+            - generic [ref=e280]:
+              - text: Customer
+              - paragraph [ref=e281]: Alice Johnson
+            - generic [ref=e282]:
+              - text: Book
+              - paragraph [ref=e283]: The Art of War × 40
+            - generic [ref=e284]:
+              - text: Created
+              - paragraph [ref=e285]: 6/11/2026
+        - generic [ref=e286]:
+          - generic [ref=e287]:
+            - generic [ref=e288]:
+              - generic [ref=e289]: "#c3bdecab"
+              - generic [ref=e290]:
+                - img [ref=e291]
+                - text: Delivered
+            - generic [ref=e293]: $37.98
+          - generic [ref=e294]:
+            - generic [ref=e295]:
+              - text: Customer
+              - paragraph [ref=e296]: Alice Johnson
+            - generic [ref=e297]:
+              - text: Book
+              - paragraph [ref=e298]: To Kill a Mockingbird × 2
+            - generic [ref=e299]:
+              - text: Created
+              - paragraph [ref=e300]: 6/11/2026
+        - generic [ref=e301]:
+          - generic [ref=e302]:
+            - generic [ref=e303]:
+              - generic [ref=e304]: "#987a70ba"
+              - generic [ref=e305]:
+                - img [ref=e306]
+                - text: Delivered
+            - generic [ref=e308]: $15.99
+          - generic [ref=e309]:
+            - generic [ref=e310]:
+              - text: Customer
+              - paragraph [ref=e311]: Alice Johnson
+            - generic [ref=e312]:
+              - text: Book
+              - paragraph [ref=e313]: The Great Gatsby × 1
+            - generic [ref=e314]:
+              - text: Created
+              - paragraph [ref=e315]: 6/11/2026
+      - generic [ref=e317]:
+        - generic [ref=e318]:
+          - heading "Create Order" [level=2] [ref=e319]
+          - button "Close modal" [ref=e320] [cursor=pointer]:
+            - img [ref=e321]
+        - generic [ref=e324]:
+          - generic [ref=e325]:
+            - generic [ref=e326]: Customer*
+            - combobox [ref=e327]:
+              - option "Select a customer..." [selected]
+              - option "Alice Johnson — alice@example.com"
+              - option "Bob Smith — bob@example.com"
+              - option "Carol Davis — carol@example.com"
+              - option "David Wilson — david@example.com"
+          - generic [ref=e328]:
+            - generic [ref=e329]: Book*
+            - combobox [ref=e330]:
+              - option "Select a book..." [selected]
+              - option "1984 — $14.99 (20 in stock)"
+              - option "A Brief History of Time — $24.99 (15 in stock)"
+              - option "Sapiens — $22.99 (18 in stock)"
+              - option "The Hobbit — $16.99 (35 in stock)"
+              - option "Dune — $19.99 (12 in stock)"
+              - option "The Diary of a Young Girl — $11.99 (22 in stock)"
+              - option "Cosmos — $20.99 (8 in stock)"
+              - option "The Great Gatsby — $15.99 (24 in stock)"
+              - option "To Kill a Mockingbird — $18.99 (28 in stock)"
+              - option "The Art of War — $9.99 (0 in stock)"
+          - generic [ref=e331]:
+            - generic [ref=e332]: Quantity *
+            - spinbutton [ref=e333]: "1"
+          - generic [ref=e334]:
+            - button "Cancel" [ref=e335] [cursor=pointer]
+            - button "Create Order" [ref=e336] [cursor=pointer]

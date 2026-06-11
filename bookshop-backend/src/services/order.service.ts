@@ -74,7 +74,7 @@ export class OrderService {
   }
 
   // List Orders (paginated)
-  async listOrders(page = 1, limit = 20, filters?: { status?: string; customerId?: string }) {
+  async listOrders(page = 1, limit = 20, filters?: { status?: string; customerId?: string; month?: string }) {
     const { data, total } = await db.findAllOrdersPaginated(page, limit, filters);
     return { data, pagination: buildPagination(page, limit, total) };
   }

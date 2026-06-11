@@ -101,6 +101,17 @@ property-based-testing: opted-out
 | R37 | Rounded-full search input | ✅ Done | [`../../bookshop-frontend/src/components/common/SearchInput.tsx`](../../bookshop-frontend/src/components/common/SearchInput.tsx) — `rounded-full` |
 | R38 | User avatar in sidebar | ✅ Done | [`../../bookshop-frontend/src/layouts/Sidebar.tsx`](../../bookshop-frontend/src/layouts/Sidebar.tsx) — avatar + name/email section |
 
+### Monthly Sales Analytics Panel
+| # | Requirement | Status | Implementation |
+|---|-------------|--------|---------------|
+| R30 | Dashboard monthly sales table (Month, Orders, Books Sold, Revenue, Avg Order Value) | ✅ Done | [`bookshop-frontend/../bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx`](../../bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx) — summary bar + table |
+| R31 | Trend arrow (↑/↓) for revenue vs previous month | ✅ Done | [`bookshop-frontend/../bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx`](../../bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx) — `TrendBadge` component |
+| R32 | Top-selling book per month row | ✅ Done | [`bookshop-backend/../bookshop-backend/src/services/analytics.service.ts`](../../bookshop-backend/src/services/analytics.service.ts) — `topBook` in monthly aggregation |
+| R33 | Summary bar: "This Month: ৳X (↑Y% from last month)" with YTD total | ✅ Done | [`bookshop-frontend/../bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx`](../../bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx) — `SummaryBar` at top |
+| R34 | Click month row → filtered orders page | ✅ Done | [`bookshop-frontend/../bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx`](../../bookshop-frontend/src/pages/components/MonthlySalesPanel.tsx) — `navigate(\`/orders?month=${month}\`)`, [`bookshop-frontend/../bookshop-frontend/src/pages/OrdersPage.tsx`](../../bookshop-frontend/src/pages/OrdersPage.tsx) — month filter from URL |
+| R35 | Backend `GET /api/v1/analytics/sales-by-month` endpoint | ✅ Done | [`bookshop-backend/../bookshop-backend/src/routes/analytics.routes.ts`](../../bookshop-backend/src/routes/analytics.routes.ts) |
+| R36 | No new DB tables — aggregation on existing orders | ✅ Done | [`bookshop-backend/../bookshop-backend/src/services/analytics.service.ts`](../../bookshop-backend/src/services/analytics.service.ts) — pure aggregation |
+
 ### Non-Functional
 | # | Requirement | Status | Implementation |
 |---|-------------|--------|---------------|
@@ -138,6 +149,7 @@ property-based-testing: opted-out
 | Feature Descriptions | ✅ Done | [`feature/feature.md`](../feature/feature.md) |
 | Book Covers API Contract | ✅ Done | [`06-contracts/01-apis/rest/books.yaml`](../06-contracts/01-apis/rest/books.yaml) — added `/books/{bookId}/cover` |
 | S3 Storage Client | ✅ Done | [`bookshop-backend/src/utils/supabase.ts`](../../bookshop-backend/src/utils/supabase.ts) |
+| Analytics API Contract | ✅ Done | [`06-contracts/01-apis/rest/analytics.yaml`](../06-contracts/01-apis/rest/analytics.yaml) |
 
 ---
 

@@ -279,10 +279,17 @@ class InMemoryDatabase {
     return { data: filtered.slice(offset, offset + limit), total: filtered.length };
   }
 
-  async findAllOrdersPaginated(page: number, limit: number, filters?: { status?: string; customerId?: string }): Promise<{ data: Order[]; total: number }> {
+  async findAllOrdersPaginated(page: number, limit: number, filters?: { status?: string; customerId?: string; month?: string }): Promise<{ data: Order[]; total: number }> {
     let filtered = Array.from(this.orders.values());
     if (filters?.status) filtered = filtered.filter(o => o.status === filters.status);
     if (filters?.customerId) filtered = filtered.filter(o => o.customerId === filters.customerId);
+    if (filters?.month) {
+      const [year, month] = filters.month.split('-').map(Number);
+      filtered = filtered.filter(o => {
+        const d = o.createdAt;
+        return d.getFullYear() === year && (d.getMonth() + 1) === month;
+      });
+    }
     filtered.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
     const offset = (page - 1) * limit;
     return { data: filtered.slice(offset, offset + limit), total: filtered.length };
@@ -346,6 +353,60 @@ class InMemoryDatabase {
     filtered.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
     const offset = (filters.page - 1) * filters.limit;
     return { data: filtered.slice(offset, offset + filters.limit), total: filtered.length };
+  }
+
+  async getSalesByMonth(): Promise<{ summary: any; months: any[] }> {
+    const orders = Array.from(this.orders.values());
+    const monthMap = new Map<string, Order[]>();
+    for (const o of orders) {
+      const key = `${o.createdAt.getFullYear()}-${String(o.createdAt.getMonth() + 1).padStart(2, '0')}`;
+      if (!monthMap.has(key)) monthMap.set(key, []);
+      monthMap.get(key)!.push(o);
+    }
+    const monthKeys = Array.from(monthMap.keys()).sort().reverse();
+
+    const monthlyData = monthKeys.map((key) => {
+      const monthOrders = monthMap.get(key)!;
+      const totalOrders = monthOrders.length;
+      const booksSold = monthOrders.reduce((sum, o) => sum + o.quantity, 0);
+      const revenue = monthOrders.reduce((sum, o) => sum + o.totalPrice, 0);
+      const avgOrderValue = totalOrders > 0 ? Math.round((revenue / totalOrders) * 100) / 100 : 0;
+
+      const bookSales = new Map<string, number>();
+      for (const o of monthOrders) {
+        bookSales.set(o.bookId, (bookSales.get(o.bookId) || 0) + o.quantity);
+      }
+      let topBookId = '';
+      let maxSold = 0;
+      for (const [bid, sold] of bookSales) {
+        if (sold > maxSold) { maxSold = sold; topBookId = bid; }
+      }
+      const topBook = topBookId ? (this.books.get(topBookId)?.title || null) : null;
+
+      return { month: key + '-01', totalOrders, booksSold, revenue, avgOrderValue, topBook };
+    });
+
+    const withTrend = monthlyData.map((curr, i) => ({
+      ...curr,
+      trend: i < monthlyData.length - 1 ? (curr.revenue >= monthlyData[i + 1].revenue ? 'up' : 'down') : 'flat',
+      trendPercent: i < monthlyData.length - 1 && monthlyData[i + 1].revenue > 0
+        ? Math.round(((curr.revenue - monthlyData[i + 1].revenue) / monthlyData[i + 1].revenue) * 100) : 0,
+    }));
+
+    const currentMonth = withTrend[0] || null;
+    const currentYear = new Date().getFullYear();
+    const summary = currentMonth ? {
+      currentMonthRevenue: currentMonth.revenue,
+      currentMonthOrders: currentMonth.totalOrders,
+      currentMonthBooksSold: currentMonth.booksSold,
+      trend: currentMonth.trend,
+      trendPercent: currentMonth.trendPercent,
+      ytdRevenue: monthlyData
+        .filter(m => parseInt(m.month.split('-')[0]) === currentYear)
+        .reduce((sum, m) => sum + m.revenue, 0),
+    } : null;
+
+    return { summary, months: withTrend };
   }
 
   async transaction<T>(callback: (db: InMemoryDatabase) => Promise<T>): Promise<T> {
@@ -690,12 +751,16 @@ class PostgresDatabase {
     };
   }
 
-  async findAllOrdersPaginated(page: number, limit: number, filters?: { status?: string; customerId?: string }): Promise<{ data: Order[]; total: number }> {
+  async findAllOrdersPaginated(page: number, limit: number, filters?: { status?: string; customerId?: string; month?: string }): Promise<{ data: Order[]; total: number }> {
     const conditions: string[] = [];
     const params: any[] = [];
     let idx = 1;
     if (filters?.status) { conditions.push(`status = $${idx++}`); params.push(filters.status); }
     if (filters?.customerId) { conditions.push(`customer_id = $${idx++}`); params.push(filters.customerId); }
+    if (filters?.month) {
+      conditions.push(`DATE_TRUNC('month', created_at) = $${idx++}::date`);
+      params.push(filters.month + '-01');
+    }
     const where = conditions.length ? 'WHERE ' + conditions.join(' AND ') : '';
     const offset = (page - 1) * limit;
 
@@ -810,6 +875,69 @@ class PostgresDatabase {
       data: dataResult.rows.map(r => toCamelCase(r) as AuditEntry),
       total: parseInt(countResult.rows[0].count, 10),
     };
+  }
+
+  // ---- Analytics ----
+
+  async getSalesByMonth(): Promise<{ summary: any; months: any[] }> {
+    const { rows } = await this.query(`
+      SELECT
+        DATE_TRUNC('month', created_at) AS month,
+        COUNT(DISTINCT id) AS total_orders,
+        COALESCE(SUM(quantity), 0) AS books_sold,
+        COALESCE(SUM(total_price), 0) AS revenue,
+        CASE WHEN COUNT(DISTINCT id) > 0 THEN ROUND(SUM(total_price) / COUNT(DISTINCT id), 2) ELSE 0 END AS avg_order_value
+      FROM orders
+      GROUP BY DATE_TRUNC('month', created_at)
+      ORDER BY month DESC
+    `);
+
+    const monthlyData = await Promise.all(
+      rows.map(async (row: any) => {
+        const topBookResult = await this.query(`
+          SELECT b.title, SUM(o.quantity) as total_sold
+          FROM orders o
+          JOIN books b ON o.book_id = b.id
+          WHERE DATE_TRUNC('month', o.created_at) = $1
+          GROUP BY b.id, b.title
+          ORDER BY total_sold DESC
+          LIMIT 1
+        `, [row.month]);
+
+        return {
+          month: row.month.toISOString().split('T')[0],
+          totalOrders: parseInt(row.total_orders, 10),
+          booksSold: parseInt(row.books_sold, 10),
+          revenue: parseFloat(row.revenue),
+          avgOrderValue: parseFloat(row.avg_order_value),
+          topBook: topBookResult.rows[0]?.title || null,
+        };
+      })
+    );
+
+    const withTrend = monthlyData.map((curr: any, i: number) => ({
+      ...curr,
+      trend: i < monthlyData.length - 1
+        ? (curr.revenue >= monthlyData[i + 1].revenue ? 'up' : 'down') : 'flat',
+      trendPercent: i < monthlyData.length - 1 && monthlyData[i + 1].revenue > 0
+        ? Math.round(((curr.revenue - monthlyData[i + 1].revenue) / monthlyData[i + 1].revenue) * 100)
+        : 0,
+    }));
+
+    const currentMonth = withTrend[0] || null;
+    const currentYear = new Date().getFullYear();
+    const summary = currentMonth ? {
+      currentMonthRevenue: currentMonth.revenue,
+      currentMonthOrders: currentMonth.totalOrders,
+      currentMonthBooksSold: currentMonth.booksSold,
+      trend: currentMonth.trend,
+      trendPercent: currentMonth.trendPercent,
+      ytdRevenue: monthlyData
+        .filter((m: any) => parseInt(m.month.split('-')[0]) === currentYear)
+        .reduce((sum: number, m: any) => sum + m.revenue, 0),
+    } : null;
+
+    return { summary, months: withTrend };
   }
 }
 

@@ -9,6 +9,7 @@ import { Card } from '../components/common/Card';
 import { Alert } from '../components/common/Alert';
 import { EmptyState } from '../components/common/EmptyState';
 import { BookHouseLogo } from '../components/common/BookHouseLogo';
+import { MonthlySalesPanel } from './components/MonthlySalesPanel';
 
 const LOW_STOCK_THRESHOLD = 5;
 
@@ -129,6 +130,12 @@ export default function HomePage() {
       <div className="animate-fade-in">
         <div className="text-center py-8 mb-6">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">BookHouse</h1>
+          <p className="text-sm text-gray-500 max-w-md mx-auto">
+            Manage your inventory, customers, and orders all in one place.
+          </p>
+        </div>
+        <div className="mb-6">
+          <MonthlySalesPanel />
         </div>
         <EmptyState
           icon={<BookOpenIcon className="w-8 h-8 text-gray-400" />}
@@ -181,6 +188,10 @@ export default function HomePage() {
           value={`$${stats.totalValue.toFixed(2)}`}
           bgColor="bg-emerald-50"
         />
+      </div>
+
+      <div className="mb-6">
+        <MonthlySalesPanel />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
