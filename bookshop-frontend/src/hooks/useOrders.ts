@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { ordersApi } from '../api/orders.api';
-import type { Order, CreateOrderRequest } from '../types';
+import type { Order, CreateOrderRequest, CancelOrderRequest } from '../types';
 
 export function useOrders() {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -30,5 +30,10 @@ export function useOrders() {
     return order;
   }, []);
 
-  return { orders, loading, page, totalPages, limit, setPage, setLimit, fetchOrders, createOrder, updateOrderStatus };
+  const cancelOrder = useCallback(async (id: string, data?: CancelOrderRequest) => {
+    const order = await ordersApi.cancel(id, data);
+    return order;
+  }, []);
+
+  return { orders, loading, page, totalPages, limit, setPage, setLimit, fetchOrders, createOrder, updateOrderStatus, cancelOrder };
 }

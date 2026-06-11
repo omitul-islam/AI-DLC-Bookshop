@@ -40,7 +40,8 @@ interface Order {
   bookId: string;
   quantity: number;
   totalPrice: number;
-  status: 'pending' | 'shipped' | 'delivered';
+  status: 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'cancelled' | 'returned';
+  cancelReason?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -51,7 +52,7 @@ interface StockMovement {
   oldStock: number;
   newStock: number;
   quantity: number;
-  reason: 'order_deduction' | 'manual_restock' | 'manual_adjustment' | 'correction';
+  reason: 'order_deduction' | 'manual_restock' | 'manual_adjustment' | 'correction' | 'cancellation';
   referenceId?: string;
   createdAt: Date;
 }
@@ -652,9 +653,9 @@ class PostgresDatabase {
 
   async createOrder(order: Order): Promise<Order> {
     const { rows } = await this.query(
-      `INSERT INTO orders (id, customer_id, book_id, quantity, total_price, status, created_at, updated_at)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *`,
-      [order.id, order.customerId, order.bookId, order.quantity, order.totalPrice, order.status, order.createdAt, order.updatedAt]
+      `INSERT INTO orders (id, customer_id, book_id, quantity, total_price, status, cancel_reason, created_at, updated_at)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *`,
+      [order.id, order.customerId, order.bookId, order.quantity, order.totalPrice, order.status, order.cancelReason || null, order.createdAt, order.updatedAt]
     );
     return toCamelCase(rows[0]) as Order;
   }
@@ -691,6 +692,7 @@ class PostgresDatabase {
     let idx = 1;
 
     if (updates.status !== undefined) { fields.push(`status = $${idx++}`); values.push(updates.status); }
+    if (updates.cancelReason !== undefined) { fields.push(`cancel_reason = $${idx++}`); values.push(updates.cancelReason); }
     if (fields.length === 0) return this.findOrderById(id);
 
     values.push(id);

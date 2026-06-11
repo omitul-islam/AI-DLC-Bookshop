@@ -3,6 +3,7 @@ import { orderService } from '../services/order.service';
 import {
   CreateOrderSchema,
   UpdateOrderStatusSchema,
+  CancelOrderSchema,
 } from '../validators/order.validator';
 import { PaginationSchema } from '../validators/pagination.validator';
 
@@ -73,6 +74,35 @@ router.put('/:id/status', async (req: Request, res: Response) => {
   try {
     const validated = UpdateOrderStatusSchema.parse(req.body);
     const order = await orderService.updateOrderStatus(req.params.id, validated);
+    res.json(order);
+  } catch (error: any) {
+    if (error.name === 'ZodError') {
+      return res.status(400).json({
+        error: 'Validation failed',
+        details: error.errors.reduce((acc: any, err: any) => {
+          acc[err.path[0]] = err.message;
+          return acc;
+        }, {}),
+      });
+    }
+    if (error.message === 'Order not found') {
+      return res.status(404).json({ error: error.message, orderId: req.params.id });
+    }
+    if (error.message === 'Invalid status transition') {
+      return res.status(400).json({
+        error: error.message,
+        details: error.details,
+      });
+    }
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// PUT /api/v1/orders/:id/cancel — Cancel pending order
+router.put('/:id/cancel', async (req: Request, res: Response) => {
+  try {
+    const validated = CancelOrderSchema.parse(req.body);
+    const order = await orderService.cancelOrder(req.params.id, validated);
     res.json(order);
   } catch (error: any) {
     if (error.name === 'ZodError') {

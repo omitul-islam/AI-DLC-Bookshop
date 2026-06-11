@@ -1,15 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
 import { db, Order } from '../db/database';
-import { CreateOrderRequest, UpdateOrderStatusRequest } from '../validators/order.validator';
+import { CreateOrderRequest, UpdateOrderStatusRequest, CancelOrderRequest } from '../validators/order.validator';
 import { auditService } from './audit.service';
 import { buildPagination } from '../utils/pagination';
 
 // Reference: context/02-domain/03-business-rules/order-rules.md
 
 export class OrderService {
-  // US-008: Create Order (Most Complex - with stock validation and deduction)
+  // US-008: Create Order
   async createOrder(request: CreateOrderRequest): Promise<Order> {
-    // Use transaction for atomic operation
     return await db.transaction(async (trx) => {
       // BR-ORDER-010: Validate customer exists
       const customer = await trx.findCustomerById(request.customerId);
@@ -23,21 +22,7 @@ export class OrderService {
         throw new Error('Book not found');
       }
 
-      // BR-ORDER-001: Check stock availability
-      if (book.stock < request.quantity) {
-        const error: any = new Error('Insufficient stock available');
-        error.details = {
-          bookId: request.bookId,
-          requested: request.quantity,
-          available: book.stock,
-        };
-        throw error;
-      }
-
-      // BR-ORDER-003: Ensure stock won't go negative (already checked above)
-      const newStock = book.stock - request.quantity;
-
-      // Create order
+      // Create order — no stock impact until delivery
       const order: Order = {
         id: uuidv4(),
         customerId: request.customerId,
@@ -50,22 +35,6 @@ export class OrderService {
       };
 
       await trx.createOrder(order);
-
-      // BR-ORDER-002: Automatic stock deduction
-      await trx.updateBook(request.bookId, { stock: newStock });
-
-      // Record stock movement
-      await trx.recordStockMovement({
-        id: uuidv4(),
-        bookId: request.bookId,
-        oldStock: book.stock,
-        newStock,
-        quantity: -request.quantity,
-        reason: 'order_deduction',
-        referenceId: order.id,
-        createdAt: new Date(),
-      });
-
       return order;
     }).then(async (order) => {
       await auditService.log('order', order.id, 'created', null, order);
@@ -90,7 +59,6 @@ export class OrderService {
 
   // US-009: Update Order Status
   async updateOrderStatus(id: string, request: UpdateOrderStatusRequest): Promise<Order> {
-    // Verify order exists
     const order = await db.findOrderById(id);
     if (!order) {
       throw new Error('Order not found');
@@ -98,9 +66,12 @@ export class OrderService {
 
     // BR-ORDER-005: Validate status transition
     const validTransitions: Record<string, string[]> = {
-      pending: ['shipped'],
+      pending: ['confirmed'],
+      confirmed: ['shipped'],
       shipped: ['delivered'],
-      delivered: [], // Final status
+      delivered: [],
+      cancelled: [],
+      returned: [],
     };
 
     const allowedNextStatuses = validTransitions[order.status];
@@ -114,10 +85,83 @@ export class OrderService {
       throw error;
     }
 
-    // Update status
+    // Deduct stock only when delivering
+    if (request.status === 'delivered') {
+      return await db.transaction(async (trx) => {
+        const book = await trx.findBookById(order.bookId);
+        if (!book) {
+          throw new Error('Book not found');
+        }
+
+        if (book.stock < order.quantity) {
+          const error: any = new Error('Insufficient stock available for delivery');
+          error.details = {
+            bookId: order.bookId,
+            requested: order.quantity,
+            available: book.stock,
+          };
+          throw error;
+        }
+
+        const newStock = book.stock - order.quantity;
+        await trx.updateBook(order.bookId, { stock: newStock });
+
+        await trx.recordStockMovement({
+          id: uuidv4(),
+          bookId: order.bookId,
+          oldStock: book.stock,
+          newStock,
+          quantity: -order.quantity,
+          reason: 'order_deduction',
+          referenceId: order.id,
+          createdAt: new Date(),
+        });
+
+        const updated = await trx.updateOrder(id, { status: request.status });
+        if (!updated) {
+          throw new Error('Failed to update order');
+        }
+
+        await auditService.log('order', id, 'updated', order, updated);
+        return updated;
+      });
+    }
+
+    // Non-delivery transitions — no stock impact
     const updated = await db.updateOrder(id, { status: request.status });
     if (!updated) {
       throw new Error('Failed to update order');
+    }
+
+    await auditService.log('order', id, 'updated', order, updated);
+    return updated;
+  }
+
+  // Cancel Order — allowed from 'pending' or 'confirmed' status
+  async cancelOrder(id: string, request: CancelOrderRequest): Promise<Order> {
+    const order = await db.findOrderById(id);
+    if (!order) {
+      throw new Error('Order not found');
+    }
+
+    if (order.status !== 'pending' && order.status !== 'confirmed') {
+      const error: any = new Error('Invalid status transition');
+      error.details = {
+        currentStatus: order.status,
+        requestedStatus: 'cancelled',
+        message: `Cannot cancel order with status ${order.status}. Only pending or confirmed orders can be cancelled.`,
+      };
+      throw error;
+    }
+
+    // Cancel — no stock impact (stock is only deducted at delivery)
+    const updated = await db.updateOrder(id, {
+      status: 'cancelled',
+      cancelReason: request.reason || undefined,
+    });
+
+    if (!updated) {
+      throw new Error('Failed to cancel order');
     }
 
     await auditService.log('order', id, 'updated', order, updated);

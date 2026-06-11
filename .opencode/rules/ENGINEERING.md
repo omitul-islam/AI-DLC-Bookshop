@@ -123,9 +123,14 @@ Always handle Promise rejections — never leave unhandled.
 
 ## GENERAL RULES
 
+- after giving you the requirements, go through guardrails, update the requirements with modification if needs, validate by me, next make execution plan and validate by me, next implementation plan and validate by me, next start coding.
+- after user suggest a requirement, ask questions to be 100% sure what the user actually want.
 - One function does one thing only
 - Function longer than 30 lines probably needs to be split
 - No commented out dead code in the codebase
 - No magic numbers — use named constants
 - If you write the same code twice, extract it into a utility
 - Every public function should have a clear, single responsibility
+- When suggesting fixes, search and find the fix first, then ask the user to validate and ask which option to apply. If modifications are needed, iterate based on user feedback before applying.
+- before pushing in git see the suspicious files or security leaks ( if there in files ), ask user to be confirmed and then push
+- always update the relevant docs after fixing or implementing any feature.

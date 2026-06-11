@@ -49,7 +49,8 @@ CREATE TABLE IF NOT EXISTS orders (
   quantity INTEGER NOT NULL CHECK (quantity >= 1),
   total_price DECIMAL(10, 2) NOT NULL CHECK (total_price >= 0),
   status VARCHAR(20) NOT NULL DEFAULT 'pending'
-    CHECK (status IN ('pending', 'shipped', 'delivered')),
+    CHECK (status IN ('pending', 'confirmed', 'shipped', 'delivered', 'cancelled', 'returned')),
+  cancel_reason VARCHAR(500),
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
 );
@@ -66,7 +67,7 @@ CREATE TABLE IF NOT EXISTS stock_movements (
   old_stock INTEGER NOT NULL,
   new_stock INTEGER NOT NULL,
   quantity INTEGER NOT NULL,
-  reason VARCHAR(50) NOT NULL CHECK (reason IN ('order_deduction', 'manual_restock', 'manual_adjustment', 'correction')),
+  reason VARCHAR(50) NOT NULL CHECK (reason IN ('order_deduction', 'manual_restock', 'manual_adjustment', 'correction', 'cancellation')),
   reference_id UUID,
   created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
 );

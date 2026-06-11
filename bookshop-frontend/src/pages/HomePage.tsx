@@ -2,9 +2,10 @@ import { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   BookOpenIcon, XCircleIcon, ExclamationTriangleIcon,
-  ArrowRightIcon, CheckCircleIcon,
+  ArrowRightIcon, CheckCircleIcon, ArrowUturnLeftIcon,
 } from '@heroicons/react/24/outline';
 import { useBooks } from '../hooks/useBooks';
+import { useOrders } from '../hooks/useOrders';
 import { Card } from '../components/common/Card';
 import { Alert } from '../components/common/Alert';
 import { EmptyState } from '../components/common/EmptyState';
@@ -34,8 +35,8 @@ function StatsCard({ icon, label, value, bgColor }: {
 
 function SkeletonStats() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-      {[1, 2, 3, 4].map((i) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+      {[1, 2, 3, 4, 5].map((i) => (
         <div key={i} className="bg-white rounded-lg shadow-card border border-gray-200 p-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg shimmer" />
@@ -67,6 +68,7 @@ function SkeletonSection() {
 
 export default function HomePage() {
   const { books, loading, fetchBooks } = useBooks();
+  const { orders, fetchOrders } = useOrders();
   const navigate = useNavigate();
   const [error, setError] = useState<string | null>(null);
 
@@ -74,7 +76,8 @@ export default function HomePage() {
     fetchBooks().catch((err: any) => {
       setError(err.message || 'Failed to load dashboard data');
     });
-  }, [fetchBooks]);
+    fetchOrders(1, 50, { status: 'returned' });
+  }, [fetchBooks, fetchOrders]);
 
   const stats = useMemo(() => {
     const total = books.length;
@@ -159,7 +162,7 @@ export default function HomePage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
         <StatsCard
           icon={<BookOpenIcon className="w-6 h-6 text-blue-600" />}
           label="Total Books"
@@ -188,13 +191,19 @@ export default function HomePage() {
           value={`$${stats.totalValue.toFixed(2)}`}
           bgColor="bg-emerald-50"
         />
+        <StatsCard
+          icon={<ArrowUturnLeftIcon className="w-6 h-6 text-rose-600" />}
+          label="Returned Orders"
+          value={orders.length}
+          bgColor="bg-rose-50"
+        />
       </div>
 
       <div className="mb-6">
         <MonthlySalesPanel />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <Card>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-base font-semibold text-gray-900">Recent Books</h2>
@@ -272,6 +281,47 @@ export default function HomePage() {
           )}
         </Card>
       </div>
+
+      <Card>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-base font-semibold text-gray-900">Recent Returns</h2>
+          <Link to="/orders?status=returned" className="text-sm font-medium text-primary hover:text-primary-dark transition-colors inline-flex items-center gap-1">
+            View All <ArrowRightIcon className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+        {orders.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-8 text-center">
+            <div className="w-12 h-12 rounded-full bg-rose-50 flex items-center justify-center mb-3">
+              <ArrowUturnLeftIcon className="w-6 h-6 text-rose-500" />
+            </div>
+            <p className="text-sm font-medium text-gray-900 mb-0.5">No returns yet</p>
+            <p className="text-xs text-gray-500">Returned orders will appear here.</p>
+          </div>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-100">
+                  <th className="text-left pb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Order</th>
+                  <th className="text-left pb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Customer</th>
+                  <th className="text-right pb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Amount</th>
+                  <th className="text-right pb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Date</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-50">
+                {orders.slice(0, 5).map((order) => (
+                  <tr key={order.id} className="hover:bg-gray-50 transition-colors">
+                    <td className="py-2.5 pr-2 font-mono text-xs font-medium text-gray-900">#{order.id.slice(0, 8)}</td>
+                    <td className="py-2.5 pr-2 text-gray-600 truncate max-w-[200px]">{order.customerId.slice(0, 8)}</td>
+                    <td className="py-2.5 text-right font-mono text-gray-700">${order.totalPrice.toFixed(2)}</td>
+                    <td className="py-2.5 text-right text-gray-500">{new Date(order.createdAt).toLocaleDateString()}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </Card>
     </div>
   );
 }

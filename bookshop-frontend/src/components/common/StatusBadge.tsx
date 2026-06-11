@@ -1,4 +1,4 @@
-import { ClockIcon, TruckIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { ClockIcon, TruckIcon, CheckIcon, CheckBadgeIcon, XCircleIcon, ArrowUturnLeftIcon } from '@heroicons/react/24/outline';
 import type { OrderStatus } from '../../types';
 
 const config: Record<OrderStatus, {
@@ -8,6 +8,10 @@ const config: Record<OrderStatus, {
     bg: 'bg-amber-50', text: 'text-amber-700', ring: 'ring-amber-600/20',
     label: 'Pending', icon: ClockIcon,
   },
+  confirmed: {
+    bg: 'bg-emerald-50', text: 'text-emerald-700', ring: 'ring-emerald-600/20',
+    label: 'Confirmed', icon: CheckBadgeIcon,
+  },
   shipped: {
     bg: 'bg-blue-50', text: 'text-blue-700', ring: 'ring-blue-600/20',
     label: 'Shipped', icon: TruckIcon,
@@ -15,6 +19,14 @@ const config: Record<OrderStatus, {
   delivered: {
     bg: 'bg-emerald-50', text: 'text-emerald-700', ring: 'ring-emerald-600/20',
     label: 'Delivered', icon: CheckIcon,
+  },
+  cancelled: {
+    bg: 'bg-gray-50', text: 'text-gray-600', ring: 'ring-gray-500/20',
+    label: 'Cancelled', icon: XCircleIcon,
+  },
+  returned: {
+    bg: 'bg-rose-50', text: 'text-rose-700', ring: 'ring-rose-600/20',
+    label: 'Returned', icon: ArrowUturnLeftIcon,
   },
 };
 

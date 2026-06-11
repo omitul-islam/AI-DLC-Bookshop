@@ -20,7 +20,7 @@ import { PageLoading } from '../components/common/Spinner';
 import { EmptyState } from '../components/common/EmptyState';
 import { Pagination } from '../components/common/Pagination';
 import { exportApi } from '../api/export.api';
-import type { Order, OrderStatus } from '../types';
+import type { Order } from '../types';
 
 const orderSchema = z.object({
   customerId: z.string().min(1, 'Please select a customer'),
@@ -33,12 +33,15 @@ type OrderFormData = z.infer<typeof orderSchema>;
 const filters = [
   { value: '', label: 'All' },
   { value: 'pending', label: 'Pending' },
+  { value: 'confirmed', label: 'Confirmed' },
   { value: 'shipped', label: 'Shipped' },
   { value: 'delivered', label: 'Delivered' },
+  { value: 'cancelled', label: 'Cancelled' },
+  { value: 'returned', label: 'Returned' },
 ] as const;
 
 export default function OrdersPage() {
-  const { orders, loading, page, totalPages, limit, setPage, setLimit, fetchOrders, createOrder, updateOrderStatus } = useOrders();
+  const { orders, loading, page, totalPages, limit, setPage, setLimit, fetchOrders, createOrder, updateOrderStatus, cancelOrder } = useOrders();
   const { books, fetchBooks } = useBooks();
   const { customers, fetchCustomers } = useCustomers();
   const { showToast } = useToast();
@@ -50,6 +53,9 @@ export default function OrdersPage() {
   const [submitting, setSubmitting] = useState(false);
   const [confirmTarget, setConfirmTarget] = useState<{ order: Order; nextStatus: string } | null>(null);
   const [confirmLoading, setConfirmLoading] = useState(false);
+  const [cancelTarget, setCancelTarget] = useState<Order | null>(null);
+  const [cancelReason, setCancelReason] = useState('');
+  const [cancelLoading, setCancelLoading] = useState(false);
 
   const {
     register, handleSubmit, reset, watch, formState: { errors },
@@ -109,10 +115,21 @@ export default function OrdersPage() {
     }
   };
 
-  const allowedNextStatus = (status: OrderStatus): string | null => {
-    if (status === 'pending') return 'shipped';
-    if (status === 'shipped') return 'delivered';
-    return null;
+  const handleCancel = async () => {
+    if (!cancelTarget) return;
+    setCancelLoading(true);
+    try {
+      await cancelOrder(cancelTarget.id, { reason: cancelReason || undefined });
+      showToast('success', 'Order cancelled successfully');
+      setCancelTarget(null);
+      setCancelReason('');
+      fetchOrders();
+      fetchBooks();
+    } catch (err: any) {
+      showToast('error', err.message || 'Failed to cancel order');
+    } finally {
+      setCancelLoading(false);
+    }
   };
 
   const filteredOrders = statusFilter
@@ -180,7 +197,6 @@ export default function OrdersPage() {
         <div>
           <div className="grid gap-4 mb-4">
             {filteredOrders.map((order) => {
-              const next = allowedNextStatus(order.status);
               return (
                 <Card key={order.id} hover>
                   <div className="flex items-start justify-between mb-4">
@@ -210,17 +226,44 @@ export default function OrdersPage() {
                     </div>
                   </div>
 
-                  {next && (
-                    <div className="flex justify-end pt-3 border-t border-gray-100">
+                  <div className="flex justify-end pt-3 border-t border-gray-100 gap-2">
+                    {(order.status === 'pending' || order.status === 'confirmed') && (
                       <Button
                         size="sm"
-                        variant={next === 'shipped' ? 'primary' : 'secondary'}
-                        onClick={() => setConfirmTarget({ order, nextStatus: next })}
+                        variant="danger"
+                        onClick={() => setCancelTarget(order)}
                       >
-                        Mark as {next.charAt(0).toUpperCase() + next.slice(1)}
+                        Cancel
                       </Button>
-                    </div>
-                  )}
+                    )}
+                    {order.status === 'pending' && (
+                      <Button
+                        size="sm"
+                        variant="primary"
+                        onClick={() => setConfirmTarget({ order, nextStatus: 'confirmed' })}
+                      >
+                        Confirm
+                      </Button>
+                    )}
+                    {order.status === 'confirmed' && (
+                      <Button
+                        size="sm"
+                        variant="primary"
+                        onClick={() => setConfirmTarget({ order, nextStatus: 'shipped' })}
+                      >
+                        Mark as Shipped
+                      </Button>
+                    )}
+                    {order.status === 'shipped' && (
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        onClick={() => setConfirmTarget({ order, nextStatus: 'delivered' })}
+                      >
+                        Mark as Delivered
+                      </Button>
+                    )}
+                  </div>
                 </Card>
               );
             })}
@@ -301,6 +344,38 @@ export default function OrdersPage() {
         variant="primary"
         loading={confirmLoading}
       />
+
+      <Modal
+        isOpen={!!cancelTarget}
+        onClose={() => { setCancelTarget(null); setCancelReason(''); }}
+        title="Cancel Order"
+        size="sm"
+      >
+        <div className="space-y-4">
+          <Alert
+            variant="warning"
+            title={`Cancel order #${cancelTarget?.id.slice(0, 8)}?`}
+            message="Stock will be restored. This action cannot be undone."
+          />
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">Reason (optional)</label>
+            <textarea
+              value={cancelReason}
+              onChange={(e) => setCancelReason(e.target.value)}
+              rows={3}
+              maxLength={500}
+              placeholder="e.g. Customer changed their mind..."
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
+            />
+            <p className="text-xs text-gray-400 mt-1 text-right">{cancelReason.length}/500</p>
+          </div>
+          <div className="flex justify-end gap-2 pt-2">
+            <Button variant="secondary" onClick={() => { setCancelTarget(null); setCancelReason(''); }}>Keep Order</Button>
+            <Button variant="danger" onClick={handleCancel} loading={cancelLoading}>Cancel Order</Button>
+          </div>
+        </div>
+      </Modal>
+
     </div>
   );
 }

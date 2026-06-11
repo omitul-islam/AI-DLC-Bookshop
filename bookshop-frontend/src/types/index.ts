@@ -52,7 +52,7 @@ export interface CreateCustomerRequest {
   address?: string;
 }
 
-export type OrderStatus = 'pending' | 'shipped' | 'delivered';
+export type OrderStatus = 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'cancelled' | 'returned';
 
 export interface Order {
   id: string;
@@ -61,6 +61,7 @@ export interface Order {
   quantity: number;
   totalPrice: number;
   status: OrderStatus;
+  cancelReason?: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -69,6 +70,10 @@ export interface CreateOrderRequest {
   customerId: string;
   bookId: string;
   quantity: number;
+}
+
+export interface CancelOrderRequest {
+  reason?: string;
 }
 
 export interface ApiError {
@@ -91,7 +96,7 @@ export interface StockMovement {
   oldStock: number;
   newStock: number;
   quantity: number;
-  reason: 'order_deduction' | 'manual_restock' | 'manual_adjustment' | 'correction';
+  reason: 'order_deduction' | 'manual_restock' | 'manual_adjustment' | 'correction' | 'cancellation';
   referenceId?: string;
   createdAt: string;
 }
