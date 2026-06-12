@@ -21,8 +21,10 @@
 
 ### Order Management
 - Create order
-- Update order status (pending → shipped → delivered)
-- Reduce stock when order is placed
+- Update order status (pending → confirmed → shipped → delivered → completed)
+- Cancel order from pending or confirmed status (with optional reason)
+- Return order from delivered status with reason (restores stock)
+- Reduce stock when order is delivered
 
 ---
 

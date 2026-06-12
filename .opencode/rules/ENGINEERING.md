@@ -121,10 +121,56 @@ Always handle Promise rejections — never leave unhandled.
 
 ---
 
-## GENERAL RULES
+## WORKFLOW PROCESS (MANDATORY)
 
-- after giving you the requirements, go through guardrails, update the requirements with modification if needs, validate by me, next make execution plan and validate by me, next implementation plan and validate by me, next start coding.
-- after user suggest a requirement, ask questions to be 100% sure what the user actually want.
+When user gives a feature or change request, follow these steps **in strict order**. Do not skip, merge, or reorder steps.
+
+### Step 1: Clarify Requirements
+- Ask questions to be 100% sure what the user actually wants.
+- Resolve ambiguous terms, confirm assumptions.
+
+### Step 2: Guardrails Review
+- Go through EVERY guardrail in this document (CODE STRUCTURE, API DESIGN, ERROR HANDLING, DATABASE, SECURITY, TYPESCRIPT, GENERAL RULES).
+- For each guardrail, note if the requirement conflicts, is inconsistent with existing codebase patterns, or needs modification.
+
+### Step 3: Update Requirements
+- Based on guardrails review, update the requirements with modifications.
+- Write the updated requirements to the relevant requirements file.
+- Document what changed and why.
+
+### Step 4: Validate with User
+- Present the updated requirements.
+- Ask user to validate before proceeding. Wait for approval.
+
+### Step 5: Execution Plan
+- Create a high-level plan: phases, files to modify, dependencies, ordering.
+- No code details yet.
+
+### Step 6: Validate with User
+- Present the execution plan.
+- Ask user to validate before proceeding. Wait for approval.
+
+### Step 7: Implementation Plan
+- Detailed per-file, per-line plan.
+- For each file: what to add, change, remove. Include line numbers.
+- No actual code yet.
+
+### Step 8: Validate with User
+- Present the implementation plan.
+- Ask user to validate before proceeding. Wait for approval.
+
+### Step 9: Implement (Code)
+- Write code file by file, in dependency order.
+- After implementation, run lint/typecheck/test commands.
+- Do not push to git unless explicitly asked.
+
+### Step 10: Update Docs
+- Always update all relevant documentation files after implementing any feature.
+- This includes business rules, API specs, README, etc.
+
+---
+
+## GENERAL RULES
 - One function does one thing only
 - Function longer than 30 lines probably needs to be split
 - No commented out dead code in the codebase
@@ -134,3 +180,5 @@ Always handle Promise rejections — never leave unhandled.
 - When suggesting fixes, search and find the fix first, then ask the user to validate and ask which option to apply. If modifications are needed, iterate based on user feedback before applying.
 - before pushing in git see the suspicious files or security leaks ( if there in files ), ask user to be confirmed and then push
 - always update the relevant docs after fixing or implementing any feature.
+- after the approval of your plan based on a proposed feature, update requirements, if it's approved, make execution plan, if it's approved make implementation guide, if it's approved go to coding.
+- after any new column added to any table always run migration

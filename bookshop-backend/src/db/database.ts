@@ -40,8 +40,9 @@ interface Order {
   bookId: string;
   quantity: number;
   totalPrice: number;
-  status: 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'cancelled' | 'returned';
+  status: 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'completed' | 'cancelled' | 'returned';
   cancelReason?: string;
+  returnReason?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -52,7 +53,7 @@ interface StockMovement {
   oldStock: number;
   newStock: number;
   quantity: number;
-  reason: 'order_deduction' | 'manual_restock' | 'manual_adjustment' | 'correction' | 'cancellation';
+  reason: 'order_deduction' | 'manual_restock' | 'manual_adjustment' | 'correction' | 'cancellation' | 'return_restock';
   referenceId?: string;
   createdAt: Date;
 }
@@ -693,6 +694,7 @@ class PostgresDatabase {
 
     if (updates.status !== undefined) { fields.push(`status = $${idx++}`); values.push(updates.status); }
     if (updates.cancelReason !== undefined) { fields.push(`cancel_reason = $${idx++}`); values.push(updates.cancelReason); }
+    if (updates.returnReason !== undefined) { fields.push(`return_reason = $${idx++}`); values.push(updates.returnReason); }
     if (fields.length === 0) return this.findOrderById(id);
 
     values.push(id);

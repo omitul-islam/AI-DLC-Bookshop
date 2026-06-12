@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import { db, Order } from '../db/database';
-import { CreateOrderRequest, UpdateOrderStatusRequest, CancelOrderRequest } from '../validators/order.validator';
+import { CreateOrderRequest, UpdateOrderStatusRequest, CancelOrderRequest, ReturnOrderRequest } from '../validators/order.validator';
 import { auditService } from './audit.service';
 import { buildPagination } from '../utils/pagination';
 
@@ -69,7 +69,8 @@ export class OrderService {
       pending: ['confirmed'],
       confirmed: ['shipped'],
       shipped: ['delivered'],
-      delivered: [],
+      delivered: ['completed', 'returned'],
+      completed: [],
       cancelled: [],
       returned: [],
     };
@@ -166,6 +167,57 @@ export class OrderService {
 
     await auditService.log('order', id, 'updated', order, updated);
     return updated;
+  }
+
+  // Return Order — allowed only from 'delivered' status
+  async returnOrder(id: string, request: ReturnOrderRequest): Promise<Order> {
+    const order = await db.findOrderById(id);
+    if (!order) {
+      throw new Error('Order not found');
+    }
+
+    if (order.status !== 'delivered') {
+      const error: any = new Error('Invalid status transition');
+      error.details = {
+        currentStatus: order.status,
+        requestedStatus: 'returned',
+        message: `Cannot return order with status ${order.status}. Only delivered orders can be returned.`,
+      };
+      throw error;
+    }
+
+    return await db.transaction(async (trx) => {
+      const book = await trx.findBookById(order.bookId);
+      if (!book) {
+        throw new Error('Book not found');
+      }
+
+      const newStock = book.stock + order.quantity;
+      await trx.updateBook(order.bookId, { stock: newStock });
+
+      await trx.recordStockMovement({
+        id: uuidv4(),
+        bookId: order.bookId,
+        oldStock: book.stock,
+        newStock,
+        quantity: order.quantity,
+        reason: 'return_restock',
+        referenceId: order.id,
+        createdAt: new Date(),
+      });
+
+      const updated = await trx.updateOrder(id, {
+        status: 'returned',
+        returnReason: request.reason || undefined,
+      });
+
+      if (!updated) {
+        throw new Error('Failed to update order');
+      }
+
+      await auditService.log('order', id, 'updated', order, updated);
+      return updated;
+    });
   }
 }
 

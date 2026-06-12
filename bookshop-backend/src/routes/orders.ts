@@ -1,13 +1,50 @@
 import { Router, Request, Response } from 'express';
+import { ZodError } from 'zod';
 import { orderService } from '../services/order.service';
 import {
   CreateOrderSchema,
   UpdateOrderStatusSchema,
   CancelOrderSchema,
+  ReturnOrderSchema,
 } from '../validators/order.validator';
 import { PaginationSchema } from '../validators/pagination.validator';
 
-// Reference: context/06-contracts/01-apis/rest/orders.yaml
+type ErrorDetails = Record<string, string | number | undefined>;
+
+function handleError(res: Response, error: unknown, status = 500) {
+  if (error instanceof ZodError) {
+    return res.status(400).json({
+      error: 'Validation failed',
+      details: error.errors.reduce((acc: ErrorDetails, err) => {
+        acc[err.path[0]] = err.message;
+        return acc;
+      }, {}),
+    });
+  }
+
+  if (error instanceof Error) {
+    const err = error as Error & { details?: ErrorDetails };
+
+    if (err.message === 'Order not found') {
+      return res.status(404).json({ error: err.message });
+    }
+
+    if (err.message === 'Customer not found' || err.message === 'Book not found') {
+      return res.status(404).json({ error: err.message });
+    }
+
+    if (err.message === 'Invalid status transition') {
+      return res.status(400).json({
+        error: err.message,
+        details: err.details,
+      });
+    }
+
+    return res.status(status).json({ error: err.message });
+  }
+
+  return res.status(500).json({ error: 'An unexpected error occurred' });
+}
 
 const router = Router();
 
@@ -17,26 +54,8 @@ router.post('/', async (req: Request, res: Response) => {
     const validated = CreateOrderSchema.parse(req.body);
     const order = await orderService.createOrder(validated);
     res.status(201).json(order);
-  } catch (error: any) {
-    if (error.name === 'ZodError') {
-      return res.status(400).json({
-        error: 'Validation failed',
-        details: error.errors.reduce((acc: any, err: any) => {
-          acc[err.path[0]] = err.message;
-          return acc
-        }, {}),
-      });
-    }
-    if (error.message === 'Customer not found' || error.message === 'Book not found') {
-      return res.status(404).json({ error: error.message });
-    }
-    if (error.message === 'Insufficient stock available') {
-      return res.status(400).json({
-        error: error.message,
-        details: error.details,
-      });
-    }
-    res.status(500).json({ error: error.message });
+  } catch (error: unknown) {
+    handleError(res, error);
   }
 });
 
@@ -51,8 +70,8 @@ router.get('/', async (req: Request, res: Response) => {
 
     const result = await orderService.listOrders(page, limit, filters);
     res.json(result);
-  } catch (error: any) {
-    res.status(500).json({ error: error.message });
+  } catch (error: unknown) {
+    handleError(res, error);
   }
 });
 
@@ -61,11 +80,8 @@ router.get('/:id', async (req: Request, res: Response) => {
   try {
     const order = await orderService.getOrder(req.params.id);
     res.json(order);
-  } catch (error: any) {
-    if (error.message === 'Order not found') {
-      return res.status(404).json({ error: error.message, orderId: req.params.id });
-    }
-    res.status(500).json({ error: error.message });
+  } catch (error: unknown) {
+    handleError(res, error);
   }
 });
 
@@ -75,26 +91,19 @@ router.put('/:id/status', async (req: Request, res: Response) => {
     const validated = UpdateOrderStatusSchema.parse(req.body);
     const order = await orderService.updateOrderStatus(req.params.id, validated);
     res.json(order);
-  } catch (error: any) {
-    if (error.name === 'ZodError') {
-      return res.status(400).json({
-        error: 'Validation failed',
-        details: error.errors.reduce((acc: any, err: any) => {
-          acc[err.path[0]] = err.message;
-          return acc;
-        }, {}),
-      });
-    }
-    if (error.message === 'Order not found') {
-      return res.status(404).json({ error: error.message, orderId: req.params.id });
-    }
-    if (error.message === 'Invalid status transition') {
-      return res.status(400).json({
-        error: error.message,
-        details: error.details,
-      });
-    }
-    res.status(500).json({ error: error.message });
+  } catch (error: unknown) {
+    handleError(res, error);
+  }
+});
+
+// PUT /api/v1/orders/:id/return — Return delivered order
+router.put('/:id/return', async (req: Request, res: Response) => {
+  try {
+    const validated = ReturnOrderSchema.parse(req.body);
+    const order = await orderService.returnOrder(req.params.id, validated);
+    res.json(order);
+  } catch (error: unknown) {
+    handleError(res, error);
   }
 });
 
@@ -104,26 +113,8 @@ router.put('/:id/cancel', async (req: Request, res: Response) => {
     const validated = CancelOrderSchema.parse(req.body);
     const order = await orderService.cancelOrder(req.params.id, validated);
     res.json(order);
-  } catch (error: any) {
-    if (error.name === 'ZodError') {
-      return res.status(400).json({
-        error: 'Validation failed',
-        details: error.errors.reduce((acc: any, err: any) => {
-          acc[err.path[0]] = err.message;
-          return acc;
-        }, {}),
-      });
-    }
-    if (error.message === 'Order not found') {
-      return res.status(404).json({ error: error.message, orderId: req.params.id });
-    }
-    if (error.message === 'Invalid status transition') {
-      return res.status(400).json({
-        error: error.message,
-        details: error.details,
-      });
-    }
-    res.status(500).json({ error: error.message });
+  } catch (error: unknown) {
+    handleError(res, error);
   }
 });
 

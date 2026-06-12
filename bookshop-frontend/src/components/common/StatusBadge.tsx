@@ -20,6 +20,10 @@ const config: Record<OrderStatus, {
     bg: 'bg-emerald-50', text: 'text-emerald-700', ring: 'ring-emerald-600/20',
     label: 'Delivered', icon: CheckIcon,
   },
+  completed: {
+    bg: 'bg-green-50', text: 'text-green-700', ring: 'ring-green-600/20',
+    label: 'Completed', icon: CheckBadgeIcon,
+  },
   cancelled: {
     bg: 'bg-gray-50', text: 'text-gray-600', ring: 'ring-gray-500/20',
     label: 'Cancelled', icon: XCircleIcon,

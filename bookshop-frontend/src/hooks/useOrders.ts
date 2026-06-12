@@ -35,5 +35,15 @@ export function useOrders() {
     return order;
   }, []);
 
-  return { orders, loading, page, totalPages, limit, setPage, setLimit, fetchOrders, createOrder, updateOrderStatus, cancelOrder };
+  const returnOrder = useCallback(async (id: string, data?: { reason?: string }) => {
+    const order = await ordersApi.returnOrder(id, data);
+    return order;
+  }, []);
+
+  const completeOrder = useCallback(async (id: string) => {
+    const order = await ordersApi.updateStatus(id, { status: 'completed' });
+    return order;
+  }, []);
+
+  return { orders, loading, page, totalPages, limit, setPage, setLimit, fetchOrders, createOrder, updateOrderStatus, cancelOrder, returnOrder, completeOrder };
 }

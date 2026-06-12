@@ -38,10 +38,11 @@ const filters = [
   { value: 'delivered', label: 'Delivered' },
   { value: 'cancelled', label: 'Cancelled' },
   { value: 'returned', label: 'Returned' },
+  { value: 'completed', label: 'Completed' },
 ] as const;
 
 export default function OrdersPage() {
-  const { orders, loading, page, totalPages, limit, setPage, setLimit, fetchOrders, createOrder, updateOrderStatus, cancelOrder } = useOrders();
+  const { orders, loading, page, totalPages, limit, setPage, setLimit, fetchOrders, createOrder, updateOrderStatus, cancelOrder, returnOrder, completeOrder } = useOrders();
   const { books, fetchBooks } = useBooks();
   const { customers, fetchCustomers } = useCustomers();
   const { showToast } = useToast();
@@ -56,6 +57,9 @@ export default function OrdersPage() {
   const [cancelTarget, setCancelTarget] = useState<Order | null>(null);
   const [cancelReason, setCancelReason] = useState('');
   const [cancelLoading, setCancelLoading] = useState(false);
+  const [returnTarget, setReturnTarget] = useState<Order | null>(null);
+  const [returnReason, setReturnReason] = useState('');
+  const [returnLoading, setReturnLoading] = useState(false);
 
   const {
     register, handleSubmit, reset, watch, formState: { errors },
@@ -93,8 +97,8 @@ export default function OrdersPage() {
       setModalOpen(false);
       fetchOrders();
       fetchBooks();
-    } catch (err: any) {
-      showToast('error', err.message || 'Failed to create order');
+    } catch (err: unknown) {
+      showToast('error', err instanceof Error ? err.message : 'Failed to create order');
     } finally {
       setSubmitting(false);
     }
@@ -108,10 +112,37 @@ export default function OrdersPage() {
       showToast('success', `Order marked as ${confirmTarget.nextStatus}`);
       setConfirmTarget(null);
       fetchOrders();
-    } catch (err: any) {
-      showToast('error', err.message || 'Failed to update status');
+    } catch (err: unknown) {
+      showToast('error', err instanceof Error ? err.message : 'Failed to update status');
     } finally {
       setConfirmLoading(false);
+    }
+  };
+
+  const handleReturn = async () => {
+    if (!returnTarget) return;
+    setReturnLoading(true);
+    try {
+      await returnOrder(returnTarget.id, { reason: returnReason || undefined });
+      showToast('success', 'Order returned successfully');
+      setReturnTarget(null);
+      setReturnReason('');
+      fetchOrders();
+      fetchBooks();
+    } catch (err: unknown) {
+      showToast('error', err instanceof Error ? err.message : 'Failed to return order');
+    } finally {
+      setReturnLoading(false);
+    }
+  };
+
+  const handleComplete = async (order: Order) => {
+    try {
+      await completeOrder(order.id);
+      showToast('success', 'Order marked as completed');
+      fetchOrders();
+    } catch (err: unknown) {
+      showToast('error', err instanceof Error ? err.message : 'Failed to complete order');
     }
   };
 
@@ -125,8 +156,8 @@ export default function OrdersPage() {
       setCancelReason('');
       fetchOrders();
       fetchBooks();
-    } catch (err: any) {
-      showToast('error', err.message || 'Failed to cancel order');
+    } catch (err: unknown) {
+      showToast('error', err instanceof Error ? err.message : 'Failed to cancel order');
     } finally {
       setCancelLoading(false);
     }
@@ -263,6 +294,24 @@ export default function OrdersPage() {
                         Mark as Delivered
                       </Button>
                     )}
+                    {order.status === 'delivered' && (
+                      <>
+                        <Button
+                          size="sm"
+                          variant="danger"
+                          onClick={() => setReturnTarget(order)}
+                        >
+                          Return
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="primary"
+                          onClick={() => handleComplete(order)}
+                        >
+                          Mark as Completed
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </Card>
               );
@@ -372,6 +421,37 @@ export default function OrdersPage() {
           <div className="flex justify-end gap-2 pt-2">
             <Button variant="secondary" onClick={() => { setCancelTarget(null); setCancelReason(''); }}>Keep Order</Button>
             <Button variant="danger" onClick={handleCancel} loading={cancelLoading}>Cancel Order</Button>
+          </div>
+        </div>
+      </Modal>
+
+      <Modal
+        isOpen={!!returnTarget}
+        onClose={() => { setReturnTarget(null); setReturnReason(''); }}
+        title="Return Order"
+        size="sm"
+      >
+        <div className="space-y-4">
+          <Alert
+            variant="warning"
+            title={`Return order #${returnTarget?.id.slice(0, 8)}?`}
+            message="Stock will be restored. This action cannot be undone."
+          />
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">Reason (optional)</label>
+            <textarea
+              value={returnReason}
+              onChange={(e) => setReturnReason(e.target.value)}
+              rows={3}
+              maxLength={500}
+              placeholder="e.g. Defective item, wrong book shipped..."
+              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors resize-none"
+            />
+            <p className="text-xs text-gray-400 mt-1 text-right">{returnReason.length}/500</p>
+          </div>
+          <div className="flex justify-end gap-2 pt-2">
+            <Button variant="secondary" onClick={() => { setReturnTarget(null); setReturnReason(''); }}>Keep Order</Button>
+            <Button variant="danger" onClick={handleReturn} loading={returnLoading}>Return Order</Button>
           </div>
         </div>
       </Modal>

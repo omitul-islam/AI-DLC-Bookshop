@@ -83,18 +83,25 @@ book.stock - order.quantity >= 0
 
 **Valid Transitions**:
 ```
-pending → shipped → delivered
+pending → confirmed → shipped → delivered → completed
+                                        ↘ returned
 ```
 
 **Invalid Transitions**:
-- ❌ pending → delivered (skip shipped)
-- ❌ shipped → pending (reverse)
-- ❌ delivered → pending/shipped (reverse)
+- ❌ pending → shipped (skip confirmed)
+- ❌ confirmed → delivered (skip shipped)
+- ❌ delivered → pending/confirmed/shipped (reverse)
+- ❌ completed → any (terminal state)
+- ❌ returned → any (terminal state)
 
 **Status Definitions**:
-- **pending**: Order created, awaiting fulfillment
+- **pending**: Order created, awaiting confirmation
+- **confirmed**: Order confirmed, awaiting shipment
 - **shipped**: Order dispatched, in transit
 - **delivered**: Order received by customer
+- **completed**: Order fully fulfilled (terminal success state)
+- **cancelled**: Order cancelled before shipping (terminal)
+- **returned**: Order returned by customer after delivery (terminal)
 
 ---
 
@@ -152,20 +159,33 @@ order.quantity >= 1
 
 ## BR-ORDER-008: Stock Restoration on Cancellation
 
-**Rule** (Future): If order is cancelled, restore stock
+**Rule**: Stock is NOT restored on cancellation. Stock is only deducted at delivery, so cancelling before delivery has no stock impact.
 
-**Current Behavior**: Not implemented
+**Current Behavior**:
+- Cancellation only allowed from `pending` or `confirmed` (before stock deduction)
+- No stock restoration needed because stock was never deducted
 
-**Future Logic**:
-1. Add "cancelled" status
-2. When status changes to cancelled
-3. Restore book.stock by order.quantity
-4. Prevent duplicate restoration
+## BR-ORDER-011: Stock Restoration on Return
+
+**Rule**: When a delivered order is returned, the book stock is restored
+
+**Logic**:
+1. Order must be in `delivered` status
+2. User provides optional return reason
+3. Stock is restored: `book.stock += order.quantity`
+4. Stock movement logged with reason `return_restock`
+5. Order status set to `returned`
+6. Audit log entry created
 
 **Formula**:
 ```
-restored_stock = current_stock + cancelled_order_quantity
+restored_stock = current_stock + returned_order_quantity
 ```
+
+**Error Prevention**:
+- Only `delivered` orders can be returned
+- Transaction ensures atomicity of stock + status update
+- Duplicate return prevented by status validation
 
 ---
 
@@ -202,12 +222,10 @@ restored_stock = current_stock + cancelled_order_quantity
 ```
 1. Validate customer exists (BR-ORDER-010)
 2. Validate book exists (BR-ORDER-001)
-3. Validate stock availability (BR-ORDER-001)
-4. Validate quantity >= 1 (BR-ORDER-007)
-5. Create order record
-6. Deduct stock (BR-ORDER-002)
-7. Set status = 'pending'
-8. Return order confirmation
+3. Validate quantity >= 1 (BR-ORDER-007)
+4. Create order record (status = 'pending')
+5. No stock deduction until delivery
+6. Return order confirmation
 ```
 
 ### Update Status Flow
@@ -215,8 +233,16 @@ restored_stock = current_stock + cancelled_order_quantity
 1. Fetch current order
 2. Validate order exists
 3. Validate status transition (BR-ORDER-005)
-4. Update status
-5. Return updated order
+4. If transitioning to 'delivered':
+   a. Check stock availability
+   b. Deduct stock (BR-ORDER-002)
+   c. Record stock movement
+5. If transitioning to 'returned':
+   a. Restore stock (BR-ORDER-011)
+   b. Record return stock movement
+6. Update status
+7. Create audit log entry
+8. Return updated order
 ```
 
 ---
@@ -260,9 +286,8 @@ restored_stock = current_stock + cancelled_order_quantity
 
 1. **Partial Fulfillment**: Allow splitting orders if partial stock available
 2. **Stock Reservation**: Reserve stock when order created, deduct when shipped
-3. **Return Handling**: Restore stock when order returned
-4. **Bulk Orders**: Validate bulk order stock across multiple books
-5. **Pre-order**: Allow orders with zero stock, fulfill when stock arrives
+3. **Bulk Orders**: Validate bulk order stock across multiple books
+4. **Pre-order**: Allow orders with zero stock, fulfill when stock arrives
 
 ---
 

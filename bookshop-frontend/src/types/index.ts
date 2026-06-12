@@ -52,7 +52,7 @@ export interface CreateCustomerRequest {
   address?: string;
 }
 
-export type OrderStatus = 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'cancelled' | 'returned';
+export type OrderStatus = 'pending' | 'confirmed' | 'shipped' | 'delivered' | 'completed' | 'cancelled' | 'returned';
 
 export interface Order {
   id: string;
