@@ -133,7 +133,7 @@ property-based-testing: opted-out
 | Glossary | ✅ Done | [`02-domain/01-overview/glossary.md`](../02-domain/01-overview/glossary.md) |
 | System Architecture | ✅ Done | [`04-architecture/01-system-design/`](../04-architecture/01-system-design/) |
 | Database Design | ✅ Done (v1.0 in-memory + v1.1 PostgreSQL) | [`04-architecture/02-database-design/database-design.md`](../04-architecture/02-database-design/database-design.md) |
-| API Contracts | ✅ Done | [`06-contracts/01-apis/rest/`](../06-contracts/01-apis/rest/) |
+| API Contracts | ✅ Done (10 total) | [`06-contracts/01-apis/rest/`](../06-contracts/01-apis/rest/) |
 | Module Specs | ✅ Done | [`05-modules/`](../05-modules/) |
 | UI Design System | ✅ Done (v2.1 — brand gradient, shimmer, backdrop blur, component polish) | [`07-design-system/`](../07-design-system/) |
 | Testing Strategy | ✅ Done | [`09-testing/strategy/testing-strategy.md`](../09-testing/strategy/testing-strategy.md) |
@@ -150,6 +150,10 @@ property-based-testing: opted-out
 | Book Covers API Contract | ✅ Done | [`06-contracts/01-apis/rest/books.yaml`](../06-contracts/01-apis/rest/books.yaml) — added `/books/{bookId}/cover` |
 | S3 Storage Client | ✅ Done | [`bookshop-backend/src/utils/supabase.ts`](../../bookshop-backend/src/utils/supabase.ts) |
 | Analytics API Contract | ✅ Done | [`06-contracts/01-apis/rest/analytics.yaml`](../06-contracts/01-apis/rest/analytics.yaml) |
+| Event Contracts | ✅ Done | [`06-contracts/03-events/book-events.yaml`](../06-contracts/03-events/book-events.yaml) |
+| Component Library | ✅ Done (v1.0) | [`07-design-system/02-components/component-library.md`](../07-design-system/02-components/component-library.md) |
+| UI Design Context | ✅ Done (v2.1) | [`07-design-system/01-foundation/ui-design-context.md`](../07-design-system/01-foundation/ui-design-context.md) |
+| Guardrails Documentation | ✅ Done | [`guardrail/guardrail.md`](../guardrail/guardrail.md) |
 
 ---
 

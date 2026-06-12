@@ -168,6 +168,13 @@ When user gives a feature or change request, follow these steps **in strict orde
 - Always update all relevant documentation files after implementing any feature.
 - This includes business rules, API specs, README, etc.
 
+#### Documentation Checklist (After Implementation)
+- [ ] **feature/feature.md** updated with new feature count, descriptions, and implementation order
+- [ ] **IMPLEMENTATION-GUIDE.md** updated with correct API contracts and Category Management phase
+- [ ] **aidlc-state/aidlc-state.md** updated — requirements traceability status, comprehensive context docs status (feature count, API contracts, implementation guide)
+- [ ] **README.md** updated if new files/directories were created
+- [ ] Any removed features documented in context files
+
 ---
 
 ## GENERAL RULES

@@ -10,7 +10,7 @@ Your AI-DLC product context is complete. Here's how to use it to build your book
 
 ### Complete Documentation
 - ✅ **9 User Stories** with acceptance criteria
-- ✅ **3 API Contracts** (Books, Customers, Orders) in OpenAPI 3.0
+- ✅ **10 API Contracts** (Books, Categories, Customers, Orders, Cart, Export, Stock, Audit, Analytics) in OpenAPI 3.0
 - ✅ **Business Rules** for validation logic
 - ✅ **Module Specifications** with data models
 - ✅ **Event Contracts** for async communication
@@ -57,6 +57,22 @@ Implement in this order:
 
 7. **US-007: View Customers** (3 points)
    - List with search
+
+### Phase 3.5: Category Management (Days 5-6)
+
+8. **US-010: Add Category** (3 points)
+   - Name uniqueness validation
+   - Description validation
+
+9. **US-011: View Categories** (2 points)
+   - List with search
+
+10. **US-012: Update Category** (2 points)
+    - Name uniqueness validation on rename
+    - Description validation
+
+11. **US-013: Delete Category** (1 point)
+    - Only if no books assigned (404 error otherwise)
 
 ### Phase 4: Order Management (Days 6-8)
 

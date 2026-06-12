@@ -134,9 +134,14 @@
 - Filename includes date: `books-2026-06-10.csv`
 - Frontend "Export CSV" button on each list page, triggers browser download
 
----
+## 17. Shopping Cart
+- **Local Storage Cart**: Client-side cart using localStorage (no authentication required)
+- **Cart Operations**: Add/remove items, adjust quantities, clear cart
+- **Cart Validation**: Backend endpoint `POST /api/v1/cart/validate` to check stock availability
+- **Checkout**: Backend endpoint `POST /api/v1/cart/checkout` to create order from cart items
+- **Cart UI**: Sidebar drawer with cart icon and badge, item management with quantity controls
 
-## 17. Monthly Sales Analytics Panel
+## 18. Monthly Sales Analytics Panel
 - **Summary Bar**: This month's revenue with trend arrow vs last month, plus YTD total revenue
 - **Monthly Table**: Columns — Month, Total Orders, Books Sold, Revenue, Avg Order Value, Top-Selling Book
 - **Trend Badges**: Revenue change vs previous month displayed as ↑ (up) / ↓ (down) / — (flat)
@@ -144,9 +149,22 @@
 - **Backend**: `GET /api/v1/analytics/sales-by-month` — pure aggregation queries on existing `orders` table, no new tables
 - **Data**: month, totalOrders, totalBooksSold, totalRevenue, averageOrderValue, topBook, trendArrow, trendPercentage
 
+## 19. BookHouse Rebrand
+- **Brand Identity**: Rename from "Bookshop" to "BookHouse"
+- **Visual Elements**: Vintage circular badge SVG logo with brand gradient colors (indigo → blue → purple)
+- **UI Updates**: Sidebar logo, page titles, HTML title, favicon
+- **Component Updates**: All text references updated across frontend
+
+## 20. Favourites (Wishlist)
+- **Toggle Favourites**: Heart icon on book cards to mark/unmark favourites
+- **Favourites Page**: Dedicated page showing all liked books with cover, title, author, price
+- **Selection & Actions**: Checkbox selection, "Add Selected to Cart", "Remove Selected"
+- **Batch Operations**: Clear all favourites
+- **Storage**: Client-side localStorage (no auth yet)
+
 ---
 
-## 18. Planned Features
+## 21. Planned Features
 - JWT authentication & RBAC
 - Swagger UI docs
 - ISBN, publisher, book covers, multiple authors
