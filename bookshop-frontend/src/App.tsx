@@ -14,17 +14,11 @@ import AuditLogPage from './pages/AuditLogPage';
 import { FavouritesPage } from './pages/FavouritesPage';
 
 function CartDrawerWrapper() {
-  const { isOpen, closeCart, items, totalItems, subtotal, updateQuantity, removeItem, clearCart } = useCartContext();
+  const { isOpen, closeCart } = useCartContext();
   return (
     <CartDrawer
       isOpen={isOpen}
       onClose={closeCart}
-      items={items}
-      totalItems={totalItems}
-      subtotal={subtotal}
-      onUpdateQuantity={updateQuantity}
-      onRemoveItem={removeItem}
-      onClear={clearCart}
     />
   );
 }

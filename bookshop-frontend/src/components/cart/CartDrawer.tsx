@@ -1,22 +1,14 @@
 import { useEffect } from 'react';
 import { XMarkIcon, MinusIcon, PlusIcon, TrashIcon, ShoppingCartIcon } from '@heroicons/react/24/outline';
-import type { CartItem } from '../../types';
+import { useCartContext } from '../../context/CartContext';
 
 interface CartDrawerProps {
   isOpen: boolean;
   onClose: () => void;
-  items: CartItem[];
-  totalItems: number;
-  subtotal: number;
-  onUpdateQuantity: (bookId: string, qty: number) => void;
-  onRemoveItem: (bookId: string) => void;
-  onClear: () => void;
 }
 
-export function CartDrawer({
-  isOpen, onClose, items, totalItems, subtotal,
-  onUpdateQuantity, onRemoveItem, onClear,
-}: CartDrawerProps) {
+export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
+  const { items, totalItems, subtotal, updateQuantity, removeItem, clearCart, checkout } = useCartContext();
   useEffect(() => {
     if (!isOpen) return;
     const handler = (e: KeyboardEvent) => {
@@ -82,7 +74,7 @@ export function CartDrawer({
                     <div className="flex items-center justify-between mt-2">
                       <div className="flex items-center gap-1">
                         <button
-                          onClick={() => onUpdateQuantity(item.bookId, item.quantity - 1)}
+                          onClick={() => updateQuantity(item.bookId, item.quantity - 1)}
                           className="w-6 h-6 rounded flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200 transition-colors"
                           aria-label={`Decrease quantity of ${item.title}`}
                         >
@@ -90,7 +82,7 @@ export function CartDrawer({
                         </button>
                         <span className="w-8 text-center text-sm font-medium text-gray-900">{item.quantity}</span>
                         <button
-                          onClick={() => onUpdateQuantity(item.bookId, item.quantity + 1)}
+                          onClick={() => updateQuantity(item.bookId, item.quantity + 1)}
                           className="w-6 h-6 rounded flex items-center justify-center text-gray-500 hover:text-gray-700 hover:bg-gray-200 transition-colors"
                           aria-label={`Increase quantity of ${item.title}`}
                         >
@@ -100,7 +92,7 @@ export function CartDrawer({
                       <div className="flex items-center gap-2">
                         <span className="text-sm font-semibold text-gray-900">${(item.price * item.quantity).toFixed(2)}</span>
                         <button
-                          onClick={() => onRemoveItem(item.bookId)}
+                          onClick={() => removeItem(item.bookId)}
                           className="p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded transition-colors"
                           aria-label={`Remove ${item.title} from cart`}
                         >
@@ -130,12 +122,13 @@ export function CartDrawer({
               </div>
               <div className="flex gap-2 pt-1">
                 <button
-                  onClick={onClear}
+                  onClick={clearCart}
                   className="flex-1 px-4 py-2 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   Clear
                 </button>
                 <button
+                  onClick={() => checkout('6c616af5-1073-4087-98d4-f28cb97a36d6')}
                   className="flex-1 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 rounded-lg hover:from-indigo-700 hover:via-blue-700 hover:to-purple-700 transition-all"
                 >
                   Checkout
